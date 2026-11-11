@@ -39,6 +39,10 @@ const LIBRARIES = [
   { key: 'gangnam', name: '강남구', platform: 'gangnam', base: 'https://ebook.gangnam.go.kr' },
   { key: 'songpa', name: '송파구', platform: 'yes24', base: 'https://ebook.splib.or.kr' },
   { key: 'gangdong', name: '강동구', platform: 'yes24', base: 'https://ebook.gdlibrary.or.kr' },
+  // 서울대학교 전자도서관 (재학생·교직원만 대출). 목록은 로그인 없이 보임. 화면에선 설정에서 켠 사람만 보임 (key가 snu로 시작)
+  { key: 'snu_kyobo', name: '서울대(교보)', platform: 'kyobo', base: 'https://snu.dkyobobook.co.kr', group: 'snu' },
+  { key: 'snu_yes24', name: '서울대(YES24)', platform: 'yes24', base: 'https://snu.yes24library.com', group: 'snu' },
+  { key: 'snu_bookcube', name: '서울대(북큐브)', platform: 'fxlibrary', base: 'https://snu.bookcube.biz', group: 'snu' },
 ];
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));

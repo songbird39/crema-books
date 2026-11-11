@@ -1468,7 +1468,7 @@ app.get('/api/libs/data', (req, res) => {
   const libs = [
     { key: 'seoul', name: '서울도서관', base: 'https://elib.seoul.go.kr', detail: 'https://elib.seoul.go.kr/contents/detail.do?no={id}',
       count: (seoul.books || []).length, total: (seoul.books || []).length, lastSync: seoul.lastSync, failedPages: seoul.failedPages || 0, changes: seoul.changes || null, ...(d.libs.seoul?.error ? { error: d.libs.seoul.error, errorAt: d.libs.seoul.errorAt } : {}) },
-    ...LIBRARIES.map(l => ({ key: l.key, name: l.name, base: l.base, detail: detailUrlTemplate(l), ...(d.libs[l.key] || {}) })),
+    ...LIBRARIES.map(l => ({ key: l.key, name: l.name, base: l.base, detail: detailUrlTemplate(l), ...(l.group ? { group: l.group } : {}), ...(d.libs[l.key] || {}) })),
   ];
   res.json({ libs, cremaToLibs: d.cremaToLibs || {}, cremaLibIds: d.cremaLibIds || {}, running: libJob.running, status: libJob.running ? libJobSnapshot().status : null });
 });

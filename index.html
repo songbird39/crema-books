@@ -602,6 +602,39 @@
 </div>
 
 <script>
+// ─── 서울대 전자도서관(key가 snu_로 시작): 재학생·교직원만 빌릴 수 있어서 설정에서 플랫폼(교보·YES24·북큐브)별로 켠 것만 보임 ───
+// 끈 것은 받은 데이터에서 아예 빼 둔다 (탭·배지·필터·검색·소장 수가 모두 그대로 맞음). 설정을 바꾸면 새로고침
+const SNU_LIBS = [['snu_kyobo', '교보'], ['snu_yes24', 'YES24'], ['snu_bookcube', '북큐브']];
+const snuKeysOf = (st) => SNU_LIBS.map(([k]) => k).filter(k => st?.snuLibs?.[k]).sort().join(',');
+const SNU_ON = (() => { try { return snuKeysOf(JSON.parse(localStorage.getItem('settings') || '{}')); } catch { return ''; } })();
+const libHidden = (k) => k.startsWith('snu') && !SNU_ON.split(',').includes(k);
+if (SNU_ON.split(',').length < SNU_LIBS.length) {
+  const dropIds = (o) => { if (o) for (const k of Object.keys(o)) if (libHidden(k)) delete o[k]; };
+  const PRUNE = {
+    '/api/libs/data': (j) => {
+      j.libs = (j.libs || []).filter(l => !libHidden(l.key));
+      for (const v of Object.values(j.cremaLibIds || {})) dropIds(v);
+      for (const [id, a] of Object.entries(j.cremaToLibs || {})) { const f = a.filter(k => !libHidden(k)); if (f.length) j.cremaToLibs[id] = f; else delete j.cremaToLibs[id]; }
+    },
+    '/api/libs/merged': (j) => { j.merged = (j.merged || []).filter(e => { dropIds(e.ids); e.libs = (e.libs || []).filter(k => !libHidden(k)); return e.libs.length; }); },
+    '/api/millie/data': (j) => { for (const m of Object.values(j.millieMatch || {})) dropIds(m.libIds); },
+    '/api/ridi/data': (j) => { for (const m of Object.values(j.ridiMatch || {})) dropIds(m.libIds); },
+    '/api/data': (j) => { for (const l of Object.values(j.bestsellerLists || {})) for (const b of l) dropIds(b.libIds); },
+    '/api/awards': (j) => { for (const l of Object.values(j.lists || {})) for (const x of l.items || []) dropIds(x.libIds); },
+    '/api/favorites': (j) => { for (const f of j.items || []) dropIds(f.libIds); dropIds(j.item?.libIds); },
+  };
+  const f0 = window.fetch.bind(window);
+  window.fetch = async (url, opts) => {
+    const r = await f0(url, opts);
+    const p = typeof url === 'string' && url.startsWith('/api/') ? url.split('?')[0] : null;
+    if (!p || !PRUNE[p] || !r.ok) return r;
+    const j = await r.json();
+    try { PRUNE[p](j); } catch (e) { console.error('prune', p, e); }
+    const res = new Response('{}', { status: r.status, headers: { 'Content-Type': 'application/json' } });
+    res.json = async () => j; // 큰 목록을 다시 문자열로 만들지 않게
+    return res;
+  };
+}
 let data = { books: [], bestsellers: {}, lastSync: null };
 let seoulData = { books: [], crossMatch: {}, lastSync: null };
 let libsData = { libs: [], cremaToLibs: {} };
@@ -2732,6 +2765,7 @@ window.setSettings = (s, { silent } = {}) => {
 window.getSettings = () => settings;
 function applySettings() {
   applyTheme(settings.theme);
+  if (snuKeysOf(settings) !== SNU_ON) return location.reload(); // 서울대 전자도서관은 데이터를 받을 때 빼므로 다시 받기
   for (const [k] of PLATFORMS) {
     document.documentElement.classList.toggle('no-' + k, !plat(k));
     const tab = document.querySelector(`.tab[data-tab="${k}"]`);
@@ -2756,6 +2790,10 @@ function openSettings() {
     <div class="settings-sec"><h4>쓰는 플랫폼</h4>
       <p class="settings-note">끈 플랫폼은 탭·필터·책 표시·검색 결과에서 빠져요.</p>
       ${PLATFORMS.map(([k, name]) => `<label class="settings-row"><input type="checkbox" data-plat="${k}" ${plat(k) ? 'checked' : ''} onchange="togglePlatform(this)"> ${name}</label>`).join('')}
+    </div>
+    <div class="settings-sec"><h4>도서관</h4>
+      <p class="settings-note">서울대 전자도서관 — 재학생·교직원만 빌릴 수 있어요. 바꾸면 새로고침돼요.</p>
+      ${SNU_LIBS.map(([k, name]) => `<label class="settings-row"><input type="checkbox" ${settings.snuLibs?.[k] ? 'checked' : ''} onchange="window.setSettings({ ...settings, snuLibs: { ...(settings.snuLibs || {}), [this.dataset.k]: this.checked } })" data-k="${k}"> 서울대 ${name}</label>`).join('')}
     </div>
     <div class="settings-sec"><h4>화면</h4>
       <div class="settings-seg">${[['system', '시스템 설정'], ['light', '라이트'], ['dark', '다크']].map(([v, l]) =>
