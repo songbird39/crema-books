@@ -41,6 +41,8 @@ const ENDPOINTS = {
   };
   fs.writeFileSync(path.join(OUT, 'api', 'status.json'), JSON.stringify(status));
   for (const f of ['match.js', 'web.js', 'google-login.js', 'admin.html']) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
+  fs.copyFileSync(path.join(ROOT, 'manifest.webmanifest'), path.join(OUT, 'manifest.webmanifest'));
+  fs.cpSync(path.join(ROOT, 'icons'), path.join(OUT, 'icons'), { recursive: true });
   // 웹 버전 설정 (Supabase URL·publishable key는 브라우저용 공개 값)
   const version = new Date().toISOString();
   fs.writeFileSync(path.join(OUT, 'config.js'), 'window.SITE = ' + JSON.stringify({

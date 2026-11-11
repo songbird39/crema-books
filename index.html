@@ -2,7 +2,16 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- 홈 화면에 추가하면 앱처럼 (전체 화면, 아이콘) -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="전자책 검색">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a1a1a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <title>크레마클럽 도서</title>
@@ -487,17 +496,57 @@
   .sync-summary .dot.none { background: var(--c555); }
   .sync-summary .cnt { color: var(--caaa); font-weight: 600; }
   .sync-summary .time { color: var(--c555); }
+
+  /* 탭 묶음 (넓은 화면에선 예전처럼 탭이 남는 폭을 나눠 가짐) */
+  .tab-list { display: flex; flex: 1; min-width: 0; }
+  .tab-sync .t-m { display: none; }
+
+  /* ─── 모바일 ─── */
+  @media (max-width: 700px) {
+    /* 위 고정 영역은 탭 줄만 (정렬·필터 줄은 같이 스크롤돼서 목록을 넓게) */
+    .topbar { display: contents; }
+    .topbar .tabs { position: sticky; top: 0; z-index: 101; flex-wrap: wrap; padding-top: env(safe-area-inset-top); }
+    #content { padding-bottom: env(safe-area-inset-bottom); }
+    /* 첫 줄: 동기화 날짜 · 관리자 · 로그인 · 테마 / 둘째 줄: 탭 (넘치면 옆으로 밀기) */
+    .tab-list { order: 2; flex: 1 0 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--c222); }
+    .tab-list::-webkit-scrollbar { display: none; }
+    .tab { flex: 1 0 auto; padding: 11px 12px; font-size: 14px; white-space: nowrap; }
+    .tl-long { display: none; }
+    .tab-sync { order: 1; border-left: none; padding: 8px 10px; font-size: 12px; min-height: 38px; }
+    #btnSyncPanel { order: 0; margin-right: auto; padding-left: 12px; }
+    #btnSyncPanel .t { display: none; }
+    #btnSyncPanel .t-m { display: inline; color: var(--c888); }
+    #btnSyncPanel .t-m b { color: var(--caaa); font-weight: 500; }
+    #btnAccount { max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
+    .theme-btn { order: 1; padding: 0 12px; }
+    .sync-summary { padding: 8px 12px; gap: 8px 14px; }
+    .sync-summary .src { flex-wrap: wrap; gap: 2px 6px; }
+    .sync-summary .src > * { white-space: nowrap; }
+    .header { padding: 8px 12px; }
+    .controls { padding: 10px 12px; gap: 6px; }
+    .sort-btn, .genre-select { height: 32px; }
+    /* iOS는 16px보다 작은 입력창에 글을 쓰면 화면을 확대함 */
+    .search-input, .genre-select, input, select, textarea { font-size: 16px; }
+    .search-input { flex: 1 0 100%; height: 38px; }
+    .ctl-divider { display: none; }
+    .book-item { padding: 12px; }
+    .popup { width: 94%; padding: 16px; max-height: 86vh; }
+    .kdc-panel { width: 96vw; left: 2vw !important; }
+    .empty { padding-left: 16px; padding-right: 16px; }
+  }
 </style>
 </head>
 <body>
 <div class="topbar"><!-- 탭·동기화 패널·진행 막대·정렬 줄을 한 덩어리로 상단 고정 (높이가 바뀌어도 겹치지 않게) -->
 <div class="tabs">
-  <div class="tab active" data-tab="crema" onclick="switchTab('crema')">크레마클럽</div>
-  <div class="tab" data-tab="millie" onclick="switchTab('millie')">밀리의 서재</div>
-  <div class="tab" data-tab="libs" onclick="switchTab('libs')">서울도서관</div>
-  <div class="tab" data-tab="best" onclick="switchTab('best')">추천 목록</div>
+  <div class="tab-list"><!-- 모바일에선 짧은 이름(.tl-long 숨김) + 옆으로 밀기 -->
+  <div class="tab active" data-tab="crema" onclick="switchTab('crema')">크레마<span class="tl-long">클럽</span></div>
+  <div class="tab" data-tab="millie" onclick="switchTab('millie')">밀리<span class="tl-long">의 서재</span></div>
+  <div class="tab" data-tab="libs" onclick="switchTab('libs')"><span class="tl-long">서울</span>도서관</div>
+  <div class="tab" data-tab="best" onclick="switchTab('best')">추천<span class="tl-long"> 목록</span></div>
   <div class="tab" data-tab="favs" onclick="switchTab('favs')">즐겨찾기 <span id="favCount"></span></div>
   <div class="tab" data-tab="search" onclick="switchTab('search')">검색</div>
+  </div>
   <button class="theme-btn" id="btnTheme" onclick="toggleTheme()" title="라이트/다크 모드">☀</button>
   <button class="tab-sync" id="btnSyncPanel" onclick="toggleSyncPanel()">동기화 ▾</button>
 </div>
@@ -821,6 +870,8 @@ const MOON_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
   <path class="twinkle t2" d="M21.5 9l.4.9.9.4-.9.4-.4.9-.4-.9-.9-.4.9-.4z" fill="#fff3b0"/>
 </svg>`;
 function updateThemeButton() {
+  // 모바일 브라우저 상단·상태 표시줄 색도 테마에 맞춤
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', document.documentElement.dataset.theme === 'light' ? '#ffffff' : '#1a1a1a');
   const light = document.documentElement.dataset.theme === 'light';
   const b = document.getElementById('btnTheme');
   // 지금 테마를 보여줌: 다크면 달, 라이트면 해
@@ -867,7 +918,9 @@ function renderSyncButton() {
   // 탭 줄은 좁아서 월/일만 (한국 시각), 마우스를 올리면 자세히
   const t = (name, iso) => `<span class="t" title="${iso ? KST.format(new Date(iso)) + ' (' + fmtDate(iso) + ')' : '미동기화'}">${name} <b>${fmtMD(iso)}</b></span>`;
   btn.classList.toggle('busy', busy);
+  const oldest = [data.lastSync, libsLast, millieData.lastSync, data.bestsellerSync].filter(Boolean).sort()[0];
   btn.innerHTML = (busy ? '<span class="busy-label">동기화 중…</span>' : '')
+    + `<span class="t-m">동기화 <b>${fmtMD(oldest)}</b></span>` // 모바일: 가장 오래된 날짜 하나만
     + t('크레마', data.lastSync) + t('도서관', libsLast) + t('밀리', millieData.lastSync) + t('베스트', data.bestsellerSync) + ' ▾';
 }
 

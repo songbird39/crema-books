@@ -51,6 +51,18 @@
   details.books li { break-inside: avoid; }
   .chg { border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin: 6px 0; background: var(--card); }
   .chg .head { font-weight: 600; }
+  @media (max-width: 700px) {
+    header { padding: 10px 12px; gap: 10px; flex-wrap: wrap; }
+    header h1 { font-size: 15px; }
+    #who { flex-basis: 100%; font-size: 12px; }
+    main { padding: 12px 12px 40px; }
+    .cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .card .v { font-size: 17px; }
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 12.5px; white-space: nowrap; }
+    th, td { padding: 6px 8px; }
+    tr.detail > td { white-space: normal; padding: 10px; }
+    details.books ol { columns: 1; }
+  }
   .tools { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 13px; }
 </style>
 <script src="config.js"></script>

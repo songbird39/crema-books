@@ -3,7 +3,7 @@
 cd "$(dirname "$0")"
 OUT="dist/BookBrowser"
 rm -rf dist && mkdir -p "$OUT"
-cp -R server.js libraries.js match.js retention.js google-login.js web.js index.html package.json package-lock.json certs awards node_modules start.command start.bat "$OUT/"
+cp -R server.js libraries.js match.js retention.js google-login.js web.js manifest.webmanifest icons index.html package.json package-lock.json certs awards node_modules start.command start.bat "$OUT/"
 for f in data.json data-libs.json data-seoul.json data-millie.json; do [ -f "$f" ] && cp "$f" "$OUT/"; done
 echo '{ "items": [] }' > "$OUT/data-favorites.json"
 cat > "$OUT/README.txt" <<'TXT'
