@@ -55,6 +55,7 @@
 </style>
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="google-login.js"></script>
 </head>
 <body>
 <header>
@@ -149,7 +150,8 @@ async function main() {
   document.getElementById('logout')?.addEventListener('click', async (e) => { e.preventDefault(); await sb.auth.signOut(); location.reload(); });
   if (!user) {
     $main.innerHTML = `<div class="center"><p>관리자 계정으로 로그인하세요</p><button class="btn" id="login">구글로 로그인</button></div>`;
-    document.getElementById('login').onclick = () => sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.href } });
+    document.getElementById('login').onclick = () => googleLogin(sb, location.href);
+    sb.auth.onAuthStateChange((ev) => { if (ev === 'SIGNED_IN') location.reload(); });
     return;
   }
   const { data: isAdmin } = await sb.rpc('is_admin');

@@ -40,16 +40,17 @@ const ENDPOINTS = {
     libs: Object.fromEntries(got['/api/libs/data'].libs.map(x => [x.key, { name: x.name, count: x.count || 0, total: x.total || 0, lastSync: x.lastSync || null, failedPages: x.failedPages || 0, error: x.error || null, detail: x.detail || null, changes: x.changes || null }])),
   };
   fs.writeFileSync(path.join(OUT, 'api', 'status.json'), JSON.stringify(status));
-  for (const f of ['match.js', 'web.js', 'admin.html']) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
+  for (const f of ['match.js', 'web.js', 'google-login.js', 'admin.html']) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
   // 웹 버전 설정 (Supabase URL·publishable key는 브라우저용 공개 값)
   const version = new Date().toISOString();
   fs.writeFileSync(path.join(OUT, 'config.js'), 'window.SITE = ' + JSON.stringify({
     version,
     supabaseUrl: process.env.SUPABASE_URL || 'https://plbloozabksouhacpsbz.supabase.co',
     supabaseKey: process.env.SUPABASE_KEY || 'sb_publishable_ZujJquUTwyqCQA7JNFVP4g_KK3a782g',
+    googleClientId: process.env.GOOGLE_CLIENT_ID || '', // 구글 로그인 버튼용 (공개 값, 저장소 변수 GOOGLE_CLIENT_ID)
   }) + ';\n');
   const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  const tags = `<script src="config.js?v=${version}"></script>\n<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>\n<script src="match.js?v=${version}"></script>\n<script src="web.js?v=${version}"></script>\n</head>`;
+  const tags = `<script src="config.js?v=${version}"></script>\n<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>\n<script src="google-login.js?v=${version}"></script>\n<script src="match.js?v=${version}"></script>\n<script src="web.js?v=${version}"></script>\n</head>`;
   if (!html.includes('</head>')) throw new Error('index.html에 </head>가 없음');
   fs.writeFileSync(path.join(OUT, 'index.html'), html.replace('</head>', tags));
   fs.writeFileSync(path.join(OUT, 'api', 'meta.json'), JSON.stringify({ exportedAt: version }));

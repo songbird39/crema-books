@@ -48,6 +48,7 @@ jobs:
           MILLIE: ${{ inputs.millie && '1' || '' }}
           NL_API_KEY: ${{ secrets.NL_API_KEY }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
         run: node scripts/sync.js
       - name: 데이터 저장
         if: github.event_name != 'push'

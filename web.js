@@ -119,7 +119,7 @@
   }
 
   // ─── 로그인 ───
-  const login = () => sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.origin + location.pathname } });
+  const login = () => googleLogin(sb); // google-login.js
   const logout = () => sb.auth.signOut();
   function refresh() {
     if (typeof loadFavorites !== 'function') return;
