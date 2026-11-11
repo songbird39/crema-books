@@ -133,7 +133,7 @@
       btn.id = 'btnAccount';
       btn.className = 'tab-sync';
       btn.onclick = (ev) => { ev.stopPropagation(); user ? toggleMenu() : login(); };
-      document.getElementById('btnTheme').before(btn);
+      document.getElementById('btnSettings').before(btn);
       const adm = document.createElement('a'); // 관리자에게만 보이는 탭 줄 버튼
       adm.id = 'btnAdmin'; adm.className = 'tab-sync'; adm.href = 'admin.html'; adm.textContent = '관리자'; adm.hidden = true;
       adm.style.cssText = 'display:flex;align-items:center;text-decoration:none';

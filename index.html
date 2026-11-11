@@ -504,6 +504,10 @@
   .settings-note { font-size: 12px; color: var(--c888); margin-bottom: 8px; }
   .settings-row { display: flex; align-items: center; gap: 8px; padding: 7px 0; font-size: 14px; cursor: pointer; }
   .settings-row input { width: 18px; height: 18px; accent-color: var(--c3498db); }
+  .settings-seg { display: flex; gap: 6px; }
+  .settings-seg label { flex: 1; text-align: center; padding: 8px 0; border: 1px solid var(--c444); border-radius: 8px; font-size: 13px; cursor: pointer; color: var(--caaa); }
+  .settings-seg input { display: none; }
+  .settings-seg label:has(input:checked) { background: var(--c3498db); border-color: var(--c3498db); color: #fff; font-weight: 600; }
   .settings-btn { background: var(--c333); color: var(--ceee); border: 1px solid var(--c444); border-radius: 6px; padding: 7px 14px; font-size: 13px; cursor: pointer; margin: 4px 6px 0 0; }
   .settings-btn.danger { background: none; color: var(--ce74c3c); border-color: var(--ce74c3c); }
   /* 탭 묶음 (넓은 화면에선 예전처럼 탭이 남는 폭을 나눠 가짐) */
@@ -516,7 +520,7 @@
     .topbar { display: contents; }
     .topbar .tabs { position: sticky; top: 0; z-index: 101; flex-wrap: wrap; padding-top: env(safe-area-inset-top); }
     #content { padding-bottom: env(safe-area-inset-bottom); }
-    /* 첫 줄: 동기화 날짜 · 관리자 · 로그인 · 테마 / 둘째 줄: 탭 (넘치면 옆으로 밀기) */
+    /* 첫 줄: 동기화 날짜 · 관리자 · 로그인 · 설정 / 둘째 줄: 탭 (넘치면 옆으로 밀기) */
     .tab-list { order: 2; flex: 1 0 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--c222); }
     .tab-list::-webkit-scrollbar { display: none; }
     .tab { flex: 1 0 auto; padding: 11px 12px; font-size: 14px; white-space: nowrap; }
@@ -557,7 +561,6 @@
   <div class="tab" data-tab="search" onclick="switchTab('search')">검색</div>
   </div>
   <button class="tab-sync" id="btnSettings" onclick="openSettings()" title="설정">⚙<span class="tl-long"> 설정</span></button>
-  <button class="theme-btn" id="btnTheme" onclick="toggleTheme()" title="라이트/다크 모드">☀</button>
   <button class="tab-sync" id="btnSyncPanel" onclick="toggleSyncPanel()">동기화 ▾</button>
 </div>
 <div class="sync-summary" id="syncSummary"></div>
@@ -849,12 +852,14 @@ function switchTab(tab) {
   render();
 }
 
-function toggleTheme() {
-  const t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-  document.documentElement.dataset.theme = t;
-  localStorage.setItem('theme', t);
+// 테마: 설정의 theme ('system' | 'light' | 'dark'). 페이지 맨 위 스크립트가 깜빡임 없게 localStorage 'theme'를 먼저 읽음
+const sysLight = matchMedia('(prefers-color-scheme: light)');
+function applyTheme(mode = settings?.theme || 'system') {
+  if (mode === 'system') localStorage.removeItem('theme'); else localStorage.setItem('theme', mode);
+  document.documentElement.dataset.theme = mode === 'system' ? (sysLight.matches ? 'light' : 'dark') : mode;
   updateThemeButton();
 }
+sysLight.addEventListener('change', () => { if ((settings?.theme || 'system') === 'system') applyTheme('system'); });
 const SUN_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
   <g class="rays" stroke="#f5a623" stroke-width="2" stroke-linecap="round">
     <line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/>
@@ -884,6 +889,7 @@ function updateThemeButton() {
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', document.documentElement.dataset.theme === 'light' ? '#ffffff' : '#1a1a1a');
   const light = document.documentElement.dataset.theme === 'light';
   const b = document.getElementById('btnTheme');
+  if (!b) return;
   // 지금 테마를 보여줌: 다크면 달, 라이트면 해
   b.innerHTML = light ? SUN_SVG : MOON_SVG;
   b.title = light ? '다크 모드로' : '라이트 모드로';
@@ -2580,7 +2586,7 @@ function showDetail(ctx) {
 // ─── 설정: 쓰는 플랫폼 (안 쓰는 플랫폼은 탭·필터·표시에서 뺌) ───
 // 이 기기(localStorage)에 저장. 웹 버전에선 로그인하면 계정에도 저장돼서 다른 기기와 같아짐 (web.js)
 const PLATFORMS = [['crema', '크레마클럽', '크레마'], ['millie', '밀리의 서재', '밀리'], ['libs', '도서관', '도서관']];
-const DEFAULT_SETTINGS = { platforms: { crema: true, millie: true, libs: true } };
+const DEFAULT_SETTINGS = { platforms: { crema: true, millie: true, libs: true }, theme: localStorage.getItem('theme') || 'system' };
 let settings = (() => {
   try { const s = JSON.parse(localStorage.getItem('settings') || '{}'); return { ...DEFAULT_SETTINGS, ...s, platforms: { ...DEFAULT_SETTINGS.platforms, ...(s.platforms || {}) } }; }
   catch { return structuredClone(DEFAULT_SETTINGS); }
@@ -2596,6 +2602,7 @@ window.setSettings = (s, { silent } = {}) => {
 };
 window.getSettings = () => settings;
 function applySettings() {
+  applyTheme(settings.theme);
   for (const [k] of PLATFORMS) {
     document.documentElement.classList.toggle('no-' + k, !plat(k));
     const tab = document.querySelector(`.tab[data-tab="${k}"]`);
@@ -2619,6 +2626,10 @@ function openSettings() {
     <div class="settings-sec"><h4>쓰는 플랫폼</h4>
       <p class="settings-note">끈 플랫폼은 탭·필터·책 표시·검색 결과에서 빠져요.</p>
       ${PLATFORMS.map(([k, name]) => `<label class="settings-row"><input type="checkbox" data-plat="${k}" ${plat(k) ? 'checked' : ''} onchange="togglePlatform(this)"> ${name}</label>`).join('')}
+    </div>
+    <div class="settings-sec"><h4>화면</h4>
+      <div class="settings-seg">${[['system', '시스템 설정'], ['light', '라이트'], ['dark', '다크']].map(([v, l]) =>
+        `<label><input type="radio" name="theme" value="${v}" ${(settings.theme || 'system') === v ? 'checked' : ''} onchange="window.setSettings({ ...settings, theme: this.value })"> ${l}</label>`).join('')}</div>
     </div>${acct}`;
   box.classList.remove('wide');
   document.getElementById('popupOverlay').classList.add('open');
