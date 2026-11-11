@@ -66,11 +66,11 @@ async function snapshot() {
   const get = async (p) => (await fetch(BASE + p)).json();
   const [d, l, m, k] = await Promise.all([get('/api/data'), get('/api/libs/data'), get('/api/millie/data'), get('/api/kdc')]);
   return {
-    crema: { count: d.books?.length || 0, lastSync: d.lastSync || null, lastCrawl: d.lastCremaCrawl || null },
+    crema: { count: d.books?.length || 0, lastSync: d.lastSync || null, lastCrawl: d.lastCremaCrawl || null, changes: d.cremaChanges || null },
     bestsellers: { lists: Object.fromEntries(Object.entries(d.bestsellerLists || {}).map(([k, v]) => [k, v.length])), lastSync: d.bestsellerSync || null },
-    millie: { count: m.count || 0, lastSync: m.lastSync || null },
+    millie: { count: m.count || 0, lastSync: m.lastSync || null, changes: m.changes || null },
     kdc: { count: Object.keys(k.map || {}).length },
-    libs: Object.fromEntries(l.libs.map(x => [x.key, { name: x.name, count: x.count || 0, total: x.total || 0, lastSync: x.lastSync || null, failedPages: x.failedPages || 0, error: x.error || null }])),
+    libs: Object.fromEntries(l.libs.map(x => [x.key, { name: x.name, count: x.count || 0, total: x.total || 0, lastSync: x.lastSync || null, failedPages: x.failedPages || 0, error: x.error || null, detail: x.detail || null, changes: x.changes || null }])),
   };
 }
 
@@ -91,6 +91,8 @@ async function snapshot() {
       await sleep(1000);
     }
     before = await snapshot();
+    // 이전 동기화의 변화 기록은 빼고 (이번 기록은 after에)
+    delete before.crema.changes; delete before.millie.changes; for (const l of Object.values(before.libs)) delete l.changes;
     const step = async (name, fn) => {
       const s0 = Date.now();
       const r = await fn().catch(e => ({ ok: false, status: e.message }));

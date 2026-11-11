@@ -248,6 +248,7 @@ async function crawlAladin(type = 'Bestseller') {
   return books;
 }
 
+const { reconcile } = require('./retention');
 const { normTitle, workKey, baseTitle, authorNames, sameName, sameForeignName, authorsMatch, buildTitleIndex, authorKey, HANGUL_RE } = require("./match");
 
 // ─── 베스트셀러 ───
@@ -347,12 +348,16 @@ app.get('/api/sync', async (req, res) => {
     const crawlResult = await crawlCremaClub((p) => send(p));
     if (syncAborted) { console.log('Crema sync aborted'); return; }
     const prev = loadData();
-    const cremaBooks = crawlResult.complete ? crawlResult.books : (prev.books || []);
+    // 없어진 책 처리 규칙은 retention.js (다 못 받았거나 크게 줄었으면 지우지 않음, 연속 2번 안 보이면 지움)
+    const rc = reconcile(prev.books || [], crawlResult.books, { idOf: b => b.bookId, titleOf: b => b.title, complete: crawlResult.complete, prevMissing: prev.cremaMissing });
+    const cremaBooks = rc.items;
+    const rcNote = `새 책 ${rc.changes.added} · 지움 ${rc.changes.removed} · 안 보였지만 남김 ${rc.changes.kept}`;
     if (!crawlResult.complete) {
-      send({ status: `크레마클럽 크롤링 실패 (실패 페이지 ${crawlResult.failedPages}개) — 기존 데이터 유지`, phase: 'bestseller', page: 0, totalPages: 5 });
+      send({ status: `크레마클럽 크롤링 일부 실패 (실패 페이지 ${crawlResult.failedPages}개) — 받은 책만 갱신, 지우지 않음 (${rcNote})`, phase: 'bestseller', page: 0, totalPages: 5 });
     } else {
       const genreNote = crawlResult.genreFailed.length ? ` (장르 일부 실패: ${crawlResult.genreFailed.join(' / ')})` : '';
-      send({ status: `크레마클럽 ${cremaBooks.length.toLocaleString()}권 수집 완료${genreNote}`, phase: 'bestseller', page: 0, totalPages: 5 });
+      const dropNote = rc.changes.warning === 'drop' ? ` ⚠ 권수가 ${rc.changes.prev}→${rc.changes.received}로 크게 줄어 지우지 않음` : '';
+      send({ status: `크레마클럽 ${cremaBooks.length.toLocaleString()}권 (${rcNote})${dropNote}${genreNote}`, phase: 'bestseller', page: 0, totalPages: 5 });
     }
 
     // 2. Crawl bestseller lists (매칭은 저장 후 rematchBestsellers에서)
@@ -372,6 +377,8 @@ app.get('/api/sync', async (req, res) => {
     const data = {
       ...prev,
       books: cremaBooks,
+      cremaMissing: rc.missing,
+      cremaChanges: rc.changes,
       bestsellerLists: { ...(prev.bestsellerLists || {}), ...bestsellerLists },
       bestsellerSync: new Date().toISOString(),
       lastSync: new Date().toISOString(),
@@ -736,6 +743,49 @@ function findMillie(title, author) {
   return millieFinder(title, author)?.id || null;
 }
 
+// 밀리는 공개 목록이 카테고리별 인기 순위(상위 100권)뿐이라 순위에서 빠졌다고 없어진 게 아님 →
+// 한 번 본 책은 계속 두고(누적), 이번에 안 보인 책은 책 상세 API로 하나씩 확인해서 없어진 게 확실할 때만 지운다.
+// 없어짐: 404·400(잘못된 책 번호) 또는 is_serviced=false. 그 밖의 오류는 확인 못 함 → 남김.
+const MILLIE_VERIFY_MAX = 8000; // 한 번에 확인하는 최대 권수 (나머지는 남겨 두고 다음에)
+async function millieBookState(id) {
+  try {
+    const r = await fetch(`https://apis.millie.co.kr/v3/content/detail/book/${id}/`, { signal: AbortSignal.timeout(20000), headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36', 'Accept': 'application/json' } });
+    if (r.status === 404 || r.status === 400) return 'gone';
+    if (!r.ok) return 'unknown';
+    const d = await r.json();
+    return d?.is_serviced === false ? 'gone' : d?.book_id || d?.content_seq ? 'exists' : 'unknown';
+  } catch { return 'unknown'; }
+}
+async function reconcileMillie(prev, rows, onProgress) {
+  const now = new Date().toISOString();
+  const seen = { ...(prev.seen || {}) };
+  const ids = new Set(rows.map(r => r[0]));
+  const prevIds = new Set((prev.books || []).map(r => r[0]));
+  for (const r of rows) seen[r[0]] = now;
+  const added = rows.filter(r => !prevIds.has(r[0]));
+  const gone = (prev.books || []).filter(r => !ids.has(r[0]));
+  // 오래 안 보인 책부터 확인
+  gone.sort((a, b) => (seen[a[0]] || '').localeCompare(seen[b[0]] || ''));
+  const state = new Map();
+  const queue = gone.slice(0, MILLIE_VERIFY_MAX);
+  let done = 0;
+  await Promise.all(Array.from({ length: 2 }, async () => {
+    for (let r; (r = queue.shift());) {
+      state.set(r[0], await millieBookState(r[0]));
+      if (++done % 200 === 0 || !queue.length) onProgress?.({ status: `밀리의 서재: 순위에서 빠진 책 확인 ${done.toLocaleString()}/${Math.min(gone.length, MILLIE_VERIFY_MAX).toLocaleString()}`, phase: 'millie', page: done, totalPages: Math.min(gone.length, MILLIE_VERIFY_MAX) });
+      await new Promise(res => setTimeout(res, 400));
+    }
+  }));
+  const removed = gone.filter(r => state.get(r[0]) === 'gone');
+  const kept = gone.filter(r => state.get(r[0]) === 'exists');
+  const unknown = gone.filter(r => state.get(r[0]) !== 'gone' && state.get(r[0]) !== 'exists'); // 확인 못 함·확인 안 함
+  for (const r of removed) delete seen[r[0]];
+  const S = 50, pair = r => [r[0], r[1]];
+  const changes = { at: now, prev: (prev.books || []).length, received: rows.length, added: added.length, removed: removed.length, kept: kept.length, unknown: unknown.length, warning: null,
+    addedSample: added.slice(0, S).map(pair), removedSample: removed.slice(0, S).map(pair), keptSample: kept.slice(0, S).map(pair), unknownSample: unknown.slice(0, S).map(pair) };
+  return { books: [...rows, ...kept, ...unknown], seen, changes };
+}
+
 let millieJob = { running: false, status: null, listeners: new Set() };
 async function runMillieJob() {
   millieJob.running = true;
@@ -744,11 +794,13 @@ async function runMillieJob() {
     send({ status: '밀리의 서재 카테고리 받는 중...', phase: 'millie', page: 0, totalPages: 1 });
     const r = await crawlMillie(send);
     if (!r.books.length) throw new Error('받은 책이 없습니다');
-    fs.writeFileSync(MILLIE_FILE, JSON.stringify({ lastSync: new Date().toISOString(), categories: r.categories, failed: r.failed, books: r.books }));
+    const m = await reconcileMillie(loadMillie(), r.books, send);
+    fs.writeFileSync(MILLIE_FILE, JSON.stringify({ lastSync: new Date().toISOString(), categories: r.categories, failed: r.failed, books: m.books, seen: m.seen, changes: m.changes }));
     millieFinder = null;
     send({ status: '매칭 중...', phase: 'match' });
     rebuildLibMatch();
-    send({ status: `완료! 밀리의 서재 ${r.books.length.toLocaleString()}권 (카테고리 ${r.categories}개${r.failed ? `, 실패 ${r.failed}건` : ''})` });
+    const c = m.changes;
+    send({ status: `완료! 밀리의 서재 ${m.books.length.toLocaleString()}권 (이번 순위 ${r.books.length.toLocaleString()} · 새 책 ${c.added} · 없어진 것 확인 ${c.removed} · 순위에만 빠진 책 ${c.kept}${c.unknown ? ` · 확인 못 해 남김 ${c.unknown}` : ''} · 카테고리 ${r.categories}개${r.failed ? `, 실패 ${r.failed}건` : ''})` });
     send({ done: true });
   } catch (e) {
     send({ error: e.message });
@@ -912,7 +964,7 @@ app.get('/api/awards', (req, res) => {
 app.get('/api/millie/data', (req, res) => {
   const d = loadMillie();
   const libs = loadLibs();
-  res.json({ lastSync: d.lastSync || null, count: (d.books || []).length, running: millieJob.running, cremaToMillie: libs.cremaToMillie || {},
+  res.json({ lastSync: d.lastSync || null, count: (d.books || []).length, changes: d.changes || null, running: millieJob.running, cremaToMillie: libs.cremaToMillie || {},
     books: d.books || [], millieMatch: libs.millieMatch || {} });
 });
 
@@ -949,17 +1001,25 @@ async function crawlSeoulElib(onProgress) {
   if (!categories.length) throw new Error('카테고리를 찾지 못함');
   const allBooks = [];
   const seen = new Set();
+  let failed = 0; // 끝내 못 받은 페이지 수 (있으면 '다 받지 못함' → 없어진 책을 지우지 않음)
   for (let i = 0; i < categories.length; i++) {
     const cat = categories[i];
-    let currentCount = 1;
+    let currentCount = 1, knownPages = 0;
     while (true) {
       let result;
-      try {
-        result = await fetchElibCategoryBooks(cat.categoryNo, 50, currentCount);
-      } catch (e) {
-        console.error(`Seoul cat ${cat.categoryNo} p${currentCount} failed:`, e.message);
+      for (let t = 0; t < 3 && !result; t++) {
+        try { result = await fetchElibCategoryBooks(cat.categoryNo, 50, currentCount); }
+        catch (e) {
+          console.error(`Seoul cat ${cat.categoryNo} p${currentCount} failed (${t + 1}/3):`, e.message);
+          await new Promise(r => setTimeout(r, 3000 * (t + 1)));
+        }
+      }
+      if (!result) {
+        failed++;
+        if (knownPages && currentCount < knownPages) { currentCount++; continue; } // 그 페이지만 건너뜀
         break;
       }
+      knownPages = result.totalPage || Math.ceil((result.totalCount || 0) / 50);
       const items = result.ContentDataList || [];
       if (items.length === 0) break;
       for (const item of items) {
@@ -988,14 +1048,18 @@ async function crawlSeoulElib(onProgress) {
       await new Promise(r => setTimeout(r, 600));
     }
   }
-  return allBooks;
+  return { books: allBooks, failed };
 }
 
-// 서울도서관 결과 저장 + 크레마와 매칭
-function saveSeoulCrawl(books) {
+// 서울도서관 결과 저장 + 크레마와 매칭 (없어진 책 처리 규칙은 retention.js)
+function saveSeoulCrawl(crawled, failed) {
+  const prev = loadSeoul();
+  const rc = reconcile(prev.books || [], crawled, { idOf: b => b.id, titleOf: b => b.title, complete: !failed, prevMissing: prev.missing });
+  const books = rc.items;
   const cremaData = loadData();
   const crossMatch = buildCrossMatch(books, cremaData.books || []);
-  saveSeoul({ books, lastSync: new Date().toISOString(), crossMatch });
+  saveSeoul({ books, lastSync: new Date().toISOString(), crossMatch, missing: rc.missing, changes: rc.changes, failedPages: failed });
+  return rc.changes;
   if ((cremaData.books || []).length > 0) {
     cremaData.seoulMatch = crossMatch.cremaToSeoul;
     saveData(cremaData);
@@ -1156,21 +1220,27 @@ async function runLibJob(libs = [SEOUL_LIB, ...LIBRARIES]) {
       const st = libJob.state[lib.key];
       try {
         if (lib.key === 'seoul') {
-          const books = await crawlSeoulElib((p) => Object.assign(st, p));
-          saveSeoulCrawl(books);
+          const r = await crawlSeoulElib((p) => Object.assign(st, p));
+          if (!r.books.length) throw new Error('받은 책이 없음');
+          const ch = saveSeoulCrawl(r.books, r.failed);
           const d = loadLibs();
-          d.libs.seoul = { name: lib.name, count: books.length, total: books.length, lastSync: new Date().toISOString() };
+          d.libs.seoul = { name: lib.name, count: r.books.length, total: r.books.length, failedPages: r.failed, lastSync: new Date().toISOString(), changes: ch };
           saveLibs(d);
-          console.log(`[${lib.name}] ${books.length} books`);
+          console.log(`[${lib.name}] ${r.books.length} books (failed pages: ${r.failed}, +${ch.added} -${ch.removed} 남김 ${ch.kept})`);
           return;
         }
         const r = await crawlLibrary(lib, { onProgress: (p) => Object.assign(st, p) });
         // 도서관 하나 끝날 때마다 저장 (다른 도서관 데이터는 유지)
         const d = loadLibs();
-        d.books[lib.key] = r.books.map(b => [b.id, b.title, b.author, b.publisher, b.isbn || '']);
-        d.libs[lib.key] = { name: lib.name, base: lib.base, platform: lib.platform, total: r.total, count: r.books.length, failedPages: r.failed, lastSync: new Date().toISOString() };
+        // 없어진 책 처리 규칙은 retention.js (실패한 페이지가 있으면 지우지 않음)
+        const rows = r.books.map(b => [b.id, b.title, b.author, b.publisher, b.isbn || '']);
+        d.missing ||= {};
+        const rc = reconcile(d.books[lib.key] || [], rows, { idOf: x => x[0], titleOf: x => x[1], complete: !r.failed, prevMissing: d.missing[lib.key] });
+        d.books[lib.key] = rc.items;
+        d.missing[lib.key] = rc.missing;
+        d.libs[lib.key] = { name: lib.name, base: lib.base, platform: lib.platform, total: r.total, count: rc.items.length, received: r.books.length, failedPages: r.failed, lastSync: new Date().toISOString(), changes: rc.changes };
         saveLibs(d);
-        console.log(`[${lib.name}] ${r.books.length}/${r.total} books (failed pages: ${r.failed})`);
+        console.log(`[${lib.name}] ${r.books.length}/${r.total} books (failed pages: ${r.failed}, +${rc.changes.added} -${rc.changes.removed} 남김 ${rc.changes.kept})`);
       } catch (e) {
         console.error(`[${lib.name}] failed:`, e.message);
         errors.push(`${lib.name}: ${e.message}`);
@@ -1222,7 +1292,7 @@ app.get('/api/libs/data', (req, res) => {
   const seoul = loadSeoul();
   const libs = [
     { key: 'seoul', name: '서울도서관', base: 'https://elib.seoul.go.kr', detail: 'https://elib.seoul.go.kr/contents/detail.do?no={id}',
-      count: (seoul.books || []).length, total: (seoul.books || []).length, lastSync: seoul.lastSync, ...(d.libs.seoul?.error ? { error: d.libs.seoul.error, errorAt: d.libs.seoul.errorAt } : {}) },
+      count: (seoul.books || []).length, total: (seoul.books || []).length, lastSync: seoul.lastSync, failedPages: seoul.failedPages || 0, changes: seoul.changes || null, ...(d.libs.seoul?.error ? { error: d.libs.seoul.error, errorAt: d.libs.seoul.errorAt } : {}) },
     ...LIBRARIES.map(l => ({ key: l.key, name: l.name, base: l.base, detail: detailUrlTemplate(l), ...(d.libs[l.key] || {}) })),
   ];
   res.json({ libs, cremaToLibs: d.cremaToLibs || {}, cremaLibIds: d.cremaLibIds || {}, running: libJob.running, status: libJob.running ? libJobSnapshot().status : null });

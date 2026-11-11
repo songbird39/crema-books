@@ -134,6 +134,10 @@
       btn.className = 'tab-sync';
       btn.onclick = (ev) => { ev.stopPropagation(); user ? toggleMenu() : login(); };
       document.getElementById('btnTheme').before(btn);
+      const adm = document.createElement('a'); // 관리자에게만 보이는 탭 줄 버튼
+      adm.id = 'btnAdmin'; adm.className = 'tab-sync'; adm.href = 'admin.html'; adm.textContent = '관리자'; adm.hidden = true;
+      adm.style.cssText = 'display:flex;align-items:center;text-decoration:none';
+      btn.before(adm);
       const menu = document.createElement('div');
       menu.id = 'accountMenu';
       menu.innerHTML = `<button id="accAdmin" hidden>관리자 화면 (동기화 기록)</button><button id="accImport">기존 즐겨찾기 가져오기 (data-favorites.json)</button><button id="accLogout">로그아웃</button><input type="file" id="accFile" accept=".json,application/json" hidden>`;
@@ -145,6 +149,8 @@
       document.addEventListener('click', (e) => { if (!menu.contains(e.target)) toggleMenu(false); });
     }
     document.getElementById('accAdmin').hidden = !isAdmin;
+    const adm = document.getElementById('btnAdmin');
+    adm.hidden = !isAdmin; adm.style.display = isAdmin ? 'flex' : 'none';
     btn.textContent = user ? (user.user_metadata?.name || user.email) + ' ▾' : '구글 로그인';
     btn.title = user ? user.email : '로그인하면 즐겨찾기를 저장할 수 있어요';
   }

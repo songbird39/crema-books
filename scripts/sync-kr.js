@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { LIBRARIES, crawlLibrary } = require('../libraries');
 const report = require('./report');
+const { reconcile } = require('../retention');
 const keys = (process.env.KR_LIBS || '').split(',').filter(Boolean);
 const OUT = path.join(__dirname, '..', 'kr-libs.json');
 (async () => {
@@ -17,9 +18,14 @@ const OUT = path.join(__dirname, '..', 'kr-libs.json');
     try {
       const r = await crawlLibrary(lib);
       if (r.failed > r.books.length / 10) throw new Error(`실패한 페이지가 너무 많음 (${r.failed})`);
-      prev.books[lib.key] = r.books.map(b => [b.id, b.title, b.author, b.publisher, b.isbn || '']);
-      prev.libs[lib.key] = { name: lib.name, base: lib.base, platform: lib.platform, total: r.total, count: r.books.length, failedPages: r.failed, lastSync: new Date().toISOString() };
-      results[lib.key] = { name: lib.name, ok: true, count: r.books.length, total: r.total, failedPages: r.failed };
+      // 없어진 책 처리 규칙은 retention.js (메인 동기화와 같음)
+      const rows = r.books.map(b => [b.id, b.title, b.author, b.publisher, b.isbn || '']);
+      prev.missing ||= {};
+      const rc = reconcile(prev.books[lib.key] || [], rows, { idOf: x => x[0], titleOf: x => x[1], complete: !r.failed, prevMissing: prev.missing[lib.key] });
+      prev.books[lib.key] = rc.items;
+      prev.missing[lib.key] = rc.missing;
+      prev.libs[lib.key] = { name: lib.name, base: lib.base, platform: lib.platform, total: r.total, count: rc.items.length, received: r.books.length, failedPages: r.failed, lastSync: new Date().toISOString(), changes: rc.changes };
+      results[lib.key] = { name: lib.name, ok: true, count: rc.items.length, total: r.total, failedPages: r.failed, changes: rc.changes };
       console.log(`[${lib.name}] ${r.books.length}/${r.total}`);
     } catch (e) { fail++; results[lib.key] = { name: lib.name, ok: false, error: e.message }; console.error(`[${lib.name}] 실패: ${e.message}`); }
   }));

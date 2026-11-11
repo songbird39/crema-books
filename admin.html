@@ -45,6 +45,12 @@
   .center { text-align: center; padding: 60px 0; color: var(--mute); }
   button.btn { background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 14px; cursor: pointer; font: inherit; }
   button.btn:hover { border-color: var(--mute); }
+  details.books { margin: 4px 0 4px 2px; }
+  details.books summary { cursor: pointer; font-size: 13px; }
+  details.books ol { margin: 6px 0 8px; padding-left: 28px; columns: 2; column-gap: 24px; font-size: 13px; }
+  details.books li { break-inside: avoid; }
+  .chg { border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin: 6px 0; background: var(--card); }
+  .chg .head { font-weight: 600; }
   .tools { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 13px; }
 </style>
 <script src="config.js"></script>
@@ -92,6 +98,50 @@ const TRIGGER = { schedule: '자동', workflow_dispatch: '수동', push: '코드
 const badge = (st, label) => `<span class="badge b-${st}">${esc(label || STATUS[st] || st)}</span>`;
 const stale = (iso, days) => !iso || Date.now() - new Date(iso) > days * 864e5;
 
+// 책 원래 페이지 (직접 들어가서 정말 없어졌는지 확인)
+let LIB_DETAIL = {}; // 도서관 key → 상세 페이지 주소 템플릿 ({id})
+const LINKS = {
+  crema: (id) => `https://cremaclub.yes24.com/BookClub/Detail/${encodeURIComponent(id)}`,
+  millie: (id) => `https://www.millie.co.kr/v4/book/${encodeURIComponent(id)}`,
+  lib: (key) => (id) => LIB_DETAIL[key] ? LIB_DETAIL[key].replace('{id}', encodeURIComponent(id)) : null,
+};
+const WARN = { incomplete: '다 받지 못해서 아무것도 지우지 않음', drop: '받은 권수가 이전보다 크게 줄어서 아무것도 지우지 않음 ⚠' };
+function bookList(label, sample, total, link, open) {
+  if (!total) return '';
+  const more = total > (sample?.length || 0) ? ` <span class="mute">(앞 ${sample.length}권만 표시)</span>` : '';
+  return `<details class="books"${open ? ' open' : ''}><summary>${label} <b>${n(total)}</b>권${more}</summary><ol>${(sample || []).map(([id, t]) => {
+    const u = link(id);
+    return `<li>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)} ↗</a>` : esc(t)} <span class="mute">${esc(id)}</span></li>`;
+  }).join('')}</ol></details>`;
+}
+// 한 소스의 책 변화 (지운 책은 펼쳐서)
+function changesHtml(name, c, link, millie) {
+  if (!c) return '';
+  const w = c.warning ? ` ${badge('partial', WARN[c.warning] || c.warning)}` : '';
+  const head = `<div class="head">${esc(name)} <span class="mute">· 이전 ${n(c.prev)} → 이번에 받음 ${n(c.received)}</span>${w}</div>`;
+  const lists = millie
+    ? bookList('없어진 것을 확인해서 지운 책', c.removedSample, c.removed, link, true)
+      + bookList('순위에서만 빠진 책 (밀리에 있음, 남김)', c.keptSample, c.kept, link)
+      + bookList('확인하지 못해서 남긴 책', c.unknownSample, c.unknown, link)
+      + bookList('새 책', c.addedSample, c.added, link)
+    : bookList('지운 책 (연속 2번 안 보임)', c.removedSample, c.removed, link, true)
+      + bookList('이번에 안 보였지만 남긴 책 (다음에도 없으면 지움)', c.keptSample, c.kept, link, !!c.warning)
+      + bookList('새 책', c.addedSample, c.added, link);
+  return `<div class="chg">${head}${lists || '<span class="mute">변화 없음</span>'}</div>`;
+}
+// 스냅샷에서 이번에(since 이후) 바뀐 소스들의 변화
+function allChanges(snap, since) {
+  if (!snap) return '';
+  const fresh = (c) => c && (!since || c.at >= since);
+  let h = '';
+  if (fresh(snap.crema.changes)) h += changesHtml('크레마클럽', snap.crema.changes, LINKS.crema);
+  if (fresh(snap.millie.changes)) h += changesHtml('밀리의 서재', snap.millie.changes, LINKS.millie, true);
+  for (const [k, l] of Object.entries(snap.libs)) { if (l.detail) LIB_DETAIL[k] ||= l.detail; if (fresh(l.changes)) h += changesHtml(l.name, l.changes, LINKS.lib(k)); }
+  return h;
+}
+const removedTotal = (snap, since) => !snap ? 0 : [snap.crema.changes, snap.millie.changes, ...Object.values(snap.libs).map(l => l.changes)]
+  .filter(c => c && (!since || c.at >= since)).reduce((a, c) => a + (c.removed || 0), 0);
+
 async function main() {
   const { data: { session } } = await sb.auth.getSession();
   const user = session?.user;
@@ -121,6 +171,7 @@ async function main() {
 function renderStatus(s) {
   if (!s) return '<h2>데이터 현황</h2><p class="mute">아직 현황 파일이 없어요 (다음 배포부터 생겨요)</p>';
   const libs = Object.entries(s.libs);
+  for (const [k, l] of libs) if (l.detail) LIB_DETAIL[k] = l.detail;
   const okLibs = libs.filter(([, l]) => !l.error && !stale(l.lastSync, 3)).length;
   const card = (k, v, t, warn) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div><div class="t">${warn ? badge('stale', t) : esc(t)}</div></div>`;
   const best = Object.entries(s.bestsellers.lists || {}).map(([k, v]) => `${k} ${v}`).join(' · ');
@@ -141,7 +192,9 @@ function renderStatus(s) {
       <td>${fmtTime(l.lastSync)} <span class="mute">(${ago(l.lastSync)})</span></td>
       <td>${l.error ? `<span class="err">${esc(l.error)}</span>` : stale(l.lastSync, 3) ? badge('stale', '오래됨') : l.failedPages ? badge('partial', `빠진 페이지 ${l.failedPages}`) : badge('success', '정상')}</td>
     </tr>`).join('')}
-  </table>`;
+  </table>
+  <h2>최근 책 변화 <span class="mute">· 소스마다 마지막 동기화 기준, 제목을 누르면 원래 사이트에서 확인</span></h2>
+  ${allChanges(s) || '<p class="mute">아직 기록이 없어요 (다음 동기화부터)</p>'}`;
 }
 
 function runSummary(r) {
@@ -155,6 +208,8 @@ function runSummary(r) {
   const b = s.before, a = s.after;
   if (a) parts.push(`크레마 ${n(a.crema.count)}${delta(b?.crema.count, a.crema.count)}`);
   if (a && s.millie) parts.push(`밀리 ${n(a.millie.count)}${delta(b?.millie.count, a.millie.count)}`);
+  const rm = removedTotal(a, r.started_at);
+  if (rm) parts.push(`<span class="down">지운 책 ${n(rm)}</span>`);
   const failed = (s.steps || []).filter(x => !x.ok).map(x => x.name);
   if (a) {
     const libErr = Object.values(a.libs).filter(l => l.error).length;
@@ -188,9 +243,12 @@ function runDetail(r) {
       <tr><td>십진분류</td><td class="num">${n(s.before.kdc.count)} → ${n(s.after.kdc.count)}${delta(s.before.kdc.count, s.after.kdc.count)}</td></tr>
       <tr><td>베스트셀러 목록</td><td class="num">${Object.entries(bl).map(([k, v]) => `${esc(k)} ${v}`).join(' · ')}</td></tr></table>`;
   }
+  const ch = allChanges(s.after, r.started_at);
+  if (ch) h += `<h3>책 변화 <span class="mute">· 제목을 누르면 원래 사이트에서 확인</span></h3>${ch}`;
   if (r.workflow === 'sync-kr' && s.results) {
     h += `<h3>도서관</h3><table><tr><th>도서관</th><th class="num">받은 책</th><th class="num">사이트 표시</th><th>결과</th></tr>
-      ${Object.values(s.results).map(x => `<tr><td>${esc(x.name)}</td><td class="num">${x.ok ? n(x.count) : '—'}</td><td class="num mute">${x.ok ? n(x.total) : '—'}</td><td>${x.ok ? (x.failedPages ? badge('partial', `빠진 페이지 ${x.failedPages}`) : badge('success', '성공')) : `<span class="err">${esc(x.error)}</span>`}</td></tr>`).join('')}</table>`;
+      ${Object.entries(s.results).map(([k, x]) => `<tr><td>${esc(x.name)}</td><td class="num">${x.ok ? n(x.count) : '—'}</td><td class="num mute">${x.ok ? n(x.total) : '—'}</td><td>${x.ok ? (x.failedPages ? badge('partial', `빠진 페이지 ${x.failedPages}`) : badge('success', '성공')) : `<span class="err">${esc(x.error)}</span>`}</td></tr>`).join('')}</table>
+      ${Object.entries(s.results).map(([k, x]) => changesHtml(x.name, x.changes, LINKS.lib(k))).join('')}`;
   }
   if (r.url) h += `<p><a href="${esc(r.url)}" target="_blank" rel="noopener">GitHub Actions 로그 보기 ↗</a></p>`;
   return h || '<span class="mute">세부 기록 없음</span>';
