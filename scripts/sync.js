@@ -15,13 +15,14 @@ const MODE = process.env.MODE || 'full';
 const SKIP = (process.env.SKIP_LIBS || '').split(',').filter(Boolean);
 const kstDay = new Date(Date.now() + 9 * 3600e3).getUTCDay();
 const MILLIE = process.env.MILLIE ? process.env.MILLIE === '1' || process.env.MILLIE === 'true' : kstDay === 0;
+const report = require('./report');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 // Mac에서 받은 도서관(kr-libs.json)을 data-libs.json에 합침 (서버가 켜질 때 매칭을 다시 만든다)
 function mergeKrLibs() {
   const kf = path.join(ROOT, 'kr-libs.json'), lf = path.join(ROOT, 'data-libs.json');
-  if (!fs.existsSync(kf) || !fs.existsSync(lf)) return;
+  if (!fs.existsSync(kf) || !fs.existsSync(lf)) return 0;
   const kr = JSON.parse(fs.readFileSync(kf, 'utf8')), libs = JSON.parse(fs.readFileSync(lf, 'utf8'));
   let n = 0;
   for (const [key, meta] of Object.entries(kr.libs || {})) {
@@ -32,9 +33,10 @@ function mergeKrLibs() {
     n++;
   }
   if (n) { fs.writeFileSync(lf, JSON.stringify(libs)); log(`Mac에서 받은 도서관 ${n}곳 합침`); }
+  return n;
 }
 
-// SSE 동기화 API를 끝날 때까지 읽음
+// SSE 동기화 API를 끝날 때까지 읽음 → { ok, status }
 async function runSse(url, label) {
   log(`▶ ${label}`);
   const r = await fetch(BASE + url);
@@ -49,44 +51,88 @@ async function runSse(url, label) {
       const line = buf.slice(0, i); buf = buf.slice(i + 2);
       if (!line.startsWith('data: ')) continue;
       const m = JSON.parse(line.slice(6));
-      if (m.error) { log(`✗ ${label}: ${m.error}`); return false; }
+      if (m.error) { log(`✗ ${label}: ${m.error}`); return { ok: false, status: m.error }; }
       if (m.status) lastStatus = m.status;
-      if (m.done) { log(`✓ ${label}: ${lastStatus}`); return true; }
+      if (m.done) { log(`✓ ${label}: ${lastStatus}`); return { ok: true, status: lastStatus }; }
       if (Date.now() - last > 60000) { last = Date.now(); log(`  ${lastStatus}`); }
     }
   }
   log(`? ${label}: 연결이 끊김 (${lastStatus})`);
-  return false;
+  return { ok: false, status: '연결이 끊김 · ' + lastStatus };
+}
+
+// 데이터 현황 (동기화 전후 비교용)
+async function snapshot() {
+  const get = async (p) => (await fetch(BASE + p)).json();
+  const [d, l, m, k] = await Promise.all([get('/api/data'), get('/api/libs/data'), get('/api/millie/data'), get('/api/kdc')]);
+  return {
+    crema: { count: d.books?.length || 0, lastSync: d.lastSync || null, lastCrawl: d.lastCremaCrawl || null },
+    bestsellers: { lists: Object.fromEntries(Object.entries(d.bestsellerLists || {}).map(([k, v]) => [k, v.length])), lastSync: d.bestsellerSync || null },
+    millie: { count: m.count || 0, lastSync: m.lastSync || null },
+    kdc: { count: Object.keys(k.map || {}).length },
+    libs: Object.fromEntries(l.libs.map(x => [x.key, { name: x.name, count: x.count || 0, total: x.total || 0, lastSync: x.lastSync || null, failedPages: x.failedPages || 0, error: x.error || null }])),
+  };
 }
 
 (async () => {
-  mergeKrLibs();
-  const server = spawn(process.execPath, ['server.js'], { cwd: ROOT, env: { ...process.env, PORT }, stdio: ['ignore', 'inherit', 'inherit'] });
-  server.on('exit', (c) => { if (c) { console.error('서버가 꺼짐', c); process.exit(1); } });
-  for (let i = 0; ; i++) {
-    try { if ((await fetch(BASE + '/api/kdc')).ok) break; } catch {}
-    if (i > 120) throw new Error('서버가 켜지지 않음');
-    await sleep(1000);
-  }
-  let ok = true;
-  if (MODE === 'full') {
-    ok = await runSse('/api/sync', '크레마클럽·베스트셀러') && ok;
-    const { libs } = await (await fetch(BASE + '/api/libs/data')).json();
-    const keys = libs.map(l => l.key).filter(k => !SKIP.includes(k));
-    ok = await runSse('/api/libs/sync?keys=' + keys.join(','), `도서관 ${keys.length}곳`) && ok;
-    if (MILLIE) ok = await runSse('/api/millie/sync', '밀리의 서재') && ok;
-    // 십진분류: 서버가 켜지고 20초 뒤 새 책들을 백그라운드로 조회함 → 끝나길 기다림
-    const until = Date.now() + (+process.env.KDC_MINUTES || 60) * 60e3;
-    await sleep(25000);
-    for (let j; (j = (await (await fetch(BASE + '/api/kdc')).json()).job).running && Date.now() < until;) {
-      log(`  십진분류 ${j.stage} ${j.done}/${j.total}`);
-      await sleep(60000);
+  const t0 = Date.now();
+  const steps = [];
+  const runId = await report.start('sync', MODE, { millie: MILLIE, skipLibs: SKIP });
+  let before = null, after = null, status = 'success';
+  let server;
+  try {
+    const kr = mergeKrLibs();
+    if (kr) steps.push({ name: 'Mac에서 받은 도서관 합치기', ok: true, status: `${kr}곳`, ms: 0 });
+    server = spawn(process.execPath, ['server.js'], { cwd: ROOT, env: { ...process.env, PORT }, stdio: ['ignore', 'inherit', 'inherit'] });
+    server.on('exit', (c) => { if (c) { console.error('서버가 꺼짐', c); process.exit(1); } });
+    for (let i = 0; ; i++) {
+      try { if ((await fetch(BASE + '/api/kdc')).ok) break; } catch {}
+      if (i > 120) throw new Error('서버가 켜지지 않음');
+      await sleep(1000);
     }
+    before = await snapshot();
+    const step = async (name, fn) => {
+      const s0 = Date.now();
+      const r = await fn().catch(e => ({ ok: false, status: e.message }));
+      steps.push({ name, ...r, ms: Date.now() - s0 });
+      if (!r.ok) status = 'partial';
+      await report.update(runId, { summary: { millie: MILLIE, skipLibs: SKIP, steps, before } });
+    };
+    if (MODE === 'full') {
+      await step('크레마클럽·베스트셀러', () => runSse('/api/sync', '크레마클럽·베스트셀러'));
+      const keys = Object.keys(before.libs).filter(k => !SKIP.includes(k));
+      await step(`도서관 ${keys.length}곳`, () => runSse('/api/libs/sync?keys=' + keys.join(','), `도서관 ${keys.length}곳`));
+      if (MILLIE) await step('밀리의 서재', () => runSse('/api/millie/sync', '밀리의 서재'));
+      // 십진분류: 서버가 켜지고 20초 뒤 새 책들을 백그라운드로 조회함 → 끝나길 기다림
+      await step('십진분류', async () => {
+        const until = Date.now() + (+process.env.KDC_MINUTES || 60) * 60e3;
+        await sleep(25000);
+        let j;
+        while ((j = (await (await fetch(BASE + '/api/kdc')).json()).job).running && Date.now() < until) {
+          log(`  십진분류 ${j.stage} ${j.done}/${j.total}`);
+          await sleep(60000);
+        }
+        return { ok: true, status: j.running ? `시간 초과로 중간까지 (${j.stage} ${j.done}/${j.total})` : '완료' };
+      });
+    }
+    after = await snapshot();
+    await step('내보내기', async () => {
+      const exp = spawn(process.execPath, [path.join(__dirname, 'export.js'), BASE, path.join(ROOT, 'site')], { stdio: 'inherit' });
+      const code = await new Promise(r => exp.on('exit', r));
+      if (code) throw new Error('내보내기 실패 (exit ' + code + ')');
+      return { ok: true, status: '완료' };
+    });
+    if (steps.at(-1).ok === false) status = 'failed';
+  } catch (e) {
+    console.error(e);
+    status = 'failed';
+    steps.push({ name: '오류', ok: false, status: e.message, ms: 0 });
+  } finally {
+    server?.kill('SIGINT'); // SIGINT에 십진분류 파일 저장
+    await sleep(3000);
   }
-  const exp = spawn(process.execPath, [path.join(__dirname, 'export.js'), BASE, path.join(ROOT, 'site')], { stdio: 'inherit' });
-  const code = await new Promise(r => exp.on('exit', r));
-  server.kill('SIGINT'); // SIGINT에 십진분류 파일 저장
-  await sleep(3000);
-  if (code) process.exit(code);
-  if (!ok) log('일부 동기화가 실패했지만 받은 데이터로 배포합니다');
+  // 배포 결과는 워크플로 마지막 job(report)에서 덧붙임
+  await report.finish(runId, status, { millie: MILLIE, skipLibs: SKIP, steps, before, after, ms: Date.now() - t0 });
+  if (status === 'partial') log('일부 동기화가 실패했지만 받은 데이터로 배포합니다');
+  if (status === 'failed') process.exit(1);
 })().catch(e => { console.error(e); process.exit(1); });

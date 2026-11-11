@@ -19,7 +19,9 @@ jobs:
         env: { GH_TOKEN: '${{ github.token }}' }
         run: gh release download state -p kr-libs.json --clobber || true
       - run: node scripts/sync-kr.js
-        env: { KR_LIBS: 'seongdong,seongbuk,yeongdeungpo,songpa' }
+        env:
+          KR_LIBS: seongdong,seongbuk,yeongdeungpo,songpa
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
       - name: 올리기
         env: { GH_TOKEN: '${{ github.token }}' }
         run: gh release upload state kr-libs.json --clobber

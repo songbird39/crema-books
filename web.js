@@ -136,13 +136,15 @@
       document.getElementById('btnTheme').before(btn);
       const menu = document.createElement('div');
       menu.id = 'accountMenu';
-      menu.innerHTML = `<button id="accImport">기존 즐겨찾기 가져오기 (data-favorites.json)</button><button id="accLogout">로그아웃</button><input type="file" id="accFile" accept=".json,application/json" hidden>`;
+      menu.innerHTML = `<button id="accAdmin" hidden>관리자 화면 (동기화 기록)</button><button id="accImport">기존 즐겨찾기 가져오기 (data-favorites.json)</button><button id="accLogout">로그아웃</button><input type="file" id="accFile" accept=".json,application/json" hidden>`;
       document.body.appendChild(menu);
+      menu.querySelector('#accAdmin').onclick = () => { location.href = 'admin.html'; };
       menu.querySelector('#accImport').onclick = () => menu.querySelector('#accFile').click();
       menu.querySelector('#accFile').onchange = (e) => { if (e.target.files[0]) importFavs(e.target.files[0]); e.target.value = ''; toggleMenu(false); };
       menu.querySelector('#accLogout').onclick = () => { logout(); toggleMenu(false); };
       document.addEventListener('click', (e) => { if (!menu.contains(e.target)) toggleMenu(false); });
     }
+    document.getElementById('accAdmin').hidden = !isAdmin;
     btn.textContent = user ? (user.user_metadata?.name || user.email) + ' ▾' : '구글 로그인';
     btn.title = user ? user.email : '로그인하면 즐겨찾기를 저장할 수 있어요';
   }
@@ -167,10 +169,21 @@
     #accountMenu button:hover { color: var(--cfff, #fff); background: var(--c333, #333); }`;
   document.head.appendChild(style);
 
+  let isAdmin = false;
+  const whenReady = (fn) => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn, { once: true }) : fn();
+  // 로그인하면: 미리 넣어 둔 즐겨찾기(pending_favorites) 가져오기 + 관리자인지 확인
+  // (onAuthStateChange 안에서 바로 Supabase를 부르면 막힐 수 있어서 setTimeout으로 밖에서)
+  async function onLogin() {
+    const [claim, admin] = await Promise.all([sb.rpc('claim_pending_favorites'), sb.rpc('is_admin')]);
+    isAdmin = admin.data === true;
+    whenReady(renderAccount);
+    if (claim.data > 0) { refresh(); alert(`미리 옮겨 둔 즐겨찾기 ${claim.data}권을 가져왔어요`); }
+  }
   sb.auth.onAuthStateChange((event, session) => {
     const prev = user?.id;
     user = session?.user || null;
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderAccount, { once: true }); else renderAccount();
-    if ((user?.id || null) !== (prev || null)) refresh();
+    if (!user) isAdmin = false;
+    whenReady(renderAccount);
+    if ((user?.id || null) !== (prev || null)) { refresh(); if (user) setTimeout(onLogin, 0); }
   });
 })();

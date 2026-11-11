@@ -47,6 +47,7 @@ jobs:
           MODE: ${{ github.event_name == 'push' && 'export' || inputs.mode || 'full' }}
           MILLIE: ${{ inputs.millie && '1' || '' }}
           NL_API_KEY: ${{ secrets.NL_API_KEY }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: node scripts/sync.js
       - name: 데이터 저장
         if: github.event_name != 'push'
@@ -65,3 +66,15 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+  # 동기화 기록 마무리 (시간 초과·취소·배포 실패도 남김)
+  report:
+    needs: [sync, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: scripts }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/report.js ${{ needs.sync.result }} ${{ needs.deploy.result }}
+        env: { SUPABASE_SECRET_KEY: '${{ secrets.SUPABASE_SECRET_KEY }}' }

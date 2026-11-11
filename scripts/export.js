@@ -18,17 +18,29 @@ const ENDPOINTS = {
 (async () => {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(path.join(OUT, 'api'), { recursive: true });
+  const got = {};
   for (const [ep, file] of Object.entries(ENDPOINTS)) {
     const r = await fetch(BASE + ep);
     if (!r.ok) throw new Error(`${ep}: HTTP ${r.status}`);
     const j = await r.json();
     if (ep === '/api/millie/data' || ep === '/api/libs/data') { j.running = false; j.status = null; }
     if (ep === '/api/kdc') j.job = { running: false, stage: '완료', done: 0, total: 0 };
+    got[ep] = j;
     const s = JSON.stringify(j);
     fs.writeFileSync(path.join(OUT, file), s);
     console.log(`${file}: ${(s.length / 1e6).toFixed(1)}MB`);
   }
-  for (const f of ['match.js', 'web.js']) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
+  // 관리자 화면용 데이터 현황 (작은 파일)
+  const d = got['/api/data'], m = got['/api/millie/data'];
+  const status = {
+    crema: { count: d.books?.length || 0, lastSync: d.lastSync || null, lastCrawl: d.lastCremaCrawl || null },
+    bestsellers: { lists: Object.fromEntries(Object.entries(d.bestsellerLists || {}).map(([k, v]) => [k, v.length])), lastSync: d.bestsellerSync || null },
+    millie: { count: m.count || 0, lastSync: m.lastSync || null },
+    kdc: { count: Object.keys(got['/api/kdc'].map || {}).length },
+    libs: Object.fromEntries(got['/api/libs/data'].libs.map(x => [x.key, { name: x.name, count: x.count || 0, total: x.total || 0, lastSync: x.lastSync || null, failedPages: x.failedPages || 0, error: x.error || null }])),
+  };
+  fs.writeFileSync(path.join(OUT, 'api', 'status.json'), JSON.stringify(status));
+  for (const f of ['match.js', 'web.js', 'admin.html']) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f));
   // 웹 버전 설정 (Supabase URL·publishable key는 브라우저용 공개 값)
   const version = new Date().toISOString();
   fs.writeFileSync(path.join(OUT, 'config.js'), 'window.SITE = ' + JSON.stringify({

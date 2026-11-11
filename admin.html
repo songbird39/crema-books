@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리자 · 동기화 기록</title>
+<script>document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');</script>
+<style>
+  :root { --bg: #111; --card: #1a1a1a; --line: #2c2c2c; --fg: #ddd; --mute: #888; --ok: #2ecc71; --warn: #f1c40f; --bad: #e74c3c; --run: #3498db; --link: #74b9ff; }
+  [data-theme="light"] { --bg: #f6f6f6; --card: #fff; --line: #e2e2e2; --fg: #222; --mute: #777; --ok: #1e9e55; --warn: #b8860b; --bad: #c0392b; --run: #2475b0; --link: #2475b0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; }
+  header { display: flex; align-items: center; gap: 16px; padding: 14px 24px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--bg); z-index: 1; }
+  header h1 { font-size: 16px; margin: 0; }
+  header .sp { flex: 1; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px 24px 60px; }
+  h2 { font-size: 14px; color: var(--mute); font-weight: 600; margin: 28px 0 10px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .card .k { color: var(--mute); font-size: 12px; }
+  .card .v { font-size: 20px; font-weight: 600; margin: 2px 0; }
+  .card .t { font-size: 12px; color: var(--mute); }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  th, td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  th { font-size: 12px; color: var(--mute); font-weight: 500; background: var(--card); }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.run { cursor: pointer; }
+  tr.run:hover td { background: color-mix(in srgb, var(--card), var(--fg) 4%); }
+  tr.detail > td { padding: 12px 16px 18px; background: color-mix(in srgb, var(--card), var(--bg) 50%); }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .b-success { color: var(--ok); background: color-mix(in srgb, var(--ok), transparent 85%); }
+  .b-partial, .b-stale { color: var(--warn); background: color-mix(in srgb, var(--warn), transparent 85%); }
+  .b-failed, .b-cancelled { color: var(--bad); background: color-mix(in srgb, var(--bad), transparent 85%); }
+  .b-running { color: var(--run); background: color-mix(in srgb, var(--run), transparent 85%); }
+  .b-mute { color: var(--mute); background: color-mix(in srgb, var(--mute), transparent 85%); }
+  .mute { color: var(--mute); }
+  .up { color: var(--ok); } .down { color: var(--bad); }
+  .err { color: var(--bad); font-size: 12px; }
+  .detail h3 { font-size: 13px; margin: 14px 0 6px; color: var(--mute); font-weight: 600; }
+  .detail h3:first-child { margin-top: 0; }
+  .detail table { font-size: 13px; }
+  .center { text-align: center; padding: 60px 0; color: var(--mute); }
+  button.btn { background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 14px; cursor: pointer; font: inherit; }
+  button.btn:hover { border-color: var(--mute); }
+  .tools { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+</style>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+</head>
+<body>
+<header>
+  <a href="./">← 도서 브라우저</a>
+  <h1>관리자 · 동기화 기록</h1>
+  <span class="sp"></span>
+  <span id="who" class="mute"></span>
+</header>
+<main id="main"><div class="center">불러오는 중…</div></main>
+<script>
+const REPO = 'songbird39/crema-books';
+const KR_LIBS = ['seongdong', 'seongbuk', 'yeongdeungpo', 'songpa']; // 해외 IP 차단 → Mac에서 받음
+const sb = supabase.createClient(SITE.supabaseUrl, SITE.supabaseKey);
+const $main = document.getElementById('main');
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const KST = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', month: 'numeric', day: 'numeric', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false });
+const fmtTime = (iso) => iso ? KST.format(new Date(iso)) : '—';
+function ago(iso) {
+  if (!iso) return '없음';
+  const m = (Date.now() - new Date(iso)) / 60000;
+  if (m < 1) return '방금';
+  if (m < 60) return Math.floor(m) + '분 전';
+  if (m < 1440) return Math.floor(m / 60) + '시간 전';
+  return Math.floor(m / 1440) + '일 전';
+}
+function dur(ms) {
+  if (ms == null) return '—';
+  const s = Math.round(ms / 1000);
+  if (s < 60) return s + '초';
+  const m = Math.floor(s / 60);
+  return m < 60 ? `${m}분 ${s % 60}초` : `${Math.floor(m / 60)}시간 ${m % 60}분`;
+}
+const n = (x) => (x ?? 0).toLocaleString();
+function delta(a, b) {
+  if (a == null || b == null || a === b) return '';
+  const d = b - a;
+  return ` <span class="${d > 0 ? 'up' : 'down'}">${d > 0 ? '+' : ''}${d.toLocaleString()}</span>`;
+}
+const STATUS = { success: '성공', partial: '일부 실패', failed: '실패', cancelled: '취소', running: '진행 중' };
+const TRIGGER = { schedule: '자동', workflow_dispatch: '수동', push: '코드 배포', local: '로컬' };
+const badge = (st, label) => `<span class="badge b-${st}">${esc(label || STATUS[st] || st)}</span>`;
+const stale = (iso, days) => !iso || Date.now() - new Date(iso) > days * 864e5;
+
+async function main() {
+  const { data: { session } } = await sb.auth.getSession();
+  const user = session?.user;
+  document.getElementById('who').innerHTML = user ? `${esc(user.email)} · <a href="#" id="logout">로그아웃</a>` : '';
+  document.getElementById('logout')?.addEventListener('click', async (e) => { e.preventDefault(); await sb.auth.signOut(); location.reload(); });
+  if (!user) {
+    $main.innerHTML = `<div class="center"><p>관리자 계정으로 로그인하세요</p><button class="btn" id="login">구글로 로그인</button></div>`;
+    document.getElementById('login').onclick = () => sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: location.href } });
+    return;
+  }
+  const { data: isAdmin } = await sb.rpc('is_admin');
+  if (!isAdmin) { $main.innerHTML = `<div class="center">관리자만 볼 수 있어요 (${esc(user.email)})</div>`; return; }
+
+  const [status, runsRes] = await Promise.all([
+    fetch('api/status.json?t=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+    sb.from('sync_runs').select('*').order('started_at', { ascending: false }).limit(60),
+  ]);
+  if (runsRes.error) { $main.innerHTML = `<div class="center err">동기화 기록을 못 불러옴: ${esc(runsRes.error.message)}</div>`; return; }
+  const runs = runsRes.data;
+  $main.innerHTML = renderStatus(status) + renderRuns(runs);
+  $main.querySelectorAll('tr.run').forEach(tr => tr.onclick = () => {
+    const d = tr.nextElementSibling;
+    d.hidden = !d.hidden;
+  });
+}
+
+function renderStatus(s) {
+  if (!s) return '<h2>데이터 현황</h2><p class="mute">아직 현황 파일이 없어요 (다음 배포부터 생겨요)</p>';
+  const libs = Object.entries(s.libs);
+  const okLibs = libs.filter(([, l]) => !l.error && !stale(l.lastSync, 3)).length;
+  const card = (k, v, t, warn) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div><div class="t">${warn ? badge('stale', t) : esc(t)}</div></div>`;
+  const best = Object.entries(s.bestsellers.lists || {}).map(([k, v]) => `${k} ${v}`).join(' · ');
+  return `<h2>데이터 현황 <span class="mute">· 마지막 배포 ${fmtTime(SITE.version)}</span></h2>
+  <div class="cards">
+    ${card('크레마클럽', n(s.crema.count) + '권', '크롤링 ' + ago(s.crema.lastCrawl || s.crema.lastSync), stale(s.crema.lastCrawl || s.crema.lastSync, 2))}
+    ${card('밀리의 서재', n(s.millie.count) + '권', '동기화 ' + ago(s.millie.lastSync), stale(s.millie.lastSync, 9))}
+    ${card('베스트셀러', ago(s.bestsellers.lastSync), best, stale(s.bestsellers.lastSync, 2))}
+    ${card('도서관', `${okLibs}/${libs.length}곳 정상`, '3일 넘었거나 오류면 표시', okLibs < libs.length)}
+    ${card('십진분류', n(s.kdc.count) + '권', '국립중앙도서관 조회')}
+  </div>
+  <h2>도서관별</h2>
+  <table>
+    <tr><th>도서관</th><th class="num">받은 책</th><th class="num">사이트 표시</th><th>마지막 동기화</th><th>상태</th></tr>
+    ${libs.sort((a, b) => (a[1].lastSync || '').localeCompare(b[1].lastSync || '')).map(([k, l]) => `<tr>
+      <td>${esc(l.name)}${KR_LIBS.includes(k) ? ' <span class="badge b-mute" title="해외 IP를 막아서 Mac(self-hosted runner)에서 받음">Mac</span>' : ''}</td>
+      <td class="num">${n(l.count)}</td><td class="num mute">${n(l.total)}</td>
+      <td>${fmtTime(l.lastSync)} <span class="mute">(${ago(l.lastSync)})</span></td>
+      <td>${l.error ? `<span class="err">${esc(l.error)}</span>` : stale(l.lastSync, 3) ? badge('stale', '오래됨') : l.failedPages ? badge('partial', `빠진 페이지 ${l.failedPages}`) : badge('success', '정상')}</td>
+    </tr>`).join('')}
+  </table>`;
+}
+
+function runSummary(r) {
+  const s = r.summary || {};
+  if (r.workflow === 'sync-kr') {
+    const res = Object.values(s.results || {});
+    return res.map(x => x.ok ? `${esc(x.name)} ${n(x.count)}` : `<span class="err">${esc(x.name)} 실패</span>`).join(' · ');
+  }
+  if (r.mode === 'export') return '<span class="mute">데이터 그대로 다시 배포</span>';
+  const parts = [];
+  const b = s.before, a = s.after;
+  if (a) parts.push(`크레마 ${n(a.crema.count)}${delta(b?.crema.count, a.crema.count)}`);
+  if (a && s.millie) parts.push(`밀리 ${n(a.millie.count)}${delta(b?.millie.count, a.millie.count)}`);
+  const failed = (s.steps || []).filter(x => !x.ok).map(x => x.name);
+  if (a) {
+    const libErr = Object.values(a.libs).filter(l => l.error).length;
+    if (libErr) parts.push(`<span class="err">도서관 오류 ${libErr}곳</span>`);
+  }
+  if (failed.length) parts.push(`<span class="err">실패: ${esc(failed.join(', '))}</span>`);
+  return parts.join(' · ') || '<span class="mute">—</span>';
+}
+
+function runDetail(r) {
+  const s = r.summary || {};
+  let h = '';
+  if (s.steps?.length) {
+    h += `<h3>단계</h3><table><tr><th>단계</th><th>결과</th><th>메시지</th><th class="num">걸린 시간</th></tr>
+      ${s.steps.map(x => `<tr><td>${esc(x.name)}</td><td>${x.ok ? badge('success', '성공') : badge('failed', '실패')}</td><td>${esc(x.status)}</td><td class="num">${dur(x.ms)}</td></tr>`).join('')}</table>`;
+  }
+  if (s.jobs) h += `<p class="mute">GitHub 작업: 동기화 ${esc(s.jobs.sync)} · 배포 ${esc(s.jobs.deploy)}</p>`;
+  if (s.before && s.after) {
+    const keys = Object.keys(s.after.libs);
+    h += `<h3>도서관 (전 → 후)</h3><table><tr><th>도서관</th><th class="num">전</th><th class="num">후</th><th>결과</th></tr>
+      ${keys.map(k => {
+        const b = s.before.libs[k] || {}, a = s.after.libs[k];
+        const touched = a.lastSync !== b.lastSync;
+        const res = a.error && a.error !== b.error ? `<span class="err">${esc(a.error)}</span>` : touched ? badge('success', '받음') : (s.skipLibs || []).includes(k) ? badge('mute', 'Mac 담당') : badge('mute', '그대로');
+        return `<tr><td>${esc(a.name)}</td><td class="num mute">${n(b.count)}</td><td class="num">${n(a.count)}${delta(b.count, a.count)}</td><td>${res}</td></tr>`;
+      }).join('')}</table>`;
+    const bl = s.after.bestsellers.lists || {};
+    h += `<h3>그 밖의 데이터</h3><table>
+      <tr><td>크레마클럽</td><td class="num">${n(s.before.crema.count)} → ${n(s.after.crema.count)}${delta(s.before.crema.count, s.after.crema.count)}</td></tr>
+      <tr><td>밀리의 서재</td><td class="num">${n(s.before.millie.count)} → ${n(s.after.millie.count)}${delta(s.before.millie.count, s.after.millie.count)}${s.millie ? '' : ' <span class="mute">(이번엔 안 받음)</span>'}</td></tr>
+      <tr><td>십진분류</td><td class="num">${n(s.before.kdc.count)} → ${n(s.after.kdc.count)}${delta(s.before.kdc.count, s.after.kdc.count)}</td></tr>
+      <tr><td>베스트셀러 목록</td><td class="num">${Object.entries(bl).map(([k, v]) => `${esc(k)} ${v}`).join(' · ')}</td></tr></table>`;
+  }
+  if (r.workflow === 'sync-kr' && s.results) {
+    h += `<h3>도서관</h3><table><tr><th>도서관</th><th class="num">받은 책</th><th class="num">사이트 표시</th><th>결과</th></tr>
+      ${Object.values(s.results).map(x => `<tr><td>${esc(x.name)}</td><td class="num">${x.ok ? n(x.count) : '—'}</td><td class="num mute">${x.ok ? n(x.total) : '—'}</td><td>${x.ok ? (x.failedPages ? badge('partial', `빠진 페이지 ${x.failedPages}`) : badge('success', '성공')) : `<span class="err">${esc(x.error)}</span>`}</td></tr>`).join('')}</table>`;
+  }
+  if (r.url) h += `<p><a href="${esc(r.url)}" target="_blank" rel="noopener">GitHub Actions 로그 보기 ↗</a></p>`;
+  return h || '<span class="mute">세부 기록 없음</span>';
+}
+
+function renderRuns(runs) {
+  const tools = `<div class="tools">
+    <a href="https://github.com/${REPO}/actions/workflows/sync.yml" target="_blank" rel="noopener">지금 동기화 실행 ↗</a>
+    <span class="mute">(GitHub에서 "Run workflow" → full)</span>
+    <a href="https://github.com/${REPO}/actions" target="_blank" rel="noopener">전체 Actions 기록 ↗</a></div>`;
+  if (!runs.length) return `<h2>동기화 기록</h2>${tools}<p class="mute">아직 기록이 없어요. 다음 동기화부터 여기에 남아요.</p>`;
+  return `<h2>동기화 기록 <span class="mute">· 최근 ${runs.length}건</span></h2>${tools}<br>
+  <table>
+    <tr><th>시작</th><th>종류</th><th>상태</th><th class="num">걸린 시간</th><th>요약</th></tr>
+    ${runs.map(r => {
+      // 6시간 넘게 '진행 중'이면 기록이 끊긴 것
+      const st = r.status === 'running' && Date.now() - new Date(r.started_at) > 6 * 36e5 ? 'failed' : r.status;
+      const kind = r.workflow === 'sync-kr' ? '도서관 4곳 (Mac)' : r.mode === 'export' ? '배포만' : '전체 동기화' + (r.summary?.millie ? ' + 밀리' : '');
+      const ms = r.finished_at ? new Date(r.finished_at) - new Date(r.started_at) : null;
+      return `<tr class="run"><td>${fmtTime(r.started_at)}</td><td>${esc(kind)} <span class="mute">· ${esc(TRIGGER[r.trigger] || r.trigger || '')}</span></td>
+        <td>${badge(st, st !== r.status ? '중단됨' : null)}</td><td class="num">${r.finished_at ? dur(ms) : r.status === 'running' ? ago(r.started_at) + ' 시작' : '—'}</td><td>${runSummary(r)}</td></tr>
+        <tr class="detail" hidden><td colspan="5">${runDetail(r)}</td></tr>`;
+    }).join('')}
+  </table>`;
+}
+
+main().catch(e => { $main.innerHTML = `<div class="center err">${esc(e.message)}</div>`; });
+</script>
+</body>
+</html>

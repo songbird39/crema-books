@@ -4,9 +4,13 @@
 const fs = require('fs');
 const path = require('path');
 const { LIBRARIES, crawlLibrary } = require('../libraries');
+const report = require('./report');
 const keys = (process.env.KR_LIBS || '').split(',').filter(Boolean);
 const OUT = path.join(__dirname, '..', 'kr-libs.json');
 (async () => {
+  const t0 = Date.now();
+  const runId = await report.start('sync-kr', 'full', { libs: keys });
+  const results = {};
   const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { libs: {}, books: {} };
   let fail = 0;
   await Promise.all(LIBRARIES.filter(l => keys.includes(l.key)).map(async (lib) => {
@@ -15,9 +19,11 @@ const OUT = path.join(__dirname, '..', 'kr-libs.json');
       if (r.failed > r.books.length / 10) throw new Error(`실패한 페이지가 너무 많음 (${r.failed})`);
       prev.books[lib.key] = r.books.map(b => [b.id, b.title, b.author, b.publisher, b.isbn || '']);
       prev.libs[lib.key] = { name: lib.name, base: lib.base, platform: lib.platform, total: r.total, count: r.books.length, failedPages: r.failed, lastSync: new Date().toISOString() };
+      results[lib.key] = { name: lib.name, ok: true, count: r.books.length, total: r.total, failedPages: r.failed };
       console.log(`[${lib.name}] ${r.books.length}/${r.total}`);
-    } catch (e) { fail++; console.error(`[${lib.name}] 실패: ${e.message}`); }
+    } catch (e) { fail++; results[lib.key] = { name: lib.name, ok: false, error: e.message }; console.error(`[${lib.name}] 실패: ${e.message}`); }
   }));
   fs.writeFileSync(OUT, JSON.stringify(prev));
+  await report.finish(runId, !fail ? 'success' : fail === keys.length ? 'failed' : 'partial', { libs: keys, results, ms: Date.now() - t0 });
   if (fail === keys.length) process.exit(1);
 })();
