@@ -857,12 +857,15 @@ function fmtDate(iso) {
 setInterval(() => updateSyncSummary(), 60000); // 상대 시각 갱신
 
 // 탭 줄 버튼: 소스별 마지막 동기화 시각을 늘 보이게
+const KST_MD = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Seoul', month: '2-digit', day: '2-digit' }); // 11/05
+const fmtMD = (iso) => iso ? KST_MD.format(new Date(iso)) : '—';
 function renderSyncButton() {
   const btn = document.getElementById('btnSyncPanel');
   if (!btn) return;
   const libsLast = libsData.libs.map(l => l.lastSync).filter(Boolean).sort().pop(); // 서울도서관 포함
   const busy = document.getElementById('progressWrap').classList.contains('active');
-  const t = (name, iso) => `<span class="t">${name} <b>${fmtDate(iso)}</b></span>`;
+  // 탭 줄은 좁아서 월/일만 (한국 시각), 마우스를 올리면 자세히
+  const t = (name, iso) => `<span class="t" title="${iso ? KST.format(new Date(iso)) + ' (' + fmtDate(iso) + ')' : '미동기화'}">${name} <b>${fmtMD(iso)}</b></span>`;
   btn.classList.toggle('busy', busy);
   btn.innerHTML = (busy ? '<span class="busy-label">동기화 중…</span>' : '')
     + t('크레마', data.lastSync) + t('도서관', libsLast) + t('밀리', millieData.lastSync) + t('베스트', data.bestsellerSync) + ' ▾';
