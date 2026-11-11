@@ -1,0 +1,596 @@
+[
+  {
+    "y": 2026,
+    "t": null,
+    "a": "스티븐 그레이엄 존스",
+    "oa": "Stephen Graham Jones",
+    "ot": "The Buffalo Hunter Hunter",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2025,
+    "t": null,
+    "a": "존 위스웰",
+    "oa": "John Wiswell",
+    "ot": "Someone You Can Build a Nest In",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2024,
+    "t": null,
+    "a": "바즈라 찬드라세케라",
+    "oa": "Vajra Chandrasekera",
+    "ot": "The Saint of Bright Doors",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2023,
+    "t": "바벨",
+    "a": "R. F. 쿠앙",
+    "oa": "R. F. Kuang",
+    "ot": "Babel, or the Necessity of Violence",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2022,
+    "t": null,
+    "a": "P. 젤리 클라크",
+    "oa": "P. Djèlí Clark",
+    "ot": "A Master of Djinn",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2021,
+    "t": null,
+    "a": "마샤 웰스",
+    "oa": "Martha Wells",
+    "ot": "Network Effect",
+    "aliases": [
+      "마사 웰스"
+    ],
+    "ko": false
+  },
+  {
+    "y": 2020,
+    "t": null,
+    "a": "세라 핀스커",
+    "oa": "Sarah Pinsker",
+    "ot": "A Song for a New Day",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2019,
+    "t": null,
+    "a": "메리 로비넷 코월",
+    "oa": "Mary Robinette Kowal",
+    "ot": "The Calculating Stars",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2018,
+    "t": "석조 하늘",
+    "a": "N. K. 제미신",
+    "oa": "N. K. Jemisin",
+    "ot": "The Stone Sky",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2017,
+    "t": "하늘의 모든 새들",
+    "a": "찰리 제인 앤더스",
+    "oa": "Charlie Jane Anders",
+    "ot": "All the Birds in the Sky",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2016,
+    "t": "업루티드",
+    "a": "나오미 노빅",
+    "oa": "Naomi Novik",
+    "ot": "Uprooted",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2015,
+    "t": "소멸의 땅",
+    "a": "제프 밴더미어",
+    "oa": "Jeff VanderMeer",
+    "ot": "Annihilation",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2014,
+    "t": "사소한 정의",
+    "a": "앤 레키",
+    "oa": "Ann Leckie",
+    "ot": "Ancillary Justice",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2013,
+    "t": null,
+    "a": "킴 스탠리 로빈슨",
+    "oa": "Kim Stanley Robinson",
+    "ot": "2312",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2012,
+    "t": "타인들 속에서",
+    "a": "조 월튼",
+    "oa": "Jo Walton",
+    "ot": "Among Others",
+    "aliases": [
+      "조 월턴"
+    ],
+    "ko": true
+  },
+  {
+    "y": 2011,
+    "t": "블랙아웃",
+    "a": "코니 윌리스",
+    "oa": "Connie Willis",
+    "ot": "Blackout/All Clear",
+    "aliases": [
+      "올클리어",
+      "등화관제"
+    ],
+    "ko": true,
+    "vols": [
+      "블랙아웃",
+      "올클리어"
+    ]
+  },
+  {
+    "y": 2010,
+    "t": "와인드업 걸",
+    "a": "파올로 바치갈루피",
+    "oa": "Paolo Bacigalupi",
+    "ot": "The Windup Girl",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2009,
+    "t": "파워",
+    "a": "어슐러 K. 르 귄",
+    "oa": "Ursula K. Le Guin",
+    "ot": "Powers",
+    "aliases": [
+      "서부 해안 연대기",
+      "어슐러 르 귄"
+    ],
+    "ko": true
+  },
+  {
+    "y": 2008,
+    "t": "유대인 경찰연합",
+    "a": "마이클 셰이본",
+    "oa": "Michael Chabon",
+    "ot": "The Yiddish Policemen's Union",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2007,
+    "t": null,
+    "a": "잭 맥데빗",
+    "oa": "Jack McDevitt",
+    "ot": "Seeker",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2006,
+    "t": null,
+    "a": "조 홀드먼",
+    "oa": "Joe Haldeman",
+    "ot": "Camouflage",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2005,
+    "t": null,
+    "a": "로이스 맥마스터 부졸드",
+    "oa": "Lois McMaster Bujold",
+    "ot": "Paladin of Souls",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2004,
+    "t": "어둠의 속도",
+    "a": "엘리자베스 문",
+    "oa": "Elizabeth Moon",
+    "ot": "The Speed of Dark",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2003,
+    "t": "신들의 전쟁",
+    "a": "닐 게이먼",
+    "oa": "Neil Gaiman",
+    "ot": "American Gods",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 2002,
+    "t": null,
+    "a": "캐서린 아사로",
+    "oa": "Catherine Asaro",
+    "ot": "The Quantum Rose",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 2001,
+    "t": "다윈의 라디오",
+    "a": "그레그 베어",
+    "oa": "Greg Bear",
+    "ot": "Darwin's Radio",
+    "aliases": [
+      "그렉 베어"
+    ],
+    "ko": true
+  },
+  {
+    "y": 2000,
+    "t": "은총을 받은 사람의 우화",
+    "a": "옥타비아 버틀러",
+    "oa": "Octavia E. Butler",
+    "ot": "Parable of the Talents",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1999,
+    "t": null,
+    "a": "조 홀드먼",
+    "oa": "Joe Haldeman",
+    "ot": "Forever Peace",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1998,
+    "t": null,
+    "a": "본다 N. 매킨타이어",
+    "oa": "Vonda N. McIntyre",
+    "ot": "The Moon and the Sun",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1997,
+    "t": null,
+    "a": "니콜라 그리피스",
+    "oa": "Nicola Griffith",
+    "ot": "Slow River",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1996,
+    "t": null,
+    "a": "로버트 J. 소여",
+    "oa": "Robert J. Sawyer",
+    "ot": "The Terminal Experiment",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1995,
+    "t": null,
+    "a": "그레그 베어",
+    "oa": "Greg Bear",
+    "ot": "Moving Mars",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1994,
+    "t": "붉은 화성",
+    "a": "킴 스탠리 로빈슨",
+    "oa": "Kim Stanley Robinson",
+    "ot": "Red Mars",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1993,
+    "t": "둠즈데이북",
+    "a": "코니 윌리스",
+    "oa": "Connie Willis",
+    "ot": "Doomsday Book",
+    "aliases": [
+      "둠즈데이 북"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1992,
+    "t": null,
+    "a": "마이클 스완윅",
+    "oa": "Michael Swanwick",
+    "ot": "Stations of the Tide",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1991,
+    "t": "테하누",
+    "a": "어슐러 K. 르 귄",
+    "oa": "Ursula K. Le Guin",
+    "ot": "Tehanu",
+    "aliases": [
+      "어슐러 르 귄"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1990,
+    "t": null,
+    "a": "엘리자베스 앤 스카버러",
+    "oa": "Elizabeth Ann Scarborough",
+    "ot": "The Healer's War",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1989,
+    "t": null,
+    "a": "로이스 맥마스터 부졸드",
+    "oa": "Lois McMaster Bujold",
+    "ot": "Falling Free",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1988,
+    "t": "추락하는 여인",
+    "a": "팻 머피",
+    "oa": "Pat Murphy",
+    "ot": "The Falling Woman",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1987,
+    "t": "사자의 대변인",
+    "a": "오슨 스콧 카드",
+    "oa": "Orson Scott Card",
+    "ot": "Speaker for the Dead",
+    "aliases": [
+      "올슨 스콧 카드"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1986,
+    "t": "엔더의 게임",
+    "a": "오슨 스콧 카드",
+    "oa": "Orson Scott Card",
+    "ot": "Ender's Game",
+    "aliases": [
+      "올슨 스콧 카드"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1985,
+    "t": "뉴로맨서",
+    "a": "윌리엄 깁슨",
+    "oa": "William Gibson",
+    "ot": "Neuromancer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1984,
+    "t": "스타타이드 라이징",
+    "a": "데이비드 브린",
+    "oa": "David Brin",
+    "ot": "Startide Rising",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1983,
+    "t": null,
+    "a": "마이클 비숍",
+    "oa": "Michael Bishop",
+    "ot": "No Enemy But Time",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1982,
+    "t": null,
+    "a": "진 울프",
+    "oa": "Gene Wolfe",
+    "ot": "The Claw of the Conciliator",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1981,
+    "t": "타임스케이프",
+    "a": "그레고리 벤퍼드",
+    "oa": "Gregory Benford",
+    "ot": "Timescape",
+    "aliases": [
+      "그레고리 벤포드"
+    ],
+    "ko": true,
+    "note": "새싹나라 1993 (새싹SF특선, 전3권, 정성호 역). 국립중앙도서관 서지(저자 Gregory Benford)"
+  },
+  {
+    "y": 1980,
+    "t": "낙원의 샘",
+    "a": "아서 C. 클라크",
+    "oa": "Arthur C. Clarke",
+    "ot": "The Fountains of Paradise",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1979,
+    "t": null,
+    "a": "본다 N. 매킨타이어",
+    "oa": "Vonda N. McIntyre",
+    "ot": "Dreamsnake",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1978,
+    "t": null,
+    "a": "프레더릭 폴",
+    "oa": "Frederik Pohl",
+    "ot": "Gateway",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1977,
+    "t": null,
+    "a": "프레더릭 폴",
+    "oa": "Frederik Pohl",
+    "ot": "Man Plus",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1976,
+    "t": "영원한 전쟁",
+    "a": "조 홀드먼",
+    "oa": "Joe Haldeman",
+    "ot": "The Forever War",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1975,
+    "t": "빼앗긴 자들",
+    "a": "어슐러 K. 르 귄",
+    "oa": "Ursula K. Le Guin",
+    "ot": "The Dispossessed",
+    "aliases": [
+      "어슐러 르 귄"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1974,
+    "t": "라마와의 랑데부",
+    "a": "아서 C. 클라크",
+    "oa": "Arthur C. Clarke",
+    "ot": "Rendezvous with Rama",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1973,
+    "t": null,
+    "a": "아이작 아시모프",
+    "oa": "Isaac Asimov",
+    "ot": "The Gods Themselves",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1972,
+    "t": null,
+    "a": "로버트 실버버그",
+    "oa": "Robert Silverberg",
+    "ot": "A Time of Changes",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1971,
+    "t": "링월드",
+    "a": "래리 니븐",
+    "oa": "Larry Niven",
+    "ot": "Ringworld",
+    "aliases": [
+      "레리 니븐"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1970,
+    "t": "어둠의 왼손",
+    "a": "어슐러 K. 르 귄",
+    "oa": "Ursula K. Le Guin",
+    "ot": "The Left Hand of Darkness",
+    "aliases": [
+      "어슐러 르 귄"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1969,
+    "t": null,
+    "a": "알렉세이 판신",
+    "oa": "Alexei Panshin",
+    "ot": "Rite of Passage",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1968,
+    "t": null,
+    "a": "새뮤얼 딜레이니",
+    "oa": "Samuel R. Delany",
+    "ot": "The Einstein Intersection",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "y": 1967,
+    "t": "바벨-17",
+    "a": "새뮤얼 딜레이니",
+    "oa": "Samuel R. Delany",
+    "ot": "Babel-17",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "y": 1967,
+    "t": "앨저넌에게 꽃을",
+    "a": "대니얼 키스",
+    "oa": "Daniel Keyes",
+    "ot": "Flowers for Algernon",
+    "aliases": [
+      "빵가게 찰리의 행복하고도 슬픈 날들",
+      "다니엘 키스"
+    ],
+    "ko": true
+  },
+  {
+    "y": 1966,
+    "t": "듄",
+    "a": "프랭크 허버트",
+    "oa": "Frank Herbert",
+    "ot": "Dune",
+    "aliases": [],
+    "ko": true
+  }
+]

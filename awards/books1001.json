@@ -1,0 +1,10420 @@
+[
+  {
+    "r": 1,
+    "y": -560,
+    "t": "이솝 우화",
+    "a": "이솝",
+    "oa": "Aesopus",
+    "ot": "Aesop’s Fables",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 2,
+    "y": 8,
+    "t": "변신 이야기",
+    "a": "오비디우스",
+    "oa": "Ovid",
+    "ot": "Metamorphoses",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 3,
+    "y": 50,
+    "t": "카이레아스와 칼리로에",
+    "a": "카리톤",
+    "oa": "Chariton",
+    "ot": "Chaireas and Kallirhoe",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 4,
+    "y": 160,
+    "t": "황금 당나귀",
+    "a": "아풀레이우스",
+    "oa": "Lucius Apuleius",
+    "ot": "The Golden Ass",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 5,
+    "y": 300,
+    "t": null,
+    "a": null,
+    "oa": "Heliodorus",
+    "ot": "Aithiopika",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 6,
+    "y": 850,
+    "t": "아라비안 나이트",
+    "a": "작자 미상",
+    "oa": "Anonymous",
+    "ot": "The Thousand and One Nights",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 7,
+    "y": 1534,
+    "t": "가르강튀아",
+    "a": "프랑수아 라블레",
+    "oa": "François Rabelais",
+    "ot": "Gargantua and Pantagruel",
+    "aliases": [
+      "가르강튀아와 팡타그뤼엘"
+    ],
+    "ko": true
+  },
+  {
+    "r": 8,
+    "y": 1578,
+    "t": null,
+    "a": "존 릴리",
+    "oa": "John Lyly",
+    "ot": "Euphues: The Anatomy of Wit",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 9,
+    "y": 1594,
+    "t": null,
+    "a": null,
+    "oa": "Thomas Nashe",
+    "ot": "The Unfortunate Traveller",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 10,
+    "y": 1605,
+    "t": "돈키호테",
+    "a": "미겔 데 세르반테스",
+    "oa": "Miguel de Cervantes Saavedra",
+    "ot": "Don Quixote",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 11,
+    "y": 1678,
+    "t": "천로역정",
+    "a": "존 버니언",
+    "oa": "John Bunyan",
+    "ot": "The Pilgrim’s Progress",
+    "aliases": [
+      "천로 역정",
+      "존 번연"
+    ],
+    "ko": true
+  },
+  {
+    "r": 12,
+    "y": 1678,
+    "t": "클레브 공작부인",
+    "a": "라파예트 부인",
+    "oa": "Marie-Madelaine Pioche de Lavergne, Comtesse de La Fayette",
+    "ot": "The Princess of Clèves",
+    "aliases": [
+      "클레브 공작 부인",
+      "라 파예트"
+    ],
+    "ko": true
+  },
+  {
+    "r": 13,
+    "y": 1688,
+    "t": "오루노코",
+    "a": "애프러 벤",
+    "oa": "Aphra Behn",
+    "ot": "Oroonoko",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 14,
+    "y": 1704,
+    "t": "통 이야기",
+    "a": "조너선 스위프트",
+    "oa": "Jonathan Swift",
+    "ot": "A Tale of a Tub",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 15,
+    "y": 1719,
+    "t": "로빈슨 크루소",
+    "a": "대니얼 디포",
+    "oa": "Daniel Defoe",
+    "ot": "Robinson Crusoe",
+    "aliases": [
+      "다니엘 디포"
+    ],
+    "ko": true
+  },
+  {
+    "r": 16,
+    "y": 1719,
+    "t": null,
+    "a": "일라이자 헤이우드",
+    "oa": "Eliza Haywood",
+    "ot": "Love in Excess",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 17,
+    "y": 1722,
+    "t": "몰 플랜더스",
+    "a": "대니얼 디포",
+    "oa": "Daniel Defoe",
+    "ot": "Moll Flanders",
+    "aliases": [
+      "다니엘 디포"
+    ],
+    "ko": true
+  },
+  {
+    "r": 18,
+    "y": 1724,
+    "t": "행운의 여인 록새너",
+    "a": "다니엘 디포",
+    "oa": "Daniel Defoe",
+    "ot": "Roxana",
+    "aliases": [
+      "록새너",
+      "대니얼 디포"
+    ],
+    "ko": true
+  },
+  {
+    "r": 19,
+    "y": 1726,
+    "t": "걸리버 여행기",
+    "a": "조너선 스위프트",
+    "oa": "Jonathan Swift",
+    "ot": "Gulliver’s Travels",
+    "aliases": [
+      "조나단 스위프트"
+    ],
+    "ko": true
+  },
+  {
+    "r": 20,
+    "y": 1729,
+    "t": "겸손한 제안",
+    "a": "조너선 스위프트",
+    "oa": "Jonathan Swift",
+    "ot": "A Modest Proposal",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 21,
+    "y": 1740,
+    "t": "파멜라",
+    "a": "새뮤얼 리처드슨",
+    "oa": "Samuel Richardson",
+    "ot": "Pamela",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 22,
+    "y": 1741,
+    "t": null,
+    "a": null,
+    "oa": "J. Arbuthnot, J. Gay, T. Parnell, A. Pope, J. Swift",
+    "ot": "Memoirs of Martinus Scriblerus",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 23,
+    "y": 1742,
+    "t": "조지프 앤드루스",
+    "a": "헨리 필딩",
+    "oa": "Henry Fielding",
+    "ot": "Joseph Andrews",
+    "aliases": [
+      "조지프 앤드류스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 24,
+    "y": 1748,
+    "t": "클라리사 할로",
+    "a": "새뮤얼 리처드슨",
+    "oa": "Samuel Richardson",
+    "ot": "Clarissa",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 25,
+    "y": 1748,
+    "t": "로더릭 랜덤의 모험",
+    "a": "토비아스 스몰렛",
+    "oa": "Tobias George Smollett",
+    "ot": "Roderick Random",
+    "aliases": [
+      "토비어스 스몰렛"
+    ],
+    "ko": true
+  },
+  {
+    "r": 26,
+    "y": 1748,
+    "t": "패니 힐의 회상",
+    "a": "존 클리랜드",
+    "oa": "John Cleland",
+    "ot": "Fanny Hill",
+    "aliases": [
+      "패니 힐의 회고록"
+    ],
+    "ko": true
+  },
+  {
+    "r": 27,
+    "y": 1749,
+    "t": "업둥이 톰 존스 이야기",
+    "a": "헨리 필딩",
+    "oa": "Henry Fielding",
+    "ot": "Tom Jones",
+    "aliases": [
+      "톰 존스의 모험"
+    ],
+    "ko": true
+  },
+  {
+    "r": 28,
+    "y": 1751,
+    "t": null,
+    "a": "토비아스 스몰렛",
+    "oa": "Tobias George Smollett",
+    "ot": "Peregrine Pickle",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 29,
+    "y": 1751,
+    "t": null,
+    "a": "헨리 필딩",
+    "oa": "Henry Fielding",
+    "ot": "Amelia",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 30,
+    "y": 1752,
+    "t": null,
+    "a": null,
+    "oa": "Charlotte Lennox",
+    "ot": "The Female Quixote",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 31,
+    "y": 1759,
+    "t": "캉디드",
+    "a": "볼테르",
+    "oa": "Voltaire",
+    "ot": "Candide",
+    "aliases": [
+      "캉디드 혹은 낙관주의"
+    ],
+    "ko": true
+  },
+  {
+    "r": 32,
+    "y": 1759,
+    "t": "라셀라스",
+    "a": "새뮤얼 존슨",
+    "oa": "Samuel Johnson",
+    "ot": "Rasselas",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 33,
+    "y": 1759,
+    "t": "신사 트리스트럼 섄디의 인생과 생각 이야기",
+    "a": "로렌스 스턴",
+    "oa": "Laurence Sterne",
+    "ot": "Tristram Shandy",
+    "aliases": [
+      "트리스트럼 섄디"
+    ],
+    "ko": true
+  },
+  {
+    "r": 34,
+    "y": 1761,
+    "t": "신엘로이즈",
+    "a": "장 자크 루소",
+    "oa": "Jean-Jacques Rousseau",
+    "ot": "Julie; or, the New Eloise",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 35,
+    "y": 1762,
+    "t": "에밀",
+    "a": "장 자크 루소",
+    "oa": "Jean-Jacques Rousseau",
+    "ot": "Émile; or, On Education",
+    "aliases": [
+      "루소의 에밀"
+    ],
+    "ko": true
+  },
+  {
+    "r": 36,
+    "y": 1764,
+    "t": "오트란토 성",
+    "a": "호레이스 월폴",
+    "oa": "Horace Walpole",
+    "ot": "The Castle of Otranto",
+    "aliases": [
+      "호러스 월폴"
+    ],
+    "ko": true
+  },
+  {
+    "r": 37,
+    "y": 1766,
+    "t": "웨이크필드의 목사",
+    "a": "올리버 골드스미스",
+    "oa": "Oliver Goldsmith",
+    "ot": "The Vicar of Wakefield",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 38,
+    "y": 1768,
+    "t": "풍류여정기",
+    "a": "로렌스 스턴",
+    "oa": "Laurence Sterne",
+    "ot": "A Sentimental Journey",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 39,
+    "y": 1771,
+    "t": null,
+    "a": null,
+    "oa": "Henry Mackenzie",
+    "ot": "The Man of Feeling",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 40,
+    "y": 1771,
+    "t": "험프리 클링커의 원정",
+    "a": "토비아스 스몰렛",
+    "oa": "Tobias George Smollett",
+    "ot": "Humphrey Clinker",
+    "aliases": [
+      "험프리 클링커의 탐험"
+    ],
+    "ko": true
+  },
+  {
+    "r": 41,
+    "y": 1774,
+    "t": "젊은 베르테르의 슬픔",
+    "a": "요한 볼프강 폰 괴테",
+    "oa": "Johann Wolfgang von Goethe",
+    "ot": "The Sorrows of Young Werther",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 42,
+    "y": 1778,
+    "t": null,
+    "a": "패니 버니",
+    "oa": "Fanny Burney",
+    "ot": "Evelina",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 43,
+    "y": 1782,
+    "t": "고독한 산책자의 몽상",
+    "a": "장 자크 루소",
+    "oa": "Jean-Jacques Rousseau",
+    "ot": "Reveries of a Solitary Walker",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 44,
+    "y": 1782,
+    "t": "위험한 관계",
+    "a": "쇼데를로 드 라클로",
+    "oa": "Pierre Choderlos de Laclos",
+    "ot": "Dangerous Liaisons",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 45,
+    "y": 1782,
+    "t": "고백록",
+    "a": "장 자크 루소",
+    "oa": "Jean-Jacques Rousseau",
+    "ot": "Confessions",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 46,
+    "y": 1782,
+    "t": null,
+    "a": "패니 버니",
+    "oa": "Fanny Burney",
+    "ot": "Cecilia",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 47,
+    "y": 1785,
+    "t": "소돔의 120일",
+    "a": "마르키 드 사드",
+    "oa": "Marquis de Sade",
+    "ot": "The 120 Days of Sodom",
+    "aliases": [
+      "D. A. F. 드 사드",
+      "소돔 120일"
+    ],
+    "ko": true
+  },
+  {
+    "r": 48,
+    "y": 1786,
+    "t": "바텍",
+    "a": "윌리엄 벡퍼드",
+    "oa": "William Beckford",
+    "ot": "Vathek",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 49,
+    "y": 1789,
+    "t": "에퀴아노의 흥미로운 이야기",
+    "a": "올라우다 에퀴아노",
+    "oa": "Olaudah Equiano",
+    "ot": "The Interesting Narrative",
+    "aliases": [
+      "올라우다 에퀴아노의 흥미로운 이야기"
+    ],
+    "ko": true
+  },
+  {
+    "r": 50,
+    "y": 1791,
+    "t": "미덕의 불운",
+    "a": "마르키 드 사드",
+    "oa": "Marquis de Sade",
+    "ot": "Justine",
+    "aliases": [
+      "쥐스틴",
+      "싸드"
+    ],
+    "ko": true
+  },
+  {
+    "r": 51,
+    "y": 1794,
+    "t": null,
+    "a": null,
+    "oa": "William Godwin",
+    "ot": "The Adventures of Caleb Williams",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 52,
+    "y": 1794,
+    "t": "우돌포 성의 비밀",
+    "a": "앤 래드클리프",
+    "oa": "Ann Radcliffe",
+    "ot": "The Mysteries of Udolpho",
+    "aliases": [
+      "우돌포의 비밀"
+    ],
+    "ko": true
+  },
+  {
+    "r": 53,
+    "y": 1796,
+    "t": "운명론자 자크와 그의 주인",
+    "a": "드니 디드로",
+    "oa": "Denis Diderot",
+    "ot": "Jacques the Fatalist",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 54,
+    "y": 1796,
+    "t": "빌헬름 마이스터의 수업시대",
+    "a": "요한 볼프강 폰 괴테",
+    "oa": "Johann Wolfgang von Goethe",
+    "ot": "Wilhelm Meister’s Apprenticeship",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 55,
+    "y": 1796,
+    "t": "수도사",
+    "a": "M. G. 루이스",
+    "oa": "M.G. Lewis",
+    "ot": "The Monk",
+    "aliases": [
+      "몽크",
+      "매튜 그레고리 루이스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 56,
+    "y": 1796,
+    "t": null,
+    "a": "패니 버니",
+    "oa": "Fanny Burney",
+    "ot": "Camilla",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 57,
+    "y": 1796,
+    "t": "수녀",
+    "a": "드니 디드로",
+    "oa": "Denis Diderot",
+    "ot": "The Nun",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 58,
+    "y": 1797,
+    "t": "휘페리온",
+    "a": "프리드리히 횔덜린",
+    "oa": "Friedrich Hölderlin",
+    "ot": "Hyperion",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 59,
+    "y": 1800,
+    "t": null,
+    "a": "마리아 에지워스",
+    "oa": "Maria Edgeworth",
+    "ot": "Castle Rackrent",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 60,
+    "y": 1805,
+    "t": "라모의 조카",
+    "a": "드니 디드로",
+    "oa": "Denis Diderot",
+    "ot": "Rameau’s Nephew",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 61,
+    "y": 1809,
+    "t": "선택적 친화력",
+    "a": "요한 볼프강 폰 괴테",
+    "oa": "Johann Wolfgang von Goethe",
+    "ot": "Elective Affinities",
+    "aliases": [
+      "친화력"
+    ],
+    "ko": true
+  },
+  {
+    "r": 62,
+    "y": 1811,
+    "t": "이성과 감성",
+    "a": "제인 오스틴",
+    "oa": "Jane Austen",
+    "ot": "Sense and Sensibility",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 63,
+    "y": 1812,
+    "t": null,
+    "a": "마리아 에지워스",
+    "oa": "Maria Edgeworth",
+    "ot": "The Absentee",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 64,
+    "y": 1813,
+    "t": "오만과 편견",
+    "a": "제인 오스틴",
+    "oa": "Jane Austen",
+    "ot": "Pride and Prejudice",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 65,
+    "y": 1814,
+    "t": "맨스필드 파크",
+    "a": "제인 오스틴",
+    "oa": "Jane Austen",
+    "ot": "Mansfield Park",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 66,
+    "y": 1815,
+    "t": "엠마",
+    "a": "제인 오스틴",
+    "oa": "Jane Austen",
+    "ot": "Emma",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 67,
+    "y": 1817,
+    "t": null,
+    "a": "월터 스콧",
+    "oa": "Sir Walter Scott",
+    "ot": "Rob Roy",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 68,
+    "y": 1817,
+    "t": null,
+    "a": "마리아 에지워스",
+    "oa": "Maria Edgeworth",
+    "ot": "Ormond",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 69,
+    "y": 1817,
+    "t": "설득",
+    "a": "제인 오스틴",
+    "oa": "Jane Austen",
+    "ot": "Persuasion",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 70,
+    "y": 1817,
+    "t": "노생거 사원",
+    "a": "제인 오스틴",
+    "oa": "Jane Austen",
+    "ot": "Northanger Abbey",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 71,
+    "y": 1818,
+    "t": "프랑켄슈타인",
+    "a": "메리 셸리",
+    "oa": "Mary Wollstonecraft Shelley",
+    "ot": "Frankenstein",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 72,
+    "y": 1819,
+    "t": "아이반호",
+    "a": "월터 스콧",
+    "oa": "Sir Walter Scott",
+    "ot": "Ivanhoe",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 73,
+    "y": 1820,
+    "t": null,
+    "a": "월터 스콧",
+    "oa": "Sir Walter Scott",
+    "ot": "The Monastery",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 74,
+    "y": 1820,
+    "t": null,
+    "a": null,
+    "oa": "Charles Robert Maturin",
+    "ot": "Melmoth the Wanderer",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 75,
+    "y": 1824,
+    "t": null,
+    "a": null,
+    "oa": "Charles Robert Maturin",
+    "ot": "The Albigenses",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 76,
+    "y": 1824,
+    "t": "죄인의 고백",
+    "a": "제임스 호그",
+    "oa": "James Hogg",
+    "ot": "The Private Memoirs and Confessions of a Justified Sinner",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 77,
+    "y": 1826,
+    "t": "모히칸족의 최후",
+    "a": "제임스 페니모어 쿠퍼",
+    "oa": "James Fenimore Cooper",
+    "ot": "Last of the Mohicans",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 78,
+    "y": 1827,
+    "t": "약혼자들",
+    "a": "알레산드로 만초니",
+    "oa": "Alessandro Manzoni",
+    "ot": "The Betrothed",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 79,
+    "y": 1830,
+    "t": "적과 흑",
+    "a": "스탕달",
+    "oa": "Stendhal",
+    "ot": "The Red and the Black",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 80,
+    "y": 1831,
+    "t": "노트르담 드 파리",
+    "a": "빅토르 위고",
+    "oa": "Victor Hugo",
+    "ot": "The Hunchback of Notre Dame",
+    "aliases": [
+      "노트르담의 꼽추"
+    ],
+    "ko": true
+  },
+  {
+    "r": 81,
+    "y": 1833,
+    "t": "외제니 그랑데",
+    "a": "오노레 드 발자크",
+    "oa": "Honoré de Balzac",
+    "ot": "Eugénie Grandet",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 82,
+    "y": 1835,
+    "t": "고리오 영감",
+    "a": "오노레 드 발자크",
+    "oa": "Honoré de Balzac",
+    "ot": "Le Père Goriot",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 83,
+    "y": 1836,
+    "t": "코",
+    "a": "니콜라이 고골",
+    "oa": "Nikolay Gogol",
+    "ot": "The Nose",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 84,
+    "y": 1838,
+    "t": "올리버 트위스트",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "Oliver Twist",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 85,
+    "y": 1839,
+    "t": "니콜라스 니클비",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "The Life and Adventures of Nicholas Nickleby",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 86,
+    "y": 1839,
+    "t": "어셔가의 몰락",
+    "a": "에드거 앨런 포",
+    "oa": "Edgar Allan Poe",
+    "ot": "The Fall of the House of Usher",
+    "aliases": [
+      "어셔 가의 몰락"
+    ],
+    "ko": true
+  },
+  {
+    "r": 87,
+    "y": 1839,
+    "t": "파르마의 수도원",
+    "a": "스탕달",
+    "oa": "Stendhal",
+    "ot": "The Charterhouse of Parma",
+    "aliases": [
+      "파르마 수도원"
+    ],
+    "ko": true
+  },
+  {
+    "r": 88,
+    "y": 1842,
+    "t": "죽은 혼",
+    "a": "니콜라이 고골",
+    "oa": "Nikolay Gogol",
+    "ot": "Dead Souls",
+    "aliases": [
+      "죽은혼"
+    ],
+    "ko": true
+  },
+  {
+    "r": 89,
+    "y": 1842,
+    "t": "함정과 진자",
+    "a": "에드거 앨런 포",
+    "oa": "Edgar Allan Poe",
+    "ot": "The Pit and the Pendulum",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 90,
+    "y": 1843,
+    "t": "크리스마스 캐럴",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "A Christmas Carol",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 91,
+    "y": 1843,
+    "t": "잃어버린 환상",
+    "a": "오노레 드 발자크",
+    "oa": "Honoré de Balzac",
+    "ot": "Lost Illusions",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 92,
+    "y": 1844,
+    "t": "마틴 처즐위트",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "Martin Chuzzlewit",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 93,
+    "y": 1844,
+    "t": "도둑맞은 편지",
+    "a": "에드거 앨런 포",
+    "oa": "Edgar Allan Poe",
+    "ot": "The Purloined Letter",
+    "aliases": [
+      "도둑 맞은 편지"
+    ],
+    "ko": true
+  },
+  {
+    "r": 94,
+    "y": 1844,
+    "t": "삼총사",
+    "a": "알렉상드르 뒤마",
+    "oa": "Alexandre Dumas",
+    "ot": "The Three Musketeers",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 95,
+    "y": 1845,
+    "t": "카트린느 메디치의 딸",
+    "a": "알렉상드르 뒤마",
+    "oa": "Alexandre Dumas",
+    "ot": "La Reine Margot",
+    "aliases": [
+      "마고 왕비",
+      "여왕 마고"
+    ],
+    "ko": true,
+    "note": "박미경 옮김, 레인보우퍼블릭북스 2019 (원제 La Reine Margot); 구판 『마고 왕비』 상·하(홍원 1994)"
+  },
+  {
+    "r": 96,
+    "y": 1845,
+    "t": "몬테크리스토 백작",
+    "a": "알렉상드르 뒤마",
+    "oa": "Alexandre Dumas",
+    "ot": "The Count of Monte-Cristo",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 97,
+    "y": 1847,
+    "t": "제인 에어",
+    "a": "샬럿 브론테",
+    "oa": "Charlotte Brontë",
+    "ot": "Jane Eyre",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 98,
+    "y": 1847,
+    "t": "아그네스 그레이",
+    "a": "앤 브론테",
+    "oa": "Anne Brontë",
+    "ot": "Agnes Grey",
+    "aliases": [
+      "애그니스 그레이"
+    ],
+    "ko": true
+  },
+  {
+    "r": 99,
+    "y": 1847,
+    "t": "폭풍의 언덕",
+    "a": "에밀리 브론테",
+    "oa": "Emily Brontë",
+    "ot": "Wuthering Heights",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 100,
+    "y": 1848,
+    "t": "허영의 시장",
+    "a": "윌리엄 메이크피스 새커리",
+    "oa": "William Makepeace Thackeray",
+    "ot": "Vanity Fair",
+    "aliases": [
+      "W.M. 새커리"
+    ],
+    "ko": true
+  },
+  {
+    "r": 101,
+    "y": 1848,
+    "t": "와일드펠 홀의 소작인",
+    "a": "앤 브론테",
+    "oa": "Anne Brontë",
+    "ot": "The Tenant of Wildfell Hall",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 102,
+    "y": 1848,
+    "t": "메리 바턴",
+    "a": "엘리자베스 개스켈",
+    "oa": "Elizabeth Gaskell",
+    "ot": "Mary Barton",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 103,
+    "y": 1849,
+    "t": "셜리",
+    "a": "샬럿 브론테",
+    "oa": "Charlotte Brontë",
+    "ot": "Shirley",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 104,
+    "y": 1850,
+    "t": "데이비드 코퍼필드",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "David Copperfield",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 105,
+    "y": 1850,
+    "t": "주홍 글자",
+    "a": "너새니얼 호손",
+    "oa": "Nathaniel Hawthorne",
+    "ot": "The Scarlet Letter",
+    "aliases": [
+      "주홍글씨"
+    ],
+    "ko": true
+  },
+  {
+    "r": 106,
+    "y": 1851,
+    "t": "모비 딕",
+    "a": "허먼 멜빌",
+    "oa": "Herman Melville",
+    "ot": "Moby-Dick",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 107,
+    "y": 1851,
+    "t": "일곱 박공의 집",
+    "a": "너새니얼 호손",
+    "oa": "Nathaniel Hawthorne",
+    "ot": "The House of the Seven Gables",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 108,
+    "y": 1852,
+    "t": "블라이드데일 로맨스",
+    "a": "너새니얼 호손",
+    "oa": "Nathaniel Hawthorne",
+    "ot": "The Blithedale Romance",
+    "aliases": [
+      "너대니얼 호손"
+    ],
+    "ko": true
+  },
+  {
+    "r": 109,
+    "y": 1852,
+    "t": "톰 아저씨의 오두막",
+    "a": "해리엇 비처 스토",
+    "oa": "Harriet Beecher Stowe",
+    "ot": "Uncle Tom’s Cabin; or, Life Among the Lowly",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 110,
+    "y": 1853,
+    "t": "크랜퍼드",
+    "a": "엘리자베스 개스켈",
+    "oa": "Elizabeth Gaskell",
+    "ot": "Cranford",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 111,
+    "y": 1853,
+    "t": "빌레트",
+    "a": "샬럿 브론테",
+    "oa": "Charlotte Brontë",
+    "ot": "Villette",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 112,
+    "y": 1853,
+    "t": "황폐한 집",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "Bleak House",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 113,
+    "y": 1854,
+    "t": "월든",
+    "a": "헨리 데이비드 소로",
+    "oa": "Henry David Thoreau",
+    "ot": "Walden",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 114,
+    "y": 1854,
+    "t": "어려운 시절",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "Hard Times",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 115,
+    "y": 1855,
+    "t": "남과 북",
+    "a": "엘리자베스 개스켈",
+    "oa": "Elizabeth Gaskell",
+    "ot": "North and South",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 116,
+    "y": 1857,
+    "t": "보바리 부인",
+    "a": "귀스타브 플로베르",
+    "oa": "Gustave Flaubert",
+    "ot": "Madame Bovary",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 117,
+    "y": 1859,
+    "t": "아담 비드",
+    "a": "조지 엘리엇",
+    "oa": "George Eliot",
+    "ot": "Adam Bede",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 118,
+    "y": 1859,
+    "t": "오블로모프",
+    "a": "이반 곤차로프",
+    "oa": "Ivan Goncharov",
+    "ot": "Oblomovka",
+    "aliases": [
+      "I. A. 곤차로프"
+    ],
+    "ko": true
+  },
+  {
+    "r": 119,
+    "y": 1859,
+    "t": "두 도시 이야기",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "A Tale of Two Cities",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 120,
+    "y": 1860,
+    "t": "막스 하벨라르",
+    "a": "물타뚤리",
+    "oa": "Multatuli",
+    "ot": "Max Havelaar",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 121,
+    "y": 1860,
+    "t": "대리석 목양신",
+    "a": "너새니얼 호손",
+    "oa": "Nathaniel Hawthorne",
+    "ot": "The Marble Faun",
+    "aliases": [
+      "나다니엘 호손"
+    ],
+    "ko": true
+  },
+  {
+    "r": 122,
+    "y": 1860,
+    "t": "흰옷을 입은 여인",
+    "a": "윌키 콜린스",
+    "oa": "Wilkie Collins",
+    "ot": "The Woman in White",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 123,
+    "y": 1860,
+    "t": "플로스강의 물방앗간",
+    "a": "조지 엘리엇",
+    "oa": "George Eliot",
+    "ot": "The Mill on the Floss",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 124,
+    "y": 1860,
+    "t": null,
+    "a": "앤서니 트롤럽",
+    "oa": "Anthony Trollope",
+    "ot": "Castle Richmond",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 125,
+    "y": 1860,
+    "t": "전날 밤",
+    "a": "이반 투르게네프",
+    "oa": "Ivan Turgenev",
+    "ot": "On the Eve",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 126,
+    "y": 1861,
+    "t": "위대한 유산",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "Great Expectations",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 127,
+    "y": 1861,
+    "t": "사일러스 마너",
+    "a": "조지 엘리엇",
+    "oa": "George Eliot",
+    "ot": "Silas Marner",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 128,
+    "y": 1862,
+    "t": "아버지와 아들",
+    "a": "이반 투르게네프",
+    "oa": "Ivan Turgenev",
+    "ot": "Fathers and Sons",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 129,
+    "y": 1862,
+    "t": "레 미제라블",
+    "a": "빅토르 위고",
+    "oa": "Victor Hugo",
+    "ot": "Les Misérables",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 130,
+    "y": 1863,
+    "t": "물의 아이들",
+    "a": "찰스 킹즐리",
+    "oa": "Charles Kingsley",
+    "ot": "The Water-Babies",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 131,
+    "y": 1864,
+    "t": "지하로부터의 수기",
+    "a": "표도르 도스토옙스키",
+    "oa": "Fyodor Dostoevsky",
+    "ot": "Notes from the Underground",
+    "aliases": [
+      "지하생활자의 수기",
+      "도스토예프스키"
+    ],
+    "ko": true
+  },
+  {
+    "r": 132,
+    "y": 1864,
+    "t": "엉클 사일러스",
+    "a": "조셉 셰리던 르 파누",
+    "oa": "Sheridan Le Fanu",
+    "ot": "Uncle Silas",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 133,
+    "y": 1864,
+    "t": "지구 속 여행",
+    "a": "쥘 베른",
+    "oa": "Jules Verne",
+    "ot": "Journey to the Centre of the Earth",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 134,
+    "y": 1865,
+    "t": "우리 서로의 친구",
+    "a": "찰스 디킨스",
+    "oa": "Charles Dickens",
+    "ot": "Our Mutual Friend",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 135,
+    "y": 1865,
+    "t": "이상한 나라의 앨리스",
+    "a": "루이스 캐럴",
+    "oa": "Lewis Carroll",
+    "ot": "Alice’s Adventures in Wonderland",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 136,
+    "y": 1866,
+    "t": "죄와 벌",
+    "a": "표도르 도스토옙스키",
+    "oa": "Fyodor Dostoevsky",
+    "ot": "Crime and Punishment",
+    "aliases": [
+      "도스토예프스키"
+    ],
+    "ko": true
+  },
+  {
+    "r": 137,
+    "y": 1867,
+    "t": null,
+    "a": "앤서니 트롤럽",
+    "oa": "Anthony Trollope",
+    "ot": "The Last Chronicle of Barset",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 138,
+    "y": 1867,
+    "t": "테레즈 라캥",
+    "a": "에밀 졸라",
+    "oa": "Émile Zola",
+    "ot": "Thérèse Raquin",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 139,
+    "y": 1868,
+    "t": "작은 아씨들",
+    "a": "루이자 메이 올컷",
+    "oa": "Louisa May Alcott",
+    "ot": "Little Women",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 140,
+    "y": 1868,
+    "t": "월장석",
+    "a": "윌키 콜린스",
+    "oa": "Wilkie Collins",
+    "ot": "The Moonstone",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 141,
+    "y": 1869,
+    "t": "백치",
+    "a": "표도르 도스토옙스키",
+    "oa": "Fyodor Dostoevsky",
+    "ot": "The Idiot",
+    "aliases": [
+      "도스토예프스키"
+    ],
+    "ko": true
+  },
+  {
+    "r": 142,
+    "y": 1869,
+    "t": "말도로르의 노래",
+    "a": "로트레아몽",
+    "oa": "Comte de Lautréaumont",
+    "ot": "Maldoror",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 143,
+    "y": 1869,
+    "t": null,
+    "a": "앤서니 트롤럽",
+    "oa": "Anthony Trollope",
+    "ot": "Phineas Finn",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 144,
+    "y": 1869,
+    "t": "감정교육",
+    "a": "귀스타브 플로베르",
+    "oa": "Gustave Flaubert",
+    "ot": "Sentimental Education",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 145,
+    "y": 1869,
+    "t": "전쟁과 평화",
+    "a": "레프 톨스토이",
+    "oa": "Leo Tolstoy",
+    "ot": "War and Peace",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 146,
+    "y": 1869,
+    "t": null,
+    "a": "앤서니 트롤럽",
+    "oa": "Anthony Trollope",
+    "ot": "He Knew He Was Right",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 147,
+    "y": 1870,
+    "t": "초원의 리어왕",
+    "a": "이반 투르게네프",
+    "oa": "Ivan Turgenev",
+    "ot": "King Lear of the Steppes",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 148,
+    "y": 1871,
+    "t": "거울 나라의 앨리스",
+    "a": "루이스 캐럴",
+    "oa": "Lewis Carroll",
+    "ot": "Through the Looking Glass, and What Alice Found There",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 149,
+    "y": 1872,
+    "t": "미들마치",
+    "a": "조지 엘리엇",
+    "oa": "George Eliot",
+    "ot": "Middlemarch",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 150,
+    "y": 1872,
+    "t": "봄 물결",
+    "a": "이반 투르게네프",
+    "oa": "Ivan Turgenev",
+    "ot": "Spring Torrents",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 151,
+    "y": 1872,
+    "t": "에레혼",
+    "a": "새뮤얼 버틀러",
+    "oa": "Samuel Butler",
+    "ot": "Erewhon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 152,
+    "y": 1872,
+    "t": "악령",
+    "a": "표도르 도스토옙스키",
+    "oa": "Fyodor Dostoevsky",
+    "ot": "The Devils",
+    "aliases": [
+      "도스토예프스키"
+    ],
+    "ko": true
+  },
+  {
+    "r": 153,
+    "y": 1872,
+    "t": null,
+    "a": "조셉 셰리든 르 파뉴",
+    "oa": "Sheridan Le Fanu",
+    "ot": "In a Glass Darkly",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 154,
+    "y": 1873,
+    "t": "80일간의 세계 일주",
+    "a": "쥘 베른",
+    "oa": "Jules Verne",
+    "ot": "Around the World in Eighty Days",
+    "aliases": [
+      "80일간의 세계일주"
+    ],
+    "ko": true
+  },
+  {
+    "r": 155,
+    "y": 1873,
+    "t": "매료된 여행자",
+    "a": "니콜라이 레스코프",
+    "oa": "Nicolai Leskov",
+    "ot": "The Enchanted Wanderer",
+    "aliases": [],
+    "ko": true,
+    "note": "김진욱 옮김, 생각하는백성 1999"
+  },
+  {
+    "r": 156,
+    "y": 1874,
+    "t": "성난 군중으로부터 멀리",
+    "a": "토머스 하디",
+    "oa": "Thomas Hardy",
+    "ot": "Far from the Madding Crowd",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 157,
+    "y": 1874,
+    "t": "성 앙투안의 유혹",
+    "a": "귀스타브 플로베르",
+    "oa": "Gustave Flaubert",
+    "ot": "The Temptation of Saint Anthony",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 158,
+    "y": 1876,
+    "t": null,
+    "a": "토머스 하디",
+    "oa": "Thomas Hardy",
+    "ot": "The Hand of Ethelberta",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 159,
+    "y": 1876,
+    "t": "다니엘 데론다",
+    "a": "조지 엘리엇",
+    "oa": "George Eliot",
+    "ot": "Daniel Deronda",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 160,
+    "y": 1877,
+    "t": "처녀지",
+    "a": "이반 투르게네프",
+    "oa": "Ivan Turgenev",
+    "ot": "Virgin Soil",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 161,
+    "y": 1877,
+    "t": "목로주점",
+    "a": "에밀 졸라",
+    "oa": "Émile Zola",
+    "ot": "Drunkard",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 162,
+    "y": 1877,
+    "t": "안나 카레니나",
+    "a": "레프 톨스토이",
+    "oa": "Leo Tolstoy",
+    "ot": "Anna Karenina",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 163,
+    "y": 1878,
+    "t": "귀향",
+    "a": "토머스 하디",
+    "oa": "Thomas Hardy",
+    "ot": "Return of the Native",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 164,
+    "y": 1879,
+    "t": null,
+    "a": "아우구스트 스트린드베리",
+    "oa": "August Strindberg",
+    "ot": "The Red Room",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 165,
+    "y": 1880,
+    "t": "카라마조프가의 형제들",
+    "a": "표도르 도스토옙스키",
+    "oa": "Fyodor Dostoevsky",
+    "ot": "The Brothers Karamazov",
+    "aliases": [
+      "카라마조프 가의 형제들",
+      "도스토예프스키"
+    ],
+    "ko": true
+  },
+  {
+    "r": 166,
+    "y": 1880,
+    "t": "나나",
+    "a": "에밀 졸라",
+    "oa": "Émile Zola",
+    "ot": "Nana",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 167,
+    "y": 1880,
+    "t": "벤허",
+    "a": "루 월리스",
+    "oa": "Lew Wallace",
+    "ot": "Ben-Hur",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 168,
+    "y": 1881,
+    "t": "부바르와 페퀴셰",
+    "a": "귀스타브 플로베르",
+    "oa": "Gustave Flaubert",
+    "ot": "Bouvard and Pécuchet",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 169,
+    "y": 1881,
+    "t": "여인의 초상",
+    "a": "헨리 제임스",
+    "oa": "Henry James",
+    "ot": "The Portrait of a Lady",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 170,
+    "y": 1881,
+    "t": "말라볼리아가의 사람들",
+    "a": "조반니 베르가",
+    "oa": "Giovanni Verga",
+    "ot": "The House by the Medlar Tree",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 171,
+    "y": 1883,
+    "t": "보물섬",
+    "a": "로버트 루이스 스티븐슨",
+    "oa": "Robert Louis Stevenson",
+    "ot": "Treasure Island",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 172,
+    "y": 1883,
+    "t": "여자의 일생",
+    "a": "기 드 모파상",
+    "oa": "Guy de Maupassant",
+    "ot": "A Woman’s Life",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 173,
+    "y": 1884,
+    "t": "거꾸로",
+    "a": "조리스카를 위스망스",
+    "oa": "Joris-Karl Huysmans",
+    "ot": "Against the Grain",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 174,
+    "y": 1884,
+    "t": "허클베리 핀의 모험",
+    "a": "마크 트웨인",
+    "oa": "Mark Twain",
+    "ot": "The Adventures of Huckleberry Finn",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 175,
+    "y": 1885,
+    "t": null,
+    "a": "월터 페이터",
+    "oa": "Walter Pater",
+    "ot": "Marius the Epicurean",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 176,
+    "y": 1885,
+    "t": "벨아미",
+    "a": "기 드 모파상",
+    "oa": "Guy de Maupassant",
+    "ot": "Bel-Ami",
+    "aliases": [
+      "벨 아미"
+    ],
+    "ko": true
+  },
+  {
+    "r": 177,
+    "y": 1885,
+    "t": "제르미날",
+    "a": "에밀 졸라",
+    "oa": "Émile Zola",
+    "ot": "Germinal",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 178,
+    "y": 1885,
+    "t": "솔로몬 왕의 동굴",
+    "a": "헨리 라이더 해거드",
+    "oa": "H. Rider Haggard",
+    "ot": "King Solomon’s Mines",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 179,
+    "y": 1886,
+    "t": "이반 일리치의 죽음",
+    "a": "레프 톨스토이",
+    "oa": "Leo Tolstoy",
+    "ot": "The Death of Ivan Ilyich",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 180,
+    "y": 1886,
+    "t": "납치",
+    "a": "로버트 루이스 스티븐슨",
+    "oa": "Robert Louis Stevenson",
+    "ot": "Kidnapped",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 181,
+    "y": 1886,
+    "t": "캐스터브리지의 시장",
+    "a": "토머스 하디",
+    "oa": "Thomas Hardy",
+    "ot": "The Mayor of Casterbridge",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 182,
+    "y": 1886,
+    "t": "지킬 박사와 하이드 씨",
+    "a": "로버트 루이스 스티븐슨",
+    "oa": "Robert Louis Stevenson",
+    "ot": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 183,
+    "y": 1887,
+    "t": "동굴의 여왕",
+    "a": "헨리 라이더 해거드",
+    "oa": "H. Rider Haggard",
+    "ot": "She",
+    "aliases": [
+      "라이더 해거드"
+    ],
+    "ko": true
+  },
+  {
+    "r": 184,
+    "y": 1887,
+    "t": "숲사람들",
+    "a": "토머스 하디",
+    "oa": "Thomas Hardy",
+    "ot": "The Woodlanders",
+    "aliases": [
+      "숲의 사람들"
+    ],
+    "ko": true
+  },
+  {
+    "r": 185,
+    "y": 1887,
+    "t": null,
+    "a": "아우구스트 스트린드베리",
+    "oa": "August Strindberg",
+    "ot": "The People of Hemsö",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 186,
+    "y": 1887,
+    "t": "포르투나타와 하신타",
+    "a": "베니토 페레스 갈도스",
+    "oa": "Benito Pérez Galdós",
+    "ot": "Fortunata and Jacinta",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 187,
+    "y": 1888,
+    "t": "피에르와 장",
+    "a": "기 드 모파상",
+    "oa": "Guy de Maupassant",
+    "ot": "Pierre and Jean",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 188,
+    "y": 1889,
+    "t": "밸런트레이 귀공자",
+    "a": "로버트 루이스 스티븐슨",
+    "oa": "Robert Louis Stevenson",
+    "ot": "The Master of Ballantrae",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 189,
+    "y": 1889,
+    "t": "크로이체르 소나타",
+    "a": "레프 톨스토이",
+    "oa": "Leo Tolstoy",
+    "ot": "The Kreutzer Sonata",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 190,
+    "y": 1890,
+    "t": "굶주림",
+    "a": "크누트 함순",
+    "oa": "Knut Hamsun",
+    "ot": "Hunger",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 191,
+    "y": 1890,
+    "t": null,
+    "a": "아우구스트 스트린드베리",
+    "oa": "August Strindberg",
+    "ot": "By the Open Sea",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 192,
+    "y": 1890,
+    "t": "인간 짐승",
+    "a": "에밀 졸라",
+    "oa": "Émile Zola",
+    "ot": "La Bête Humaine",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 193,
+    "y": 1890,
+    "t": "도리언 그레이의 초상",
+    "a": "오스카 와일드",
+    "oa": "Oscar Wilde",
+    "ot": "The Picture of Dorian Gray",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 194,
+    "y": 1890,
+    "t": "에코토피아 뉴스",
+    "a": "윌리엄 모리스",
+    "oa": "William Morris",
+    "ot": "News from Nowhere",
+    "aliases": [
+      "유토피아에서 온 소식"
+    ],
+    "ko": true
+  },
+  {
+    "r": 195,
+    "y": 1891,
+    "t": "테스",
+    "a": "토머스 하디",
+    "oa": "Thomas Hardy",
+    "ot": "Tess of the D’Urbervilles",
+    "aliases": [
+      "더버빌가의 테스",
+      "토마스 하디"
+    ],
+    "ko": true
+  },
+  {
+    "r": 196,
+    "y": 1891,
+    "t": "예스타 베를링 이야기",
+    "a": "셀마 라게를뢰프",
+    "oa": "Selma Lagerlöf",
+    "ot": "Gösta Berling’s Saga",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 197,
+    "y": 1891,
+    "t": "뉴 그럽 스트리트",
+    "a": "조지 기싱",
+    "oa": "George Gissing",
+    "ot": "New Grub Street",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 198,
+    "y": 1892,
+    "t": "셜록 홈즈의 모험",
+    "a": "아서 코난 도일",
+    "oa": "Sir Arthur Conan Doyle",
+    "ot": "The Adventures of Sherlock Holmes",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 199,
+    "y": 1892,
+    "t": "어느 평범한 사람의 일기",
+    "a": "조지 그로스미스",
+    "oa": "George & Weedon Grossmith",
+    "ot": "Diary of a Nobody",
+    "aliases": [
+      "위돈 그로스미스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 200,
+    "y": 1892,
+    "t": null,
+    "a": "조지 기싱",
+    "oa": "George Gissing",
+    "ot": "Born in Exile",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 201,
+    "y": 1892,
+    "t": "누런 벽지",
+    "a": "샬럿 퍼킨스 길먼",
+    "oa": "Charlotte Perkins Gilman",
+    "ot": "The Yellow Wallpaper",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 202,
+    "y": 1894,
+    "t": null,
+    "a": null,
+    "oa": "Somerville and Ross",
+    "ot": "The Real Charlotte",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 203,
+    "y": 1895,
+    "t": "비운의 주드",
+    "a": "토머스 하디",
+    "oa": "Thomas Hardy",
+    "ot": "Jude the Obscure",
+    "aliases": [
+      "무명의 주드",
+      "이름 없는 주드"
+    ],
+    "ko": true
+  },
+  {
+    "r": 204,
+    "y": 1895,
+    "t": "에피 브리스트",
+    "a": "테오도어 폰타네",
+    "oa": "Theodore Fontane",
+    "ot": "Effi Briest",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 205,
+    "y": 1895,
+    "t": "타임머신",
+    "a": "허버트 조지 웰스",
+    "oa": "H.G. Wells",
+    "ot": "The Time Machine",
+    "aliases": [
+      "H. G. 웰스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 206,
+    "y": 1896,
+    "t": "모로 박사의 섬",
+    "a": "허버트 조지 웰스",
+    "oa": "H.G. Wells",
+    "ot": "The Island of Dr. Moreau",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 207,
+    "y": 1896,
+    "t": "쿠오 바디스",
+    "a": "헨릭 시엔키에비츠",
+    "oa": "Henryk Sienkiewicz",
+    "ot": "Quo Vadis",
+    "aliases": [
+      "쿠오바디스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 208,
+    "y": 1897,
+    "t": "드라큘라",
+    "a": "브램 스토커",
+    "oa": "Bram Stoker",
+    "ot": "Dracula",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 209,
+    "y": 1897,
+    "t": "지상의 양식",
+    "a": "앙드레 지드",
+    "oa": "André Gide",
+    "ot": "Fruits of the Earth",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 210,
+    "y": 1897,
+    "t": "메이지가 알았던 것",
+    "a": "헨리 제임스",
+    "oa": "Henry James",
+    "ot": "What Maisie Knew",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 211,
+    "y": 1897,
+    "t": "투명인간",
+    "a": "허버트 조지 웰스",
+    "oa": "H.G. Wells",
+    "ot": "The Invisible Man",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 212,
+    "y": 1898,
+    "t": "우주 전쟁",
+    "a": "허버트 조지 웰스",
+    "oa": "H.G. Wells",
+    "ot": "The War of the Worlds",
+    "aliases": [
+      "우주전쟁"
+    ],
+    "ko": true
+  },
+  {
+    "r": 213,
+    "y": 1898,
+    "t": "나사의 회전",
+    "a": "헨리 제임스",
+    "oa": "Henry James",
+    "ot": "The Turn of the Screw",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 214,
+    "y": 1898,
+    "t": "슈테힐린",
+    "a": "테오도어 폰타네",
+    "oa": "Theodore Fontane",
+    "ot": "The Stechlin",
+    "aliases": [
+      "테오도르 폰타네"
+    ],
+    "ko": true,
+    "note": "고영석 옮김, 학원사 1985 (절판)"
+  },
+  {
+    "r": 215,
+    "y": 1899,
+    "t": "각성",
+    "a": "케이트 쇼팽",
+    "oa": "Kate Chopin",
+    "ot": "The Awakening",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 216,
+    "y": 1899,
+    "t": null,
+    "a": null,
+    "oa": "Somerville and Ross",
+    "ot": "Some Experiences of an Irish R.M.",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 217,
+    "y": 1899,
+    "t": "어둠의 심연",
+    "a": "조지프 콘래드",
+    "oa": "Joseph Conrad",
+    "ot": "Heart of Darkness",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 218,
+    "y": 1900,
+    "t": "로드 짐",
+    "a": "조지프 콘래드",
+    "oa": "Joseph Conrad",
+    "ot": "Lord Jim",
+    "aliases": [
+      "조셉 콘래드"
+    ],
+    "ko": true
+  },
+  {
+    "r": 219,
+    "y": 1900,
+    "t": "시스터 캐리",
+    "a": "시어도어 드라이저",
+    "oa": "Theodore Dreiser",
+    "ot": "Sister Carrie",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 220,
+    "y": 1901,
+    "t": "킴",
+    "a": "러디어드 키플링",
+    "oa": "Rudyard Kipling",
+    "ot": "Kim",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 221,
+    "y": 1901,
+    "t": "부덴브로크 가의 사람들",
+    "a": "토마스 만",
+    "oa": "Thomas Mann",
+    "ot": "Buddenbrooks",
+    "aliases": [
+      "부덴브로크가의 사람들"
+    ],
+    "ko": true
+  },
+  {
+    "r": 222,
+    "y": 1902,
+    "t": "바스커빌가의 개",
+    "a": "아서 코난 도일",
+    "oa": "Sir Arthur Conan Doyle",
+    "ot": "The Hound of the Baskervilles",
+    "aliases": [
+      "아서 코넌 도일"
+    ],
+    "ko": true
+  },
+  {
+    "r": 223,
+    "y": 1902,
+    "t": "비둘기의 날개",
+    "a": "헨리 제임스",
+    "oa": "Henry James",
+    "ot": "The Wings of the Dove",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 224,
+    "y": 1902,
+    "t": "배덕자",
+    "a": "앙드레 지드",
+    "oa": "André Gide",
+    "ot": "The Immoralist",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 225,
+    "y": 1903,
+    "t": "모래톱의 수수께끼",
+    "a": "에르스킨 칠더스",
+    "oa": "Erskine Childers",
+    "ot": "The Riddle of the Sands",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 226,
+    "y": 1903,
+    "t": "대사들",
+    "a": "헨리 제임스",
+    "oa": "Henry James",
+    "ot": "The Ambassadors",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 227,
+    "y": 1904,
+    "t": "황금잔",
+    "a": "헨리 제임스",
+    "oa": "Henry James",
+    "ot": "The Golden Bowl",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 228,
+    "y": 1904,
+    "t": null,
+    "a": null,
+    "oa": "Frederick Rolfe",
+    "ot": "Hadrian the Seventh",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 229,
+    "y": 1904,
+    "t": "노스트로모",
+    "a": "조지프 콘래드",
+    "oa": "Joseph Conrad",
+    "ot": "Nostromo",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 230,
+    "y": 1905,
+    "t": "천사들도 발 딛기 두려워하는 곳",
+    "a": "E. M. 포스터",
+    "oa": "E.M. Forster",
+    "ot": "Where Angels Fear to Tread",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 231,
+    "y": 1905,
+    "t": "운라트 선생",
+    "a": "하인리히 만",
+    "oa": "Heinrich Mann",
+    "ot": "Professor Unrat",
+    "aliases": [
+      "운라트 선생 또는 어느 폭군의 종말"
+    ],
+    "ko": true
+  },
+  {
+    "r": 232,
+    "y": 1905,
+    "t": "환락의 집",
+    "a": "이디스 워튼",
+    "oa": "Edith Wharton",
+    "ot": "The House of Mirth",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 233,
+    "y": 1906,
+    "t": "포사이트가 이야기",
+    "a": "존 골즈워디",
+    "oa": "John Galsworthy",
+    "ot": "The Forsyte Sage",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 234,
+    "y": 1906,
+    "t": "생도 퇴를레스의 혼란",
+    "a": "로베르트 무질",
+    "oa": "Robert Musil",
+    "ot": "Young Törless",
+    "aliases": [
+      "소년 퇴를레스의 혼란"
+    ],
+    "ko": true
+  },
+  {
+    "r": 235,
+    "y": 1906,
+    "t": "정글",
+    "a": "업튼 싱클레어",
+    "oa": "Upton Sinclair",
+    "ot": "The Jungle",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 236,
+    "y": 1906,
+    "t": "어머니",
+    "a": "막심 고리키",
+    "oa": "Maxim Gorky",
+    "ot": "Mother",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 237,
+    "y": 1907,
+    "t": "비밀요원",
+    "a": "조지프 콘래드",
+    "oa": "Joseph Conrad",
+    "ot": "The Secret Agent",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 238,
+    "y": 1908,
+    "t": "이계의 집",
+    "a": "윌리엄 호프 호지슨",
+    "oa": "William Hope Hodgson",
+    "ot": "The House on the Borderland",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 239,
+    "y": 1908,
+    "t": "늙은 아내들의 이야기",
+    "a": "아놀드 베넷",
+    "oa": "Arnold Bennett",
+    "ot": "The Old Wives’ Tale",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 240,
+    "y": 1908,
+    "t": "강철 군화",
+    "a": "잭 런던",
+    "oa": "Jack London",
+    "ot": "The Iron Heel",
+    "aliases": [
+      "강철군화"
+    ],
+    "ko": true
+  },
+  {
+    "r": 241,
+    "y": 1908,
+    "t": "전망 좋은 방",
+    "a": "E. M. 포스터",
+    "oa": "E.M. Forster",
+    "ot": "A Room With a View",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 242,
+    "y": 1908,
+    "t": "지옥",
+    "a": "앙리 바르뷔스",
+    "oa": "Henri Barbusse",
+    "ot": "The Inferno",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 243,
+    "y": 1909,
+    "t": null,
+    "a": "허버트 조지 웰스",
+    "oa": "H.G. Wells",
+    "ot": "Tono-Bungay",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 244,
+    "y": 1909,
+    "t": "좁은 문",
+    "a": "앙드레 지드",
+    "oa": "André Gide",
+    "ot": "Strait is the Gate",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 245,
+    "y": 1909,
+    "t": "마틴 이든",
+    "a": "잭 런던",
+    "oa": "Jack London",
+    "ot": "Martin Eden",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 246,
+    "y": 1909,
+    "t": "세 명의 삶",
+    "a": "거트루드 스타인",
+    "oa": "Gertrude Stein",
+    "ot": "Three Lives",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 247,
+    "y": 1910,
+    "t": "아프리카의 인상",
+    "a": "레몽 루셀",
+    "oa": "Raymond Roussel",
+    "ot": "Impressions of Africa",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 248,
+    "y": 1910,
+    "t": "하워즈 엔드",
+    "a": "E. M. 포스터",
+    "oa": "E.M. Forster",
+    "ot": "Howards End",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 249,
+    "y": 1911,
+    "t": "팡토마스",
+    "a": "마르셀 알랭",
+    "oa": "Marcel Allain and Pierre Souvestre",
+    "ot": "Fantômas",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 250,
+    "y": 1911,
+    "t": "이선 프롬",
+    "a": "이디스 워튼",
+    "oa": "Edith Wharton",
+    "ot": "Ethan Frome",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 251,
+    "y": 1912,
+    "t": null,
+    "a": null,
+    "oa": "James Stephens",
+    "ot": "The Charwoman’s Daughter",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 252,
+    "y": 1912,
+    "t": "베네치아에서 죽다",
+    "a": "토마스 만",
+    "oa": "Thomas Mann",
+    "ot": "Death in Venice",
+    "aliases": [
+      "베네치아에서의 죽음",
+      "베니스에서의 죽음",
+      "베니스에서 죽다"
+    ],
+    "ko": true
+  },
+  {
+    "r": 253,
+    "y": 1912,
+    "t": "타잔",
+    "a": "에드거 라이스 버로스",
+    "oa": "Edgar Rice Burroughs",
+    "ot": "Tarzan of the Apes",
+    "aliases": [
+      "에드거 라이스 버로우즈"
+    ],
+    "ko": true
+  },
+  {
+    "r": 254,
+    "y": 1913,
+    "t": "아들과 연인",
+    "a": "D. H. 로런스",
+    "oa": "D.H. Lawrence",
+    "ot": "Sons and Lovers",
+    "aliases": [
+      "데이비드 허버트 로렌스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 255,
+    "y": 1914,
+    "t": "누더기 바지 박애주의자들",
+    "a": "로버트 트레셀",
+    "oa": "Robert Tressell",
+    "ot": "The Ragged Trousered Philanthropists",
+    "aliases": [
+      "로버트 트레슬"
+    ],
+    "ko": true,
+    "note": "안정효 옮김, 실천문학사 1988 (절판)"
+  },
+  {
+    "r": 256,
+    "y": 1914,
+    "t": "로스할데",
+    "a": "헤르만 헤세",
+    "oa": "Herman Hesse",
+    "ot": "Rosshalde",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 257,
+    "y": 1914,
+    "t": "로쿠스 솔루스",
+    "a": "레몽 루셀",
+    "oa": "Raymond Roussel",
+    "ot": "Locus Solus",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 258,
+    "y": 1914,
+    "t": "마음",
+    "a": "나쓰메 소세키",
+    "oa": "Natsume Soseki",
+    "ot": "Kokoro",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 259,
+    "y": 1915,
+    "t": "39계단",
+    "a": "존 버컨",
+    "oa": "John Buchan",
+    "ot": "The Thirty-Nine Steps",
+    "aliases": [
+      "39 계단"
+    ],
+    "ko": true
+  },
+  {
+    "r": 260,
+    "y": 1915,
+    "t": "무지개",
+    "a": "D. H. 로런스",
+    "oa": "D.H. Lawrence",
+    "ot": "The Rainbow",
+    "aliases": [
+      "D. H. 로렌스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 261,
+    "y": 1915,
+    "t": "인간의 굴레",
+    "a": "서머싯 몸",
+    "oa": "William Somerset Maugham",
+    "ot": "Of Human Bondage",
+    "aliases": [
+      "서머셋 몸"
+    ],
+    "ko": true
+  },
+  {
+    "r": 262,
+    "y": 1915,
+    "t": "출항",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "The Voyage Out",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 263,
+    "y": 1915,
+    "t": "훌륭한 군인",
+    "a": "포드 매덕스 포드",
+    "oa": "Ford Madox Ford",
+    "ot": "The Good Soldier",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 264,
+    "y": 1915,
+    "t": "라쇼몬",
+    "a": "아쿠타가와 류노스케",
+    "oa": "Akutagawa Ryunosuke",
+    "ot": "Rashomon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 265,
+    "y": 1916,
+    "t": "포화",
+    "a": "앙리 바르뷔스",
+    "oa": "Henri Barbusse",
+    "ot": "Under Fire",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 266,
+    "y": 1916,
+    "t": "젊은 예술가의 초상",
+    "a": "제임스 조이스",
+    "oa": "James Joyce",
+    "ot": "A Portrait of the Artist as a Young Man",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 267,
+    "y": 1916,
+    "t": "버너 자매",
+    "a": "이디스 워튼",
+    "oa": "Edith Wharton",
+    "ot": "Bunner Sisters",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 268,
+    "y": 1917,
+    "t": "땅의 혜택",
+    "a": "크누트 함순",
+    "oa": "Knut Hamsen",
+    "ot": "Growth of the Soil",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 269,
+    "y": 1917,
+    "t": "여름",
+    "a": "이디스 워튼",
+    "oa": "Edith Wharton",
+    "ot": "Summer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 270,
+    "y": 1917,
+    "t": null,
+    "a": "조지프 콘래드",
+    "oa": "Joseph Conrad",
+    "ot": "The Shadow Line",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 271,
+    "y": 1918,
+    "t": null,
+    "a": null,
+    "oa": "Rebecca West",
+    "ot": "The Return of the Soldier",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 272,
+    "y": 1918,
+    "t": null,
+    "a": null,
+    "oa": "Wyndham Lewis",
+    "ot": "Tarr",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 273,
+    "y": 1919,
+    "t": "밤과 낮",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "Night and Day",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 274,
+    "y": 1920,
+    "t": "사랑에 빠진 여인들",
+    "a": "D. H. 로렌스",
+    "oa": "D.H. Lawrence",
+    "ot": "Women in Love",
+    "aliases": [
+      "D. H. 로런스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 275,
+    "y": 1920,
+    "t": "메인 스트리트",
+    "a": "싱클레어 루이스",
+    "oa": "Sinclair Lewis",
+    "ot": "Main Street",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 276,
+    "y": 1920,
+    "t": "순수의 시대",
+    "a": "이디스 워튼",
+    "oa": "Edith Wharton",
+    "ot": "The Age of Innocence",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 277,
+    "y": 1921,
+    "t": null,
+    "a": "올더스 헉슬리",
+    "oa": "Aldous Huxley",
+    "ot": "Crome Yellow",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 278,
+    "y": 1922,
+    "t": "여우",
+    "a": "D. H. 로런스",
+    "oa": "D.H. Lawrence",
+    "ot": "The Fox",
+    "aliases": [
+      "처녀와 집시, 여우, 다루기 힘든 숫말",
+      "데이비드 허버트 로렌스",
+      "D. H. 로렌스"
+    ],
+    "ko": true,
+    "note": "중편 「여우」: 『처녀와 집시, 여우, 다루기 힘든 숫말』(김영무 옮김, 중앙일보사 1982) 등 선집 수록"
+  },
+  {
+    "r": 279,
+    "y": 1922,
+    "t": "율리시스",
+    "a": "제임스 조이스",
+    "oa": "James Joyce",
+    "ot": "Ulysses",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 280,
+    "y": 1922,
+    "t": "배빗",
+    "a": "싱클레어 루이스",
+    "oa": "Sinclair Lewis",
+    "ot": "Babbitt",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 281,
+    "y": 1922,
+    "t": "아론의 지팡이",
+    "a": "D. H. 로렌스",
+    "oa": "D.H. Lawrence",
+    "ot": "Aaron’s Rod",
+    "aliases": [
+      "데이비드 허버트 로렌스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 282,
+    "y": 1922,
+    "t": null,
+    "a": null,
+    "oa": "Karl Kraus",
+    "ot": "The Last Days of Humanity",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 283,
+    "y": 1922,
+    "t": null,
+    "a": "메이 싱클레어",
+    "oa": "May Sinclair",
+    "ot": "Life and Death of Harriett Frean",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 284,
+    "y": 1922,
+    "t": "달빛이 머문 순간",
+    "a": "이디스 워튼",
+    "oa": "Edith Wharton",
+    "ot": "The Glimpses of the Moon",
+    "aliases": [],
+    "ko": true,
+    "note": "해밀누리 2025 (원제 Glimpses of the Moon)"
+  },
+  {
+    "r": 285,
+    "y": 1922,
+    "t": "싯다르타",
+    "a": "헤르만 헤세",
+    "oa": "Herman Hesse",
+    "ot": "Siddhartha",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 286,
+    "y": 1922,
+    "t": "제이콥의 방",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "Jacob’s Room",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 287,
+    "y": 1922,
+    "t": null,
+    "a": null,
+    "oa": "E.E. Cummings",
+    "ot": "The Enormous Room",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 288,
+    "y": 1922,
+    "t": "가든 파티",
+    "a": "캐서린 맨스필드",
+    "oa": "Katherine Mansfield",
+    "ot": "The Garden Party",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 289,
+    "y": 1922,
+    "t": "아모크",
+    "a": "슈테판 츠바이크",
+    "oa": "Stefan Zweig",
+    "ot": "Amok",
+    "aliases": [
+      "아모크, 첫 키스, 재회"
+    ],
+    "ko": true
+  },
+  {
+    "r": 290,
+    "y": 1923,
+    "t": null,
+    "a": "올더스 헉슬리",
+    "oa": "Aldous Huxley",
+    "ot": "Antic Hay",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 291,
+    "y": 1923,
+    "t": null,
+    "a": null,
+    "oa": "Jean Toomer",
+    "ot": "Cane",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 292,
+    "y": 1923,
+    "t": "제노의 의식",
+    "a": "이탈로 스베보",
+    "oa": "Italo Svevo",
+    "ot": "Zeno’s Conscience",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 293,
+    "y": 1923,
+    "t": "육체의 악마",
+    "a": "레몽 라디게",
+    "oa": "Raymond Radiguet",
+    "ot": "The Devil in the Flesh",
+    "aliases": [
+      "레이몽 라디게"
+    ],
+    "ko": true
+  },
+  {
+    "r": 294,
+    "y": 1923,
+    "t": "훌륭한 병사 슈베이크",
+    "a": "야로슬라프 하셰크",
+    "oa": "Jaroslav Hašek",
+    "ot": "The Good Soldier Švejk",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 295,
+    "y": 1924,
+    "t": "인도로 가는 길",
+    "a": "E. M. 포스터",
+    "oa": "E.M. Forster",
+    "ot": "A Passage to India",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 296,
+    "y": 1924,
+    "t": "우리들",
+    "a": "예브게니 자먀찐",
+    "oa": "Yevgeny Zamyatin",
+    "ot": "We",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 297,
+    "y": 1924,
+    "t": "마의 산",
+    "a": "토마스 만",
+    "oa": "Thomas Mann",
+    "ot": "The Magic Mountain",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 298,
+    "y": 1924,
+    "t": null,
+    "a": null,
+    "oa": "Michael Arlen",
+    "ot": "The Green Hat",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 299,
+    "y": 1924,
+    "t": "빌리 버드",
+    "a": "허먼 멜빌",
+    "oa": "Herman Melville",
+    "ot": "Billy Budd, Foretopman",
+    "aliases": [
+      "선원 빌리 버드"
+    ],
+    "ko": true
+  },
+  {
+    "r": 300,
+    "y": 1925,
+    "t": null,
+    "a": "윌라 캐더",
+    "oa": "Willa Cather",
+    "ot": "The Professor’s House",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 301,
+    "y": 1925,
+    "t": "아르따모노프가의 사업",
+    "a": "막심 고리키",
+    "oa": "Maxim Gorky",
+    "ot": "The Artamonov Business",
+    "aliases": [
+      "아르타모노프가의 사업"
+    ],
+    "ko": true,
+    "note": "아침 1991 (절판)"
+  },
+  {
+    "r": 302,
+    "y": 1925,
+    "t": "소송",
+    "a": "프란츠 카프카",
+    "oa": "Franz Kafka",
+    "ot": "The Trial",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 303,
+    "y": 1925,
+    "t": "위폐범들",
+    "a": "앙드레 지드",
+    "oa": "André Gide",
+    "ot": "The Counterfeiters",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 304,
+    "y": 1925,
+    "t": "위대한 개츠비",
+    "a": "F. 스콧 피츠제럴드",
+    "oa": "F. Scott Fitzgerald",
+    "ot": "The Great Gatsby",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 305,
+    "y": 1925,
+    "t": "댈러웨이 부인",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "Mrs. Dalloway",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 306,
+    "y": 1925,
+    "t": "맨해튼 트랜스퍼",
+    "a": "존 더스패서스",
+    "oa": "John Dos Passos",
+    "ot": "Manhattan Transfer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 307,
+    "y": 1925,
+    "t": null,
+    "a": "거트루드 스타인",
+    "oa": "Gertrude Stein",
+    "ot": "The Making of Americans",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 308,
+    "y": 1926,
+    "t": "애크로이드 살인 사건",
+    "a": "애거서 크리스티",
+    "oa": "Agatha Christie",
+    "ot": "The Murder of Roger Ackroyd",
+    "aliases": [
+      "애크로이드 살인사건",
+      "아가사 크리스티"
+    ],
+    "ko": true
+  },
+  {
+    "r": 309,
+    "y": 1926,
+    "t": "아무도 아닌, 동시에 십만 명인 어떤 사람",
+    "a": "루이지 피란델로",
+    "oa": "Luigi Pirandello",
+    "ot": "One, None and a Hundred Thousand",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 310,
+    "y": 1926,
+    "t": "날개 돋친 뱀",
+    "a": "D. H. 로런스",
+    "oa": "D.H. Lawrence",
+    "ot": "The Plumed Serpent",
+    "aliases": [
+      "D. H. 로렌스"
+    ],
+    "ko": true,
+    "note": "김재남 옮김, 을유문화사 1974·1979 (절판)"
+  },
+  {
+    "r": 311,
+    "y": 1926,
+    "t": "성",
+    "a": "프란츠 카프카",
+    "oa": "Franz Kafka",
+    "ot": "The Castle",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 312,
+    "y": 1926,
+    "t": null,
+    "a": null,
+    "oa": "Henry Green",
+    "ot": "Blindness",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 313,
+    "y": 1926,
+    "t": "태양은 다시 떠오른다",
+    "a": "어니스트 헤밍웨이",
+    "oa": "Ernest Hemingway",
+    "ot": "The Sun Also Rises",
+    "aliases": [
+      "해는 다시 떠오른다"
+    ],
+    "ko": true
+  },
+  {
+    "r": 314,
+    "y": 1927,
+    "t": "실종자",
+    "a": "프란츠 카프카",
+    "oa": "Franz Kafka",
+    "ot": "Amerika",
+    "aliases": [
+      "아메리카"
+    ],
+    "ko": true
+  },
+  {
+    "r": 315,
+    "y": 1927,
+    "t": "수달 타카의 일생",
+    "a": "헨리 윌리엄슨",
+    "oa": "Henry Williamson",
+    "ot": "Tarka the Otter",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 316,
+    "y": 1927,
+    "t": "등대로",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "To The Lighthouse",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 317,
+    "y": 1927,
+    "t": "잃어버린 시간을 찾아서",
+    "a": "마르셀 프루스트",
+    "oa": "Marcel Proust",
+    "ot": "Remembrance of Things Past",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 318,
+    "y": 1927,
+    "t": "황야의 이리",
+    "a": "헤르만 헤세",
+    "oa": "Herman Hesse",
+    "ot": "Steppenwolf",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 319,
+    "y": 1928,
+    "t": "나자",
+    "a": "앙드레 브르통",
+    "oa": "André Breton",
+    "ot": "Nadja",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 320,
+    "y": 1928,
+    "t": "퍼레이즈 엔드",
+    "a": "포드 매독스 포드",
+    "oa": "Ford Madox Ford",
+    "ot": "Parade’s End",
+    "aliases": [
+      "포드 매덕스 포드"
+    ],
+    "ko": true,
+    "note": "김일영 옮김, 한국문화사 2018–2019, 전4권 (원제 Parade's End)"
+  },
+  {
+    "r": 321,
+    "y": 1928,
+    "t": null,
+    "a": "넬라 라슨",
+    "oa": "Nella Larsen",
+    "ot": "Quicksand",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 322,
+    "y": 1928,
+    "t": null,
+    "a": "에벌린 워",
+    "oa": "Evelyn Waugh",
+    "ot": "Decline and Fall",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 323,
+    "y": 1928,
+    "t": null,
+    "a": "진 리스",
+    "oa": "Jean Rhys",
+    "ot": "Quartet",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 324,
+    "y": 1928,
+    "t": null,
+    "a": null,
+    "oa": "Wyndham Lewis",
+    "ot": "The Childermass",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 325,
+    "y": 1928,
+    "t": "고독의 우물",
+    "a": "래드클리프 홀",
+    "oa": "Radclyffe Hall",
+    "ot": "The Well of Loneliness",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 326,
+    "y": 1928,
+    "t": "채털리 부인의 연인",
+    "a": "D. H. 로렌스",
+    "oa": "D.H. Lawrence",
+    "ot": "Lady Chatterley’s Lover",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 327,
+    "y": 1928,
+    "t": "올랜도",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "Orlando",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 328,
+    "y": 1928,
+    "t": "눈 이야기",
+    "a": "조르주 바타유",
+    "oa": "Georges Bataille",
+    "ot": "Story of the Eye",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 329,
+    "y": 1929,
+    "t": "천사여, 고향을 보라",
+    "a": "토머스 울프",
+    "oa": "Thomas Wolfe",
+    "ot": "Look Homeward, Angel",
+    "aliases": [
+      "토마스 울프"
+    ],
+    "ko": true
+  },
+  {
+    "r": 330,
+    "y": 1929,
+    "t": "앙팡 테리블",
+    "a": "장 콕토",
+    "oa": "Jean Cocteau",
+    "ot": "Les Enfants Terribles",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 331,
+    "y": 1929,
+    "t": "소리와 분노",
+    "a": "윌리엄 포크너",
+    "oa": "William Faulkner",
+    "ot": "The Sound and the Fury",
+    "aliases": [
+      "음향과 분노",
+      "고함과 분노"
+    ],
+    "ko": true
+  },
+  {
+    "r": 332,
+    "y": 1929,
+    "t": null,
+    "a": null,
+    "oa": "Rebecca West",
+    "ot": "Harriet Hume",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 333,
+    "y": 1929,
+    "t": null,
+    "a": "엘리자베스 보웬",
+    "oa": "Elizabeth Bowen",
+    "ot": "The Last September",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 334,
+    "y": 1929,
+    "t": "베를린 알렉산더 광장",
+    "a": "알프레트 되블린",
+    "oa": "Alfred Döblin",
+    "ot": "Berlin Alexanderplatz",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 335,
+    "y": 1929,
+    "t": "서부 전선 이상 없다",
+    "a": "에리히 마리아 레마르크",
+    "oa": "Erich Maria Remarque",
+    "ot": "All Quiet on the Western Front",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 336,
+    "y": 1929,
+    "t": "무관심한 사람들",
+    "a": "알베르토 모라비아",
+    "oa": "Alberto Moravia",
+    "ot": "The Time of Indifference",
+    "aliases": [],
+    "ko": true,
+    "note": "한형곤 옮김, 삼성출판사 1978; 범한출판사 1984; 양림사 1982 (절판)"
+  },
+  {
+    "r": 337,
+    "y": 1929,
+    "t": null,
+    "a": null,
+    "oa": "Henry Green",
+    "ot": "Living",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 338,
+    "y": 1929,
+    "t": "붉은 수확",
+    "a": "대실 해밋",
+    "oa": "Dashiell Hammett",
+    "ot": "Red Harvest",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 339,
+    "y": 1929,
+    "t": "무기여 잘 있거라",
+    "a": "어니스트 헤밍웨이",
+    "oa": "Ernest Hemingway",
+    "ot": "A Farewell to Arms",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 340,
+    "y": 1929,
+    "t": "패싱",
+    "a": "넬라 라슨",
+    "oa": "Nella Larsen",
+    "ot": "Passing",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 341,
+    "y": 1929,
+    "t": null,
+    "a": null,
+    "oa": "Giorgio de Chirico",
+    "ot": "Hebdomeros",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 342,
+    "y": 1930,
+    "t": "몰타의 매",
+    "a": "대실 해밋",
+    "oa": "Dashiell Hammett",
+    "ot": "The Maltese Falcon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 343,
+    "y": 1930,
+    "t": null,
+    "a": "에벌린 워",
+    "oa": "Evelyn Waugh",
+    "ot": "Vile Bodies",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 344,
+    "y": 1930,
+    "t": null,
+    "a": null,
+    "oa": "Frederic Manning",
+    "ot": "Her Privates We",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 345,
+    "y": 1930,
+    "t": null,
+    "a": null,
+    "oa": "Wyndham Lewis",
+    "ot": "The Apes of God",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 346,
+    "y": 1930,
+    "t": "과자와 맥주",
+    "a": "서머싯 몸",
+    "oa": "W. Somerset Maugham",
+    "ot": "Cakes and Ale",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 347,
+    "y": 1930,
+    "t": "특성 없는 남자",
+    "a": "로베르트 무질",
+    "oa": "Robert Musil",
+    "ot": "The Man Without Qualities",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 348,
+    "y": 1931,
+    "t": "유리 열쇠",
+    "a": "대실 해밋",
+    "oa": "Dashiell Hammett",
+    "ot": "The Glass Key",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 349,
+    "y": 1931,
+    "t": "파도",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "The Waves",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 350,
+    "y": 1932,
+    "t": "라데츠키 행진곡",
+    "a": "요제프 로트",
+    "oa": "Joseph Roth",
+    "ot": "The Radetzky March",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 351,
+    "y": 1932,
+    "t": null,
+    "a": "엘리자베스 보웬",
+    "oa": "Elizabeth Bowen",
+    "ot": "To the North",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 352,
+    "y": 1932,
+    "t": null,
+    "a": null,
+    "oa": "Stella Gibbons",
+    "ot": "Cold Comfort Farm",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 353,
+    "y": 1932,
+    "t": "멋진 신세계",
+    "a": "올더스 헉슬리",
+    "oa": "Aldous Huxley",
+    "ot": "Brave New World",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 354,
+    "y": 1932,
+    "t": "밤 끝으로의 여행",
+    "a": "루이페르디낭 셀린",
+    "oa": "Louis-Ferdinand Céline",
+    "ot": "Journey to the End of the Night",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 355,
+    "y": 1932,
+    "t": null,
+    "a": null,
+    "oa": "Lewis Grassic Gibbon",
+    "ot": "A Scots Quair (Sunset Song)",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 356,
+    "y": 1933,
+    "t": null,
+    "a": null,
+    "oa": "Storm Jameson",
+    "ot": "A Day Off",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 357,
+    "y": 1933,
+    "t": null,
+    "a": null,
+    "oa": "Vera Brittain",
+    "ot": "Testament of Youth",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 358,
+    "y": 1933,
+    "t": "앨리스 B. 토클라스 자서전",
+    "a": "거트루드 스타인",
+    "oa": "Gertrude Stein",
+    "ot": "The Autobiography of Alice B. Toklas",
+    "aliases": [
+      "앨리스 B. 토클러스의 자서전",
+      "앨리스 B. 토클라스의 자서전"
+    ],
+    "ko": true
+  },
+  {
+    "r": 359,
+    "y": 1933,
+    "t": "광고하는 살인",
+    "a": "도로시 L. 세이어즈",
+    "oa": "Dorothy L. Sayers",
+    "ot": "Murder Must Advertise",
+    "aliases": [],
+    "ko": true,
+    "note": "이시언 옮김, 동안 2014 (원제 Murder Must Advertise)"
+  },
+  {
+    "r": 360,
+    "y": 1933,
+    "t": "미스 론리하츠",
+    "a": "너새니얼 웨스트",
+    "oa": "Nathanael West",
+    "ot": "Miss Lonelyhearts",
+    "aliases": [
+      "너새네이얼 웨스트",
+      "미스 론리하트"
+    ],
+    "ko": true
+  },
+  {
+    "r": 361,
+    "y": 1934,
+    "t": "그림자 없는 남자",
+    "a": "대실 해밋",
+    "oa": "Dashiell Hammett",
+    "ot": "The Thin Man",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 362,
+    "y": 1934,
+    "t": null,
+    "a": null,
+    "oa": "Henry Roth",
+    "ot": "Call it Sleep",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 363,
+    "y": 1934,
+    "t": null,
+    "a": "P. G. 우드하우스",
+    "oa": "P.G. Wodehouse",
+    "ot": "Thank You, Jeeves",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 364,
+    "y": 1934,
+    "t": "밤은 부드러워",
+    "a": "F. 스콧 피츠제럴드",
+    "oa": "F. Scott Fitzgerald",
+    "ot": "Tender is the Night",
+    "aliases": [
+      "밤은 부드러워라"
+    ],
+    "ko": true
+  },
+  {
+    "r": 365,
+    "y": 1934,
+    "t": "한 줌의 먼지",
+    "a": "에벌린 워",
+    "oa": "Evelyn Waugh",
+    "ot": "A Handful of Dust",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 366,
+    "y": 1934,
+    "t": "북회귀선",
+    "a": "헨리 밀러",
+    "oa": "Henry Miller",
+    "ot": "Tropic of Cancer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 367,
+    "y": 1934,
+    "t": "포스트맨은 벨을 두 번 울린다",
+    "a": "제임스 M. 케인",
+    "oa": "James M. Cain",
+    "ot": "The Postman Always Rings Twice",
+    "aliases": [
+      "우편배달부는 벨을 두 번 울린다"
+    ],
+    "ko": true
+  },
+  {
+    "r": 368,
+    "y": 1934,
+    "t": null,
+    "a": null,
+    "oa": "M. Ageyev",
+    "ot": "Novel With Cocaine",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 369,
+    "y": 1934,
+    "t": null,
+    "a": "베르톨트 브레히트",
+    "oa": "Bertolt Brecht",
+    "ot": "Threepenny Novel",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 370,
+    "y": 1934,
+    "t": "나인 테일러스",
+    "a": "도로시 L. 세이어즈",
+    "oa": "Dorothy L. Sayers",
+    "ot": "The Nine Tailors",
+    "aliases": [
+      "도로시 세이어스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 371,
+    "y": 1934,
+    "t": "버마 시절",
+    "a": "조지 오웰",
+    "oa": "George Orwell",
+    "ot": "Burmese Days",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 372,
+    "y": 1934,
+    "t": null,
+    "a": null,
+    "oa": "Halldór Laxness",
+    "ot": "Independent People",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 373,
+    "y": 1935,
+    "t": null,
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "England Made Me",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 374,
+    "y": 1935,
+    "t": null,
+    "a": "엘리자베스 보웬",
+    "oa": "Elizabeth Bowen",
+    "ot": "The House in Paris",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 375,
+    "y": 1935,
+    "t": "그들은 말을 쏘았다",
+    "a": "호레이스 맥코이",
+    "oa": "Horace McCoy",
+    "ot": "They Shoot Horses, Don’t They?",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 376,
+    "y": 1935,
+    "t": "노리스 씨 기차를 갈아타다",
+    "a": "크리스토퍼 이셔우드",
+    "oa": "Christopher Isherwood",
+    "ot": "The Last of Mr. Norris",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 377,
+    "y": 1935,
+    "t": "현혹",
+    "a": "엘리아스 카네티",
+    "oa": "Elias Canetti",
+    "ot": "Auto-da-Fé",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 378,
+    "y": 1936,
+    "t": "나이트우드",
+    "a": "주나 반스",
+    "oa": "Djuna Barnes",
+    "ot": "Nightwood",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 379,
+    "y": 1936,
+    "t": "광기의 산맥",
+    "a": "H. P. 러브크래프트",
+    "oa": "H.P. Lovecraft",
+    "ot": "At the Mountains of Madness",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 380,
+    "y": 1936,
+    "t": "압살롬, 압살롬!",
+    "a": "윌리엄 포크너",
+    "oa": "William Faulkner",
+    "ot": "Absalom, Absalom!",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 381,
+    "y": 1936,
+    "t": null,
+    "a": null,
+    "oa": "Ian MacPherson",
+    "ot": "Wild Harbour",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 382,
+    "y": 1936,
+    "t": "엽란을 날려라",
+    "a": "조지 오웰",
+    "oa": "George Orwell",
+    "ot": "Keep the Aspidistra Flying",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 383,
+    "y": 1936,
+    "t": "바람과 함께 사라지다",
+    "a": "마거릿 미첼",
+    "oa": "Margaret Mitchell",
+    "ot": "Gone With the Wind",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 384,
+    "y": 1936,
+    "t": null,
+    "a": null,
+    "oa": "Rebecca West",
+    "ot": "The Thinking Reed",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 385,
+    "y": 1936,
+    "t": "가자에서 눈이 멀어",
+    "a": "올더스 헉슬리",
+    "oa": "Aldous Huxley",
+    "ot": "Eyeless in Gaza",
+    "aliases": [],
+    "ko": true,
+    "note": "송관식 옮김, 학원사 1983 (절판)"
+  },
+  {
+    "r": 386,
+    "y": 1936,
+    "t": null,
+    "a": "실비아 타운센드 워너",
+    "oa": "Sylvia Townsend Warner",
+    "ot": "Summer Will Show",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 387,
+    "y": 1937,
+    "t": "가진 자와 못 가진 자",
+    "a": "어니스트 헤밍웨이",
+    "oa": "Ernest Hemingway",
+    "ot": "To Have and Have Not",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 388,
+    "y": 1937,
+    "t": "아웃 오브 아프리카",
+    "a": "카렌 블릭센",
+    "oa": "Isak Dineson (Karen Blixen)",
+    "ot": "Out of Africa",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 389,
+    "y": 1937,
+    "t": null,
+    "a": null,
+    "oa": "Wyndham Lewis",
+    "ot": "The Revenge for Love",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 390,
+    "y": 1937,
+    "t": null,
+    "a": null,
+    "oa": "David Jones",
+    "ot": "In Parenthesis",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 391,
+    "y": 1937,
+    "t": "세월",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "The Years",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 392,
+    "y": 1937,
+    "t": "호빗",
+    "a": "J. R. R. 톨킨",
+    "oa": "J.R.R. Tolkien",
+    "ot": "The Hobbit",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 393,
+    "y": 1937,
+    "t": "그들의 눈은 신을 보고 있었다",
+    "a": "조라 닐 허스턴",
+    "oa": "Zora Neale Hurston",
+    "ot": "Their Eyes Were Watching God",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 394,
+    "y": 1937,
+    "t": "생쥐와 인간",
+    "a": "존 스타인벡",
+    "oa": "John Steinbeck",
+    "ot": "Of Mice and Men",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 395,
+    "y": 1938,
+    "t": "머피",
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "Murphy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 396,
+    "y": 1938,
+    "t": null,
+    "a": "존 더스패서스",
+    "oa": "John Dos Passos",
+    "ot": "U.S.A.",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 397,
+    "y": 1938,
+    "t": "브라이턴 록",
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "Brighton Rock",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 398,
+    "y": 1938,
+    "t": null,
+    "a": "에릭 앰블러",
+    "oa": "Eric Ambler",
+    "ot": "Cause for Alarm",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 399,
+    "y": 1938,
+    "t": "레베카",
+    "a": "대프니 듀 모리에",
+    "oa": "Daphne du Maurier",
+    "ot": "Rebecca",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 400,
+    "y": 1938,
+    "t": "구토",
+    "a": "장폴 사르트르",
+    "oa": "Jean-Paul Sartre",
+    "ot": "Nausea",
+    "aliases": [
+      "장 폴 사르트르"
+    ],
+    "ko": true
+  },
+  {
+    "r": 401,
+    "y": 1938,
+    "t": "미스 페티그루의 어느 특별한 하루",
+    "a": "위니프리드 왓슨",
+    "oa": "Winifred Watson",
+    "ot": "Miss Pettigrew Lives for a Day",
+    "aliases": [
+      "위니프레드 왓슨"
+    ],
+    "ko": true
+  },
+  {
+    "r": 402,
+    "y": 1938,
+    "t": null,
+    "a": "실비아 타운센드 워너",
+    "oa": "Sylvie Townsend Warner",
+    "ot": "After the Death of Don Juan",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 403,
+    "y": 1939,
+    "t": "빅 슬립",
+    "a": "레이먼드 챈들러",
+    "oa": "Raymond Chandler",
+    "ot": "The Big Sleep",
+    "aliases": [
+      "깊은 잠"
+    ],
+    "ko": true
+  },
+  {
+    "r": 404,
+    "y": 1939,
+    "t": "한밤이여, 안녕",
+    "a": "진 리스",
+    "oa": "Jean Rhys",
+    "ot": "Good Morning, Midnight",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 405,
+    "y": 1939,
+    "t": "남회귀선",
+    "a": "헨리 밀러",
+    "oa": "Henry Miller",
+    "ot": "Tropic of Capricorn",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 406,
+    "y": 1939,
+    "t": "베를린이여 안녕",
+    "a": "크리스토퍼 이셔우드",
+    "oa": "Christopher Isherwood",
+    "ot": "Goodbye to Berlin",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 407,
+    "y": 1939,
+    "t": "숨 쉬러 나가다",
+    "a": "조지 오웰",
+    "oa": "George Orwell",
+    "ot": "Coming Up for Air",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 408,
+    "y": 1939,
+    "t": null,
+    "a": "플랜 오브라이언",
+    "oa": "Flann O’Brien",
+    "ot": "At Swim-Two-Birds",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 409,
+    "y": 1939,
+    "t": "피네간의 경야",
+    "a": "제임스 조이스",
+    "oa": "James Joyce",
+    "ot": "Finnegans Wake",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 410,
+    "y": 1939,
+    "t": "분노의 포도",
+    "a": "존 스타인벡",
+    "oa": "John Steinbeck",
+    "ot": "The Grapes of Wrath",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 411,
+    "y": 1939,
+    "t": null,
+    "a": null,
+    "oa": "Henry Green",
+    "ot": "Party Going",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 412,
+    "y": 1940,
+    "t": "타타르인의 사막",
+    "a": "디노 부차티",
+    "oa": "Dino Buzzati",
+    "ot": "The Tartar Steppe",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 413,
+    "y": 1940,
+    "t": "권력과 영광",
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "The Power and the Glory",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 414,
+    "y": 1940,
+    "t": "미국의 아들",
+    "a": "리처드 라이트",
+    "oa": "Richard Wright",
+    "ot": "Native Son",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 415,
+    "y": 1940,
+    "t": "누구를 위하여 종은 울리나",
+    "a": "어니스트 헤밍웨이",
+    "oa": "Ernest Hemingway",
+    "ot": "For Whom the Bell Tolls",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 416,
+    "y": 1940,
+    "t": "안녕 내 사랑",
+    "a": "레이먼드 챈들러",
+    "oa": "Raymond Chandler",
+    "ot": "Farewell My Lovely",
+    "aliases": [
+      "안녕, 내 사랑"
+    ],
+    "ko": true
+  },
+  {
+    "r": 417,
+    "y": 1940,
+    "t": null,
+    "a": "윌리엄 포크너",
+    "oa": "William Faulkner",
+    "ot": "The Hamlet",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 418,
+    "y": 1941,
+    "t": "막간",
+    "a": "버지니아 울프",
+    "oa": "Virginia Woolf",
+    "ot": "Between the Acts",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 419,
+    "y": 1941,
+    "t": null,
+    "a": null,
+    "oa": "Patrick Hamilton",
+    "ot": "Hangover Square",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 420,
+    "y": 1941,
+    "t": "산 자와 죽은 자",
+    "a": "패트릭 화이트",
+    "oa": "Patrick White",
+    "ot": "The Living and the Dead",
+    "aliases": [],
+    "ko": true,
+    "note": "양찬규 옮김, 문예출판사 1973 (절판)"
+  },
+  {
+    "r": 421,
+    "y": 1941,
+    "t": null,
+    "a": "플랜 오브라이언",
+    "oa": "Flann O’Brien",
+    "ot": "The Poor Mouth",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 422,
+    "y": 1941,
+    "t": "시칠리아에서의 대화",
+    "a": "엘리오 비토리니",
+    "oa": "Elio Vittorini",
+    "ot": "In Sicily",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 423,
+    "y": 1942,
+    "t": "이방인",
+    "a": "알베르 카뮈",
+    "oa": "Albert Camus",
+    "ot": "The Outsider",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 424,
+    "y": 1942,
+    "t": "내려가라, 모세여",
+    "a": "윌리엄 포크너",
+    "oa": "William Faulkner",
+    "ot": "Go Down, Moses",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 425,
+    "y": 1942,
+    "t": "열정",
+    "a": "산도르 마라이",
+    "oa": "Sandor Marai",
+    "ot": "Embers",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 426,
+    "y": 1943,
+    "t": "유리알 유희",
+    "a": "헤르만 헤세",
+    "oa": "Herman Hesse",
+    "ot": "The Glass Bead Game",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 427,
+    "y": 1943,
+    "t": null,
+    "a": null,
+    "oa": "Henry Green",
+    "ot": "Caught",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 428,
+    "y": 1943,
+    "t": "어린 왕자",
+    "a": "앙투안 드 생텍쥐페리",
+    "oa": "Antoine de Saint-Exupéry",
+    "ot": "The Little Prince",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 429,
+    "y": 1944,
+    "t": "허공에 매달린 사나이",
+    "a": "솔 벨로",
+    "oa": "Saul Bellow",
+    "ot": "Dangling Man",
+    "aliases": [
+      "솔 벨로우"
+    ],
+    "ko": true
+  },
+  {
+    "r": 430,
+    "y": 1944,
+    "t": "픽션들",
+    "a": "호르헤 루이스 보르헤스",
+    "oa": "Jorge Luis Borges",
+    "ot": "Ficciones",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 431,
+    "y": 1944,
+    "t": "통과비자",
+    "a": "안나 제거스",
+    "oa": "Anna Seghers",
+    "ot": "Transit",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 432,
+    "y": 1944,
+    "t": "면도날",
+    "a": "서머싯 몸",
+    "oa": "William Somerset Maugham",
+    "ot": "The Razor’s Edge",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 433,
+    "y": 1944,
+    "t": null,
+    "a": "앙드레 브르통",
+    "oa": "André Breton",
+    "ot": "Arcanum 17",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 434,
+    "y": 1945,
+    "t": "그리스도는 에볼리에 머물렀다",
+    "a": "카를로 레비",
+    "oa": "Carlo Levi",
+    "ot": "Christ Stopped at Eboli",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 435,
+    "y": 1945,
+    "t": null,
+    "a": null,
+    "oa": "Henry Green",
+    "ot": "Loving",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 436,
+    "y": 1945,
+    "t": "사랑의 추구",
+    "a": "낸시 미트포드",
+    "oa": "Nancy Mitford",
+    "ot": "The Pursuit of Love",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 437,
+    "y": 1945,
+    "t": "통조림공장 골목",
+    "a": "존 스타인벡",
+    "oa": "John Steinbeck",
+    "ot": "Cannery Row",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 438,
+    "y": 1945,
+    "t": "동물농장",
+    "a": "조지 오웰",
+    "oa": "George Orwell",
+    "ot": "Animal Farm",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 439,
+    "y": 1945,
+    "t": "다시 찾은 브라이즈헤드",
+    "a": "에벌린 워",
+    "oa": "Evelyn Waugh",
+    "ot": "Brideshead Revisited",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 440,
+    "y": 1945,
+    "t": "드리나 강의 다리",
+    "a": "이보 안드리치",
+    "oa": "Ivo Andri?",
+    "ot": "The Bridge on the Drina",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 441,
+    "y": 1946,
+    "t": null,
+    "a": null,
+    "oa": "Mervyn Peake",
+    "ot": "Titus Groan",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 442,
+    "y": 1946,
+    "t": null,
+    "a": null,
+    "oa": "Henry Green",
+    "ot": "Back",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 443,
+    "y": 1947,
+    "t": "페스트",
+    "a": "알베르 카뮈",
+    "oa": "Albert Camus",
+    "ot": "The Plague",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 444,
+    "y": 1947,
+    "t": "거미집으로 가는 오솔길",
+    "a": "이탈로 칼비노",
+    "oa": "Italo Calvino",
+    "ot": "The Path to the Nest of Spiders",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 445,
+    "y": 1947,
+    "t": "화산 아래서",
+    "a": "맬컴 라우리",
+    "oa": "Malcolm Lowry",
+    "ot": "Under the Volcano",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 446,
+    "y": 1947,
+    "t": "이것이 인간인가",
+    "a": "프리모 레비",
+    "oa": "Primo Levi",
+    "ot": "If This Is a Man",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 447,
+    "y": 1947,
+    "t": "문체 연습",
+    "a": "레몽 크노",
+    "oa": "Raymond Queneau",
+    "ot": "Exercises in Style",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 448,
+    "y": 1947,
+    "t": "희생자",
+    "a": "솔 벨로",
+    "oa": "Saul Bellow",
+    "ot": "The Victim",
+    "aliases": [
+      "솔 벨로우"
+    ],
+    "ko": true,
+    "note": "김병철 옮김, 문예출판사 1976; 이희춘 옮김, 금성출판사 1982 (절판)"
+  },
+  {
+    "r": 449,
+    "y": 1947,
+    "t": "파우스트 박사",
+    "a": "토마스 만",
+    "oa": "Thomas Mann",
+    "ot": "Doctor Faustus",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 450,
+    "y": 1948,
+    "t": "울어라 사랑하는 조국이여",
+    "a": "앨런 페이튼",
+    "oa": "Alan Paton",
+    "ot": "Cry, the Beloved Country",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 451,
+    "y": 1948,
+    "t": "사건의 핵심",
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "The Heart of the Matter",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 452,
+    "y": 1948,
+    "t": "죽음의 선고",
+    "a": "모리스 블랑쇼",
+    "oa": "Maurice Blanchot",
+    "ot": "Death Sentence",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 453,
+    "y": 1948,
+    "t": null,
+    "a": "알베르토 모라비아",
+    "oa": "Alberto Moravia",
+    "ot": "Disobedience",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 454,
+    "y": 1948,
+    "t": null,
+    "a": null,
+    "oa": "G.V. Desani",
+    "ot": "All About H. Hatterr",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 455,
+    "y": 1948,
+    "t": "툴라예프 사건",
+    "a": "빅토르 세르주",
+    "oa": "Victor Serge",
+    "ot": "The Case of Comrade Tulayev",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 456,
+    "y": 1948,
+    "t": null,
+    "a": null,
+    "oa": "Hella Haasse",
+    "ot": "Forever a Stranger",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 457,
+    "y": 1949,
+    "t": "1984",
+    "a": "조지 오웰",
+    "oa": "George Orwell",
+    "ot": "Nineteen Eighty-Four",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 458,
+    "y": 1949,
+    "t": null,
+    "a": null,
+    "oa": "Nelson Algren",
+    "ot": "The Man With the Golden Arm",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 459,
+    "y": 1949,
+    "t": "이 세상의 왕국",
+    "a": "알레호 카르펜티에르",
+    "oa": "Alejo Carpentier",
+    "ot": "Kingdom of This World",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 460,
+    "y": 1949,
+    "t": "한낮의 열기",
+    "a": "엘리자베스 보웬",
+    "oa": "Elizabeth Bowen",
+    "ot": "The Heat of the Day",
+    "aliases": [
+      "엘리자베스 보엔"
+    ],
+    "ko": true
+  },
+  {
+    "r": 461,
+    "y": 1949,
+    "t": null,
+    "a": "낸시 미트포드",
+    "oa": "Nancy Mitford",
+    "ot": "Love in a Cold Climate",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 462,
+    "y": 1950,
+    "t": null,
+    "a": null,
+    "oa": "Simon Vestdijk",
+    "ot": "The Garden Where the Brass Band Played",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 463,
+    "y": 1950,
+    "t": "달과 불",
+    "a": "체사레 파베세",
+    "oa": "Cesare Pavese",
+    "ot": "The Moon and the Bonfires",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 464,
+    "y": 1950,
+    "t": "아이, 로봇",
+    "a": "아이작 아시모프",
+    "oa": "Isaac Asimov",
+    "ot": "I, Robot",
+    "aliases": [
+      "아이 로봇"
+    ],
+    "ko": true
+  },
+  {
+    "r": 465,
+    "y": 1950,
+    "t": "풀잎은 노래한다",
+    "a": "도리스 레싱",
+    "oa": "Doris Lessing",
+    "ot": "The Grass is Singing",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 466,
+    "y": 1950,
+    "t": null,
+    "a": null,
+    "oa": "Mervyn Peake",
+    "ot": "Gormenghast",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 467,
+    "y": 1950,
+    "t": "열세 개의 시계",
+    "a": "제임스 서버",
+    "oa": "James Thurber",
+    "ot": "The 13 Clocks",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 468,
+    "y": 1950,
+    "t": "제3의 사나이",
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "The Third Man",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 469,
+    "y": 1950,
+    "t": "멕시코의 세 얼굴",
+    "a": "옥타비오 파스",
+    "oa": "Octavio Paz",
+    "ot": "The Labyrinth of Solitude",
+    "aliases": [
+      "고독의 미로",
+      "고독한 미로"
+    ],
+    "ko": true,
+    "note": "부제 '고독의 미로', 황의승·조명원 옮김, 세창미디어 2011/2020; 구판 『고독한 미로』(손관수 옮김, 신원문화사 1990)"
+  },
+  {
+    "r": 470,
+    "y": 1950,
+    "t": "C 신부",
+    "a": "조르주 바타유",
+    "oa": "Georges Bataille",
+    "ot": "The Abbot C",
+    "aliases": [
+      "C.신부"
+    ],
+    "ko": true,
+    "note": "안태용 옮김, 『C.神父, 죽음의 宣告, 말론은 죽다 外』(금성출판사 1990) 수록 (절판)"
+  },
+  {
+    "r": 471,
+    "y": 1950,
+    "t": "판사와 형리",
+    "a": "프리드리히 뒤렌마트",
+    "oa": "Friedrich Dürrenmatt",
+    "ot": "The Judge and His Hangman",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 472,
+    "y": 1950,
+    "t": "나의 도시를 앨리스처럼",
+    "a": "네빌 슈트",
+    "oa": "Nevil Shute",
+    "ot": "A Town Like Alice",
+    "aliases": [],
+    "ko": true,
+    "note": "정유선 옮김, 레인보우퍼블릭북스 2020, 전2권"
+  },
+  {
+    "r": 473,
+    "y": 1951,
+    "t": "사랑의 종말",
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "The End of the Affair",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 474,
+    "y": 1951,
+    "t": "몰로이",
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "Molloy",
+    "aliases": [
+      "사무엘 베케트"
+    ],
+    "ko": true
+  },
+  {
+    "r": 475,
+    "y": 1951,
+    "t": "반항하는 인간",
+    "a": "알베르 카뮈",
+    "oa": "Albert Camus",
+    "ot": "The Rebel",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 476,
+    "y": 1951,
+    "t": "호밀밭의 파수꾼",
+    "a": "J. D. 샐린저",
+    "oa": "J.D. Salinger",
+    "ot": "The Catcher in the Rye",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 477,
+    "y": 1951,
+    "t": "시르트의 바닷가",
+    "a": "쥘리앵 그라크",
+    "oa": "Julien Gracq",
+    "ot": "The Opposing Shore",
+    "aliases": [
+      "줄리앙 그라크"
+    ],
+    "ko": true
+  },
+  {
+    "r": 478,
+    "y": 1951,
+    "t": "파운데이션",
+    "a": "아이작 아시모프",
+    "oa": "Isaac Asimov",
+    "ot": "Foundation",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 479,
+    "y": 1951,
+    "t": "트리피드의 날",
+    "a": "존 윈덤",
+    "oa": "John Wyndham",
+    "ot": "Day of the Triffids",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 480,
+    "y": 1951,
+    "t": "말론 죽다",
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "Malone Dies",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 481,
+    "y": 1951,
+    "t": "하드리아누스의 회상록",
+    "a": "마르그리트 유르스나르",
+    "oa": "Marguerite Yourcenar",
+    "ot": "Memoirs of Hadrian",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 482,
+    "y": 1952,
+    "t": "내 안의 살인마",
+    "a": "짐 톰슨",
+    "oa": "Jim Thompson",
+    "ot": "The Killer Inside Me",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 483,
+    "y": 1952,
+    "t": "현명한 피",
+    "a": "플래너리 오코너",
+    "oa": "Flannery O’Connor",
+    "ot": "Wise Blood",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 484,
+    "y": 1952,
+    "t": "노인과 바다",
+    "a": "어니스트 헤밍웨이",
+    "oa": "Ernest Hemingway",
+    "ot": "The Old Man and the Sea",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 485,
+    "y": 1952,
+    "t": "보이지 않는 인간",
+    "a": "랠프 엘리슨",
+    "oa": "Ralph Ellison",
+    "ot": "Invisible Man",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 486,
+    "y": 1953,
+    "t": "카지노 로얄",
+    "a": "이언 플레밍",
+    "oa": "Ian Fleming",
+    "ot": "Casino Royale",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 487,
+    "y": 1953,
+    "t": "산에 가서 말하라",
+    "a": "제임스 볼드윈",
+    "oa": "James Baldwin",
+    "ot": "Go Tell It on the Mountain",
+    "aliases": [],
+    "ko": true,
+    "note": "전대웅 옮김, 주우 1982; 학원사 1984 (절판)"
+  },
+  {
+    "r": 488,
+    "y": 1953,
+    "t": "오기 마치의 모험",
+    "a": "솔 벨로",
+    "oa": "Saul Bellow",
+    "ot": "The Adventures of Augie March",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 489,
+    "y": 1953,
+    "t": "정키",
+    "a": "윌리엄 S. 버로스",
+    "oa": "William Burroughs",
+    "ot": "Junkie",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 490,
+    "y": 1953,
+    "t": null,
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "Watt",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 491,
+    "y": 1953,
+    "t": "이름 붙일 수 없는 자",
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "The Unnamable",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 492,
+    "y": 1953,
+    "t": "기나긴 이별",
+    "a": "레이먼드 챈들러",
+    "oa": "Raymond Chandler",
+    "ot": "The Long Goodbye",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 493,
+    "y": 1953,
+    "t": null,
+    "a": null,
+    "oa": "L.P. Hartley",
+    "ot": "The Go-Between",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 494,
+    "y": 1954,
+    "t": "럭키 짐",
+    "a": "킹즐리 에이미스",
+    "oa": "Kingsley Amis",
+    "ot": "Lucky Jim",
+    "aliases": [
+      "킹슬리 에이미스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 495,
+    "y": 1954,
+    "t": "그물을 헤치고",
+    "a": "아이리스 머독",
+    "oa": "Iris Murdoch",
+    "ot": "Under the Net",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 496,
+    "y": 1954,
+    "t": "파리대왕",
+    "a": "윌리엄 골딩",
+    "oa": "William Golding",
+    "ot": "Lord of the Flies",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 497,
+    "y": 1954,
+    "t": "경멸",
+    "a": "알베르토 모라비아",
+    "oa": "Alberto Moravia",
+    "ot": "A Ghost at Noon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 498,
+    "y": 1954,
+    "t": "O 이야기",
+    "a": "폴린 레아주",
+    "oa": "Pauline Réage",
+    "ot": "The Story of O",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 499,
+    "y": 1954,
+    "t": null,
+    "a": null,
+    "oa": "Wyndham Lewis",
+    "ot": "Self Condemned",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 500,
+    "y": 1954,
+    "t": "슈틸러",
+    "a": "막스 프리슈",
+    "oa": "Max Frisch",
+    "ot": "I’m Not Stiller",
+    "aliases": [
+      "거인 슈틸러"
+    ],
+    "ko": true
+  },
+  {
+    "r": 501,
+    "y": 1954,
+    "t": "슬픔이여 안녕",
+    "a": "프랑수아즈 사강",
+    "oa": "Françoise Sagan",
+    "ot": "Bonjour Tristesse",
+    "aliases": [
+      "프랑소와즈 사강"
+    ],
+    "ko": true
+  },
+  {
+    "r": 502,
+    "y": 1954,
+    "t": "반지의 제왕",
+    "a": "J.R.R. 톨킨",
+    "oa": "J.R.R. Tolkien",
+    "ot": "The Lord of the Rings",
+    "aliases": [
+      "존 로널드 로웰 톨킨"
+    ],
+    "ko": true
+  },
+  {
+    "r": 503,
+    "y": 1955,
+    "t": null,
+    "a": "피에르 파올로 파졸리니",
+    "oa": "Pier Paulo Pasolini",
+    "ot": "The Ragazzi",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 504,
+    "y": 1955,
+    "t": null,
+    "a": null,
+    "oa": "William Gaddis",
+    "ot": "The Recognitions",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 505,
+    "y": 1955,
+    "t": "최후의 유혹",
+    "a": "니코스 카잔차키스",
+    "oa": "Nikos Kazantzákis",
+    "ot": "The Last Temptation of Christ",
+    "aliases": [
+      "그리스도 최후의 유혹"
+    ],
+    "ko": true
+  },
+  {
+    "r": 506,
+    "y": 1955,
+    "t": "조용한 미국인",
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "The Quiet American",
+    "aliases": [
+      "그레엄 그린"
+    ],
+    "ko": true
+  },
+  {
+    "r": 507,
+    "y": 1955,
+    "t": null,
+    "a": null,
+    "oa": "James Plunkett",
+    "ot": "The Trusting and the Maimed",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 508,
+    "y": 1955,
+    "t": null,
+    "a": "엘리자베스 보엔",
+    "oa": "Elizabeth Bowen",
+    "ot": "A World of Love",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 509,
+    "y": 1955,
+    "t": "롤리타",
+    "a": "블라디미르 나보코프",
+    "oa": "Vladimir Nabokov",
+    "ot": "Lolita",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 510,
+    "y": 1955,
+    "t": "재능 있는 리플리",
+    "a": "퍼트리샤 하이스미스",
+    "oa": "Patricia Highsmith",
+    "ot": "The Talented Mr. Ripley",
+    "aliases": [
+      "리플리",
+      "재능있는 리플리"
+    ],
+    "ko": true
+  },
+  {
+    "r": 511,
+    "y": 1956,
+    "t": "선상 악극단",
+    "a": "존 바스",
+    "oa": "John Barth",
+    "ot": "The Floating Opera",
+    "aliases": [
+      "여로의 끝, 선상 악극단",
+      "존 바아드"
+    ],
+    "ko": true,
+    "note": "主友 1983, 윤효윤 옮김 (『여로의 끝』과 합본). 국립중앙도서관 원서명 검색 일치"
+  },
+  {
+    "r": 512,
+    "y": 1956,
+    "t": "오늘을 잡아라",
+    "a": "솔 벨로",
+    "oa": "Saul Bellow",
+    "ot": "Seize the Day",
+    "aliases": [
+      "솔 벨로우"
+    ],
+    "ko": true
+  },
+  {
+    "r": 513,
+    "y": 1956,
+    "t": "하늘의 뿌리",
+    "a": "로맹 가리",
+    "oa": "Romain Gary",
+    "ot": "The Roots of Heaven",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 514,
+    "y": 1956,
+    "t": null,
+    "a": null,
+    "oa": "Sam Selvon",
+    "ot": "The Lonely Londoners",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 515,
+    "y": 1956,
+    "t": "조반니의 방",
+    "a": "제임스 볼드윈",
+    "oa": "James Baldwin",
+    "ot": "Giovanni’s Room",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 516,
+    "y": 1957,
+    "t": "저스틴",
+    "a": "로렌스 더럴",
+    "oa": "Lawrence Durrell",
+    "ot": "Justine",
+    "aliases": [
+      "알렉산드리아 사중주"
+    ],
+    "ko": true
+  },
+  {
+    "r": 517,
+    "y": 1957,
+    "t": "더 원더풀 O",
+    "a": "제임스 서버",
+    "oa": "James Thurber",
+    "ot": "The Wonderful “O”",
+    "aliases": [
+      "O빠진 영어",
+      "제임스 G. 터버"
+    ],
+    "ko": true,
+    "note": "찰리북 2014, 박중서 옮김 (원제 The Wonderful O); 한뜻 1994 『O빠진 영어』"
+  },
+  {
+    "r": 518,
+    "y": 1957,
+    "t": "닥터 지바고",
+    "a": "보리스 파스테르나크",
+    "oa": "Boris Pasternak",
+    "ot": "Doctor Zhivago",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 519,
+    "y": 1957,
+    "t": "프닌",
+    "a": "블라디미르 나보코프",
+    "oa": "Vladimir Nabokov",
+    "ot": "Pnin",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 520,
+    "y": 1957,
+    "t": "길 위에서",
+    "a": "잭 케루악",
+    "oa": "Jack Kerouac",
+    "ot": "On the Road",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 521,
+    "y": 1957,
+    "t": "호모 파버",
+    "a": "막스 프리슈",
+    "oa": "Max Frisch",
+    "ot": "Homo Faber",
+    "aliases": [
+      "막스 프리쉬"
+    ],
+    "ko": true
+  },
+  {
+    "r": 522,
+    "y": 1957,
+    "t": "하늘의 푸른빛",
+    "a": "조르주 바타유",
+    "oa": "Georges Bataille",
+    "ot": "Blue Noon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 523,
+    "y": 1957,
+    "t": null,
+    "a": "존 윈덤",
+    "oa": "John Wyndham",
+    "ot": "The Midwich Cuckoos",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 524,
+    "y": 1957,
+    "t": "보스",
+    "a": "패트릭 화이트",
+    "oa": "Patrick White",
+    "ot": "Voss",
+    "aliases": [],
+    "ko": true,
+    "note": "弘新文化社 1973, 全英植 옮김 (국립중앙도서관)"
+  },
+  {
+    "r": 525,
+    "y": 1957,
+    "t": "질투",
+    "a": "알랭 로브그리예",
+    "oa": "Alain Robbe-Grillet",
+    "ot": "Jealousy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 526,
+    "y": 1958,
+    "t": "종",
+    "a": "아이리스 머독",
+    "oa": "Iris Murdoch",
+    "ot": "The Bell",
+    "aliases": [
+      "鐘",
+      "후계자들, 종"
+    ],
+    "ko": true,
+    "note": "三省出版社 1982 『鐘』; 汎韓出版社 1984·1988 『후계자들, 종』(골딩과 합본)"
+  },
+  {
+    "r": 527,
+    "y": 1958,
+    "t": null,
+    "a": "T. H. 화이트",
+    "oa": "T.H. White",
+    "ot": "The Once and Future King",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 528,
+    "y": 1958,
+    "t": "여로의 끝",
+    "a": "존 바스",
+    "oa": "John Barth",
+    "ot": "The End of the Road",
+    "aliases": [
+      "旅路의 끝",
+      "여로의 끝, 선상 악극단",
+      "존 바드",
+      "존 바아드"
+    ],
+    "ko": true,
+    "note": "乙酉文化社 1983 서숙 옮김; 主友 1983 윤효윤 옮김; 汎韓出版社 1984·1988 허문택 옮김 (국립중앙도서관 원서명 검색 일치)"
+  },
+  {
+    "r": 529,
+    "y": 1958,
+    "t": null,
+    "a": null,
+    "oa": "Brendan Behan",
+    "ot": "Borstal Boy",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 530,
+    "y": 1958,
+    "t": null,
+    "a": "폴 갈리코",
+    "oa": "Paul Gallico",
+    "ot": "Mrs. ‘Arris Goes to Paris",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 531,
+    "y": 1958,
+    "t": "토요일밤과 일요일아침",
+    "a": "앨런 실리토",
+    "oa": "Alan Sillitoe",
+    "ot": "Saturday Night and Sunday Morning",
+    "aliases": [
+      "토요일 밤과 일요일 아침",
+      "알란 실리토",
+      "앨런 씰리토"
+    ],
+    "ko": true,
+    "note": "평민사 1977, 임헌영 옮김 (국립중앙도서관)"
+  },
+  {
+    "r": 532,
+    "y": 1958,
+    "t": "모든 것이 산산이 부서지다",
+    "a": "치누아 아체베",
+    "oa": "Chinua Achebe",
+    "ot": "Things Fall Apart",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 533,
+    "y": 1958,
+    "t": null,
+    "a": null,
+    "oa": "Eilís Dillon",
+    "ot": "The Bitter Glass",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 534,
+    "y": 1958,
+    "t": "짓밟히는 싹들",
+    "a": "오에 겐자부로",
+    "oa": "Kenzaburo Oe",
+    "ot": "Pluck the Bud and Destroy the Offspring",
+    "aliases": [
+      "사육.짓밟히는 싹들"
+    ],
+    "ko": true
+  },
+  {
+    "r": 535,
+    "y": 1958,
+    "t": "표범",
+    "a": "주세페 토마시 디 람페두사",
+    "oa": "Giuseppe Tomasi di Lampedusa",
+    "ot": "The Leopard",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 536,
+    "y": 1958,
+    "t": "티파니에서 아침을",
+    "a": "트루먼 커포티",
+    "oa": "Truman Capote",
+    "ot": "Breakfast at Tiffany’s",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 537,
+    "y": 1959,
+    "t": "9시 반의 당구",
+    "a": "하인리히 뵐",
+    "oa": "Heinrich Böll",
+    "ot": "Billiards at Half-Past Nine",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 538,
+    "y": 1959,
+    "t": "메멘토 모리",
+    "a": "뮤리얼 스파크",
+    "oa": "Muriel Spark",
+    "ot": "Memento Mori",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 539,
+    "y": 1959,
+    "t": "비의 왕 헨더슨",
+    "a": "솔 벨로",
+    "oa": "Saul Bellow",
+    "ot": "Henderson the Rain King",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 540,
+    "y": 1959,
+    "t": null,
+    "a": null,
+    "oa": "Colin MacInnes",
+    "ot": "Absolute Beginners",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 541,
+    "y": 1959,
+    "t": "양철북",
+    "a": "귄터 그라스",
+    "oa": "Günter Grass",
+    "ot": "The Tin Drum",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 542,
+    "y": 1959,
+    "t": "네이키드 런치",
+    "a": "윌리엄 S. 버로스",
+    "oa": "William Burroughs",
+    "ot": "Naked Lunch",
+    "aliases": [
+      "윌리엄 버로스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 543,
+    "y": 1959,
+    "t": null,
+    "a": null,
+    "oa": "Keith Waterhouse",
+    "ot": "Billy Liar",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 544,
+    "y": 1959,
+    "t": null,
+    "a": null,
+    "oa": "Laurie Lee",
+    "ot": "Cider With Rosie",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 545,
+    "y": 1960,
+    "t": "새벽의 약속",
+    "a": "로맹 가리",
+    "oa": "Romain Gary",
+    "ot": "Promise at Dawn",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 546,
+    "y": 1960,
+    "t": "달려라, 토끼",
+    "a": "존 업다이크",
+    "oa": "John Updike",
+    "ot": "Rabbit, Run",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 547,
+    "y": 1960,
+    "t": "앵무새 죽이기",
+    "a": "하퍼 리",
+    "oa": "Harper Lee",
+    "ot": "To Kill a Mockingbird",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 548,
+    "y": 1960,
+    "t": "시골 소녀들",
+    "a": "에드나 오브라이언",
+    "oa": "Edna O’Brien",
+    "ot": "The Country Girls",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 549,
+    "y": 1960,
+    "t": "반쪼가리 자작",
+    "a": "이탈로 칼비노",
+    "oa": "Italo Calvino",
+    "ot": "Our Ancestors",
+    "aliases": [
+      "우리의 선조들"
+    ],
+    "ko": true,
+    "vols": [
+      "반쪼가리 자작",
+      "나무 위의 남작",
+      "존재하지 않는 기사"
+    ],
+    "note": "'우리의 선조들' 3부작, 민음사 이탈로 칼비노 전집(이현경 옮김)으로 각권 출간"
+  },
+  {
+    "r": 550,
+    "y": 1960,
+    "t": null,
+    "a": "플래너리 오코너",
+    "oa": "Flannery O’Connor",
+    "ot": "The Violent Bear it Away",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 551,
+    "y": 1961,
+    "t": "그게 어떤지 / 영상",
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "How It Is",
+    "aliases": [
+      "그게 어떤지"
+    ],
+    "ko": true,
+    "note": "워크룸프레스 2020, 전승화 옮김"
+  },
+  {
+    "r": 552,
+    "y": 1961,
+    "t": "캐치-22",
+    "a": "조지프 헬러",
+    "oa": "Joseph Heller",
+    "ot": "Catch-22",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 553,
+    "y": 1961,
+    "t": "진 브로디 선생의 전성기",
+    "a": "뮤리얼 스파크",
+    "oa": "Muriel Spark",
+    "ot": "The Prime of Miss Jean Brodie",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 554,
+    "y": 1961,
+    "t": "고양이와 쥐",
+    "a": "귄터 그라스",
+    "oa": "Günter Grass",
+    "ot": "Cat and Mouse",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 555,
+    "y": 1961,
+    "t": "솔라리스",
+    "a": "스타니스와프 렘",
+    "oa": "Stanislaw Lem",
+    "ot": "Solaris",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 556,
+    "y": 1961,
+    "t": null,
+    "a": "재닛 프레임",
+    "oa": "Janet Frame",
+    "ot": "Faces in the Water",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 557,
+    "y": 1961,
+    "t": "잘려진 머리",
+    "a": "아이리스 머독",
+    "oa": "Iris Murdoch",
+    "ot": "A Severed Head",
+    "aliases": [
+      "잘려진 머리, 한줌의 흙",
+      "아이리스 머도크"
+    ],
+    "ko": true,
+    "note": "中央日報社 1982·1984 박희진 옮김(에블린 워 『한줌의 흙』과 합본); 한국외국어대학교출판부 1995 최옥영 옮김 (국립중앙도서관 원서명 검색 일치)"
+  },
+  {
+    "r": 558,
+    "y": 1961,
+    "t": "프래니와 주이",
+    "a": "J.D. 샐린저",
+    "oa": "J.D. Salinger",
+    "ot": "Franny and Zooey",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 559,
+    "y": 1961,
+    "t": "낯선 땅 이방인",
+    "a": "로버트 A. 하인라인",
+    "oa": "Robert Heinlein",
+    "ot": "Stranger in a Strange Land",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 560,
+    "y": 1962,
+    "t": "핀치콘티니가의 정원",
+    "a": "조르조 바사니",
+    "oa": "Giorgio Bassani",
+    "ot": "The Garden of the Finzi-Continis",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 561,
+    "y": 1962,
+    "t": "파란눈의 아가씨",
+    "a": "에드나 오브라이언",
+    "oa": "Edna O’Brien",
+    "ot": "Girl With Green Eyes",
+    "aliases": [
+      "파란 눈의 아가씨"
+    ],
+    "ko": true,
+    "note": "女學生社 1968 / 靑字閣 1979, 박기반 옮김 (국립중앙도서관 원서명 'Girl with green eyes' 검색 일치)"
+  },
+  {
+    "r": 562,
+    "y": 1962,
+    "t": null,
+    "a": "호르헤 루이스 보르헤스",
+    "oa": "Jorge Luis Borges",
+    "ot": "Labyrinths",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 563,
+    "y": 1962,
+    "t": "황금 노트북",
+    "a": "도리스 레싱",
+    "oa": "Doris Lessing",
+    "ot": "The Golden Notebook",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 564,
+    "y": 1962,
+    "t": "물에 잠긴 세계",
+    "a": "J. G. 밸러드",
+    "oa": "J.G. Ballard",
+    "ot": "The Drowned World",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 565,
+    "y": 1962,
+    "t": "창백한 불꽃",
+    "a": "블라디미르 나보코프",
+    "oa": "Vladimir Nabokov",
+    "ot": "Pale Fire",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 566,
+    "y": 1962,
+    "t": "시계태엽 오렌지",
+    "a": "앤서니 버지스",
+    "oa": "Anthony Burgess",
+    "ot": "A Clockwork Orange",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 567,
+    "y": 1962,
+    "t": "뻐꾸기 둥지 위로 날아간 새",
+    "a": "켄 키지",
+    "oa": "Ken Kesey",
+    "ot": "One Flew Over the Cuckoo’s Nest",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 568,
+    "y": 1962,
+    "t": "이반 데니소비치의 하루",
+    "a": "알렉산드르 솔제니친",
+    "oa": "Aleksandr Isayevich Solzhenitsyn",
+    "ot": "One Day in the Life of Ivan Denisovich",
+    "aliases": [
+      "이반 데니소비치, 수용소의 하루"
+    ],
+    "ko": true
+  },
+  {
+    "r": 569,
+    "y": 1963,
+    "t": "콜렉터",
+    "a": "존 파울즈",
+    "oa": "John Fowles",
+    "ot": "The Collector",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 570,
+    "y": 1963,
+    "t": "벨 자",
+    "a": "실비아 플라스",
+    "oa": "Sylvia Plath",
+    "ot": "The Bell Jar",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 571,
+    "y": 1963,
+    "t": null,
+    "a": "앤서니 버지스",
+    "oa": "Anthony Burgess",
+    "ot": "Inside Mr. Enderby",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 572,
+    "y": 1963,
+    "t": "가난한 처녀들",
+    "a": "뮤리얼 스파크",
+    "oa": "Muriel Spark",
+    "ot": "The Girls of Slender Means",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 573,
+    "y": 1963,
+    "t": "추운 나라에서 돌아온 스파이",
+    "a": "존 르카레",
+    "oa": "John Le Carré",
+    "ot": "The Spy Who Came in from the Cold",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 574,
+    "y": 1963,
+    "t": "마농의 샘",
+    "a": "마르셀 파뇰",
+    "oa": "Marcel Pagnol",
+    "ot": "Manon des Sources",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 575,
+    "y": 1963,
+    "t": "졸업",
+    "a": "찰스 웹",
+    "oa": "Charles Webb",
+    "ot": "The Graduate",
+    "aliases": [
+      "卒業",
+      "卒業生",
+      "졸업생",
+      "찰즈 웨이브",
+      "차알즈 웨브",
+      "챨스 웨브"
+    ],
+    "ko": true,
+    "note": "學園出版社 1978 정영일 옮김; 동광출판사 1983 유종숙 옮김; 시인과 촌장 1994; 샘터 1975 『卒業生』 안정효 옮김 (국립중앙도서관)"
+  },
+  {
+    "r": 576,
+    "y": 1963,
+    "t": "고양이 요람",
+    "a": "커트 보니것",
+    "oa": "Kurt Vonnegut",
+    "ot": "Cat’s Cradle",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 577,
+    "y": 1963,
+    "t": "브이.",
+    "a": "토머스 핀천",
+    "oa": "Thomas Pynchon",
+    "ot": "V.",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 578,
+    "y": 1964,
+    "t": "허조그",
+    "a": "솔 벨로",
+    "oa": "Saul Bellow",
+    "ot": "Herzog",
+    "aliases": [
+      "솔 벨로우"
+    ],
+    "ko": true
+  },
+  {
+    "r": 579,
+    "y": 1964,
+    "t": "롤 베 스타인의 환희",
+    "a": "마르그리트 뒤라스",
+    "oa": "Marguerite Duras",
+    "ot": "The Ravishing of Lol V. Stein",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 580,
+    "y": 1964,
+    "t": "신의 화살",
+    "a": "치누아 아체베",
+    "oa": "Chinua Achebe",
+    "ot": "Arrow of God",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 581,
+    "y": 1964,
+    "t": null,
+    "a": null,
+    "oa": "B.S. Johnson",
+    "ot": "Albert Angelo",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 582,
+    "y": 1964,
+    "t": null,
+    "a": "도널드 바셀미",
+    "oa": "Donald Barthelme",
+    "ot": "Come Back, Dr. Caligari",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 583,
+    "y": 1964,
+    "t": null,
+    "a": "켄 키지",
+    "oa": "Ken Kesey",
+    "ot": "Sometimes a Great Notion",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 584,
+    "y": 1964,
+    "t": "G.H.에 따른 수난",
+    "a": "클라리시 리스펙토르",
+    "oa": "Clarice Lispector",
+    "ot": "The Passion According to G.H.",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 585,
+    "y": 1965,
+    "t": null,
+    "a": "플래너리 오코너",
+    "oa": "Flannery O’Connor",
+    "ot": "Everything That Rises Must Converge",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 586,
+    "y": 1965,
+    "t": "신의 축복이 있기를, 로즈워터 씨",
+    "a": "커트 보니것",
+    "oa": "Kurt Vonnegut",
+    "ot": "God Bless You, Mr. Rosewater",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 587,
+    "y": 1965,
+    "t": "8월은 악마의 달",
+    "a": "에드나 오브라이언",
+    "oa": "Edna O’Brien",
+    "ot": "August is a Wicked Month",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 588,
+    "y": 1965,
+    "t": null,
+    "a": "응구기 와 시옹오",
+    "oa": "Ngugi wa Thiong’o",
+    "ot": "The River Between",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 589,
+    "y": 1965,
+    "t": "사물들",
+    "a": "조르주 페렉",
+    "oa": "Georges Perec",
+    "ot": "Things",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 590,
+    "y": 1966,
+    "t": "제49호 품목의 경매",
+    "a": "토머스 핀천",
+    "oa": "Thomas Pynchon",
+    "ot": "The Crying of Lot 49",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 591,
+    "y": 1966,
+    "t": null,
+    "a": "존 바스",
+    "oa": "John Barth",
+    "ot": "Giles Goat-Boy",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 592,
+    "y": 1966,
+    "t": "광막한 사르가소 바다",
+    "a": "진 리스",
+    "oa": "Jean Rhys",
+    "ot": "Wide Sargasso Sea",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 593,
+    "y": 1966,
+    "t": "부영사",
+    "a": "마르그리트 뒤라스",
+    "oa": "Marguerite Duras",
+    "ot": "The Vice-Consul",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 594,
+    "y": 1966,
+    "t": "마법사",
+    "a": "존 파울즈",
+    "oa": "John Fowles",
+    "ot": "The Magus",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 595,
+    "y": 1966,
+    "t": "인 콜드 블러드",
+    "a": "트루먼 커포티",
+    "oa": "Truman Capote",
+    "ot": "In Cold Blood",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 596,
+    "y": 1966,
+    "t": null,
+    "a": null,
+    "oa": "B.S. Johnson",
+    "ot": "Trawl",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 597,
+    "y": 1966,
+    "t": null,
+    "a": null,
+    "oa": "Rebecca West",
+    "ot": "The Birds Fall Down",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 598,
+    "y": 1967,
+    "t": "잠자는 남자",
+    "a": "조르주 페렉",
+    "oa": "Georges Perec",
+    "ot": "A Man Asleep",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 599,
+    "y": 1967,
+    "t": "세 번째 경찰관",
+    "a": "플랜 오브라이언",
+    "oa": "Flann O’Brien",
+    "ot": "The Third Policeman",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 600,
+    "y": 1967,
+    "t": null,
+    "a": null,
+    "oa": "Angus Wilson",
+    "ot": "No Laughing Matter",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 601,
+    "y": 1967,
+    "t": "농담",
+    "a": "밀란 쿤데라",
+    "oa": "Milan Kundera",
+    "ot": "The Joke",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 602,
+    "y": 1967,
+    "t": null,
+    "a": null,
+    "oa": "Dorothy Richardson",
+    "ot": "Pilgrimage",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 603,
+    "y": 1967,
+    "t": "거장과 마르가리타",
+    "a": "미하일 불가코프",
+    "oa": "Mikhail Bulgakov",
+    "ot": "The Master and Margarita",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 604,
+    "y": 1967,
+    "t": "백년의 고독",
+    "a": "가브리엘 가르시아 마르케스",
+    "oa": "Gabriel García Márquez",
+    "ot": "One Hundred Years of Solitude",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 605,
+    "y": 1967,
+    "t": null,
+    "a": "마리오 바르가스 요사",
+    "oa": "Mario Vargas Llosa",
+    "ot": "The Cubs and Other Stories",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 606,
+    "y": 1968,
+    "t": null,
+    "a": null,
+    "oa": "Tom Wolfe",
+    "ot": "The Electric Kool-Aid Acid Test",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 607,
+    "y": 1968,
+    "t": "초키",
+    "a": "존 윈덤",
+    "oa": "John Wyndham",
+    "ot": "Chocky",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 608,
+    "y": 1968,
+    "t": "크리스타 T.에 대한 추억",
+    "a": "크리스타 볼프",
+    "oa": "Christa Wolf",
+    "ot": "The Quest for Christa T.",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 609,
+    "y": 1968,
+    "t": "케스 - 매와 소년",
+    "a": "배리 하인즈",
+    "oa": "Barry Hines",
+    "ot": "A Kestrel for a Knave",
+    "aliases": [
+      "케스-매와 소년"
+    ],
+    "ko": true,
+    "note": "녹색평론사 1998·2011, 김태언 옮김 (원제 A Kestrel for a Knave)"
+  },
+  {
+    "r": 610,
+    "y": 1968,
+    "t": "워터멜론 슈가에서",
+    "a": "리처드 브라우티건",
+    "oa": "Richard Brautigan",
+    "ot": "In Watermelon Sugar",
+    "aliases": [
+      "리차드 브라우티건",
+      "워터멜론 슈거에서"
+    ],
+    "ko": true
+  },
+  {
+    "r": 611,
+    "y": 1968,
+    "t": "독일어 시간",
+    "a": "지크프리트 렌츠",
+    "oa": "Siegfried Lenz",
+    "ot": "The German Lesson",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 612,
+    "y": 1968,
+    "t": null,
+    "a": "맬컴 라우리",
+    "oa": "Malcolm Lowry",
+    "ot": "Dark as the Grave Wherein My Friend is Laid",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 613,
+    "y": 1968,
+    "t": "안드로이드는 전기양의 꿈을 꾸는가?",
+    "a": "필립 K. 딕",
+    "oa": "Philip K. Dick",
+    "ot": "Do Androids Dream of Electric Sheep?",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 614,
+    "y": 1968,
+    "t": "2001 스페이스 오디세이",
+    "a": "아서 C. 클라크",
+    "oa": "Arthur C. Clarke",
+    "ot": "2001: A Space Odyssey",
+    "aliases": [
+      "스페이스 오디세이"
+    ],
+    "ko": true
+  },
+  {
+    "r": 615,
+    "y": 1968,
+    "t": "제일권",
+    "a": "알렉산드르 솔제니친",
+    "oa": "Aleksandr Isayevich Solzhenitsyn",
+    "ot": "The First Circle",
+    "aliases": [
+      "第一圈"
+    ],
+    "ko": true,
+    "note": "분도출판사 1974, 上·下 『第一圈』 (국립중앙도서관)"
+  },
+  {
+    "r": 616,
+    "y": 1968,
+    "t": "암 병동",
+    "a": "알렉산드르 솔제니친",
+    "oa": "Aleksandr Isayevich Solzhenitsyn",
+    "ot": "Cancer Ward",
+    "aliases": [
+      "암병동"
+    ],
+    "ko": true
+  },
+  {
+    "r": 617,
+    "y": 1968,
+    "t": "주군의 여인",
+    "a": "알베르 코엔",
+    "oa": "Albert Cohen",
+    "ot": "Belle du Seigneur",
+    "aliases": [
+      "알베르 꼬엔"
+    ],
+    "ko": true
+  },
+  {
+    "r": 618,
+    "y": 1968,
+    "t": null,
+    "a": "아이리스 머독",
+    "oa": "Iris Murdoch",
+    "ot": "The Nice and the Good",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 619,
+    "y": 1968,
+    "t": null,
+    "a": "고어 비달",
+    "oa": "Gore Vidal",
+    "ot": "Myra Breckinridge",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 620,
+    "y": 1968,
+    "t": null,
+    "a": "엘리자베스 보엔",
+    "oa": "Elizabeth Bowen",
+    "ot": "Eva Trout",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 621,
+    "y": 1969,
+    "t": null,
+    "a": "조르주 페렉",
+    "oa": "Georges Perec",
+    "ot": "A Void/Avoid",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 622,
+    "y": 1969,
+    "t": "그들",
+    "a": "조이스 캐럴 오츠",
+    "oa": "Joyce Carol Oates",
+    "ot": "Them",
+    "aliases": [
+      "조이스 캐롤 오츠"
+    ],
+    "ko": true
+  },
+  {
+    "r": 623,
+    "y": 1969,
+    "t": null,
+    "a": "블라디미르 나보코프",
+    "oa": "Vladimir Nabokov",
+    "ot": "Ada",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 624,
+    "y": 1969,
+    "t": "대부",
+    "a": "마리오 푸조",
+    "oa": "Mario Puzo",
+    "ot": "The Godfather",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 625,
+    "y": 1969,
+    "t": "포트노이의 불평",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "Portnoy’s Complaint",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 626,
+    "y": 1969,
+    "t": null,
+    "a": "킹슬리 에이미스",
+    "oa": "Kingsley Amis",
+    "ot": "The Green Man",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 627,
+    "y": 1969,
+    "t": "프랑스 중위의 여자",
+    "a": "존 파울즈",
+    "oa": "John Fowles",
+    "ot": "The French Lieutenant’s Woman",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 628,
+    "y": 1969,
+    "t": "제5도살장",
+    "a": "커트 보니것",
+    "oa": "Kurt Vonnegut, Jr.",
+    "ot": "Slaughterhouse-five",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 629,
+    "y": 1969,
+    "t": null,
+    "a": null,
+    "oa": "Chester Himes",
+    "ot": "Blind Man With a Pistol",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 630,
+    "y": 1969,
+    "t": "요술 부지깽이",
+    "a": "로버트 쿠버",
+    "oa": "Robert Coover",
+    "ot": "Pricksongs and Descants",
+    "aliases": [],
+    "ko": true,
+    "note": "민음사 2009, 양윤희 옮김 (원제 Pricksongs & Descants)"
+  },
+  {
+    "r": 631,
+    "y": 1969,
+    "t": null,
+    "a": "조르지 아마두",
+    "oa": "Jorge Amado",
+    "ot": "Tent of Miracles",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 632,
+    "y": 1969,
+    "t": "새장에 갇힌 새가 왜 노래하는지 나는 아네",
+    "a": "마야 안젤루",
+    "oa": "Maya Angelou",
+    "ot": "I Know Why the Caged Bird Sings",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 633,
+    "y": 1970,
+    "t": null,
+    "a": "J. G. 밸러드",
+    "oa": "J.G. Ballard",
+    "ot": "The Atrocity Exhibition",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 634,
+    "y": 1970,
+    "t": null,
+    "a": "우베 욘존",
+    "oa": "Uwe Johnson",
+    "ot": "Jahrestage",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 635,
+    "y": 1970,
+    "t": null,
+    "a": null,
+    "oa": "J.G. Farrell",
+    "ot": "Troubles",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 636,
+    "y": 1970,
+    "t": null,
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "Mercier et Camier",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 637,
+    "y": 1970,
+    "t": "페널티킥 앞에 선 골키퍼의 불안",
+    "a": "페터 한트케",
+    "oa": "Peter Handke",
+    "ot": "Goalie’s Anxiety at the Penalty Kick",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 638,
+    "y": 1970,
+    "t": "가장 푸른 눈",
+    "a": "토니 모리슨",
+    "oa": "Toni Morrison",
+    "ot": "The Bluest Eye",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 639,
+    "y": 1970,
+    "t": "마왕",
+    "a": "미셸 투르니에",
+    "oa": "Michel Tournier",
+    "ot": "The Ogre",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 640,
+    "y": 1970,
+    "t": "운전석의 여자",
+    "a": "뮤리얼 스파크",
+    "oa": "Muriel Spark",
+    "ot": "The Driver’s Seat",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 641,
+    "y": 1970,
+    "t": "풍요의 바다",
+    "a": "미시마 유키오",
+    "oa": "Yukio Mishima",
+    "ot": "The Sea of Fertility",
+    "aliases": [
+      "봄눈"
+    ],
+    "ko": true
+  },
+  {
+    "r": 642,
+    "y": 1971,
+    "t": "돌아온 토끼",
+    "a": "존 업다이크",
+    "oa": "John Updike",
+    "ot": "Rabbit Redux",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 643,
+    "y": 1971,
+    "t": null,
+    "a": "윌리엄 S. 버로스",
+    "oa": "William Burroughs",
+    "ot": "The Wild Boys",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 644,
+    "y": 1971,
+    "t": "여인과 군상",
+    "a": "하인리히 뵐",
+    "oa": "Heinrich Böll",
+    "ot": "Group Portrait With Lady",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 645,
+    "y": 1971,
+    "t": "라스베이거스의 공포와 혐오",
+    "a": "헌터 S. 톰슨",
+    "oa": "Hunter S. Thompson",
+    "ot": "Fear and Loathing in Las Vegas",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 646,
+    "y": 1971,
+    "t": "다니엘서",
+    "a": "E. L. 닥터로",
+    "oa": "E.L. Doctorow",
+    "ot": "The Book of Daniel",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 647,
+    "y": 1971,
+    "t": "자유 국가에서",
+    "a": "V. S. 나이폴",
+    "oa": "V.S. Naipaul",
+    "ot": "In A Free State",
+    "aliases": [
+      "자유국가에서"
+    ],
+    "ko": true
+  },
+  {
+    "r": 648,
+    "y": 1971,
+    "t": null,
+    "a": null,
+    "oa": "B.S. Johnson",
+    "ot": "House Mother Normal",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 649,
+    "y": 1972,
+    "t": "떠오르는 집",
+    "a": "마거릿 애트우드",
+    "oa": "Margaret Atwood",
+    "ot": "Surfacing",
+    "aliases": [
+      "마가렛 앳우드"
+    ],
+    "ko": true,
+    "note": "志學社 1987 / 벽호 1995, 서숙 옮김 (국립중앙도서관 원서명 'Surfacing' 검색 일치)"
+  },
+  {
+    "r": 650,
+    "y": 1972,
+    "t": "G",
+    "a": "존 버거",
+    "oa": "John Berger",
+    "ot": "G",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 651,
+    "y": 1972,
+    "t": "여름의 책",
+    "a": "토베 얀손",
+    "oa": "Tove Jansson",
+    "ot": "The Summer Book",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 652,
+    "y": 1972,
+    "t": null,
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "The Breast",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 653,
+    "y": 1972,
+    "t": "보이지 않는 도시들",
+    "a": "이탈로 칼비노",
+    "oa": "Italo Calvino",
+    "ot": "Invisible Cities",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 654,
+    "y": 1973,
+    "t": "술라",
+    "a": "토니 모리슨",
+    "oa": "Toni Morrison",
+    "ot": "Sula",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 655,
+    "y": 1973,
+    "t": null,
+    "a": "아이리스 머독",
+    "oa": "Iris Murdoch",
+    "ot": "The Black Prince",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 656,
+    "y": 1973,
+    "t": "중력의 무지개",
+    "a": "토머스 핀천",
+    "oa": "Thomas Pynchon",
+    "ot": "Gravity’s Rainbow",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 657,
+    "y": 1973,
+    "t": "명예영사",
+    "a": "그레이엄 그린",
+    "oa": "Graham Greene",
+    "ot": "The Honorary Consul",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 658,
+    "y": 1973,
+    "t": "크래시",
+    "a": "J. G. 밸러드",
+    "oa": "J.G. Ballard",
+    "ot": "Crash",
+    "aliases": [
+      "제임스 발라드"
+    ],
+    "ko": true
+  },
+  {
+    "r": 659,
+    "y": 1973,
+    "t": "교차된 운명의 성",
+    "a": "이탈로 칼비노",
+    "oa": "Italo Calvino",
+    "ot": "The Castle of Crossed Destinies",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 660,
+    "y": 1973,
+    "t": null,
+    "a": null,
+    "oa": "J.G. Farrell",
+    "ot": "The Siege of Krishnapur",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 661,
+    "y": 1973,
+    "t": "권력의 문제",
+    "a": "베시 헤드",
+    "oa": "Bessie Head",
+    "ot": "A Question of Power",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 662,
+    "y": 1973,
+    "t": "비행공포",
+    "a": "에리카 종",
+    "oa": "Erica Jong",
+    "ot": "Fear of Flying",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 663,
+    "y": 1973,
+    "t": "챔피언들의 아침식사",
+    "a": "커트 보니것",
+    "oa": "Kurt Vonnegut, Jr.",
+    "ot": "Breakfast of Champions",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 664,
+    "y": 1974,
+    "t": "팅커 테일러 솔저 스파이",
+    "a": "존 르카레",
+    "oa": "John Le Carré",
+    "ot": "Tinker Tailor Soldier Spy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 665,
+    "y": 1974,
+    "t": "카타리나 블룸의 잃어버린 명예",
+    "a": "하인리히 뵐",
+    "oa": "Heinrich Böll",
+    "ot": "The Lost Honor of Katharina Blum",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 666,
+    "y": 1974,
+    "t": "어둠의 땅",
+    "a": "J. M. 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "Dusklands",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 667,
+    "y": 1974,
+    "t": null,
+    "a": "윌리엄 코츠윙클",
+    "oa": "William Kotzwinkle",
+    "ot": "The Fan Man",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 668,
+    "y": 1975,
+    "t": "래그타임",
+    "a": "E. L. 닥터로",
+    "oa": "E.L. Doctorow",
+    "ot": "Ragtime",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 669,
+    "y": 1975,
+    "t": null,
+    "a": "토마스 베른하르트",
+    "oa": "Thomas Bernhard",
+    "ot": "Correction",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 670,
+    "y": 1975,
+    "t": null,
+    "a": "마틴 에이미스",
+    "oa": "Martin Amis",
+    "ot": "Dead Babies",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 671,
+    "y": 1975,
+    "t": "험볼트의 선물",
+    "a": "솔 벨로",
+    "oa": "Saul Bellow",
+    "ot": "Humboldt’s Gift",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 672,
+    "y": 1975,
+    "t": "하이-라이즈",
+    "a": "J. G. 밸러드",
+    "oa": "J.G. Ballard",
+    "ot": "High Rise",
+    "aliases": [
+      "하이라이즈"
+    ],
+    "ko": true
+  },
+  {
+    "r": 673,
+    "y": 1975,
+    "t": null,
+    "a": "리처드 브라우티건",
+    "oa": "Richard Brautigan",
+    "ot": "Willard and His Bowling Trophies",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 674,
+    "y": 1975,
+    "t": "운명",
+    "a": "임레 케르테스",
+    "oa": "Imre Kertész",
+    "ot": "Fateless",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 675,
+    "y": 1975,
+    "t": "죽은 아버지",
+    "a": "도널드 바셀미",
+    "oa": "Donald Barthelme",
+    "ot": "The Dead Father",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 676,
+    "y": 1975,
+    "t": null,
+    "a": "살만 루슈디",
+    "oa": "Salman Rushdie",
+    "ot": "Grimus",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 677,
+    "y": 1975,
+    "t": null,
+    "a": null,
+    "oa": "Anthony Powell",
+    "ot": "A Dance to the Music of Time",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 678,
+    "y": 1975,
+    "t": "W 또는 유년의 기억",
+    "a": "조르주 페렉",
+    "oa": "Georges Perec",
+    "ot": "W, or the Memory of Childhood",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 679,
+    "y": 1975,
+    "t": "족장의 가을",
+    "a": "가브리엘 가르시아 마르케스",
+    "oa": "Gabriel García Márquez",
+    "ot": "Autumn of the Patriarch",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 680,
+    "y": 1976,
+    "t": null,
+    "a": "크리스타 볼프",
+    "oa": "Christa Wolf",
+    "ot": "Patterns of Childhood",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 681,
+    "y": 1976,
+    "t": null,
+    "a": "도널드 바셀미",
+    "oa": "Donald Barthelme",
+    "ot": "Amateurs",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 682,
+    "y": 1976,
+    "t": null,
+    "a": null,
+    "oa": "Newton Thornburg",
+    "ot": "Cutter and Bone",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 683,
+    "y": 1976,
+    "t": "뱀파이어와의 인터뷰",
+    "a": "앤 라이스",
+    "oa": "Anne Rice",
+    "ot": "Interview With the Vampire",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 684,
+    "y": 1976,
+    "t": null,
+    "a": "돈 드릴로",
+    "oa": "Don DeLillo",
+    "ot": "Ratner’s Star",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 685,
+    "y": 1976,
+    "t": "왼손잡이 여인",
+    "a": "페터 한트케",
+    "oa": "Peter Handke",
+    "ot": "The Left-Handed Woman",
+    "aliases": [
+      "패터 한트케"
+    ],
+    "ko": true
+  },
+  {
+    "r": 686,
+    "y": 1977,
+    "t": null,
+    "a": "로버트 쿠버",
+    "oa": "Robert Coover",
+    "ot": "The Public Burning",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 687,
+    "y": 1977,
+    "t": "별의 시간",
+    "a": "클라리시 리스펙토르",
+    "oa": "Clarice Lispector",
+    "ot": "The Hour of the Star",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 688,
+    "y": 1977,
+    "t": "솔로몬의 노래",
+    "a": "토니 모리슨",
+    "oa": "Toni Morrison",
+    "ot": "Song of Solomon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 689,
+    "y": 1977,
+    "t": "피의 꽃잎들",
+    "a": "응구기 와 시옹오",
+    "oa": "Ngugi Wa Thiong’o",
+    "ot": "Petals of Blood",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 690,
+    "y": 1977,
+    "t": null,
+    "a": null,
+    "oa": "Michael Herr",
+    "ot": "Dispatches",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 691,
+    "y": 1977,
+    "t": "샤이닝",
+    "a": "스티븐 킹",
+    "oa": "Stephen King",
+    "ot": "The Shining",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 692,
+    "y": 1977,
+    "t": "델타 오브 비너스",
+    "a": "아나이스 닌",
+    "oa": "Anaïs Nin",
+    "ot": "Delta of Venus",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 693,
+    "y": 1977,
+    "t": null,
+    "a": "앤절라 카터",
+    "oa": "Angela Carter",
+    "ot": "The Passion of New Eve",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 694,
+    "y": 1977,
+    "t": "나라의 심장부에서",
+    "a": "J. M. 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "In the Heart of the Country",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 695,
+    "y": 1978,
+    "t": null,
+    "a": null,
+    "oa": "A.S. Byatt",
+    "ot": "The Virgin in the Garden",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 696,
+    "y": 1978,
+    "t": null,
+    "a": "토마스 베른하르트",
+    "oa": "Thomas Bernhard",
+    "ot": "Yes",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 697,
+    "y": 1978,
+    "t": null,
+    "a": null,
+    "oa": "J.G. Farrell",
+    "ot": "The Singapore Grip",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 698,
+    "y": 1978,
+    "t": "바다여, 바다여",
+    "a": "아이리스 머독",
+    "oa": "Iris Murdoch",
+    "ot": "The Sea, The Sea",
+    "aliases": [
+      "바다여 바다여"
+    ],
+    "ko": true
+  },
+  {
+    "r": 699,
+    "y": 1978,
+    "t": "인생 사용법",
+    "a": "조르주 페렉",
+    "oa": "Georges Perec",
+    "ot": "Life: A User’s Manual",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 700,
+    "y": 1978,
+    "t": "가아프가 본 세상",
+    "a": "존 어빙",
+    "oa": "John Irving",
+    "ot": "The World According to Garp",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 701,
+    "y": 1978,
+    "t": "시멘트 가든",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "The Cement Garden",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 702,
+    "y": 1979,
+    "t": "은하수를 여행하는 히치하이커를 위한 안내서",
+    "a": "더글러스 애덤스",
+    "oa": "Douglas Adams",
+    "ot": "The Hitchhiker’s Guide to the Galaxy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 703,
+    "y": 1979,
+    "t": "어느 겨울밤 한 여행자가",
+    "a": "이탈로 칼비노",
+    "oa": "Italo Calvino",
+    "ot": "If On a Winter’s Night a Traveler",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 704,
+    "y": 1979,
+    "t": null,
+    "a": "하인리히 뵐",
+    "oa": "Heinrich Böll",
+    "ot": "The Safety Net",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 705,
+    "y": 1979,
+    "t": null,
+    "a": "나딘 고디머",
+    "oa": "Nadine Gordimer",
+    "ot": "Burger’s Daughter",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 706,
+    "y": 1979,
+    "t": "거인의 도시",
+    "a": "V. S. 나이폴",
+    "oa": "V.S. Naipaul",
+    "ot": "A Bend in the River",
+    "aliases": [],
+    "ko": true,
+    "note": "강 1997, 김영희 옮김 (원제 A Bend in the River)"
+  },
+  {
+    "r": 707,
+    "y": 1979,
+    "t": null,
+    "a": "도리스 레싱",
+    "oa": "Doris Lessing",
+    "ot": "Shikasta",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 708,
+    "y": 1979,
+    "t": "스마일리의 사람들",
+    "a": "존 르카레",
+    "oa": "John Le Carré",
+    "ot": "Smiley’s People",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 709,
+    "y": 1979,
+    "t": "웃음과 망각의 책",
+    "a": "밀란 쿤데라",
+    "oa": "Milan Kundera",
+    "ot": "The Book of Laughter and Forgetting",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 710,
+    "y": 1980,
+    "t": "장미의 이름",
+    "a": "움베르토 에코",
+    "oa": "Umberto Eco",
+    "ot": "The Name of the Rose",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 711,
+    "y": 1980,
+    "t": null,
+    "a": "엘모어 레너드",
+    "oa": "Elmore Leonard",
+    "ot": "City Primeval",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 712,
+    "y": 1980,
+    "t": "바보들의 결탁",
+    "a": "존 케네디 툴",
+    "oa": "John Kennedy Toole",
+    "ot": "Confederacy of Dunces",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 713,
+    "y": 1980,
+    "t": "의식",
+    "a": "세스 노터봄",
+    "oa": "Cees Nooteboom",
+    "ot": "Rituals",
+    "aliases": [
+      "쎄스 노테봄"
+    ],
+    "ko": true
+  },
+  {
+    "r": 714,
+    "y": 1980,
+    "t": "항해 의식",
+    "a": "윌리엄 골딩",
+    "oa": "William Golding",
+    "ot": "Rites of Passage",
+    "aliases": [],
+    "ko": true,
+    "note": "한마음사 1983, 이종관 옮김 (국립중앙도서관 원서명 'Rites of passage' 검색 일치)"
+  },
+  {
+    "r": 715,
+    "y": 1980,
+    "t": "야만인을 기다리며",
+    "a": "J. M. 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "Waiting for the Barbarians",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 716,
+    "y": 1980,
+    "t": "부서진 사월",
+    "a": "이스마일 카다레",
+    "oa": "Ismail Kadare",
+    "ot": "Broken April",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 717,
+    "y": 1981,
+    "t": "한밤의 아이들",
+    "a": "살만 루슈디",
+    "oa": "Salman Rushdie",
+    "ot": "Midnight’s Children",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 718,
+    "y": 1981,
+    "t": "바덴바덴에서의 여름",
+    "a": "레오니드 치프킨",
+    "oa": "Leonid Tsypkin",
+    "ot": "Summer in Baden-Baden",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 719,
+    "y": 1981,
+    "t": null,
+    "a": "나딘 고디머",
+    "oa": "Nadine Gordimer",
+    "ot": "July’s People",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 720,
+    "y": 1981,
+    "t": "위험한 이방인",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "The Comfort of Strangers",
+    "aliases": [
+      "이안 매큐엔"
+    ],
+    "ko": true,
+    "note": "프레스21 1996, 이성희 옮김 (국립중앙도서관 원서명 'Comfort of strangers' 검색 일치)"
+  },
+  {
+    "r": 721,
+    "y": 1981,
+    "t": "라나크",
+    "a": "앨러스데어 그레이",
+    "oa": "Alasdair Gray",
+    "ot": "Lanark: A Life in Four Books",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 722,
+    "y": 1981,
+    "t": "토끼는 부자다",
+    "a": "존 업다이크",
+    "oa": "John Updike",
+    "ot": "Rabbit is Rich",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 723,
+    "y": 1982,
+    "t": null,
+    "a": "돈 드릴로",
+    "oa": "Don DeLillo",
+    "ot": "The Names",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 724,
+    "y": 1982,
+    "t": null,
+    "a": "토마스 베른하르트",
+    "oa": "Thomas Bernhard",
+    "ot": "Concrete",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 725,
+    "y": 1982,
+    "t": null,
+    "a": "브루스 채트윈",
+    "oa": "Bruce Chatwin",
+    "ot": "On the Black Hill",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 726,
+    "y": 1982,
+    "t": null,
+    "a": "존 밴빌",
+    "oa": "John Banville",
+    "ot": "The Newton Letter",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 727,
+    "y": 1982,
+    "t": "영혼의 집",
+    "a": "이사벨 아옌데",
+    "oa": "Isabel Allende",
+    "ot": "The House of the Spirits",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 728,
+    "y": 1982,
+    "t": "쉰들러 리스트",
+    "a": "토머스 키닐리",
+    "oa": "Thomas Keneally",
+    "ot": "Schindler’s Ark",
+    "aliases": [
+      "토마스 키닐리"
+    ],
+    "ko": true
+  },
+  {
+    "r": 729,
+    "y": 1982,
+    "t": "창백한 언덕 풍경",
+    "a": "가즈오 이시구로",
+    "oa": "Kazuo Ishiguro",
+    "ot": "A Pale View of Hills",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 730,
+    "y": 1982,
+    "t": "비트겐슈타인의 조카",
+    "a": "토마스 베른하르트",
+    "oa": "Thomas Bernhard",
+    "ot": "Wittgenstein’s Nephew",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 731,
+    "y": 1982,
+    "t": "컬러 퍼플",
+    "a": "앨리스 워커",
+    "oa": "Alice Walker",
+    "ot": "The Color Purple",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 732,
+    "y": 1982,
+    "t": "어느 소년의 고백",
+    "a": "에드먼드 화이트",
+    "oa": "Edmund White",
+    "ot": "A Boy’s Own Story",
+    "aliases": [
+      "에드문드 화이트"
+    ],
+    "ko": true,
+    "note": "열음사 1993, 최수민 옮김 (국립중앙도서관 원서명 \"Boy's Own Story\" 검색 단독 일치)"
+  },
+  {
+    "r": 733,
+    "y": 1982,
+    "t": "지금이 아니면 언제?",
+    "a": "프리모 레비",
+    "oa": "Primo Levi",
+    "ot": "If Not Now, When?",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 734,
+    "y": 1983,
+    "t": null,
+    "a": null,
+    "oa": "Hugo Claus",
+    "ot": "The Sorrow of Belgium",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 735,
+    "y": 1983,
+    "t": "피아노 치는 여자",
+    "a": "엘프리데 옐리네크",
+    "oa": "Elfriede Jelinek",
+    "ot": "The Piano Teacher",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 736,
+    "y": 1983,
+    "t": null,
+    "a": "도리스 레싱",
+    "oa": "Doris Lessing",
+    "ot": "The Diary of Jane Somers",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 737,
+    "y": 1983,
+    "t": "마이클 K의 삶과 시대",
+    "a": "J. M. 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "The Life and Times of Michael K",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 738,
+    "y": 1983,
+    "t": null,
+    "a": "그레이엄 스위프트",
+    "oa": "Graham Swift",
+    "ot": "Waterland",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 739,
+    "y": 1983,
+    "t": null,
+    "a": null,
+    "oa": "Elmore Leonard",
+    "ot": "La Brava",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 740,
+    "y": 1983,
+    "t": "운명의 꼭두각시",
+    "a": "윌리엄 트레버",
+    "oa": "William Trevor",
+    "ot": "Fools of Fortune",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 741,
+    "y": 1983,
+    "t": "최악을 향하여",
+    "a": "사뮈엘 베케트",
+    "oa": "Samuel Beckett",
+    "ot": "Worstward Ho",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 742,
+    "y": 1983,
+    "t": "수치",
+    "a": "살만 루슈디",
+    "oa": "Salman Rushdie",
+    "ot": "Shame",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 743,
+    "y": 1984,
+    "t": "머니",
+    "a": "마틴 에이미스",
+    "oa": "Martin Amis",
+    "ot": "Money: A Suicide Note",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 744,
+    "y": 1984,
+    "t": "플로베르의 앵무새",
+    "a": "줄리언 반스",
+    "oa": "Julian Barnes",
+    "ot": "Flaubert’s Parrot",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 745,
+    "y": 1984,
+    "t": "뉴로맨서",
+    "a": "윌리엄 깁슨",
+    "oa": "William Gibson",
+    "ot": "Neuromancer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 746,
+    "y": 1984,
+    "t": null,
+    "a": "캐시 애커",
+    "oa": "Kathy Acker",
+    "ot": "Blood and Guts in High School",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 747,
+    "y": 1984,
+    "t": "참을 수 없는 존재의 가벼움",
+    "a": "밀란 쿤데라",
+    "oa": "Milan Kundera",
+    "ot": "The Unbearable Lightness of Being",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 748,
+    "y": 1984,
+    "t": "써커스의 밤",
+    "a": "앤절라 카터",
+    "oa": "Angela Carter",
+    "ot": "Nights at the Circus",
+    "aliases": [
+      "서커스의 밤",
+      "앤젤러 카터"
+    ],
+    "ko": true,
+    "note": "창비 2011, 조현준 옮김 (원제 Nights at the Circus)"
+  },
+  {
+    "r": 749,
+    "y": 1984,
+    "t": "말벌 공장",
+    "a": "이언 뱅크스",
+    "oa": "Iain Banks",
+    "ot": "The Wasp Factory",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 750,
+    "y": 1984,
+    "t": "태양의 제국",
+    "a": "J. G. 밸러드",
+    "oa": "J.G. Ballard",
+    "ot": "Empire of the Sun",
+    "aliases": [
+      "제임스 그레이엄 밸러드"
+    ],
+    "ko": true
+  },
+  {
+    "r": 751,
+    "y": 1984,
+    "t": "연인",
+    "a": "마르그리트 뒤라스",
+    "oa": "Marguerite Duras",
+    "ot": "The Lover",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 752,
+    "y": 1984,
+    "t": "히카르두 헤이스가 죽은 해",
+    "a": "주제 사라마구",
+    "oa": "José Saramago",
+    "ot": "The Year of the Death of Ricardo Reis",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 753,
+    "y": 1984,
+    "t": null,
+    "a": null,
+    "oa": "James Kelman",
+    "ot": "The Bus Conductor Hines",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 754,
+    "y": 1984,
+    "t": "하자르 사전",
+    "a": "밀로라드 파비치",
+    "oa": "Milorad Pavić",
+    "ot": "Dictionary of the Khazars",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 755,
+    "y": 1984,
+    "t": null,
+    "a": null,
+    "oa": "David Gemmell",
+    "ot": "Legend",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 756,
+    "y": 1985,
+    "t": "혹스무어",
+    "a": "피터 애크로이드",
+    "oa": "Peter Ackroyd",
+    "ot": "Hawksmoor",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 757,
+    "y": 1985,
+    "t": "퀴어",
+    "a": "윌리엄 버로스",
+    "oa": "William Burroughs",
+    "ot": "Queer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 758,
+    "y": 1985,
+    "t": "화이트 노이즈",
+    "a": "돈 드릴로",
+    "oa": "Don DeLillo",
+    "ot": "White Noise",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 759,
+    "y": 1985,
+    "t": "옛 거장들",
+    "a": "토마스 베른하르트",
+    "oa": "Thomas Bernhard",
+    "ot": "Old Masters",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 760,
+    "y": 1985,
+    "t": "향수",
+    "a": "파트리크 쥐스킨트",
+    "oa": "Patrick Süskind",
+    "ot": "Perfume",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 761,
+    "y": 1985,
+    "t": "시녀 이야기",
+    "a": "마거릿 애트우드",
+    "oa": "Margaret Atwood",
+    "ot": "The Handmaid’s Tale",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 762,
+    "y": 1985,
+    "t": "콘택트",
+    "a": "칼 세이건",
+    "oa": "Carl Sagan",
+    "ot": "Contact",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 763,
+    "y": 1985,
+    "t": null,
+    "a": "브렛 이스턴 엘리스",
+    "oa": "Bret Easton Ellis",
+    "ot": "Less Than Zero",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 764,
+    "y": 1985,
+    "t": null,
+    "a": "존 파울즈",
+    "oa": "John Fowles",
+    "ot": "A Maggot",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 765,
+    "y": 1985,
+    "t": "사이더 하우스",
+    "a": "존 어빙",
+    "oa": "John Irving",
+    "ot": "The Cider House Rules",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 766,
+    "y": 1985,
+    "t": "오렌지만이 과일은 아니다",
+    "a": "지넷 윈터슨",
+    "oa": "Jeanette Winterson",
+    "ot": "Oranges Are Not the Only Fruit",
+    "aliases": [
+      "재닛 윈터슨"
+    ],
+    "ko": true
+  },
+  {
+    "r": 767,
+    "y": 1985,
+    "t": "콜레라 시대의 사랑",
+    "a": "가브리엘 가르시아 마르케스",
+    "oa": "Gabriel García Márquez",
+    "ot": "Love in the Time of Cholera",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 768,
+    "y": 1985,
+    "t": null,
+    "a": "게르트 호프만",
+    "oa": "Gert Hofmann",
+    "ot": "The Parable of the Blind",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 769,
+    "y": 1985,
+    "t": "사는 이유",
+    "a": "에이미 헴플",
+    "oa": "Amy Hempel",
+    "ot": "Reasons to Live",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 770,
+    "y": 1986,
+    "t": "가라앉은 자와 구조된 자",
+    "a": "프리모 레비",
+    "oa": "Primo Levi",
+    "ot": "The Drowned and the Saved",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 771,
+    "y": 1986,
+    "t": "포",
+    "a": "존 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "Foe",
+    "aliases": [
+      "J. M. 쿳시"
+    ],
+    "ko": true
+  },
+  {
+    "r": 772,
+    "y": 1986,
+    "t": "소멸",
+    "a": "토마스 베른하르트",
+    "oa": "Thomas Bernhard",
+    "ot": "Extinction",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 773,
+    "y": 1986,
+    "t": "부유하는 세상의 화가",
+    "a": "가즈오 이시구로",
+    "oa": "Kazuo Ishiguro",
+    "ot": "An Artist of the Floating World",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 774,
+    "y": 1986,
+    "t": null,
+    "a": null,
+    "oa": "David Leavitt",
+    "ot": "Lost Language of Cranes",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 775,
+    "y": 1986,
+    "t": null,
+    "a": "킹슬리 에이미스",
+    "oa": "Kingsley Amis",
+    "ot": "The Old Devils",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 776,
+    "y": 1986,
+    "t": "왓치맨",
+    "a": "앨런 무어",
+    "oa": "Alan Moore & David Gibbons",
+    "ot": "Watchmen",
+    "aliases": [
+      "데이브 기본스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 777,
+    "y": 1986,
+    "t": null,
+    "a": "조이스 캐럴 오츠",
+    "oa": "Joyce Carol Oates",
+    "ot": "Marya",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 778,
+    "y": 1986,
+    "t": null,
+    "a": "응구기 와 시옹오",
+    "oa": "Ngugi Wa Thiong’o",
+    "ot": "Matigari",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 779,
+    "y": 1986,
+    "t": null,
+    "a": null,
+    "oa": "Lorrie Moore",
+    "ot": "Anagrams",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 780,
+    "y": 1986,
+    "t": "태백산맥",
+    "a": "조정래",
+    "oa": "Jo Jung-rae",
+    "ot": "The Taebek Mountains",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 781,
+    "y": 1987,
+    "t": "빌러비드",
+    "a": "토니 모리슨",
+    "oa": "Toni Morrison",
+    "ot": "Beloved",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 782,
+    "y": 1987,
+    "t": "도착의 수수께끼",
+    "a": "V. S. 나이폴",
+    "oa": "V.S. Naipaul",
+    "ot": "Enigma of Arrival",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 783,
+    "y": 1987,
+    "t": null,
+    "a": null,
+    "oa": "T. Coraghessan Boyle",
+    "ot": "World’s End",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 784,
+    "y": 1987,
+    "t": "뉴욕 3부작",
+    "a": "폴 오스터",
+    "oa": "Paul Auster",
+    "ot": "The New York Trilogy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 785,
+    "y": 1987,
+    "t": "허영의 불꽃",
+    "a": "톰 울프",
+    "oa": "Tom Wolfe",
+    "ot": "The Bonfire of the Vanities",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 786,
+    "y": 1987,
+    "t": null,
+    "a": null,
+    "oa": "Harry Mathews",
+    "ot": "Cigarettes",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 787,
+    "y": 1987,
+    "t": "차일드 인 타임",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "The Child in Time",
+    "aliases": [],
+    "ko": true,
+    "note": "한겨레출판 2020, 민은영 옮김 (원제 The Child in Time)"
+  },
+  {
+    "r": 788,
+    "y": 1987,
+    "t": "비둘기",
+    "a": "파트리크 쥐스킨트",
+    "oa": "Patrick Süskind",
+    "ot": "The Pigeon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 789,
+    "y": 1987,
+    "t": "열정",
+    "a": "지넷 윈터슨",
+    "oa": "Jeanette Winterson",
+    "ot": "The Passion",
+    "aliases": [
+      "재닛 윈터슨"
+    ],
+    "ko": true
+  },
+  {
+    "r": 790,
+    "y": 1987,
+    "t": "블랙 달리아",
+    "a": "제임스 엘로이",
+    "oa": "James Ellroy",
+    "ot": "The Black Dahlia",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 791,
+    "y": 1987,
+    "t": "어느 작가의 오후",
+    "a": "페터 한트케",
+    "oa": "Peter Handke",
+    "ot": "The Afternoon of a Writer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 792,
+    "y": 1987,
+    "t": "찬란한 길",
+    "a": "마거릿 드래블",
+    "oa": "Margaret Drabble",
+    "ot": "The Radiant Way",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 793,
+    "y": 1987,
+    "t": "더크 젠틀리의 성스러운 탐정 사무소",
+    "a": "더글러스 애덤스",
+    "oa": "Douglas Adams",
+    "ot": "Dirk Gently’s Holistic Detective Agency",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 794,
+    "y": 1988,
+    "t": "영혼의 길고 암울한 티타임",
+    "a": "더글러스 애덤스",
+    "oa": "Douglas Adams",
+    "ot": "The Long Dark Teatime of the Soul",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 795,
+    "y": 1988,
+    "t": null,
+    "a": null,
+    "oa": "Tsitsi Dangarembga",
+    "ot": "Nervous Conditions",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 796,
+    "y": 1988,
+    "t": "게임의 명수",
+    "a": "이언 M. 뱅크스",
+    "oa": "Iain M. Banks",
+    "ot": "The Player of Games",
+    "aliases": [
+      "이언 뱅크스"
+    ],
+    "ko": true
+  },
+  {
+    "r": 797,
+    "y": 1988,
+    "t": "리브라",
+    "a": "돈 드릴로",
+    "oa": "Don DeLillo",
+    "ot": "Libra",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 798,
+    "y": 1988,
+    "t": "오스카와 루신다",
+    "a": "피터 케리",
+    "oa": "Peter Carey",
+    "ot": "Oscar and Lucinda",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 799,
+    "y": 1988,
+    "t": "수영장 도서관",
+    "a": "앨런 홀링허스트",
+    "oa": "Alan Hollinghurst",
+    "ot": "The Swimming-Pool Library",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 800,
+    "y": 1988,
+    "t": "악마의 시",
+    "a": "살만 루슈디",
+    "oa": "Salman Rushdie",
+    "ot": "The Satanic Verses",
+    "aliases": [
+      "살만 루시디"
+    ],
+    "ko": true
+  },
+  {
+    "r": 801,
+    "y": 1988,
+    "t": null,
+    "a": null,
+    "oa": "David Markson",
+    "ot": "Wittgenstein’s Mistress",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 802,
+    "y": 1988,
+    "t": null,
+    "a": null,
+    "oa": "Edmund White",
+    "ot": "The Beautiful Room is Empty",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 803,
+    "y": 1988,
+    "t": "푸코의 진자",
+    "a": "움베르토 에코",
+    "oa": "Umberto Eco",
+    "ot": "Foucault’s Pendulum",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 804,
+    "y": 1988,
+    "t": "고양이 눈",
+    "a": "마거릿 애트우드",
+    "oa": "Margaret Atwood",
+    "ot": "Cat’s Eye",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 805,
+    "y": 1989,
+    "t": null,
+    "a": "존 밴빌",
+    "oa": "John Banville",
+    "ot": "The Book of Evidence",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 806,
+    "y": 1989,
+    "t": "런던 필즈",
+    "a": "마틴 에이미스",
+    "oa": "Martin Amis",
+    "ot": "London Fields",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 807,
+    "y": 1989,
+    "t": null,
+    "a": "존 어빙",
+    "oa": "John Irving",
+    "ot": "A Prayer for Owen Meany",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 808,
+    "y": 1989,
+    "t": "달콤 쌉싸름한 초콜릿",
+    "a": "라우라 에스키벨",
+    "oa": "Laura Esquivel",
+    "ot": "Like Water for Chocolate",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 809,
+    "y": 1989,
+    "t": "리스본 쟁탈전",
+    "a": "주제 사라마구",
+    "oa": "José Saramago",
+    "ot": "The History of the Siege of Lisbon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 810,
+    "y": 1989,
+    "t": null,
+    "a": null,
+    "oa": "Janice Galloway",
+    "ot": "The Trick is to Keep Breathing",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 811,
+    "y": 1989,
+    "t": "여인들의 신전",
+    "a": "앨리스 워커",
+    "oa": "Alice Walker",
+    "ot": "The Temple of My Familiar",
+    "aliases": [],
+    "ko": true,
+    "note": "문학사상사 1990, 上·下, 안정효 옮김 (국립중앙도서관 원서명 검색 일치)"
+  },
+  {
+    "r": 812,
+    "y": 1989,
+    "t": "저항의 멜랑콜리",
+    "a": "크러스너호르커이 라슬로",
+    "oa": "László Krasznahorkai",
+    "ot": "The Melancholy of Resistance",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 813,
+    "y": 1989,
+    "t": "남아 있는 나날",
+    "a": "가즈오 이시구로",
+    "oa": "Kazuo Ishiguro",
+    "ot": "Remains of the Day",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 814,
+    "y": 1989,
+    "t": "빌리 배스게이트",
+    "a": "E. L. 닥터로",
+    "oa": "E.L. Doctorow",
+    "ot": "Billy Bathgate",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 815,
+    "y": 1989,
+    "t": "달의 궁전",
+    "a": "폴 오스터",
+    "oa": "Paul Auster",
+    "ot": "Moon Palace",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 816,
+    "y": 1989,
+    "t": null,
+    "a": "지넷 윈터슨",
+    "oa": "Jeanette Winterson",
+    "ot": "Sexing the Cherry",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 817,
+    "y": 1989,
+    "t": null,
+    "a": null,
+    "oa": "James Kelman",
+    "ot": "A Disaffection",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 818,
+    "y": 1989,
+    "t": null,
+    "a": "윌리엄 코츠윙클",
+    "oa": "William Kotzwinkle",
+    "ot": "The Midnight Examiner",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 819,
+    "y": 1990,
+    "t": "시골뜨기 부처",
+    "a": "하니프 쿠레이시",
+    "oa": "Hanif Kureishi",
+    "ot": "The Buddha of Suburbia",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 820,
+    "y": 1990,
+    "t": "소유",
+    "a": "A. S. 바이어트",
+    "oa": "A.S. Byatt",
+    "ot": "Possession",
+    "aliases": [
+      "앤토니어 수전 바이어트"
+    ],
+    "ko": true
+  },
+  {
+    "r": 821,
+    "y": 1990,
+    "t": null,
+    "a": null,
+    "oa": "Lorrie Moore",
+    "ot": "Like Life",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 822,
+    "y": 1990,
+    "t": "세상 끝의 사랑",
+    "a": "마이클 커닝햄",
+    "oa": "Michael Cunningham",
+    "ot": "A Home at the End of the World",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 823,
+    "y": 1990,
+    "t": "그들이 가지고 다닌 것들",
+    "a": "팀 오브라이언",
+    "oa": "Tim O’Brien",
+    "ot": "The Things They Carried",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 824,
+    "y": 1990,
+    "t": "우연의 음악",
+    "a": "폴 오스터",
+    "oa": "Paul Auster",
+    "ot": "The Music of Chance",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 825,
+    "y": 1990,
+    "t": null,
+    "a": null,
+    "oa": "Jim Dodge",
+    "ot": "Stone Junction",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 826,
+    "y": 1990,
+    "t": "현기증. 감정들",
+    "a": "W. G. 제발트",
+    "oa": "W.G. Sebald",
+    "ot": "Vertigo",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 827,
+    "y": 1990,
+    "t": "바인랜드",
+    "a": "토머스 핀천",
+    "oa": "Thomas Pynchon",
+    "ot": "Vineland",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 828,
+    "y": 1990,
+    "t": null,
+    "a": null,
+    "oa": "John McGahern",
+    "ot": "Amongst Women",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 829,
+    "y": 1990,
+    "t": null,
+    "a": "엘모어 레너드",
+    "oa": "Elmore Leonard",
+    "ot": "Get Shorty",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 830,
+    "y": 1991,
+    "t": null,
+    "a": "안젤라 카터",
+    "oa": "Angela Carter",
+    "ot": "Wise Children",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 831,
+    "y": 1991,
+    "t": null,
+    "a": "루이스 드 베르니에",
+    "oa": "Louis de Bernieres",
+    "ot": "Señor Vivo and the Coca Lord",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 832,
+    "y": 1991,
+    "t": null,
+    "a": null,
+    "oa": "Iain Sinclair",
+    "ot": "Downriver",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 833,
+    "y": 1991,
+    "t": null,
+    "a": "팻 바커",
+    "oa": "Pat Barker",
+    "ot": "Regeneration",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 834,
+    "y": 1991,
+    "t": null,
+    "a": null,
+    "oa": "Padgett Powell",
+    "ot": "Typical",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 835,
+    "y": 1991,
+    "t": "마오 2",
+    "a": "돈 드릴로",
+    "oa": "Don DeLillo",
+    "ot": "Mao II",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 836,
+    "y": 1991,
+    "t": null,
+    "a": "마틴 에이미스",
+    "oa": "Martin Amis",
+    "ot": "Time’s Arrow",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 837,
+    "y": 1991,
+    "t": "아메리칸 사이코",
+    "a": "브렛 이스턴 엘리스",
+    "oa": "Bret Easton Ellis",
+    "ot": "American Psycho",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 838,
+    "y": 1991,
+    "t": "대륙의 딸",
+    "a": "장융",
+    "oa": "Jung Chang",
+    "ot": "Wild Swans",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 839,
+    "y": 1992,
+    "t": null,
+    "a": null,
+    "oa": "Jim Crace",
+    "ot": "Arcadia",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 840,
+    "y": 1992,
+    "t": null,
+    "a": null,
+    "oa": "Esther Freud",
+    "ot": "Hideous Kinky",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 841,
+    "y": 1992,
+    "t": "검은 개",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "Black Dogs",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 842,
+    "y": 1992,
+    "t": null,
+    "a": null,
+    "oa": "H.D. (Hilda Doolittle)",
+    "ot": "Asphodel",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 843,
+    "y": 1992,
+    "t": null,
+    "a": "콜럼 토빈",
+    "oa": "Colm Tóibín",
+    "ot": "The Heather Blazing",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 844,
+    "y": 1992,
+    "t": "블랙 워터",
+    "a": "조이스 캐럴 오츠",
+    "oa": "Joyce Carol Oates",
+    "ot": "Black Water",
+    "aliases": [
+      "블랙워터",
+      "조이스 캐롤 오츠"
+    ],
+    "ko": true
+  },
+  {
+    "r": 845,
+    "y": 1992,
+    "t": "푸줏간 소년",
+    "a": "패트릭 매케이브",
+    "oa": "Patrick McCabe",
+    "ot": "The Butcher Boy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 846,
+    "y": 1992,
+    "t": "스밀라의 눈에 대한 감각",
+    "a": "페터 회",
+    "oa": "Peter Høeg",
+    "ot": "Smilla’s Sense of Snow",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 847,
+    "y": 1992,
+    "t": "잉글리시 페이션트",
+    "a": "마이클 온다치",
+    "oa": "Michael Ondaatje",
+    "ot": "The English Patient",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 848,
+    "y": 1992,
+    "t": "재즈",
+    "a": "토니 모리슨",
+    "oa": "Toni Morrison",
+    "ot": "Jazz",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 849,
+    "y": 1992,
+    "t": "육체에 새겨지다",
+    "a": "지넷 윈터슨",
+    "oa": "Jeanette Winterson",
+    "ot": "Written on the Body",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 850,
+    "y": 1992,
+    "t": null,
+    "a": "이언 뱅크스",
+    "oa": "Iain Banks",
+    "ot": "The Crow Road",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 851,
+    "y": 1992,
+    "t": null,
+    "a": null,
+    "oa": "Marina Warner",
+    "ot": "Indigo",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 852,
+    "y": 1992,
+    "t": "은밀한 기쁨을 간직하며",
+    "a": "앨리스 워커",
+    "oa": "Alice Walker",
+    "ot": "Possessing the Secret of Joy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 853,
+    "y": 1992,
+    "t": "새하얀 마음",
+    "a": "하비에르 마리아스",
+    "oa": "Javier Marias",
+    "ot": "A Heart So White",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 854,
+    "y": 1992,
+    "t": "천국의 발견",
+    "a": "하리 멀리쉬",
+    "oa": "Harry Mulisch",
+    "ot": "The Discovery of Heaven",
+    "aliases": [
+      "해리 멀리시"
+    ],
+    "ko": true,
+    "note": "작가정신 2002, 1-2권, 지명숙 옮김"
+  },
+  {
+    "r": 855,
+    "y": 1992,
+    "t": null,
+    "a": "에미네 세브기 외즈다마르",
+    "oa": "Emine Özdamar",
+    "ot": "Life is a Caravanserai",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 856,
+    "y": 1992,
+    "t": "비밀의 계절",
+    "a": "도나 타트",
+    "oa": "Donna Tartt",
+    "ot": "The Secret History",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 857,
+    "y": 1992,
+    "t": "이민자들",
+    "a": "W. G. 제발트",
+    "oa": "W.G. Sebald",
+    "ot": "The Emigrants",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 858,
+    "y": 1993,
+    "t": "도둑 신부",
+    "a": "마거릿 애트우드",
+    "oa": "Margaret Atwood",
+    "ot": "The Robber Bride",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 859,
+    "y": 1993,
+    "t": "디 박사의 집",
+    "a": "피터 애크로이드",
+    "oa": "Peter Ackroyd",
+    "ot": "The House of Doctor Dee",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 860,
+    "y": 1993,
+    "t": "처녀들, 자살하다",
+    "a": "제프리 유제니디스",
+    "oa": "Jeffrey Eugenides",
+    "ot": "The Virgin Suicides",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 861,
+    "y": 1993,
+    "t": "스톤 다이어리",
+    "a": "캐럴 실즈",
+    "oa": "Carol Shields",
+    "ot": "The Stone Diaries",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 862,
+    "y": 1993,
+    "t": null,
+    "a": null,
+    "oa": "Vikram Seth",
+    "ot": "A Suitable Boy",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 863,
+    "y": 1993,
+    "t": "왜 나는 너를 사랑하는가",
+    "a": "알랭 드 보통",
+    "oa": "Alain de Botton",
+    "ot": "On Love",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 864,
+    "y": 1993,
+    "t": "공범",
+    "a": "이언 뱅크스",
+    "oa": "Iain Banks",
+    "ot": "Complicity",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 865,
+    "y": 1993,
+    "t": "샤일록 작전",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "Operation Shylock",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 866,
+    "y": 1993,
+    "t": null,
+    "a": null,
+    "oa": "A.L. Kennedy",
+    "ot": "Looking for the Possible Dance",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 867,
+    "y": 1993,
+    "t": "새의 노래",
+    "a": "시배스천 폭스",
+    "oa": "Sebastian Faulks",
+    "ot": "Birdsong",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 868,
+    "y": 1993,
+    "t": "트레인스포팅",
+    "a": "어빈 웰시",
+    "oa": "Irvine Welsh",
+    "ot": "Trainspotting",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 869,
+    "y": 1993,
+    "t": "시핑 뉴스",
+    "a": "애니 프루",
+    "oa": "E. Annie Proulx",
+    "ot": "The Shipping News",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 870,
+    "y": 1993,
+    "t": "카레소시지",
+    "a": "우베 팀",
+    "oa": "Uwe Timm",
+    "ot": "The Invention of Curried Sausage",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 871,
+    "y": 1993,
+    "t": null,
+    "a": null,
+    "oa": "David Dabydeen",
+    "ot": "Disappearance",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 872,
+    "y": 1993,
+    "t": "벌레처럼",
+    "a": "빅토르 펠레빈",
+    "oa": "Victor Pelevin",
+    "ot": "The Life of Insects",
+    "aliases": [],
+    "ko": true,
+    "note": "책세상 1998, 이은민 옮김 (원제 미표기; 저자·제목 대응으로 판단, 확인 필요)"
+  },
+  {
+    "r": 873,
+    "y": 1994,
+    "t": null,
+    "a": null,
+    "oa": "Jonathan Coe",
+    "ot": "What a Carve Up!",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 874,
+    "y": 1994,
+    "t": "펠리시아의 여정",
+    "a": "윌리엄 트레버",
+    "oa": "William Trevor",
+    "ot": "Felicia’s Journey",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 875,
+    "y": 1994,
+    "t": "코렐리의 만돌린",
+    "a": "루이스 드 베르니에",
+    "oa": "Louis de Bernieres",
+    "ot": "Captain Corelli’s Mandolin",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 876,
+    "y": 1994,
+    "t": null,
+    "a": null,
+    "oa": "James Kelman",
+    "ot": "How Late It Was, How Late",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 877,
+    "y": 1994,
+    "t": null,
+    "a": null,
+    "oa": "Jàchym Topol",
+    "ot": "City Sister Silver",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 878,
+    "y": 1994,
+    "t": "페레이라가 주장하다",
+    "a": "안토니오 타부키",
+    "oa": "Antonio Tabucchi",
+    "ot": "Pereira Declares: A Testimony",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 879,
+    "y": 1994,
+    "t": "태엽 감는 새 연대기",
+    "a": "무라카미 하루키",
+    "oa": "Haruki Murakami",
+    "ot": "The Wind-Up Bird Chronicle",
+    "aliases": [
+      "태엽 감는 새"
+    ],
+    "ko": true
+  },
+  {
+    "r": 880,
+    "y": 1994,
+    "t": "페테르부르크의 대가",
+    "a": "존 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "The Master of Petersburg",
+    "aliases": [
+      "J. M. 쿳시"
+    ],
+    "ko": true
+  },
+  {
+    "r": 881,
+    "y": 1994,
+    "t": "토지",
+    "a": "박경리",
+    "oa": "Park Kyong-ni",
+    "ot": "Land",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 882,
+    "y": 1994,
+    "t": "투쟁 영역의 확장",
+    "a": "미셸 우엘벡",
+    "oa": "Michel Houellebecq",
+    "ot": "Whatever",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 883,
+    "y": 1994,
+    "t": null,
+    "a": "앨런 홀링허스트",
+    "oa": "Alan Hollinghurst",
+    "ot": "The Folding Star",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 884,
+    "y": 1994,
+    "t": "공중 곡예사",
+    "a": "폴 오스터",
+    "oa": "Paul Auster",
+    "ot": "Mr. Vertigo",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 885,
+    "y": 1995,
+    "t": "이야기의 끝",
+    "a": "리디아 데이비스",
+    "oa": "Lydia Davis",
+    "ot": "The End of the Story",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 886,
+    "y": 1995,
+    "t": null,
+    "a": "질리언 로즈",
+    "oa": "Gillian Rose",
+    "ot": "Love’s Work",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 887,
+    "y": 1995,
+    "t": "적절한 균형",
+    "a": "로힌턴 미스트리",
+    "oa": "Rohinton Mistry",
+    "ot": "A Fine Balance",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 888,
+    "y": 1995,
+    "t": "책 읽어주는 남자",
+    "a": "베른하르트 슐링크",
+    "oa": "Bernhard Schlink",
+    "ot": "The Reader",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 889,
+    "y": 1995,
+    "t": "토성의 고리",
+    "a": "W. G. 제발트",
+    "oa": "W.G. Sebald",
+    "ot": "The Rings of Saturn",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 890,
+    "y": 1995,
+    "t": "새버스의 극장",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "Sabbath’s Theater",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 891,
+    "y": 1995,
+    "t": "무어의 마지막 한숨",
+    "a": "살만 루슈디",
+    "oa": "Salman Rushdie",
+    "ot": "The Moor’s Last Sigh",
+    "aliases": [
+      "살만 루시디"
+    ],
+    "ko": true
+  },
+  {
+    "r": 892,
+    "y": 1995,
+    "t": null,
+    "a": "마틴 에이미스",
+    "oa": "Martin Amis",
+    "ot": "The Information",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 893,
+    "y": 1995,
+    "t": null,
+    "a": "알란 워너",
+    "oa": "Alan Warner",
+    "ot": "Morvern Callar",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 894,
+    "y": 1995,
+    "t": "위로받지 못한 사람들",
+    "a": "가즈오 이시구로",
+    "oa": "Kazuo Ishiguro",
+    "ot": "The Unconsoled",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 895,
+    "y": 1995,
+    "t": null,
+    "a": "팻 바커",
+    "oa": "Pat Barker",
+    "ot": "The Ghost Road",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 896,
+    "y": 1996,
+    "t": "그레이스",
+    "a": "마거릿 애트우드",
+    "oa": "Margaret Atwood",
+    "ot": "Alias Grace",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 897,
+    "y": 1996,
+    "t": null,
+    "a": "빅토르 펠레빈",
+    "oa": "Victor Pelevin",
+    "ot": "The Clay Machine-Gun",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 898,
+    "y": 1996,
+    "t": null,
+    "a": "데이비드 포스터 월리스",
+    "oa": "David Foster Wallace",
+    "ot": "Infinite Jest",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 899,
+    "y": 1996,
+    "t": null,
+    "a": null,
+    "oa": "Anne Michaels",
+    "ot": "Fugitive Pieces",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 900,
+    "y": 1996,
+    "t": null,
+    "a": null,
+    "oa": "Patricia Duncker",
+    "ot": "Hallucinating Foucault",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 901,
+    "y": 1996,
+    "t": null,
+    "a": null,
+    "oa": "J.G. Ballard",
+    "ot": "Cocaine Nights",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 902,
+    "y": 1996,
+    "t": "비단",
+    "a": "알레산드로 바리코",
+    "oa": "Alessandro Baricco",
+    "ot": "Silk",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 903,
+    "y": 1997,
+    "t": null,
+    "a": "존 밴빌",
+    "oa": "John Banville",
+    "ot": "The Untouchable",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 904,
+    "y": 1997,
+    "t": "미국의 목가",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "American Pastoral",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 905,
+    "y": 1997,
+    "t": null,
+    "a": "피터 케리",
+    "oa": "Peter Carey",
+    "ot": "Jack Maggs",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 906,
+    "y": 1997,
+    "t": null,
+    "a": "돈 드릴로",
+    "oa": "Don DeLillo",
+    "ot": "Underworld",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 907,
+    "y": 1997,
+    "t": "사랑의 신드롬",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "Enduring Love",
+    "aliases": [
+      "견딜 수 없는 사랑"
+    ],
+    "ko": true
+  },
+  {
+    "r": 908,
+    "y": 1997,
+    "t": null,
+    "a": "윌 셀프",
+    "oa": "Will Self",
+    "ot": "Great Apes",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 909,
+    "y": 1997,
+    "t": "게이샤의 추억",
+    "a": "아서 골든",
+    "oa": "Arthur Golden",
+    "ot": "Memoirs of a Geisha",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 910,
+    "y": 1997,
+    "t": "작은 것들의 신",
+    "a": "아룬다티 로이",
+    "oa": "Arundhati Roy",
+    "ot": "The God of Small Things",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 911,
+    "y": 1997,
+    "t": null,
+    "a": "토머스 핀천",
+    "oa": "Thomas Pynchon",
+    "ot": "Mason & Dixon",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 912,
+    "y": 1998,
+    "t": "베로니카, 죽기로 결심하다",
+    "a": "파울로 코엘료",
+    "oa": "Paulo Coelho",
+    "ot": "Veronika Decides to Die",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 913,
+    "y": 1998,
+    "t": "디 아워스",
+    "a": "마이클 커닝햄",
+    "oa": "Michael Cunningham",
+    "ot": "The Hours",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 914,
+    "y": 1998,
+    "t": null,
+    "a": "팻 바커",
+    "oa": "Pat Barker",
+    "ot": "Another World",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 915,
+    "y": 1998,
+    "t": null,
+    "a": "브렛 이스턴 엘리스",
+    "oa": "Bret Easton Ellis",
+    "ot": "Glamorama",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 916,
+    "y": 1998,
+    "t": "포이즌우드 바이블",
+    "a": "바버라 킹솔버",
+    "oa": "Barbara Kingsolver",
+    "ot": "The Poisonwood Bible",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 917,
+    "y": 1998,
+    "t": "티핑 더 벨벳",
+    "a": "세라 워터스",
+    "oa": "Sarah Waters",
+    "ot": "Tipping the Velvet",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 918,
+    "y": 1998,
+    "t": null,
+    "a": null,
+    "oa": "Ardal O’Hanlon",
+    "ot": "The Talk of the Town",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 919,
+    "y": 1998,
+    "t": null,
+    "a": "세스 노터봄",
+    "oa": "Cees Nooteboom",
+    "ot": "All Souls Day",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 920,
+    "y": 1998,
+    "t": null,
+    "a": "러셀 뱅크스",
+    "oa": "Russell Banks",
+    "ot": "Cloudsplitter",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 921,
+    "y": 1998,
+    "t": "암스테르담",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "Amsterdam",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 922,
+    "y": 1998,
+    "t": "친밀감",
+    "a": "하니프 쿠레이시",
+    "oa": "Hanif Kureishi",
+    "ot": "Intimacy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 923,
+    "y": 1998,
+    "t": "소립자",
+    "a": "미셸 우엘벡",
+    "oa": "Michel Houellebecq",
+    "ot": "Elementary Particles",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 924,
+    "y": 1999,
+    "t": "스푸트니크의 연인",
+    "a": "무라카미 하루키",
+    "oa": "Haruki Murakami",
+    "ot": "Sputnik Sweetheart",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 925,
+    "y": 1999,
+    "t": "추락",
+    "a": "존 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "Disgrace",
+    "aliases": [
+      "J. M. 쿳시"
+    ],
+    "ko": true
+  },
+  {
+    "r": 926,
+    "y": 1999,
+    "t": null,
+    "a": "살만 루시디",
+    "oa": "Salman Rushdie",
+    "ot": "The Ground Beneath Her Feet",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 927,
+    "y": 1999,
+    "t": "두려움과 떨림",
+    "a": "아멜리 노통브",
+    "oa": "Amélie Nothomb",
+    "ot": "Fear and Trembling",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 928,
+    "y": 1999,
+    "t": null,
+    "a": null,
+    "oa": "A.L. Kennedy",
+    "ot": "Everything You Need",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 929,
+    "y": 1999,
+    "t": null,
+    "a": null,
+    "oa": "Slavenka Drakulić",
+    "ot": "As If I Am Not There",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 930,
+    "y": 1999,
+    "t": "크립토노미콘",
+    "a": "닐 스티븐슨",
+    "oa": "Neal Stephenson",
+    "ot": "Cryptonomicon",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 931,
+    "y": 1999,
+    "t": null,
+    "a": "판카지 미슈라",
+    "oa": "Pankaj Mishra",
+    "ot": "The Romantics",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 932,
+    "y": 1999,
+    "t": "동행",
+    "a": "폴 오스터",
+    "oa": "Paul Auster",
+    "ot": "Timbuktu",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 933,
+    "y": 2000,
+    "t": "패스토럴리아",
+    "a": "조지 손더스",
+    "oa": "George Saunders",
+    "ot": "Pastoralia",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 934,
+    "y": 2000,
+    "t": "블론드",
+    "a": "조이스 캐럴 오츠",
+    "oa": "Joyce Carol Oates",
+    "ot": "Blonde",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 935,
+    "y": 2000,
+    "t": null,
+    "a": null,
+    "oa": "Mark Z. Danielewski",
+    "ot": "House of Leaves",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 936,
+    "y": 2000,
+    "t": null,
+    "a": null,
+    "oa": "J.G. Ballard",
+    "ot": "Super-Cannes",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 937,
+    "y": 2000,
+    "t": null,
+    "a": "샤시 데슈판데",
+    "oa": "Shashi Deshpande",
+    "ot": "Small Remedies",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 938,
+    "y": 2000,
+    "t": "신의 아이들은 모두 춤춘다",
+    "a": "무라카미 하루키",
+    "oa": "Haruki Murakami",
+    "ot": "After the Quake",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 939,
+    "y": 2000,
+    "t": "눈먼 암살자",
+    "a": "마거릿 애트우드",
+    "oa": "Margaret Atwood",
+    "ot": "The Blind Assassin",
+    "aliases": [
+      "눈 먼 암살자"
+    ],
+    "ko": true
+  },
+  {
+    "r": 940,
+    "y": 2000,
+    "t": "휴먼 스테인",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "The Human Stain",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 941,
+    "y": 2000,
+    "t": null,
+    "a": "윌 셀프",
+    "oa": "Will Self",
+    "ot": "How the Dead Live",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 942,
+    "y": 2000,
+    "t": null,
+    "a": "E. L. 닥터로",
+    "oa": "E.L. Doctorow",
+    "ot": "City of God",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 943,
+    "y": 2000,
+    "t": null,
+    "a": null,
+    "oa": "Peter Esterhazy",
+    "ot": "Celestial Harmonies",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 944,
+    "y": 2000,
+    "t": "1977",
+    "a": "데이비드 피스",
+    "oa": "David Peace",
+    "ot": "Nineteen Seventy Seven",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 945,
+    "y": 2000,
+    "t": "향수",
+    "a": "밀란 쿤데라",
+    "oa": "Milan Kundera",
+    "ot": "Ignorance",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 946,
+    "y": 2000,
+    "t": "언더 더 스킨",
+    "a": "미헬 파버르",
+    "oa": "Michel Faber",
+    "ot": "Under the Skin",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 947,
+    "y": 2000,
+    "t": null,
+    "a": "자케스 음다",
+    "oa": "Zakes Mda",
+    "ot": "The Heart of Redness",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 948,
+    "y": 2000,
+    "t": "하얀 이빨",
+    "a": "제이디 스미스",
+    "oa": "Zadie Smith",
+    "ot": "White Teeth",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 949,
+    "y": 2000,
+    "t": null,
+    "a": "이스마일 카다레",
+    "oa": "Ismail Kadare",
+    "ot": "Spring Flowers, Spring Frost",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 950,
+    "y": 2000,
+    "t": "악마와 미스 프랭",
+    "a": "파울로 코엘료",
+    "oa": "Paulo Coelho",
+    "ot": "The Devil and Miss Prym",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 951,
+    "y": 2000,
+    "t": null,
+    "a": null,
+    "oa": "Akhil Sharma",
+    "ot": "An Obedient Father",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 952,
+    "y": 2000,
+    "t": "염소의 축제",
+    "a": "마리오 바르가스 요사",
+    "oa": "Mario Vargas Llosa",
+    "ot": "The Feast of the Goat",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 953,
+    "y": 2001,
+    "t": "파이 이야기",
+    "a": "얀 마텔",
+    "oa": "Yann Martel",
+    "ot": "Life of Pi",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 954,
+    "y": 2001,
+    "t": "질식",
+    "a": "척 팔라닉",
+    "oa": "Chuck Palahniuk",
+    "ot": "Choke",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 955,
+    "y": 2001,
+    "t": null,
+    "a": null,
+    "oa": "Jamie O’Neill",
+    "ot": "At Swim, Two Boys",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 956,
+    "y": 2001,
+    "t": "분노",
+    "a": "살만 루슈디",
+    "oa": "Salman Rushdie",
+    "ot": "Fury",
+    "aliases": [
+      "살만 루시디"
+    ],
+    "ko": true
+  },
+  {
+    "r": 957,
+    "y": 2001,
+    "t": "바디 아티스트",
+    "a": "돈 드릴로",
+    "oa": "Don DeLillo",
+    "ot": "The Body Artist",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 958,
+    "y": 2001,
+    "t": "그대로 있어줘",
+    "a": "마거릿 마찬티니",
+    "oa": "Margaret Mazzantini",
+    "ot": "Don’t Move",
+    "aliases": [
+      "마르가렛 마짠티니"
+    ],
+    "ko": true,
+    "note": "문학동네 2005, 한리나 옮김 (원제 Non ti muovere)"
+  },
+  {
+    "r": 959,
+    "y": 2001,
+    "t": "인생 수정",
+    "a": "조너선 프랜즌",
+    "oa": "Jonathan Franzen",
+    "ot": "The Corrections",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 960,
+    "y": 2001,
+    "t": "속죄",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "Atonement",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 961,
+    "y": 2001,
+    "t": null,
+    "a": null,
+    "oa": "Heather McGowan",
+    "ot": "Schooling",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 962,
+    "y": 2001,
+    "t": "플랫폼",
+    "a": "미셸 우엘벡",
+    "oa": "Michel Houellebecq",
+    "ot": "Platform",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 963,
+    "y": 2001,
+    "t": "아우스터리츠",
+    "a": "W. G. 제발트",
+    "oa": "W.G. Sebald",
+    "ot": "Austerlitz",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 964,
+    "y": 2001,
+    "t": null,
+    "a": "하니프 쿠레이시",
+    "oa": "Hanif Kureishi",
+    "ot": "Gabriel’s Gift",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 965,
+    "y": 2002,
+    "t": "환상의 책",
+    "a": "폴 오스터",
+    "oa": "Paul Auster",
+    "ot": "The Book of Illusions",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 966,
+    "y": 2002,
+    "t": null,
+    "a": "알렉산다르 헤몬",
+    "oa": "Aleksandar Hemon",
+    "ot": "Nowhere Man",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 967,
+    "y": 2002,
+    "t": null,
+    "a": "이언 뱅크스",
+    "oa": "Iain Banks",
+    "ot": "Dead Air",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 968,
+    "y": 2002,
+    "t": "청년 시절",
+    "a": "존 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "Youth",
+    "aliases": [
+      "J. M. 쿳시"
+    ],
+    "ko": true
+  },
+  {
+    "r": 969,
+    "y": 2002,
+    "t": "미들섹스",
+    "a": "제프리 유제니디스",
+    "oa": "Jeffrey Eugenides",
+    "ot": "Middlesex",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 970,
+    "y": 2002,
+    "t": null,
+    "a": "존 밴빌",
+    "oa": "John Banville",
+    "ot": "Shroud",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 971,
+    "y": 2002,
+    "t": null,
+    "a": "에드나 오브라이언",
+    "oa": "Edna O’Brien",
+    "ot": "In the Forest",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 972,
+    "y": 2002,
+    "t": null,
+    "a": null,
+    "oa": "John McGahern",
+    "ot": "That They May Face the Rising Sun",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 973,
+    "y": 2002,
+    "t": "루시 골트 이야기",
+    "a": "윌리엄 트레버",
+    "oa": "William Trevor",
+    "ot": "The Story of Lucy Gault",
+    "aliases": [
+      "루시골트이야기"
+    ],
+    "ko": true
+  },
+  {
+    "r": 974,
+    "y": 2002,
+    "t": "해변의 카프카",
+    "a": "무라카미 하루키",
+    "oa": "Haruki Murakami",
+    "ot": "Kafka on the Shore",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 975,
+    "y": 2002,
+    "t": "가장 가깝지만 가장 알 수 없는 그녀",
+    "a": "캐럴 실즈",
+    "oa": "Carol Shields",
+    "ot": "Unless",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 976,
+    "y": 2002,
+    "t": "모든 것이 밝혀졌다",
+    "a": "조너선 사프란 포어",
+    "oa": "Jonathan Safran Foer",
+    "ot": "Everything is Illuminated",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 977,
+    "y": 2002,
+    "t": "도플갱어",
+    "a": "주제 사라마구",
+    "oa": "Jose Saramago",
+    "ot": "The Double",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 978,
+    "y": 2002,
+    "t": "핑거스미스",
+    "a": "세라 워터스",
+    "oa": "Sarah Waters",
+    "ot": "Fingersmith",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 979,
+    "y": 2002,
+    "t": "가족 문제",
+    "a": "로힌턴 미스트리",
+    "oa": "Rohinton Mistry",
+    "ot": "Family Matters",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 980,
+    "y": 2002,
+    "t": null,
+    "a": null,
+    "oa": "Iain Sinclair",
+    "ot": "London Orbital",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 981,
+    "y": 2002,
+    "t": null,
+    "a": null,
+    "oa": "Dan Sleigh",
+    "ot": "Islands",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 982,
+    "y": 2003,
+    "t": "엘리자베스 코스텔로",
+    "a": "존 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "Elizabeth Costello",
+    "aliases": [
+      "J. M. 쿳시"
+    ],
+    "ko": true
+  },
+  {
+    "r": 983,
+    "y": 2003,
+    "t": "한밤중에 개에게 일어난 의문의 사건",
+    "a": "마크 해던",
+    "oa": "Mark Haddon",
+    "ot": "The Curious Incident of the Dog in the Night-Time",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 984,
+    "y": 2003,
+    "t": "내가 사랑했던 것",
+    "a": "시리 허스트베트",
+    "oa": "Siri Hustvedt",
+    "ot": "What I Loved",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 985,
+    "y": 2003,
+    "t": null,
+    "a": "그레이엄 스위프트",
+    "oa": "Graham Swift",
+    "ot": "The Light of Day",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 986,
+    "y": 2003,
+    "t": null,
+    "a": null,
+    "oa": "Alan Garner",
+    "ot": "Thursbitch",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 987,
+    "y": 2003,
+    "t": null,
+    "a": null,
+    "oa": "Rose Tremain",
+    "ot": "The Colour",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 988,
+    "y": 2003,
+    "t": null,
+    "a": null,
+    "oa": "T. Coraghessan Boyle",
+    "ot": "Drop City",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 989,
+    "y": 2004,
+    "t": "클라우드 아틀라스",
+    "a": "데이비드 미첼",
+    "oa": "David Mitchell",
+    "ot": "Cloud Atlas",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 990,
+    "y": 2004,
+    "t": null,
+    "a": null,
+    "oa": "Iain Sinclair",
+    "ot": "Dining on Stones",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 991,
+    "y": 2004,
+    "t": null,
+    "a": "피터 애크로이드",
+    "oa": "Peter Ackroyd",
+    "ot": "The Lambs of London",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 992,
+    "y": 2004,
+    "t": null,
+    "a": null,
+    "oa": "David Markson",
+    "ot": "Vanishing Point",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 993,
+    "y": 2004,
+    "t": null,
+    "a": "콜럼 토빈",
+    "oa": "Colm Toibin",
+    "ot": "The Master",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 994,
+    "y": 2004,
+    "t": "미국을 노린 음모",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "The Plot Against America",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 995,
+    "y": 2004,
+    "t": "붉은 왕세자빈",
+    "a": "마거릿 드래블",
+    "oa": "Margaret Drabble",
+    "ot": "The Red Queen",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 996,
+    "y": 2005,
+    "t": "바다",
+    "a": "존 밴빌",
+    "oa": "John Banville",
+    "ot": "The Sea",
+    "aliases": [
+      "신들은 바다로 떠났다"
+    ],
+    "ko": true
+  },
+  {
+    "r": 997,
+    "y": 2005,
+    "t": null,
+    "a": null,
+    "oa": "Peter Manson",
+    "ot": "Adjunct: An Undigest",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 998,
+    "y": 2005,
+    "t": "슬로우 맨",
+    "a": "존 쿳시",
+    "oa": "J.M. Coetzee",
+    "ot": "Slow Man",
+    "aliases": [
+      "J. M. 쿳시"
+    ],
+    "ko": true
+  },
+  {
+    "r": 999,
+    "y": 2005,
+    "t": "온 뷰티",
+    "a": "제이디 스미스",
+    "oa": "Zadie Smith",
+    "ot": "On Beauty",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 1000,
+    "y": 2005,
+    "t": "토요일",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "Saturday",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 1001,
+    "y": 2005,
+    "t": "나를 보내지 마",
+    "a": "가즈오 이시구로",
+    "oa": "Kazuo Ishiguro",
+    "ot": "Never Let Me Go",
+    "aliases": [],
+    "ko": true
+  }
+]

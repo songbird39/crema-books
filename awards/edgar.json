@@ -1,0 +1,685 @@
+[
+ {
+  "y": 2026,
+  "t": null,
+  "a": "로버트 크레이스",
+  "oa": "Robert Crais",
+  "ot": "The Big Empty",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2025,
+  "t": null,
+  "a": "샬럿 바셀",
+  "oa": "Charlotte Vassell",
+  "ot": "The In Crowd",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2024,
+  "t": null,
+  "a": "제임스 리 버크",
+  "oa": "James Lee Burke",
+  "ot": "Flags on the Bayou",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2023,
+  "t": "어느 사형에 관한 기록",
+  "a": "단야 쿠카프카",
+  "oa": "Danya Kukafka",
+  "ot": "Notes on an Execution",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2022,
+  "t": null,
+  "a": "제임스 케스트럴",
+  "oa": "James Kestrel",
+  "ot": "Five Decembers",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2021,
+  "t": "보라선 열차와 사라진 아이들",
+  "a": "디파 아나파라",
+  "oa": "Deepa Anappara",
+  "ot": "Djinn Patrol on the Purple Line",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2020,
+  "t": "낯선 자의 일기",
+  "a": "엘리 그리피스",
+  "oa": "Elly Griffiths",
+  "ot": "The Stranger Diaries",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2019,
+  "t": null,
+  "a": "월터 모슬리",
+  "oa": "Walter Mosley",
+  "ot": "Down the River Unto the Sea",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2018,
+  "t": "블루버드, 블루버드",
+  "a": "애티카 로크",
+  "oa": "Attica Locke",
+  "ot": "Bluebird, Bluebird",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2017,
+  "t": null,
+  "a": "노아 홀리",
+  "oa": "Noah Hawley",
+  "ot": "Before the Fall",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2016,
+  "t": null,
+  "a": "로리 로이",
+  "oa": "Lori Roy",
+  "ot": "Let Me Die in His Footsteps",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2015,
+  "t": "미스터 메르세데스",
+  "a": "스티븐 킹",
+  "oa": "Stephen King",
+  "ot": "Mr. Mercedes",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2014,
+  "t": "철로 된 강물처럼",
+  "a": "윌리엄 켄트 크루거",
+  "oa": "William Kent Krueger",
+  "ot": "Ordinary Grace",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2013,
+  "t": "리브 바이 나이트",
+  "a": "데니스 루헤인",
+  "oa": "Dennis Lehane",
+  "ot": "Live by Night",
+  "aliases": [
+   "리브 바이 나이트 : 밤에 살다"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2012,
+  "t": null,
+  "a": "모 헤이더",
+  "oa": "Mo Hayder",
+  "ot": "Gone",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2011,
+  "t": "록 아티스트",
+  "a": "스티브 해밀턴",
+  "oa": "Steve Hamilton",
+  "ot": "The Lock Artist",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2010,
+  "t": "라스트 차일드",
+  "a": "존 하트",
+  "oa": "John Hart",
+  "ot": "The Last Child",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2009,
+  "t": null,
+  "a": "C. J. 박스",
+  "oa": "C. J. Box",
+  "ot": "Blue Heaven",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2008,
+  "t": "다운 리버",
+  "a": "존 하트",
+  "oa": "John Hart",
+  "ot": "Down River",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2007,
+  "t": "환관 탐정 미스터 야심",
+  "a": "제이슨 굿윈",
+  "oa": "Jason Goodwin",
+  "ot": "The Janissary Tree",
+  "aliases": [
+   "환관 탐정 미스터 야심 - 예니체리 부대의 음모"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2006,
+  "t": "시티즌 빈스",
+  "a": "제스 월터",
+  "oa": "Jess Walter",
+  "ot": "Citizen Vince",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2005,
+  "t": "캘리포니아 걸",
+  "a": "T. 제퍼슨 파커",
+  "oa": "T. Jefferson Parker",
+  "ot": "California Girl",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2004,
+  "t": "부활하는 남자들",
+  "a": "이언 랜킨",
+  "oa": "Ian Rankin",
+  "ot": "Resurrection Men",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2003,
+  "t": "윈터 앤 나이트",
+  "a": "S. J. 로잔",
+  "oa": "S. J. Rozan",
+  "ot": "Winter and Night",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2002,
+  "t": null,
+  "a": "T. 제퍼슨 파커",
+  "oa": "T. Jefferson Parker",
+  "ot": "Silent Joe",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2001,
+  "t": "밑바닥",
+  "a": "조 R. 랜스데일",
+  "oa": "Joe R. Lansdale",
+  "ot": "The Bottoms",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2000,
+  "t": null,
+  "a": "잰 버크",
+  "oa": "Jan Burke",
+  "ot": "Bones",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1999,
+  "t": null,
+  "a": "로버트 클라크",
+  "oa": "Robert Clark",
+  "ot": "Mr. White's Confession",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1998,
+  "t": null,
+  "a": "제임스 리 버크",
+  "oa": "James Lee Burke",
+  "ot": "Cimarron Rose",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1997,
+  "t": "채텀 스쿨 어페어",
+  "a": "토머스 H. 쿡",
+  "oa": "Thomas H. Cook",
+  "ot": "The Chatham School Affair",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1996,
+  "t": null,
+  "a": "딕 프랜시스",
+  "oa": "Dick Francis",
+  "ot": "Come to Grief",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1995,
+  "t": "절규",
+  "a": "메리 윌리스 워커",
+  "oa": "Mary Willis Walker",
+  "ot": "The Red Scream",
+  "aliases": [],
+  "ko": true,
+  "note": "피아 1995, 전2권(절규 1·2, 절판). 알라딘 에드거상(1995) 분류에 등록"
+ },
+ {
+  "y": 1994,
+  "t": "여류 조각가",
+  "a": "미네트 월터스",
+  "oa": "Minette Walters",
+  "ot": "The Sculptress",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1993,
+  "t": null,
+  "a": "마거릿 매런",
+  "oa": "Margaret Maron",
+  "ot": "Bootlegger's Daughter",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1992,
+  "t": "백정들의 미사",
+  "a": "로렌스 블록",
+  "oa": "Lawrence Block",
+  "ot": "A Dance at the Slaughterhouse",
+  "aliases": [
+   "로런스 블록"
+  ],
+  "ko": true,
+  "note": "고려원 1992, 이동민 역(절판). 원제 미표기 — 알라딘이 이 판본을 에드거상(1992)·이 미스터리가 대단하다 분류에 등록"
+ },
+ {
+  "y": 1991,
+  "t": null,
+  "a": "줄리 스미스",
+  "oa": "Julie Smith",
+  "ot": "New Orleans Mourning",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1990,
+  "t": null,
+  "a": "제임스 리 버크",
+  "oa": "James Lee Burke",
+  "ot": "Black Cherry Blues",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1989,
+  "t": null,
+  "a": "스튜어트 M. 카민스키",
+  "oa": "Stuart M. Kaminsky",
+  "ot": "A Cold Red Sunrise",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1988,
+  "t": null,
+  "a": "에런 엘킨스",
+  "oa": "Aaron Elkins",
+  "ot": "Old Bones",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1987,
+  "t": null,
+  "a": "바버라 바인",
+  "oa": "Barbara Vine",
+  "ot": "A Dark-Adapted Eye",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1986,
+  "t": null,
+  "a": "L. R. 라이트",
+  "oa": "L. R. Wright",
+  "ot": "The Suspect",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1985,
+  "t": "백색살인",
+  "a": "로스 토마스",
+  "oa": "Ross Thomas",
+  "ot": "Briarpatch",
+  "aliases": [
+   "백색 살인",
+   "로스 토머스"
+  ],
+  "ko": true,
+  "note": "지문사 1992, 장말희 역(절판). 원제 미표기 — 알라딘 에드거상(1985) 분류 근거, 제목 대응은 불확실"
+ },
+ {
+  "y": 1984,
+  "t": null,
+  "a": "엘모어 레너드",
+  "oa": "Elmore Leonard",
+  "ot": "La Brava",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1983,
+  "t": null,
+  "a": "릭 보이어",
+  "oa": "Rick Boyer",
+  "ot": "Billingsgate Shoal",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1982,
+  "t": "새의 살인",
+  "a": "윌리엄 베이어",
+  "oa": "William Bayer",
+  "ot": "Peregrine",
+  "aliases": [
+   "송골매"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1981,
+  "t": "채찍을 쥔 오른손",
+  "a": "딕 프랜시스",
+  "oa": "Dick Francis",
+  "ot": "Whip Hand",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1980,
+  "t": null,
+  "a": "아서 멀링",
+  "oa": "Arthur Maling",
+  "ot": "The Rheingold Route",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1979,
+  "t": "바늘구멍",
+  "a": "켄 폴릿",
+  "oa": "Ken Follett",
+  "ot": "The Eye of the Needle",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1978,
+  "t": null,
+  "a": "윌리엄 H. 핼러핸",
+  "oa": "William H. Hallahan",
+  "ot": "Catch Me: Kill Me",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1977,
+  "t": "약속의 땅",
+  "a": "로버트 B. 파커",
+  "oa": "Robert B. Parker",
+  "ot": "Promised Land",
+  "aliases": [],
+  "ko": true,
+  "note": "해문출판사 Q MYSTERY 39 (1992, 최운권 역); 南島 1989(김갑수 역)판도 있음. 알라딘 에드거상(1977) 분류"
+ },
+ {
+  "y": 1976,
+  "t": "CIA 리포트",
+  "a": "브라이언 가필드",
+  "oa": "Brian Garfield",
+  "ot": "Hopscotch",
+  "aliases": [],
+  "ko": true,
+  "note": "세시 2002, 정진우 역. YES24 원제 HOPSCOTCH"
+ },
+ {
+  "y": 1975,
+  "t": "교황의 인질금",
+  "a": "존 클리어리",
+  "oa": "Jon Cleary",
+  "ot": "Peter's Pence",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1974,
+  "t": null,
+  "a": "토니 힐러먼",
+  "oa": "Tony Hillerman",
+  "ot": "Dance Hall of the Dead",
+  "aliases": [],
+  "ko": false,
+  "note": "고려원 『카치나의 춤』(1994)은 어릿광대 살인·1993 PW 선정작 소개로 보아 Sacred Clowns — 이 책 아님"
+ },
+ {
+  "y": 1973,
+  "t": null,
+  "a": "워런 키퍼",
+  "oa": "Warren Kiefer",
+  "ot": "The Lingala Code",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1972,
+  "t": "자칼의 날",
+  "a": "프레데릭 포사이드",
+  "oa": "Frederick Forsyth",
+  "ot": "The Day of the Jackal",
+  "aliases": [
+   "프레더릭 포사이스"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1971,
+  "t": "웃는 경관",
+  "a": "마이 셰발, 페르 발뢰",
+  "oa": "Maj Sjöwall & Per Wahlöö",
+  "ot": "The Laughing Policeman",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1970,
+  "t": null,
+  "a": "딕 프랜시스",
+  "oa": "Dick Francis",
+  "ot": "Forfeit",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1969,
+  "t": "긴급할 때는",
+  "a": "마이클 크라이튼",
+  "oa": "Michael Crichton",
+  "ot": "A Case of Need",
+  "aliases": [
+   "제프리 허드슨"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1968,
+  "t": null,
+  "a": "도널드 E. 웨스트레이크",
+  "oa": "Donald E. Westlake",
+  "ot": "God Save the Mark",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1967,
+  "t": null,
+  "a": "니콜라스 프릴링",
+  "oa": "Nicolas Freeling",
+  "ot": "King of the Rainy Country",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1966,
+  "t": null,
+  "a": "애덤 홀",
+  "oa": "Adam Hall",
+  "ot": "The Quiller Memorandum",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1965,
+  "t": "추운 나라에서 돌아온 스파이",
+  "a": "존 르 카레",
+  "oa": "John le Carré",
+  "ot": "The Spy Who Came in from the Cold",
+  "aliases": [
+   "추운 나라에서 온 스파이"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1964,
+  "t": null,
+  "a": "에릭 앰블러",
+  "oa": "Eric Ambler",
+  "ot": "The Light of Day",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1963,
+  "t": "죽음과 즐거운 여자",
+  "a": "엘리스 피터스",
+  "oa": "Ellis Peters",
+  "ot": "Death and the Joyful Woman",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1962,
+  "t": "기데온과 방화마",
+  "a": "J. J. 매릭",
+  "oa": "J. J. Marric",
+  "ot": "Gideon's Fire",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1961,
+  "t": null,
+  "a": "줄리언 시먼스",
+  "oa": "Julian Symons",
+  "ot": "The Progress of a Crime",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1960,
+  "t": null,
+  "a": "실리아 프렘린",
+  "oa": "Celia Fremlin",
+  "ot": "The Hours Before Dawn",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1959,
+  "t": "제8지옥",
+  "a": "스탠리 엘린",
+  "oa": "Stanley Ellin",
+  "ot": "The Eighth Circle",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1958,
+  "t": null,
+  "a": "에드 레이시",
+  "oa": "Ed Lacy",
+  "ot": "Room to Swing",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1957,
+  "t": "작은 독약병",
+  "a": "샬롯 암스트롱",
+  "oa": "Charlotte Armstrong",
+  "ot": "A Dram of Poison",
+  "aliases": [
+   "독약 한 방울",
+   "독약 한방울"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1956,
+  "t": "내 안의 야수",
+  "a": "마거릿 밀러",
+  "oa": "Margaret Millar",
+  "ot": "Beast in View",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1955,
+  "t": "기나긴 이별",
+  "a": "레이먼드 챈들러",
+  "oa": "Raymond Chandler",
+  "ot": "The Long Goodbye",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1954,
+  "t": null,
+  "a": "샬럿 제이",
+  "oa": "Charlotte Jay",
+  "ot": "Beat Not the Bones",
+  "aliases": [],
+  "ko": false
+ }
+]

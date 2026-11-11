@@ -1,0 +1,711 @@
+[
+ {
+  "y": 2026,
+  "t": null,
+  "a": "브라이언 골드스톤",
+  "oa": "Brian Goldstone",
+  "ot": "There Is No Place for Us: Working and Homeless in America",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2025,
+  "t": null,
+  "a": "벤저민 네이선스",
+  "oa": "Benjamin Nathans",
+  "ot": "To the Success of Our Hopeless Cause: The Many Lives of the Soviet Dissident Movement",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2024,
+  "t": null,
+  "a": "네이선 스롤",
+  "oa": "Nathan Thrall",
+  "ot": "A Day in the Life of Abed Salama: Anatomy of a Jerusalem Tragedy",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2023,
+  "t": null,
+  "a": "로버트 새뮤얼스, 톨루세 올로룬니파",
+  "oa": "Robert Samuels, Toluse Olorunnipa",
+  "ot": "His Name Is George Floyd: One Man's Life and the Struggle for Racial Justice",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2022,
+  "t": null,
+  "a": "앤드리아 엘리엇",
+  "oa": "Andrea Elliott",
+  "ot": "Invisible Child: Poverty, Survival & Hope in an American City",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2021,
+  "t": null,
+  "a": "데이비드 주치노",
+  "oa": "David Zucchino",
+  "ot": "Wilmington's Lie: The Murderous Coup of 1898 and the Rise of White Supremacy",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2020,
+  "t": "언다잉",
+  "a": "앤 보이어",
+  "oa": "Anne Boyer",
+  "ot": "The Undying: Pain, Vulnerability, Mortality, Medicine, Art, Time, Dreams, Data, Exhaustion, Cancer, and Care",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2019,
+  "t": null,
+  "a": "일라이자 그리즈월드",
+  "oa": "Eliza Griswold",
+  "ot": "Amity and Prosperity: One Family and the Fracturing of America",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2018,
+  "t": null,
+  "a": "제임스 포먼 주니어",
+  "oa": "James Forman Jr.",
+  "ot": "Locking Up Our Own: Crime and Punishment in Black America",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2017,
+  "t": "쫓겨난 사람들",
+  "a": "매튜 데스몬드",
+  "oa": "Matthew Desmond",
+  "ot": "Evicted: Poverty and Profit in the American City",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2016,
+  "t": null,
+  "a": "조비 워릭",
+  "oa": "Joby Warrick",
+  "ot": "Black Flags: The Rise of ISIS",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2015,
+  "t": "여섯 번째 대멸종",
+  "a": "엘리자베스 콜버트",
+  "oa": "Elizabeth Kolbert",
+  "ot": "The Sixth Extinction: An Unnatural History",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2014,
+  "t": null,
+  "a": "댄 페이긴",
+  "oa": "Dan Fagin",
+  "ot": "Toms River: A Story of Science and Salvation",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2013,
+  "t": "숲속의 악마",
+  "a": "길버트 킹",
+  "oa": "Gilbert King",
+  "ot": "Devil in the Grove: Thurgood Marshall, the Groveland Boys, and the Dawn of a New America",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2012,
+  "t": "1417년, 근대의 탄생",
+  "a": "스티븐 그린블랫",
+  "oa": "Stephen Greenblatt",
+  "ot": "The Swerve: How the World Became Modern",
+  "aliases": [
+   "1417년 근대의 탄생"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2011,
+  "t": "암: 만병의 황제의 역사",
+  "a": "싯다르타 무케르지",
+  "oa": "Siddhartha Mukherjee",
+  "ot": "The Emperor of All Maladies: A Biography of Cancer",
+  "aliases": [
+   "암 만병의 황제의 역사",
+   "만병의 황제의 역사"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2010,
+  "t": "데드핸드",
+  "a": "데이비드 E. 호프먼",
+  "oa": "David E. Hoffman",
+  "ot": "The Dead Hand: The Untold Story of the Cold War Arms Race and Its Dangerous Legacy",
+  "aliases": [
+   "데드 핸드"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2009,
+  "t": null,
+  "a": "더글러스 A. 블랙먼",
+  "oa": "Douglas A. Blackmon",
+  "ot": "Slavery by Another Name: The Re-Enslavement of Black Americans from the Civil War to World War II",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2008,
+  "t": null,
+  "a": "사울 프리들랜더",
+  "oa": "Saul Friedländer",
+  "ot": "The Years of Extermination: Nazi Germany and the Jews, 1939–1945",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2007,
+  "t": "문명전쟁",
+  "a": "로렌스 라이트",
+  "oa": "Lawrence Wright",
+  "ot": "The Looming Tower: Al-Qaeda and the Road to 9/11",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2006,
+  "t": null,
+  "a": "캐럴라인 엘킨스",
+  "oa": "Caroline Elkins",
+  "ot": "Imperial Reckoning: The Untold Story of Britain's Gulag in Kenya",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2005,
+  "t": null,
+  "a": "스티브 콜",
+  "oa": "Steve Coll",
+  "ot": "Ghost Wars: The Secret History of the CIA, Afghanistan, and Bin Laden",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2004,
+  "t": "굴락",
+  "a": "앤 애플바움",
+  "oa": "Anne Applebaum",
+  "ot": "Gulag: A History",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2003,
+  "t": "미국과 대량 학살의 시대",
+  "a": "사만다 파워",
+  "oa": "Samantha Power",
+  "ot": "\"A Problem from Hell\": America and the Age of Genocide",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2002,
+  "t": null,
+  "a": "다이앤 맥워터",
+  "oa": "Diane McWhorter",
+  "ot": "Carry Me Home: Birmingham, Alabama: The Climactic Battle of the Civil Rights Revolution",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 2001,
+  "t": "히로히토 평전",
+  "a": "허버트 빅스",
+  "oa": "Herbert P. Bix",
+  "ot": "Hirohito and the Making of Modern Japan",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 2000,
+  "t": "패배를 껴안고",
+  "a": "존 다우어",
+  "oa": "John W. Dower",
+  "ot": "Embracing Defeat: Japan in the Wake of World War II",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1999,
+  "t": "이전 세계의 연대기",
+  "a": "존 맥피",
+  "oa": "John McPhee",
+  "ot": "Annals of the Former World",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1998,
+  "t": "총 균 쇠",
+  "a": "재레드 다이아몬드",
+  "oa": "Jared Diamond",
+  "ot": "Guns, Germs, and Steel: The Fates of Human Societies",
+  "aliases": [
+   "총, 균, 쇠"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1997,
+  "t": null,
+  "a": "리처드 클루거",
+  "oa": "Richard Kluger",
+  "ot": "Ashes to Ashes: America's Hundred-Year Cigarette War, the Public Health, and the Unabashed Triumph of Philip Morris",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1996,
+  "t": null,
+  "a": "티나 로젠버그",
+  "oa": "Tina Rosenberg",
+  "ot": "The Haunted Land: Facing Europe's Ghosts After Communism",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1995,
+  "t": "핀치의 부리",
+  "a": "조너선 와이너",
+  "oa": "Jonathan Weiner",
+  "ot": "The Beak of the Finch: A Story of Evolution in Our Time",
+  "aliases": [
+   "조너던 와이너"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1994,
+  "t": null,
+  "a": "데이비드 렘닉",
+  "oa": "David Remnick",
+  "ot": "Lenin's Tomb: The Last Days of the Soviet Empire",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1993,
+  "t": "링컨의 연설",
+  "a": "게리 윌스",
+  "oa": "Garry Wills",
+  "ot": "Lincoln at Gettysburg: The Words That Remade America",
+  "aliases": [
+   "게티즈버그 연설, 272단어의 비밀"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1992,
+  "t": "황금의 샘",
+  "a": "대니얼 예긴",
+  "oa": "Daniel Yergin",
+  "ot": "The Prize: The Epic Quest for Oil, Money, and Power",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1991,
+  "t": null,
+  "a": "베르트 횔도블러, 에드워드 O. 윌슨",
+  "oa": "Bert Hölldobler, Edward O. Wilson",
+  "ot": "The Ants",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1990,
+  "t": null,
+  "a": "데일 마해리지, 마이클 윌리엄슨",
+  "oa": "Dale Maharidge, Michael Williamson",
+  "ot": "And Their Children After Them",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1989,
+  "t": null,
+  "a": "닐 시핸",
+  "oa": "Neil Sheehan",
+  "ot": "A Bright Shining Lie: John Paul Vann and America in Vietnam",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1988,
+  "t": "원자 폭탄 만들기",
+  "a": "리처드 로즈",
+  "oa": "Richard Rhodes",
+  "ot": "The Making of the Atomic Bomb",
+  "aliases": [
+   "원자폭탄 만들기"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1987,
+  "t": null,
+  "a": "데이비드 K. 시플러",
+  "oa": "David K. Shipler",
+  "ot": "Arab and Jew: Wounded Spirits in a Promised Land",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1986,
+  "t": null,
+  "a": "조지프 렐리벨드",
+  "oa": "Joseph Lelyveld",
+  "ot": "Move Your Shadow: South Africa, Black and White",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1986,
+  "t": null,
+  "a": "J. 앤서니 루커스",
+  "oa": "J. Anthony Lukas",
+  "ot": "Common Ground: A Turbulent Decade in the Lives of Three American Families",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1985,
+  "t": null,
+  "a": "스터즈 터클",
+  "oa": "Studs Terkel",
+  "ot": "\"The Good War\": An Oral History of World War II",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1984,
+  "t": "미국 의료의 사회사",
+  "a": "폴 스타",
+  "oa": "Paul Starr",
+  "ot": "The Social Transformation of American Medicine",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1983,
+  "t": null,
+  "a": "수전 시핸",
+  "oa": "Susan Sheehan",
+  "ot": "Is There No Place on Earth for Me?",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1982,
+  "t": "새로운 기계의 영혼",
+  "a": "트레이시 키더",
+  "oa": "Tracy Kidder",
+  "ot": "The Soul of a New Machine",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1981,
+  "t": "세기말 빈",
+  "a": "칼 쇼르스케",
+  "oa": "Carl E. Schorske",
+  "ot": "Fin-de-Siècle Vienna: Politics and Culture",
+  "aliases": [
+   "세기말 비엔나",
+   "비엔나 천재들의 붉은 노을"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1980,
+  "t": "괴델, 에셔, 바흐",
+  "a": "더글러스 호프스태터",
+  "oa": "Douglas R. Hofstadter",
+  "ot": "Gödel, Escher, Bach: An Eternal Golden Braid",
+  "aliases": [
+   "괴델, 에셔, 바흐: 영원한 황금 노끈"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1979,
+  "t": "인간 본성에 대하여",
+  "a": "에드워드 O. 윌슨",
+  "oa": "Edward O. Wilson",
+  "ot": "On Human Nature",
+  "aliases": [
+   "에드워드 오스본 윌슨"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1978,
+  "t": "에덴의 용",
+  "a": "칼 세이건",
+  "oa": "Carl Sagan",
+  "ot": "The Dragons of Eden: Speculations on the Evolution of Human Intelligence",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1977,
+  "t": null,
+  "a": "윌리엄 W. 워너",
+  "oa": "William W. Warner",
+  "ot": "Beautiful Swimmers: Watermen, Crabs and the Chesapeake Bay",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1976,
+  "t": null,
+  "a": "로버트 N. 버틀러",
+  "oa": "Robert N. Butler",
+  "ot": "Why Survive? Being Old in America",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1975,
+  "t": "자연의 지혜",
+  "a": "애니 딜러드",
+  "oa": "Annie Dillard",
+  "ot": "Pilgrim at Tinker Creek",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1974,
+  "t": "죽음의 부정",
+  "a": "어니스트 베커",
+  "oa": "Ernest Becker",
+  "ot": "The Denial of Death",
+  "aliases": [
+   "어네스트 베커"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1973,
+  "t": null,
+  "a": "프랜시스 피츠제럴드",
+  "oa": "Frances FitzGerald",
+  "ot": "Fire in the Lake: The Vietnamese and the Americans in Vietnam",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1973,
+  "t": null,
+  "a": "로버트 콜스",
+  "oa": "Robert Coles",
+  "ot": "Children of Crisis, Volumes II and III",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1972,
+  "t": null,
+  "a": "바바라 터크먼",
+  "oa": "Barbara W. Tuchman",
+  "ot": "Stilwell and the American Experience in China, 1911–45",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1971,
+  "t": "일본 제국 패망사",
+  "a": "존 톨랜드",
+  "oa": "John Toland",
+  "ot": "The Rising Sun: The Decline and Fall of the Japanese Empire, 1936–1945",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1970,
+  "t": "간디의 진리",
+  "a": "에릭 에릭슨",
+  "oa": "Erik H. Erikson",
+  "ot": "Gandhi's Truth: On the Origins of Militant Nonviolence",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1969,
+  "t": "인간이란 동물",
+  "a": "르네 듀보",
+  "oa": "René Dubos",
+  "ot": "So Human an Animal",
+  "aliases": [
+   "르네 뒤보",
+   "人間이란 動物",
+   "인간이기 위하여",
+   "르네 뒤보스"
+  ],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1969,
+  "t": "밤의 군대들",
+  "a": "노먼 메일러",
+  "oa": "Norman Mailer",
+  "ot": "The Armies of the Night",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1968,
+  "t": null,
+  "a": "윌 듀런트, 에어리얼 듀런트",
+  "oa": "Will Durant, Ariel Durant",
+  "ot": "Rousseau and Revolution (The Story of Civilization, Vol. X)",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1967,
+  "t": null,
+  "a": "데이비드 브라이언 데이비스",
+  "oa": "David Brion Davis",
+  "ot": "The Problem of Slavery in Western Culture",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1966,
+  "t": null,
+  "a": "에드윈 웨이 틸",
+  "oa": "Edwin Way Teale",
+  "ot": "Wandering Through Winter",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1965,
+  "t": null,
+  "a": "하워드 멈퍼드 존스",
+  "oa": "Howard Mumford Jones",
+  "ot": "O Strange New World",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ },
+ {
+  "y": 1964,
+  "t": "미국의 반지성주의",
+  "a": "리처드 호프스태터",
+  "oa": "Richard Hofstadter",
+  "ot": "Anti-intellectualism in American Life",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1963,
+  "t": "8월의 포성",
+  "a": "바바라 터크먼",
+  "oa": "Barbara W. Tuchman",
+  "ot": "The Guns of August",
+  "aliases": [],
+  "ko": true,
+  "note": ""
+ },
+ {
+  "y": 1962,
+  "t": null,
+  "a": "시어도어 H. 화이트",
+  "oa": "Theodore H. White",
+  "ot": "The Making of the President 1960",
+  "aliases": [],
+  "ko": false,
+  "note": ""
+ }
+]

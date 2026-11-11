@@ -1,0 +1,922 @@
+[
+ {
+  "y": 2026,
+  "t": null,
+  "a": "대니얼 크라우스",
+  "oa": "Daniel Kraus",
+  "ot": "Angel Down",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2025,
+  "t": "제임스",
+  "a": "퍼시벌 에버렛",
+  "oa": "Percival Everett",
+  "ot": "James",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2024,
+  "t": "밤의 가장자리에서",
+  "a": "제인 앤 필립스",
+  "oa": "Jayne Anne Phillips",
+  "ot": "Night Watch",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2023,
+  "t": "내 이름은 데몬 코퍼헤드",
+  "a": "바버라 킹솔버",
+  "oa": "Barbara Kingsolver",
+  "ot": "Demon Copperhead",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2023,
+  "t": "트러스트",
+  "a": "에르난 디아스",
+  "oa": "Hernan Diaz",
+  "ot": "Trust",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2022,
+  "t": "네타냐후",
+  "a": "조슈아 코언",
+  "oa": "Joshua Cohen",
+  "ot": "The Netanyahus",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2021,
+  "t": "밤의 경비원",
+  "a": "루이스 어드리크",
+  "oa": "Louise Erdrich",
+  "ot": "The Night Watchman",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2020,
+  "t": "니클의 소년들",
+  "a": "콜슨 화이트헤드",
+  "oa": "Colson Whitehead",
+  "ot": "The Nickel Boys",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2019,
+  "t": "오버스토리",
+  "a": "리처드 파워스",
+  "oa": "Richard Powers",
+  "ot": "The Overstory",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2018,
+  "t": "레스",
+  "a": "앤드루 숀 그리어",
+  "oa": "Andrew Sean Greer",
+  "ot": "Less",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2017,
+  "t": "언더그라운드 레일로드",
+  "a": "콜슨 화이트헤드",
+  "oa": "Colson Whitehead",
+  "ot": "The Underground Railroad",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2016,
+  "t": "동조자",
+  "a": "비엣 타인 응우옌",
+  "oa": "Viet Thanh Nguyen",
+  "ot": "The Sympathizer",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2015,
+  "t": "우리가 볼 수 없는 모든 빛",
+  "a": "앤서니 도어",
+  "oa": "Anthony Doerr",
+  "ot": "All the Light We Cannot See",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2014,
+  "t": "황금방울새",
+  "a": "도나 타트",
+  "oa": "Donna Tartt",
+  "ot": "The Goldfinch",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2013,
+  "t": "고아원 원장의 아들",
+  "a": "애덤 존슨",
+  "oa": "Adam Johnson",
+  "ot": "The Orphan Master's Son",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2011,
+  "t": "깡패단의 방문",
+  "a": "제니퍼 이건",
+  "oa": "Jennifer Egan",
+  "ot": "A Visit from the Goon Squad",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2010,
+  "t": "팅커스",
+  "a": "폴 하딩",
+  "oa": "Paul Harding",
+  "ot": "Tinkers",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2009,
+  "t": "올리브 키터리지",
+  "a": "엘리자베스 스트라우트",
+  "oa": "Elizabeth Strout",
+  "ot": "Olive Kitteridge",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2008,
+  "t": "오스카 와오의 짧고 놀라운 삶",
+  "a": "주노 디아스",
+  "oa": "Junot Díaz",
+  "ot": "The Brief Wondrous Life of Oscar Wao",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2007,
+  "t": "로드",
+  "a": "코맥 매카시",
+  "oa": "Cormac McCarthy",
+  "ot": "The Road",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2006,
+  "t": null,
+  "a": "제럴딘 브룩스",
+  "oa": "Geraldine Brooks",
+  "ot": "March",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2005,
+  "t": "길리아드",
+  "a": "메릴린 로빈슨",
+  "oa": "Marilynne Robinson",
+  "ot": "Gilead",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2004,
+  "t": "알려진 세계",
+  "a": "에드워드 P. 존스",
+  "oa": "Edward P. Jones",
+  "ot": "The Known World",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2003,
+  "t": "미들섹스",
+  "a": "제프리 유제니디스",
+  "oa": "Jeffrey Eugenides",
+  "ot": "Middlesex",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2002,
+  "t": null,
+  "a": "리처드 루소",
+  "oa": "Richard Russo",
+  "ot": "Empire Falls",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2001,
+  "t": "캐벌리어와 클레이의 놀라운 모험",
+  "a": "마이클 셰이본",
+  "oa": "Michael Chabon",
+  "ot": "The Amazing Adventures of Kavalier & Clay",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2000,
+  "t": "축복받은 집",
+  "a": "줌파 라히리",
+  "oa": "Jhumpa Lahiri",
+  "ot": "Interpreter of Maladies",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1999,
+  "t": "디 아워스",
+  "a": "마이클 커닝햄",
+  "oa": "Michael Cunningham",
+  "ot": "The Hours",
+  "aliases": [
+   "세월"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1998,
+  "t": "미국의 목가",
+  "a": "필립 로스",
+  "oa": "Philip Roth",
+  "ot": "American Pastoral",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1997,
+  "t": "마틴 드레슬러",
+  "a": "스티븐 밀하우저",
+  "oa": "Steven Millhauser",
+  "ot": "Martin Dressler: The Tale of an American Dreamer",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1996,
+  "t": "독립기념일",
+  "a": "리처드 포드",
+  "oa": "Richard Ford",
+  "ot": "Independence Day",
+  "aliases": [
+   "잃어버린 나날들"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1995,
+  "t": "스톤 다이어리",
+  "a": "캐롤 쉴즈",
+  "oa": "Carol Shields",
+  "ot": "The Stone Diaries",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1994,
+  "t": "시핑 뉴스",
+  "a": "애니 프루",
+  "oa": "E. Annie Proulx",
+  "ot": "The Shipping News",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1993,
+  "t": "이상한 산의 향기",
+  "a": "로버트 올렌 버틀러",
+  "oa": "Robert Olen Butler",
+  "ot": "A Good Scent from a Strange Mountain",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1992,
+  "t": "천 에이커의 땅에서",
+  "a": "제인 스마일리",
+  "oa": "Jane Smiley",
+  "ot": "A Thousand Acres",
+  "aliases": [
+   "1000 에이커"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1991,
+  "t": "토끼 잠들다",
+  "a": "존 업다이크",
+  "oa": "John Updike",
+  "ot": "Rabbit at Rest",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1990,
+  "t": "내 영혼의 마리아",
+  "a": "오스카 이후엘로스",
+  "oa": "Oscar Hijuelos",
+  "ot": "The Mambo Kings Play Songs of Love",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1989,
+  "t": "종이시계",
+  "a": "앤 타일러",
+  "oa": "Anne Tyler",
+  "ot": "Breathing Lessons",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1988,
+  "t": "빌러비드",
+  "a": "토니 모리슨",
+  "oa": "Toni Morrison",
+  "ot": "Beloved",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1987,
+  "t": "멤피스에로의 화려한 여행",
+  "a": "피터 테일러",
+  "oa": "Peter Taylor",
+  "ot": "A Summons to Memphis",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1986,
+  "t": null,
+  "a": "래리 맥머트리",
+  "oa": "Larry McMurtry",
+  "ot": "Lonesome Dove",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1985,
+  "t": null,
+  "a": "앨리슨 루리",
+  "oa": "Alison Lurie",
+  "ot": "Foreign Affairs",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1984,
+  "t": "내가 너를 사랑한 도시",
+  "a": "윌리엄 케네디",
+  "oa": "William Kennedy",
+  "ot": "Ironweed",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1983,
+  "t": "컬러 퍼플",
+  "a": "앨리스 워커",
+  "oa": "Alice Walker",
+  "ot": "The Color Purple",
+  "aliases": [
+   "더 컬러 퍼플"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1982,
+  "t": "토끼는 부자다",
+  "a": "존 업다이크",
+  "oa": "John Updike",
+  "ot": "Rabbit Is Rich",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1981,
+  "t": "바보들의 결탁",
+  "a": "존 케네디 툴",
+  "oa": "John Kennedy Toole",
+  "ot": "A Confederacy of Dunces",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1980,
+  "t": "처형인의 노래",
+  "a": "노먼 메일러",
+  "oa": "Norman Mailer",
+  "ot": "The Executioner's Song",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1979,
+  "t": "기괴한 라디오",
+  "a": "존 치버",
+  "oa": "John Cheever",
+  "ot": "The Stories of John Cheever",
+  "aliases": [
+   "돼지가 우물에 빠졌던 날",
+   "그게 누구였는지만 말해봐",
+   "사랑의 기하학"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1978,
+  "t": "행동반경",
+  "a": "제임스 앨런 맥퍼슨",
+  "oa": "James Alan McPherson",
+  "ot": "Elbow Room",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1976,
+  "t": "험볼트의 선물",
+  "a": "솔 벨로",
+  "oa": "Saul Bellow",
+  "ot": "Humboldt's Gift",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1975,
+  "t": null,
+  "a": "마이클 샤라",
+  "oa": "Michael Shaara",
+  "ot": "The Killer Angels",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1973,
+  "t": "낙천주의자의 딸",
+  "a": "유도라 웰티",
+  "oa": "Eudora Welty",
+  "ot": "The Optimist's Daughter",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1972,
+  "t": null,
+  "a": "월리스 스테그너",
+  "oa": "Wallace Stegner",
+  "ot": "Angle of Repose",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1970,
+  "t": null,
+  "a": "진 스태퍼드",
+  "oa": "Jean Stafford",
+  "ot": "Collected Stories",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1969,
+  "t": "여명으로 빚은 집",
+  "a": "N. 스콧 모머데이",
+  "oa": "N. Scott Momaday",
+  "ot": "House Made of Dawn",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1968,
+  "t": "냇 터어너",
+  "a": "윌리암 스타이론",
+  "oa": "William Styron",
+  "ot": "The Confessions of Nat Turner",
+  "aliases": [
+   "윌리엄 스타이런"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1967,
+  "t": "수선공",
+  "a": "버나드 맬러머드",
+  "oa": "Bernard Malamud",
+  "ot": "The Fixer",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1966,
+  "t": "캐서린 앤 포터",
+  "a": "캐서린 앤 포터",
+  "oa": "Katherine Anne Porter",
+  "ot": "The Collected Stories of Katherine Anne Porter",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1965,
+  "t": null,
+  "a": "셜리 앤 그라우",
+  "oa": "Shirley Ann Grau",
+  "ot": "The Keepers of the House",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1963,
+  "t": null,
+  "a": "윌리엄 포크너",
+  "oa": "William Faulkner",
+  "ot": "The Reivers",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1962,
+  "t": null,
+  "a": "에드윈 오코너",
+  "oa": "Edwin O'Connor",
+  "ot": "The Edge of Sadness",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1961,
+  "t": "앵무새 죽이기",
+  "a": "하퍼 리",
+  "oa": "Harper Lee",
+  "ot": "To Kill a Mockingbird",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1960,
+  "t": null,
+  "a": "앨런 드루리",
+  "oa": "Allen Drury",
+  "ot": "Advise and Consent",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1959,
+  "t": null,
+  "a": "로버트 루이스 테일러",
+  "oa": "Robert Lewis Taylor",
+  "ot": "The Travels of Jaimie McPheeters",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1958,
+  "t": "가족의 죽음",
+  "a": "제임스 에이지",
+  "oa": "James Agee",
+  "ot": "A Death in the Family",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1956,
+  "t": null,
+  "a": "매킨리 캔터",
+  "oa": "MacKinlay Kantor",
+  "ot": "Andersonville",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1955,
+  "t": null,
+  "a": "윌리엄 포크너",
+  "oa": "William Faulkner",
+  "ot": "A Fable",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1953,
+  "t": "노인과 바다",
+  "a": "어니스트 헤밍웨이",
+  "oa": "Ernest Hemingway",
+  "ot": "The Old Man and the Sea",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1952,
+  "t": null,
+  "a": "허먼 워크",
+  "oa": "Herman Wouk",
+  "ot": "The Caine Mutiny",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1951,
+  "t": null,
+  "a": "콘래드 리히터",
+  "oa": "Conrad Richter",
+  "ot": "The Town",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1950,
+  "t": "서부행로",
+  "a": "알프렛 B. 거드리",
+  "oa": "A. B. Guthrie Jr.",
+  "ot": "The Way West",
+  "aliases": [
+   "A. B. 거스리 주니어",
+   "西部行路"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1949,
+  "t": null,
+  "a": "제임스 굴드 커즌스",
+  "oa": "James Gould Cozzens",
+  "ot": "Guard of Honor",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1948,
+  "t": null,
+  "a": "제임스 미치너",
+  "oa": "James A. Michener",
+  "ot": "Tales of the South Pacific",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1947,
+  "t": null,
+  "a": "로버트 펜 워런",
+  "oa": "Robert Penn Warren",
+  "ot": "All the King's Men",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1945,
+  "t": null,
+  "a": "존 허시",
+  "oa": "John Hersey",
+  "ot": "A Bell for Adano",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1944,
+  "t": null,
+  "a": "마틴 플래빈",
+  "oa": "Martin Flavin",
+  "ot": "Journey in the Dark",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1943,
+  "t": null,
+  "a": "업턴 싱클레어",
+  "oa": "Upton Sinclair",
+  "ot": "Dragon's Teeth",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1942,
+  "t": null,
+  "a": "엘런 글래스고",
+  "oa": "Ellen Glasgow",
+  "ot": "In This Our Life",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1940,
+  "t": "분노의 포도",
+  "a": "존 스타인벡",
+  "oa": "John Steinbeck",
+  "ot": "The Grapes of Wrath",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1939,
+  "t": "아기 사슴 플랙",
+  "a": "마저리 키넌 롤링스",
+  "oa": "Marjorie Kinnan Rawlings",
+  "ot": "The Yearling",
+  "aliases": [
+   "아기 사슴 프래그",
+   "아기사슴 이야기"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1938,
+  "t": null,
+  "a": "존 P. 마퀀드",
+  "oa": "John P. Marquand",
+  "ot": "The Late George Apley",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1937,
+  "t": "바람과 함께 사라지다",
+  "a": "마거릿 미첼",
+  "oa": "Margaret Mitchell",
+  "ot": "Gone with the Wind",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1936,
+  "t": null,
+  "a": "H. L. 데이비스",
+  "oa": "H. L. Davis",
+  "ot": "Honey in the Horn",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1935,
+  "t": null,
+  "a": "조지핀 존슨",
+  "oa": "Josephine Johnson",
+  "ot": "Now in November",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1934,
+  "t": null,
+  "a": "캐롤라인 밀러",
+  "oa": "Caroline Miller",
+  "ot": "Lamb in His Bosom",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1933,
+  "t": null,
+  "a": "T. S. 스트리블링",
+  "oa": "T. S. Stribling",
+  "ot": "The Store",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1932,
+  "t": "대지",
+  "a": "펄 S. 벅",
+  "oa": "Pearl S. Buck",
+  "ot": "The Good Earth",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1931,
+  "t": null,
+  "a": "마거릿 에이어 반스",
+  "oa": "Margaret Ayer Barnes",
+  "ot": "Years of Grace",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1930,
+  "t": null,
+  "a": "올리버 라 파지",
+  "oa": "Oliver La Farge",
+  "ot": "Laughing Boy",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1929,
+  "t": null,
+  "a": "줄리아 피터킨",
+  "oa": "Julia Peterkin",
+  "ot": "Scarlet Sister Mary",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1928,
+  "t": "산 루이스 레이의 다리",
+  "a": "손턴 와일더",
+  "oa": "Thornton Wilder",
+  "ot": "The Bridge of San Luis Rey",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1927,
+  "t": null,
+  "a": "루이스 브롬필드",
+  "oa": "Louis Bromfield",
+  "ot": "Early Autumn",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1926,
+  "t": "의사과학자 애로우스미스",
+  "a": "싱클레어 루이스",
+  "oa": "Sinclair Lewis",
+  "ot": "Arrowsmith",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1925,
+  "t": null,
+  "a": "에드나 퍼버",
+  "oa": "Edna Ferber",
+  "ot": "So Big",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1924,
+  "t": null,
+  "a": "마거릿 윌슨",
+  "oa": "Margaret Wilson",
+  "ot": "The Able McLaughlins",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1923,
+  "t": "우리 중 하나",
+  "a": "윌라 캐더",
+  "oa": "Willa Cather",
+  "ot": "One of Ours",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1922,
+  "t": "앨리스 애덤스의 비밀스러운 삶",
+  "a": "부스 타킹턴",
+  "oa": "Booth Tarkington",
+  "ot": "Alice Adams",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1921,
+  "t": "순수의 시대",
+  "a": "이디스 워튼",
+  "oa": "Edith Wharton",
+  "ot": "The Age of Innocence",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1919,
+  "t": "위대한 앰버슨가",
+  "a": "부스 타킹턴",
+  "oa": "Booth Tarkington",
+  "ot": "The Magnificent Ambersons",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1918,
+  "t": null,
+  "a": "어니스트 풀",
+  "oa": "Ernest Poole",
+  "ot": "His Family",
+  "aliases": [],
+  "ko": false
+ }
+]

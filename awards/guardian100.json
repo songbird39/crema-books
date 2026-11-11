@@ -1,0 +1,1013 @@
+[
+ {
+  "r": 1,
+  "y": 2009,
+  "t": "울프홀",
+  "a": "힐러리 맨틀",
+  "oa": "Hilary Mantel",
+  "ot": "Wolf Hall",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 2,
+  "y": 2004,
+  "t": "길리아드",
+  "a": "메릴린 로빈슨",
+  "oa": "Marilynne Robinson",
+  "ot": "Gilead",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 3,
+  "y": 2013,
+  "t": "붉은 인간의 최후",
+  "a": "스베틀라나 알렉시예비치",
+  "oa": "Svetlana Alexievich",
+  "ot": "Secondhand Time",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 4,
+  "y": 2005,
+  "t": "나를 보내지 마",
+  "a": "가즈오 이시구로",
+  "oa": "Kazuo Ishiguro",
+  "ot": "Never Let Me Go",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 5,
+  "y": 2001,
+  "t": "아우스터리츠",
+  "a": "W. G. 제발트",
+  "oa": "WG Sebald",
+  "ot": "Austerlitz",
+  "aliases": [
+   "W.G.제발트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 6,
+  "y": 2000,
+  "t": "황금나침반 3",
+  "a": "필립 풀먼",
+  "oa": "Philip Pullman",
+  "ot": "The Amber Spyglass",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 7,
+  "y": 2015,
+  "t": "세상과 나 사이",
+  "a": "타네히시 코츠",
+  "oa": "Ta-Nehisi Coates",
+  "ot": "Between the World and Me",
+  "aliases": [
+   "타네하시 코츠"
+  ],
+  "ko": true
+ },
+ {
+  "r": 8,
+  "y": 2016,
+  "t": "가을",
+  "a": "앨리 스미스",
+  "oa": "Ali Smith",
+  "ot": "Autumn",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 9,
+  "y": 2004,
+  "t": "클라우드 아틀라스",
+  "a": "데이비드 미첼",
+  "oa": "David Mitchell",
+  "ot": "Cloud Atlas",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 10,
+  "y": 2006,
+  "t": "절반의 태양",
+  "a": "치마만다 응고지 아디치에",
+  "oa": "Chimamanda Ngozi Adichie",
+  "ot": "Half of a Yellow Sun",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 11,
+  "y": 2011,
+  "t": "나의 눈부신 친구",
+  "a": "엘레나 페란테",
+  "oa": "Elena Ferrante",
+  "ot": "My Brilliant Friend",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 12,
+  "y": 2004,
+  "t": "미국을 노린 음모",
+  "a": "필립 로스",
+  "oa": "Philip Roth",
+  "ot": "The Plot Against America",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 13,
+  "y": 2001,
+  "t": "노동의 배신",
+  "a": "바버라 에런라이크",
+  "oa": "Barbara Ehrenreich",
+  "ot": "Nickel and Dimed",
+  "aliases": [
+   "바바라 에렌라이히"
+  ],
+  "ko": true
+ },
+ {
+  "r": 14,
+  "y": 2002,
+  "t": "핑거스미스",
+  "a": "세라 워터스",
+  "oa": "Sarah Waters",
+  "ot": "Fingersmith",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 15,
+  "y": 2014,
+  "t": "여섯 번째 대멸종",
+  "a": "엘리자베스 콜버트",
+  "oa": "Elizabeth Kolbert",
+  "ot": "The Sixth Extinction",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 16,
+  "y": 2001,
+  "t": "인생 수정",
+  "a": "조너선 프랜즌",
+  "oa": "Jonathan Franzen",
+  "ot": "The Corrections",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 17,
+  "y": 2006,
+  "t": "로드",
+  "a": "코맥 매카시",
+  "oa": "Cormac McCarthy",
+  "ot": "The Road",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 18,
+  "y": 2007,
+  "t": "쇼크 독트린",
+  "a": "나오미 클라인",
+  "oa": "Naomi Klein",
+  "ot": "The Shock Doctrine",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 19,
+  "y": 2003,
+  "t": "한밤중에 개에게 일어난 의문의 사건",
+  "a": "마크 해던",
+  "oa": "Mark Haddon",
+  "ot": "The Curious Incident of the Dog in the Night-Time",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 20,
+  "y": 2013,
+  "t": "라이프 애프터 라이프",
+  "a": "케이트 앳킨슨",
+  "oa": "Kate Atkinson",
+  "ot": "Life After Life",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 21,
+  "y": 2011,
+  "t": "사피엔스",
+  "a": "유발 하라리",
+  "oa": "Yuval Noah Harari",
+  "ot": "Sapiens",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 22,
+  "y": 2013,
+  "t": "12월 10일",
+  "a": "조지 손더스",
+  "oa": "George Saunders",
+  "ot": "Tenth of December",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 23,
+  "y": 2001,
+  "t": "한낮의 우울",
+  "a": "앤드류 솔로몬",
+  "oa": "Andrew Solomon",
+  "ot": "The Noonday Demon",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 24,
+  "y": 2011,
+  "t": "깡패단의 방문",
+  "a": "제니퍼 이건",
+  "oa": "Jennifer Egan",
+  "ot": "A Visit from The Goon Squad",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 25,
+  "y": 2018,
+  "t": "노멀 피플",
+  "a": "샐리 루니",
+  "oa": "Sally Rooney",
+  "ot": "Normal People",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 26,
+  "y": 2013,
+  "t": "21세기 자본",
+  "a": "토마 피케티",
+  "oa": "Thomas Piketty",
+  "ot": "Capital in the Twenty First Century",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 27,
+  "y": 2001,
+  "t": "미움, 우정, 구애, 사랑, 결혼",
+  "a": "앨리스 먼로",
+  "oa": "Alice Munro",
+  "ot": "Hateship, Friendship, Courtship, Loveship, Marriage",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 28,
+  "y": 2005,
+  "t": "서 있는 여성의 누드/황홀",
+  "a": "캐럴 앤 더피",
+  "oa": "Carol Ann Duffy",
+  "ot": "Rapture",
+  "aliases": [
+   "캐롤 앤 더피"
+  ],
+  "ko": true
+ },
+ {
+  "r": 29,
+  "y": 2009,
+  "t": "나의 투쟁 1",
+  "a": "칼 오베 크나우스고르",
+  "oa": "Karl Ove Knausgaard",
+  "ot": "A Death in the Family",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 30,
+  "y": 2016,
+  "t": "언더그라운드 레일로드",
+  "a": "콜슨 화이트헤드",
+  "oa": "Colson Whitehead",
+  "ot": "The Underground Railroad",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 31,
+  "y": 2015,
+  "t": "아르고호의 선원들",
+  "a": "매기 넬슨",
+  "oa": "Maggie Nelson",
+  "ot": "The Argonauts",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 32,
+  "y": 2010,
+  "t": "암 : 만병의 황제의 역사",
+  "a": "싯다르타 무케르지",
+  "oa": "Siddhartha Mukherjee",
+  "ot": "The Emperor of All Maladies",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 33,
+  "y": 2006,
+  "t": "펀 홈",
+  "a": "앨리슨 벡델",
+  "oa": "Alison Bechdel",
+  "ot": "Fun Home",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 34,
+  "y": 2014,
+  "t": "윤곽",
+  "a": "레이첼 커스크",
+  "oa": "Rachel Cusk",
+  "ot": "Outline",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 35,
+  "y": 2010,
+  "t": "호박 눈의 산토끼",
+  "a": "에드먼드 드 발",
+  "oa": "Edmund de Waal",
+  "ot": "The Hare with Amber Eyes",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 36,
+  "y": 2000,
+  "t": null,
+  "a": null,
+  "oa": "Martin Amis",
+  "ot": "Experience",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 37,
+  "y": 2015,
+  "t": null,
+  "a": null,
+  "oa": "Anne Enright",
+  "ot": "The Green Road",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 38,
+  "y": 2004,
+  "t": "아름다움의 선",
+  "a": "앨런 홀링허스트",
+  "oa": "Alan Hollinghurst",
+  "ot": "The Line of Beauty",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 39,
+  "y": 2000,
+  "t": "하얀 이빨",
+  "a": "제이디 스미스",
+  "oa": "Zadie Smith",
+  "ot": "White Teeth",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 40,
+  "y": 2005,
+  "t": "상실",
+  "a": "조앤 디디온",
+  "oa": "Joan Didion",
+  "ot": "The Year of Magical Thinking",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 41,
+  "y": 2001,
+  "t": "속죄",
+  "a": "이언 매큐언",
+  "oa": "Ian McEwan",
+  "ot": "Atonement",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 42,
+  "y": 2010,
+  "t": "머니볼",
+  "a": "마이클 루이스",
+  "oa": "Michael Lewis",
+  "ot": "Moneyball",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 43,
+  "y": 2014,
+  "t": null,
+  "a": null,
+  "oa": "Claudia Rankine",
+  "ot": "Citizen: An American Lyric",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 44,
+  "y": 2004,
+  "t": "어둠 속의 희망",
+  "a": "리베카 솔닛",
+  "oa": "Rebecca Solnit",
+  "ot": "Hope in the Dark",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 45,
+  "y": 2013,
+  "t": "사랑은 그렇게 끝나지 않는다",
+  "a": "줄리언 반스",
+  "oa": "Julian Barnes",
+  "ot": "Levels of Life",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 46,
+  "y": 2010,
+  "t": null,
+  "a": null,
+  "oa": "Seamus Heaney",
+  "ot": "Human Chain",
+  "aliases": [],
+  "ko": false,
+  "note": "단행본 번역 없음. 『셰이머스 히니 시전집』(문학동네 2011, The Collected Poems)에 수록됐는지는 미확인"
+ },
+ {
+  "r": 47,
+  "y": 2000,
+  "t": "페르세폴리스",
+  "a": "마르얀 사트라피",
+  "oa": "Marjane Satrapi",
+  "ot": "Persepolis",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 48,
+  "y": 2002,
+  "t": null,
+  "a": null,
+  "oa": "Terry Pratchett",
+  "ot": "Night Watch",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 49,
+  "y": 2011,
+  "t": null,
+  "a": null,
+  "oa": "Jeanette Winterson",
+  "ot": "Why Be Happy When You Could Be Normal?",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 50,
+  "y": 2003,
+  "t": "오릭스와 크레이크",
+  "a": "마거릿 애트우드",
+  "oa": "Margaret Atwood",
+  "ot": "Oryx and Crake",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 51,
+  "y": 2009,
+  "t": "브루클린",
+  "a": "콜럼 토빈",
+  "oa": "Colm Tóibín",
+  "ot": "Brooklyn",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 52,
+  "y": 2004,
+  "t": null,
+  "a": null,
+  "oa": "Andrea Levy",
+  "ot": "Small Island",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 53,
+  "y": 2000,
+  "t": "켈리 갱의 진짜 이야기",
+  "a": "피터 케리",
+  "oa": "Peter Carey",
+  "ot": "True History of the Kelly Gang",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 54,
+  "y": 2017,
+  "t": "여성, 전적으로 권력에 관한",
+  "a": "메리 비어드",
+  "oa": "Mary Beard",
+  "ot": "Women & Power",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 55,
+  "y": 2006,
+  "t": "잡식동물의 딜레마",
+  "a": "마이클 폴란",
+  "oa": "Michael Pollan",
+  "ot": "The Omnivore's Dilemma",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 56,
+  "y": 2019,
+  "t": "언더랜드",
+  "a": "로버트 맥팔레인",
+  "oa": "Robert Macfarlane",
+  "ot": "Underland",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 57,
+  "y": 2000,
+  "t": "캐벌리어와 클레이의 놀라운 모험",
+  "a": "마이클 셰이본",
+  "oa": "Michael Chabon",
+  "ot": "The Amazing Adventures of Kavalier and Clay",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 58,
+  "y": 2005,
+  "t": "전후 유럽 1945~2005",
+  "a": "토니 주트",
+  "oa": "Tony Judt",
+  "ot": "Postwar",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 59,
+  "y": 2002,
+  "t": "남편의 아름다움",
+  "a": "앤 카슨",
+  "oa": "Anne Carson",
+  "ot": "The Beauty of the Husband",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 60,
+  "y": 2002,
+  "t": "다트",
+  "a": "앨리스 오스월드",
+  "oa": "Alice Oswald",
+  "ot": "Dart",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 61,
+  "y": 2014,
+  "t": null,
+  "a": null,
+  "oa": "Helen Garner",
+  "ot": "This House of Grief",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 62,
+  "y": 2006,
+  "t": "모유",
+  "a": "에드워드 세인트 오빈",
+  "oa": "Edward St Aubyn",
+  "ot": "Mother's Milk",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 63,
+  "y": 2010,
+  "t": "헨리에타 랙스의 불멸의 삶",
+  "a": "레베카 스클루트",
+  "oa": "Rebecca Skloot",
+  "ot": "The Immortal Life of Henrietta Lacks",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 64,
+  "y": 2000,
+  "t": "유혹하는 글쓰기",
+  "a": "스티븐 킹",
+  "oa": "Stephen King",
+  "ot": "On Writing",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 65,
+  "y": 2012,
+  "t": "나를 찾아줘",
+  "a": "길리언 플린",
+  "oa": "Gillian Flynn",
+  "ot": "Gone Girl",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 66,
+  "y": 2014,
+  "t": "모든 순간의 물리학",
+  "a": "카를로 로벨리",
+  "oa": "Carlo Rovelli",
+  "ot": "Seven Brief Lessons on Physics",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 67,
+  "y": 2018,
+  "t": "침묵은 여자가 되나니",
+  "a": "팻 바커",
+  "oa": "Pat Barker",
+  "ot": "The Silence of the Girls",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 68,
+  "y": 2001,
+  "t": null,
+  "a": null,
+  "oa": "John le Carré",
+  "ot": "The Constant Gardener",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 69,
+  "y": 2011,
+  "t": "사랑에 빠지기",
+  "a": "하비에르 마리아스",
+  "oa": "Javier Marías",
+  "ot": "The Infatuations",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 70,
+  "y": 2003,
+  "t": null,
+  "a": null,
+  "oa": "Zoë Heller",
+  "ot": "Notes on a Scandal",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 71,
+  "y": 2000,
+  "t": "지미 코리건",
+  "a": "크리스 웨어",
+  "oa": "Chris Ware",
+  "ot": "Jimmy Corrigan: The Smartest Kid on Earth",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 72,
+  "y": 2019,
+  "t": "감시 자본주의 시대",
+  "a": "쇼샤나 주보프",
+  "oa": "Shoshana Zuboff",
+  "ot": "The Age of Surveillance Capitalism",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 73,
+  "y": 2009,
+  "t": null,
+  "a": null,
+  "oa": "Barbara Demick",
+  "ot": "Nothing to Envy",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 74,
+  "y": 2016,
+  "t": null,
+  "a": null,
+  "oa": "Sebastian Barry",
+  "ot": "Days Without End",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 75,
+  "y": 2009,
+  "t": "죽은 이들의 뼈 위로 쟁기를 끌어라",
+  "a": "올가 토카르추크",
+  "oa": "Olga Tokarczuk",
+  "ot": "Drive Your Plow Over the Bones of the Dead",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 76,
+  "y": 2011,
+  "t": "생각에 관한 생각",
+  "a": "대니얼 카너먼",
+  "oa": "Daniel Kahneman",
+  "ot": "Thinking, Fast and Slow",
+  "aliases": [
+   "다니엘 카너먼"
+  ],
+  "ko": true
+ },
+ {
+  "r": 77,
+  "y": 2009,
+  "t": null,
+  "a": null,
+  "oa": "Yuri Herrera",
+  "ot": "Signs Preceding the End of the World",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 78,
+  "y": 2015,
+  "t": "다섯 번째 계절",
+  "a": "N. K. 제미신",
+  "oa": "NK Jemisin",
+  "ot": "The Fifth Season",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 79,
+  "y": 2009,
+  "t": "평등이 답이다",
+  "a": "리처드 윌킨슨, 케이트 피킷",
+  "oa": "Richard Wilkinson and Kate Pickett",
+  "ot": "The Spirit Level",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 80,
+  "y": 2002,
+  "t": "당신 인생의 이야기",
+  "a": "테드 창",
+  "oa": "Ted Chiang",
+  "ot": "Stories of Your Life and Others",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 81,
+  "y": 2013,
+  "t": null,
+  "a": null,
+  "oa": "Jim Crace",
+  "ot": "Harvest",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 82,
+  "y": 2002,
+  "t": "코랄린",
+  "a": "닐 게이먼",
+  "oa": "Neil Gaiman",
+  "ot": "Coraline",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 83,
+  "y": 2016,
+  "t": null,
+  "a": null,
+  "oa": "Valeria Luiselli",
+  "ot": "Tell Me How It Ends",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 84,
+  "y": 2018,
+  "t": "살림 비용",
+  "a": "데버라 리비",
+  "oa": "Deborah Levy",
+  "ot": "The Cost of Living",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 85,
+  "y": 2006,
+  "t": "만들어진 신",
+  "a": "리처드 도킨스",
+  "oa": "Richard Dawkins",
+  "ot": "The God Delusion",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 86,
+  "y": 2017,
+  "t": null,
+  "a": null,
+  "oa": "Yanis Varoufakis",
+  "ot": "Adults in the Room",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 87,
+  "y": 2017,
+  "t": null,
+  "a": null,
+  "oa": "Patricia Lockwood",
+  "ot": "Priestdaddy",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 88,
+  "y": 2001,
+  "t": null,
+  "a": null,
+  "oa": "Malorie Blackman",
+  "ot": "Noughts & Crosses",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 89,
+  "y": 2000,
+  "t": null,
+  "a": null,
+  "oa": "Lorna Sage",
+  "ot": "Bad Blood",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 90,
+  "y": 2008,
+  "t": "그곳에 집이 있었을까",
+  "a": "예니 에르펜베크",
+  "oa": "Jenny Erpenbeck",
+  "ot": "Visitation",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 91,
+  "y": 2002,
+  "t": null,
+  "a": null,
+  "oa": "M John Harrison",
+  "ot": "Light",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 92,
+  "y": 2001,
+  "t": null,
+  "a": null,
+  "oa": "Helen Dunmore",
+  "ot": "The Siege",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 93,
+  "y": 2007,
+  "t": null,
+  "a": null,
+  "oa": "Nicola Barker",
+  "ot": "Darkmans",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "r": 94,
+  "y": 2000,
+  "t": "티핑 포인트",
+  "a": "말콤 글래드웰",
+  "oa": "Malcolm Gladwell",
+  "ot": "The Tipping Point",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 95,
+  "y": 2004,
+  "t": "밥 딜런 자서전",
+  "a": "밥 딜런",
+  "oa": "Bob Dylan",
+  "ot": "Chronicles: Volume One",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 96,
+  "y": 2015,
+  "t": "리틀 라이프",
+  "a": "한야 야나기하라",
+  "oa": "Hanya Yanagihara",
+  "ot": "A Little Life",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 97,
+  "y": 2000,
+  "t": "해리 포터와 불의 잔",
+  "a": "J.K. 롤링",
+  "oa": "JK Rowling",
+  "ot": "Harry Potter and the Goblet of Fire",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 98,
+  "y": 2005,
+  "t": "여자를 증오한 남자들",
+  "a": "스티그 라르손",
+  "oa": "Stieg Larsson",
+  "ot": "The Girl With the Dragon Tattoo",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 99,
+  "y": 2005,
+  "t": "아프리카 술집, 외상은 어림없지",
+  "a": "알랭 마방쿠",
+  "oa": "Alain Mabanckou",
+  "ot": "Broken Glass",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 100,
+  "y": 2006,
+  "t": "내 인생은 로맨틱 코미디",
+  "a": "노라 에프론",
+  "oa": "Nora Ephron",
+  "ot": "I Feel Bad About My Neck",
+  "aliases": [],
+  "ko": true
+ }
+]

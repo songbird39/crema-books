@@ -1,0 +1,3388 @@
+[
+ {
+  "r": 1,
+  "y": -750,
+  "t": "일리아스",
+  "a": "호메로스",
+  "oa": "Homer",
+  "ot": "Iliad",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 2,
+  "y": -725,
+  "t": "오뒷세이아",
+  "a": "호메로스",
+  "oa": "Homer",
+  "ot": "Odyssey",
+  "aliases": [
+   "오디세이아"
+  ],
+  "ko": true
+ },
+ {
+  "r": 3,
+  "y": -463,
+  "t": "탄원하는 여인들",
+  "a": "아이스킬로스",
+  "oa": "Aeschylus",
+  "ot": "The Suppliant Maidens",
+  "aliases": [
+   "아이스퀼로스 비극 전집",
+   "아이스퀼로스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 4,
+  "y": -472,
+  "t": "아이스퀼로스 비극 전집",
+  "a": "아이스킬로스",
+  "oa": "Aeschylus",
+  "ot": "The Persians",
+  "aliases": [
+   "아이스퀼로스"
+  ],
+  "ko": true,
+  "note": "『아이스퀼로스 비극 전집』(숲)에 「페르시아인들」 수록"
+ },
+ {
+  "r": 5,
+  "y": -467,
+  "t": "테베 공격 일곱 장군",
+  "a": "아이스킬로스",
+  "oa": "Aeschylus",
+  "ot": "Seven Against Thebes",
+  "aliases": [
+   "아이스퀼로스 비극 전집",
+   "아이스퀼로스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 6,
+  "y": -460,
+  "t": "사슬에 묶인 프로메테우스",
+  "a": "아이스킬로스",
+  "oa": "Aeschylus",
+  "ot": "Prometheus Bound",
+  "aliases": [
+   "결박된 프로메테우스",
+   "아이스퀼로스 비극 전집",
+   "아이스퀼로스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 7,
+  "y": -458,
+  "t": "아가멤논",
+  "a": "아이스킬로스",
+  "oa": "Aeschylus",
+  "ot": "Agamemnon",
+  "aliases": [
+   "아이스퀼로스 비극 전집",
+   "아이스퀼로스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 8,
+  "y": -458,
+  "t": "제주를 바치는 여인들",
+  "a": "아이스킬로스",
+  "oa": "Aeschylus",
+  "ot": "Choephoroe (The Libation Bearers)",
+  "aliases": [
+   "아이스퀼로스 비극 전집",
+   "아이스퀼로스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 9,
+  "y": -458,
+  "t": "에우메니데스",
+  "a": "아이스킬로스",
+  "oa": "Aeschylus",
+  "ot": "The Eumenides",
+  "aliases": [
+   "자비로운 여신들",
+   "아이스퀼로스 비극 전집",
+   "아이스퀼로스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 10,
+  "y": -429,
+  "t": "오이디푸스 왕",
+  "a": "소포클레스",
+  "oa": "Sophocles",
+  "ot": "Oedipus the King",
+  "aliases": [
+   "오이디푸스 왕 / 콜로노스의 오이디푸스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 11,
+  "y": -401,
+  "t": "콜로노스의 오이디푸스",
+  "a": "소포클레스",
+  "oa": "Sophocles",
+  "ot": "Oedipus at Colonus",
+  "aliases": [
+   "오이디푸스 왕 / 콜로노스의 오이디푸스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 12,
+  "y": -441,
+  "t": "안티고네",
+  "a": "소포클레스",
+  "oa": "Sophocles",
+  "ot": "Antigone",
+  "aliases": [
+   "오이디푸스 왕·안티고네 외"
+  ],
+  "ko": true
+ },
+ {
+  "r": 13,
+  "y": -445,
+  "t": "아이아스",
+  "a": "소포클레스",
+  "oa": "Sophocles",
+  "ot": "Ajax",
+  "aliases": [
+   "소포클레스 비극 전집"
+  ],
+  "ko": true
+ },
+ {
+  "r": 14,
+  "y": -410,
+  "t": "소포클레스의 엘렉트라",
+  "a": "소포클레스",
+  "oa": "Sophocles",
+  "ot": "Electra",
+  "aliases": [
+   "엘렉트라",
+   "소포클레스 비극 전집"
+  ],
+  "ko": true
+ },
+ {
+  "r": 15,
+  "y": -430,
+  "t": "트라키스의 여인들",
+  "a": "소포클레스",
+  "oa": "Sophocles",
+  "ot": "Women of Trachis",
+  "aliases": [
+   "소포클레스 비극 전집"
+  ],
+  "ko": true
+ },
+ {
+  "r": 16,
+  "y": -409,
+  "t": "필록테테스",
+  "a": "소포클레스",
+  "oa": "Sophocles",
+  "ot": "Philoctetes",
+  "aliases": [
+   "소포클레스 비극 전집"
+  ],
+  "ko": true
+ },
+ {
+  "r": 17,
+  "y": -431,
+  "t": "메데이아",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Medea",
+  "aliases": [
+   "에우리피데스 비극 전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 18,
+  "y": -428,
+  "t": "히폴리투스",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Hippolytus",
+  "aliases": [
+   "힙폴뤼토스",
+   "에우리피데스 비극 전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 19,
+  "y": -438,
+  "t": "알케스티스",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Alcestis",
+  "aliases": [
+   "에우리피데스 비극 전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 20,
+  "y": -415,
+  "t": "트로이의 여인들",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "The Trojan Women",
+  "aliases": [
+   "트로이아 여인들",
+   "에우리피데스 비극 전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 21,
+  "y": -414,
+  "t": "이온",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Ion",
+  "aliases": [
+   "에우리피데스 비극 전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 22,
+  "y": -412,
+  "t": "헬레네",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Helen",
+  "aliases": [
+   "에우리피데스 비극 전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 23,
+  "y": -425,
+  "t": "안드로마케",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Andromache",
+  "aliases": [
+   "에우리피데스 비극 전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 24,
+  "y": -420,
+  "t": "에우리피데스의 엘렉트라",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Electra",
+  "aliases": [
+   "엘렉트라",
+   "에우리피데스 비극 전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 25,
+  "y": -405,
+  "t": "박코스 여신도들",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "The Bacchae",
+  "aliases": [
+   "바쿠스의 여신도들",
+   "에우리피데스 비극 전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 26,
+  "y": -424,
+  "t": "헤카베",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Hecuba",
+  "aliases": [
+   "에우리피데스 비극 전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 27,
+  "y": -408,
+  "t": "오레스테스",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Orestes",
+  "aliases": [
+   "에우리피데스 비극 전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 28,
+  "y": -413,
+  "t": "타우리스의 이피게네이아",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Iphigenia in Tauris",
+  "aliases": [
+   "타우리케의 이피게네이아",
+   "에우리피데스 비극 전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 29,
+  "y": -405,
+  "t": "아울리스의 이피게네이아",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "Iphigenia in Aulis",
+  "aliases": [
+   "에우리피데스 비극 전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 30,
+  "y": -408,
+  "t": "키클롭스",
+  "a": "에우리피데스",
+  "oa": "Euripides",
+  "ot": "The Cyclops",
+  "aliases": [
+   "퀴클롭스",
+   "에우리피데스 비극 전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 31,
+  "y": -425,
+  "t": "아리스토파네스 희극전집 1",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "The Acharnians",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 1』(숲)에 「아카르나이 구역민들」 수록"
+ },
+ {
+  "r": 32,
+  "y": -424,
+  "t": "아리스토파네스 희극전집 1",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "The Knights",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 1』(숲)에 「기사」 수록"
+ },
+ {
+  "r": 33,
+  "y": -423,
+  "t": "아리스토파네스 희극전집 1",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "The Clouds",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 1』(숲)에 「구름」 수록"
+ },
+ {
+  "r": 34,
+  "y": -422,
+  "t": "아리스토파네스 희극전집 1",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "The Wasps",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 1』(숲)에 「말벌」 수록"
+ },
+ {
+  "r": 35,
+  "y": -421,
+  "t": "아리스토파네스 희극전집 1",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "Peace",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 1』(숲)에 「평화」 수록"
+ },
+ {
+  "r": 36,
+  "y": -414,
+  "t": "새",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "The Birds",
+  "aliases": [
+   "아리스토파네스 희극전집 1"
+  ],
+  "ko": true
+ },
+ {
+  "r": 37,
+  "y": -405,
+  "t": "개구리",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "The Frogs",
+  "aliases": [
+   "아리스토파네스 희극전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 38,
+  "y": -411,
+  "t": "리시스트라타",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "Lysistrata",
+  "aliases": [
+   "뤼시스트라테",
+   "아리스토파네스 희극전집 2"
+  ],
+  "ko": true
+ },
+ {
+  "r": 39,
+  "y": -411,
+  "t": "아리스토파네스 희극전집 2",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "Thesmophoriazusae (The Poet and the Women)",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 2』(숲)에 「테스모포리아 축제의 여인들」 수록"
+ },
+ {
+  "r": 40,
+  "y": -391,
+  "t": "아리스토파네스 희극전집 2",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "Ecclesiazusae (The Assemblywomen)",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 2』(숲)에 「여인들의 민회」 수록"
+ },
+ {
+  "r": 41,
+  "y": -388,
+  "t": "아리스토파네스 희극전집 2",
+  "a": "아리스토파네스",
+  "oa": "Aristophanes",
+  "ot": "Plutus",
+  "aliases": [],
+  "ko": true,
+  "note": "『아리스토파네스 희극전집 2』(숲)에 「부의 신」 수록"
+ },
+ {
+  "r": 42,
+  "y": -430,
+  "t": "역사",
+  "a": "헤로도토스",
+  "oa": "Herodotus",
+  "ot": "The Histories",
+  "aliases": [
+   "헤로도토스 역사"
+  ],
+  "ko": true
+ },
+ {
+  "r": 43,
+  "y": -400,
+  "t": "펠로폰네소스 전쟁사",
+  "a": "투키디데스",
+  "oa": "Thucydides",
+  "ot": "History of the Peloponnesian War",
+  "aliases": [
+   "투퀴디데스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 44,
+  "y": -390,
+  "t": "카르미데스",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Charmides",
+  "aliases": [
+   "뤼시스 / 라케스 / 카르미데스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 45,
+  "y": -395,
+  "t": "라케스",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Laches",
+  "aliases": [
+   "뤼시스 / 라케스 / 카르미데스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 46,
+  "y": -390,
+  "t": "프로타고라스",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Protagoras",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 47,
+  "y": -370,
+  "t": "파이드로스",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Phaedrus",
+  "aliases": [
+   "파이드로스/메논"
+  ],
+  "ko": true
+ },
+ {
+  "r": 48,
+  "y": -385,
+  "t": "향연",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Symposium",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 49,
+  "y": -385,
+  "t": "메논",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Meno",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 50,
+  "y": -399,
+  "t": "에우튀프론",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Euthyphro",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 51,
+  "y": -399,
+  "t": "소크라테스의 변명",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Apology",
+  "aliases": [
+   "소크라테스의 변론 / 크리톤 / 파이돈",
+   "소크라테스의 변명·크리톤·파이돈·향연"
+  ],
+  "ko": true
+ },
+ {
+  "r": 52,
+  "y": -399,
+  "t": "크리톤",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Crito",
+  "aliases": [
+   "소크라테스의 변론 / 크리톤 / 파이돈"
+  ],
+  "ko": true
+ },
+ {
+  "r": 53,
+  "y": -385,
+  "t": "파이돈",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Phaedo",
+  "aliases": [
+   "소크라테스의 변론 / 크리톤 / 파이돈"
+  ],
+  "ko": true
+ },
+ {
+  "r": 54,
+  "y": -387,
+  "t": "고르기아스",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Gorgias",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 55,
+  "y": -375,
+  "t": "국가",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "The Republic",
+  "aliases": [
+   "플라톤의 국가·정체(政體)",
+   "플라톤 국가"
+  ],
+  "ko": true
+ },
+ {
+  "r": 56,
+  "y": -360,
+  "t": "티마이오스",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Timaeus",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 57,
+  "y": -369,
+  "t": "테아이테토스",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Theaetetus",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 58,
+  "y": -360,
+  "t": "소피스트",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Sophist",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 59,
+  "y": -350,
+  "t": "플라톤의 법률",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "Laws",
+  "aliases": [
+   "법률"
+  ],
+  "ko": true
+ },
+ {
+  "r": 60,
+  "y": -354,
+  "t": "편지들",
+  "a": "플라톤",
+  "oa": "Plato",
+  "ot": "The Seventh Letter",
+  "aliases": [],
+  "ko": true,
+  "note": "「제7서한」 포함"
+ },
+ {
+  "r": 61,
+  "y": -350,
+  "t": "범주론.명제론",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Categories",
+  "aliases": [
+   "범주들·명제에 관하여"
+  ],
+  "ko": true,
+  "note": "『범주론.명제론』(이제이북스)에 수록"
+ },
+ {
+  "r": 62,
+  "y": -350,
+  "t": "범주론.명제론",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "On Interpretation",
+  "aliases": [
+   "범주들·명제에 관하여"
+  ],
+  "ko": true,
+  "note": "『범주론.명제론』(이제이북스)에 수록"
+ },
+ {
+  "r": 63,
+  "y": -350,
+  "t": "아리스토텔레스의 분석론 전서",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Prior Analytics",
+  "aliases": [
+   "분석론 전서"
+  ],
+  "ko": true
+ },
+ {
+  "r": 64,
+  "y": -350,
+  "t": "아리스토텔레스의 분석론 후서",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Posterior Analytics",
+  "aliases": [
+   "분석론 후서"
+  ],
+  "ko": true
+ },
+ {
+  "r": 65,
+  "y": -350,
+  "t": "아리스토텔레스의 토피카",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Topics",
+  "aliases": [
+   "토피카"
+  ],
+  "ko": true
+ },
+ {
+  "r": 66,
+  "y": -340,
+  "t": "자연학",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Physics",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 67,
+  "y": -350,
+  "t": "하늘에 대하여",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "On the Heavens",
+  "aliases": [
+   "천체에 관하여"
+  ],
+  "ko": true
+ },
+ {
+  "r": 68,
+  "y": -340,
+  "t": "형이상학",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Metaphysics",
+  "aliases": [
+   "아리스토텔레스의 형이상학"
+  ],
+  "ko": true
+ },
+ {
+  "r": 69,
+  "y": -350,
+  "t": "영혼에 관하여",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "On the Soul",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 70,
+  "y": -343,
+  "t": "동물지",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "History of Animals",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 71,
+  "y": -340,
+  "t": "니코마코스 윤리학",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Nicomachean Ethics",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 72,
+  "y": -330,
+  "t": "정치학",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Politics",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 73,
+  "y": -330,
+  "t": "아테나이인의 정치체제",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "The Athenian Constitution",
+  "aliases": [
+   "아테네 정치제도"
+  ],
+  "ko": true
+ },
+ {
+  "r": 74,
+  "y": -335,
+  "t": "아리스토텔레스 수사학",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Rhetoric",
+  "aliases": [
+   "수사학",
+   "수사학 / 시학"
+  ],
+  "ko": true
+ },
+ {
+  "r": 75,
+  "y": -335,
+  "t": "시학",
+  "a": "아리스토텔레스",
+  "oa": "Aristotle",
+  "ot": "Poetics",
+  "aliases": [
+   "아리스토텔레스 시학",
+   "수사학 / 시학"
+  ],
+  "ko": true
+ },
+ {
+  "r": 76,
+  "y": -400,
+  "t": "히포크라테스 선서",
+  "a": "히포크라테스",
+  "oa": "Hippocrates",
+  "ot": "The Oath",
+  "aliases": [
+   "히포크라테스 선집"
+  ],
+  "ko": true
+ },
+ {
+  "r": 77,
+  "y": -400,
+  "t": "히포크라테스 선집",
+  "a": "히포크라테스",
+  "oa": "Hippocrates",
+  "ot": "On Ancient Medicine",
+  "aliases": [],
+  "ko": true,
+  "note": "『히포크라테스 선집』(나남/역사공간)에 수록"
+ },
+ {
+  "r": 78,
+  "y": -400,
+  "t": "히포크라테스 선집",
+  "a": "히포크라테스",
+  "oa": "Hippocrates",
+  "ot": "On Airs, Waters, and Places",
+  "aliases": [],
+  "ko": true,
+  "note": "『히포크라테스 선집』(나남/역사공간)에 수록"
+ },
+ {
+  "r": 79,
+  "y": -400,
+  "t": "히포크라테스 선집",
+  "a": "히포크라테스",
+  "oa": "Hippocrates",
+  "ot": "The Book of Prognostics",
+  "aliases": [],
+  "ko": true,
+  "note": "『히포크라테스 선집』(나남/역사공간)에 수록"
+ },
+ {
+  "r": 80,
+  "y": -400,
+  "t": "히포크라테스 선집",
+  "a": "히포크라테스",
+  "oa": "Hippocrates",
+  "ot": "Aphorisms",
+  "aliases": [],
+  "ko": true,
+  "note": "『히포크라테스 선집』(나남/역사공간)에 수록"
+ },
+ {
+  "r": 81,
+  "y": -400,
+  "t": "히포크라테스 선집",
+  "a": "히포크라테스",
+  "oa": "Hippocrates",
+  "ot": "On the Sacred Disease",
+  "aliases": [],
+  "ko": true,
+  "note": "『히포크라테스 선집』(나남/역사공간)에 수록"
+ },
+ {
+  "r": 82,
+  "y": 180,
+  "t": null,
+  "a": "갈레노스",
+  "oa": "Galen",
+  "ot": "On the Natural Faculties",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 83,
+  "y": -300,
+  "t": "유클리드 원론",
+  "a": "유클리드",
+  "oa": "Euclid",
+  "ot": "Elements",
+  "aliases": [
+   "에우클레이데스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 84,
+  "y": -225,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "On the Sphere and Cylinder",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 85,
+  "y": -250,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "Measurement of a Circle",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 86,
+  "y": -225,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "On Spirals",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 87,
+  "y": -250,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "On the Equilibrium of Planes",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 88,
+  "y": -216,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "The Sand Reckoner",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 89,
+  "y": -240,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "Quadrature of the Parabola",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 90,
+  "y": -220,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "On Floating Bodies",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 91,
+  "y": -225,
+  "t": "새롭게 발견된 <방법>을 추가한 아르키메데스 전집",
+  "a": "아르키메데스",
+  "oa": "Archimedes",
+  "ot": "The Method",
+  "aliases": [],
+  "ko": true,
+  "note": "『아르키메데스 전집』(교우사, 상·하)에 수록"
+ },
+ {
+  "r": 92,
+  "y": 100,
+  "t": null,
+  "a": "니코마코스",
+  "oa": "Nicomachus of Gerasa",
+  "ot": "Introduction to Arithmetic",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 93,
+  "y": -55,
+  "t": "사물의 본성에 관하여",
+  "a": "루크레티우스",
+  "oa": "Lucretius",
+  "ot": "On the Nature of Things",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 94,
+  "y": 108,
+  "t": "에픽테토스 강의 1·2",
+  "a": "에픽테토스",
+  "oa": "Epictetus",
+  "ot": "Discourses",
+  "aliases": [
+   "에픽테토스 강의 3·4, 엥케이리디온, 단편"
+  ],
+  "ko": true
+ },
+ {
+  "r": 95,
+  "y": 180,
+  "t": "명상록",
+  "a": "마르쿠스 아우렐리우스",
+  "oa": "Marcus Aurelius",
+  "ot": "Meditations",
+  "aliases": [
+   "자기 자신에게 이르는 것들",
+   "아우렐리우스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 96,
+  "y": 270,
+  "t": "플로티노스의 엔네아데스 선집",
+  "a": "플로티노스",
+  "oa": "Plotinus",
+  "ot": "The Six Enneads",
+  "aliases": [
+   "엔네아데스"
+  ],
+  "ko": true,
+  "note": "국내는 선집·발췌본만 있음"
+ },
+ {
+  "r": 97,
+  "y": -38,
+  "t": "목가",
+  "a": "베르길리우스",
+  "oa": "Virgil",
+  "ot": "Eclogues",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 98,
+  "y": -29,
+  "t": null,
+  "a": "베르길리우스",
+  "oa": "Virgil",
+  "ot": "Georgics",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 99,
+  "y": -19,
+  "t": "아이네이스",
+  "a": "베르길리우스",
+  "oa": "Virgil",
+  "ot": "Aeneid",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 100,
+  "y": 100,
+  "t": "플루타르코스 영웅전",
+  "a": "플루타르코스",
+  "oa": "Plutarch",
+  "ot": "Parallel Lives",
+  "aliases": [
+   "플루타르크"
+  ],
+  "ko": true
+ },
+ {
+  "r": 101,
+  "y": 117,
+  "t": "타키투스의 연대기",
+  "a": "타키투스",
+  "oa": "Tacitus",
+  "ot": "The Annals",
+  "aliases": [
+   "연대기"
+  ],
+  "ko": true
+ },
+ {
+  "r": 102,
+  "y": 105,
+  "t": "타키투스의 역사",
+  "a": "타키투스",
+  "oa": "Tacitus",
+  "ot": "The Histories",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 103,
+  "y": 150,
+  "t": null,
+  "a": "프톨레마이오스",
+  "oa": "Ptolemy",
+  "ot": "Almagest",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 104,
+  "y": 1543,
+  "t": "천체의 회전에 관하여",
+  "a": "니콜라우스 코페르니쿠스",
+  "oa": "Nicolaus Copernicus",
+  "ot": "On the Revolutions of the Heavenly Spheres",
+  "aliases": [
+   "천구의 회전에 관하여",
+   "코페르니쿠스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 105,
+  "y": 1621,
+  "t": null,
+  "a": "요하네스 케플러",
+  "oa": "Johannes Kepler",
+  "ot": "Epitome of Copernican Astronomy (Books IV–V)",
+  "aliases": [
+   "케플러"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 106,
+  "y": 1619,
+  "t": null,
+  "a": "요하네스 케플러",
+  "oa": "Johannes Kepler",
+  "ot": "The Harmonies of the World (Book V)",
+  "aliases": [
+   "케플러"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 107,
+  "y": 400,
+  "t": "고백록",
+  "a": "아우구스티누스",
+  "oa": "Augustine",
+  "ot": "Confessions",
+  "aliases": [
+   "어거스틴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 108,
+  "y": 426,
+  "t": "신국론",
+  "a": "아우구스티누스",
+  "oa": "Augustine",
+  "ot": "The City of God",
+  "aliases": [
+   "하나님의 도성",
+   "어거스틴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 109,
+  "y": 426,
+  "t": "그리스도교 교양",
+  "a": "아우구스티누스",
+  "oa": "Augustine",
+  "ot": "On Christian Doctrine",
+  "aliases": [
+   "어거스틴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 110,
+  "y": 1274,
+  "t": "신학대전",
+  "a": "토마스 아퀴나스",
+  "oa": "Thomas Aquinas",
+  "ot": "Summa Theologica",
+  "aliases": [],
+  "ko": true,
+  "note": "바오로딸 분권 번역(진행 중)"
+ },
+ {
+  "r": 111,
+  "y": 1320,
+  "t": "신곡",
+  "a": "단테 알리기에리",
+  "oa": "Dante Alighieri",
+  "ot": "The Divine Comedy",
+  "aliases": [
+   "신곡 : 지옥",
+   "단테"
+  ],
+  "ko": true
+ },
+ {
+  "r": 112,
+  "y": 1385,
+  "t": "트로일러스와 크리세이드",
+  "a": "제프리 초서",
+  "oa": "Geoffrey Chaucer",
+  "ot": "Troilus and Criseyde",
+  "aliases": [
+   "트로일루스와 크리세이드"
+  ],
+  "ko": true
+ },
+ {
+  "r": 113,
+  "y": 1400,
+  "t": "캔터베리 이야기",
+  "a": "제프리 초서",
+  "oa": "Geoffrey Chaucer",
+  "ot": "The Canterbury Tales",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 114,
+  "y": 1559,
+  "t": "기독교 강요",
+  "a": "장 칼뱅",
+  "oa": "John Calvin",
+  "ot": "Institutes of the Christian Religion",
+  "aliases": [
+   "존 칼빈",
+   "칼빈"
+  ],
+  "ko": true
+ },
+ {
+  "r": 115,
+  "y": 1532,
+  "t": "군주론",
+  "a": "니콜로 마키아벨리",
+  "oa": "Niccolò Machiavelli",
+  "ot": "The Prince",
+  "aliases": [
+   "마키아벨리"
+  ],
+  "ko": true
+ },
+ {
+  "r": 116,
+  "y": 1651,
+  "t": "리바이어던",
+  "a": "토머스 홉스",
+  "oa": "Thomas Hobbes",
+  "ot": "Leviathan",
+  "aliases": [
+   "토마스 홉스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 117,
+  "y": 1564,
+  "t": "가르강튀아와 팡타그뤼엘",
+  "a": "프랑수아 라블레",
+  "oa": "François Rabelais",
+  "ot": "Gargantua and Pantagruel",
+  "aliases": [
+   "라블레"
+  ],
+  "ko": true
+ },
+ {
+  "r": 118,
+  "y": 1511,
+  "t": "우신예찬",
+  "a": "에라스뮈스",
+  "oa": "Desiderius Erasmus",
+  "ot": "The Praise of Folly",
+  "aliases": [
+   "에라스무스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 119,
+  "y": 1580,
+  "t": "에세",
+  "a": "미셸 드 몽테뉴",
+  "oa": "Michel de Montaigne",
+  "ot": "Essays",
+  "aliases": [
+   "몽테뉴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 120,
+  "y": 1593,
+  "t": "리처드 3세",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Richard III",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 121,
+  "y": 1595,
+  "t": "로미오와 줄리엣",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Romeo and Juliet",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 122,
+  "y": 1595,
+  "t": "한여름 밤의 꿈",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "A Midsummer Night's Dream",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 123,
+  "y": 1597,
+  "t": "베니스의 상인",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "The Merchant of Venice",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 124,
+  "y": 1597,
+  "t": "헨리 4세 1부",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Henry IV, Part 1 & 2",
+  "aliases": [
+   "헨리 4세 2부",
+   "셰익스피어"
+  ],
+  "ko": true,
+  "note": "제1·2부"
+ },
+ {
+  "r": 125,
+  "y": 1599,
+  "t": "헛소동",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Much Ado About Nothing",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 126,
+  "y": 1599,
+  "t": "줄리어스 시저",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Julius Caesar",
+  "aliases": [
+   "율리우스 카이사르",
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 127,
+  "y": 1599,
+  "t": "뜻대로 하세요",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "As You Like It",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 128,
+  "y": 1601,
+  "t": "십이야",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Twelfth Night",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 129,
+  "y": 1601,
+  "t": "햄릿",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Hamlet",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 130,
+  "y": 1604,
+  "t": "오셀로",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Othello",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 131,
+  "y": 1606,
+  "t": "리어 왕",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "King Lear",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 132,
+  "y": 1606,
+  "t": "맥베스",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Macbeth",
+  "aliases": [
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 133,
+  "y": 1607,
+  "t": "안토니와 클레오파트라",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Antony and Cleopatra",
+  "aliases": [
+   "안토니우스와 클레오파트라",
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 134,
+  "y": 1611,
+  "t": "템페스트",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "The Tempest",
+  "aliases": [
+   "폭풍우",
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 135,
+  "y": 1609,
+  "t": "셰익스피어 소네트",
+  "a": "윌리엄 셰익스피어",
+  "oa": "William Shakespeare",
+  "ot": "Sonnets",
+  "aliases": [
+   "소네트",
+   "셰익스피어"
+  ],
+  "ko": true
+ },
+ {
+  "r": 136,
+  "y": 1600,
+  "t": "자석 이야기",
+  "a": "윌리엄 길버트",
+  "oa": "William Gilbert",
+  "ot": "On the Loadstone and Magnetic Bodies",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 137,
+  "y": 1638,
+  "t": "새로운 두 과학",
+  "a": "갈릴레오 갈릴레이",
+  "oa": "Galileo Galilei",
+  "ot": "Dialogues Concerning Two New Sciences",
+  "aliases": [
+   "갈릴레이"
+  ],
+  "ko": true
+ },
+ {
+  "r": 138,
+  "y": 1628,
+  "t": null,
+  "a": "윌리엄 하비",
+  "oa": "William Harvey",
+  "ot": "On the Motion of the Heart and Blood in Animals",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 139,
+  "y": 1649,
+  "t": null,
+  "a": "윌리엄 하비",
+  "oa": "William Harvey",
+  "ot": "On the Circulation of the Blood",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 140,
+  "y": 1651,
+  "t": null,
+  "a": "윌리엄 하비",
+  "oa": "William Harvey",
+  "ot": "On the Generation of Animals",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 141,
+  "y": 1605,
+  "t": "돈키호테",
+  "a": "미겔 데 세르반테스",
+  "oa": "Miguel de Cervantes",
+  "ot": "Don Quixote",
+  "aliases": [
+   "세르반테스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 142,
+  "y": 1605,
+  "t": "학문의 진보",
+  "a": "프랜시스 베이컨",
+  "oa": "Francis Bacon",
+  "ot": "The Advancement of Learning",
+  "aliases": [
+   "프란시스 베이컨"
+  ],
+  "ko": true
+ },
+ {
+  "r": 143,
+  "y": 1620,
+  "t": "신기관",
+  "a": "프랜시스 베이컨",
+  "oa": "Francis Bacon",
+  "ot": "Novum Organum",
+  "aliases": [
+   "프란시스 베이컨"
+  ],
+  "ko": true
+ },
+ {
+  "r": 144,
+  "y": 1627,
+  "t": "새로운 아틀란티스",
+  "a": "프랜시스 베이컨",
+  "oa": "Francis Bacon",
+  "ot": "New Atlantis",
+  "aliases": [
+   "프란시스 베이컨"
+  ],
+  "ko": true
+ },
+ {
+  "r": 145,
+  "y": 1628,
+  "t": "방법서설",
+  "a": "르네 데카르트",
+  "oa": "René Descartes",
+  "ot": "Rules for the Direction of the Mind",
+  "aliases": [
+   "데카르트"
+  ],
+  "ko": true,
+  "note": "『방법서설』(문예출판사, 이현복 역)에 「정신지도규칙」 수록"
+ },
+ {
+  "r": 146,
+  "y": 1637,
+  "t": "방법서설",
+  "a": "르네 데카르트",
+  "oa": "René Descartes",
+  "ot": "Discourse on the Method",
+  "aliases": [
+   "데카르트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 147,
+  "y": 1641,
+  "t": "제일철학에 관한 성찰",
+  "a": "르네 데카르트",
+  "oa": "René Descartes",
+  "ot": "Meditations on First Philosophy",
+  "aliases": [
+   "성찰",
+   "데카르트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 148,
+  "y": 1641,
+  "t": "성찰 2",
+  "a": "르네 데카르트",
+  "oa": "René Descartes",
+  "ot": "Objections Against the Meditations and Replies",
+  "aliases": [
+   "성찰 1",
+   "데카르트"
+  ],
+  "ko": true,
+  "note": "『성찰』(나남, 원석영 역, 전2권)에 반박과 답변 수록"
+ },
+ {
+  "r": 149,
+  "y": 1637,
+  "t": "방법서설의 기하학",
+  "a": "르네 데카르트",
+  "oa": "René Descartes",
+  "ot": "The Geometry",
+  "aliases": [
+   "데카르트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 150,
+  "y": 1677,
+  "t": "에티카",
+  "a": "바뤼흐 스피노자",
+  "oa": "Baruch Spinoza",
+  "ot": "Ethics",
+  "aliases": [
+   "스피노자"
+  ],
+  "ko": true
+ },
+ {
+  "r": 151,
+  "y": 1645,
+  "t": null,
+  "a": "존 밀턴",
+  "oa": "John Milton",
+  "ot": "English Minor Poems",
+  "aliases": [
+   "밀턴"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 152,
+  "y": 1667,
+  "t": "실낙원",
+  "a": "존 밀턴",
+  "oa": "John Milton",
+  "ot": "Paradise Lost",
+  "aliases": [
+   "밀턴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 153,
+  "y": 1671,
+  "t": "투사 삼손",
+  "a": "존 밀턴",
+  "oa": "John Milton",
+  "ot": "Samson Agonistes",
+  "aliases": [
+   "밀턴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 154,
+  "y": 1644,
+  "t": "아레오파지티카",
+  "a": "존 밀턴",
+  "oa": "John Milton",
+  "ot": "Areopagitica",
+  "aliases": [
+   "밀턴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 155,
+  "y": 1657,
+  "t": "시골 친구에게 보내는 편지",
+  "a": "블레즈 파스칼",
+  "oa": "Blaise Pascal",
+  "ot": "The Provincial Letters",
+  "aliases": [
+   "파스칼"
+  ],
+  "ko": true
+ },
+ {
+  "r": 156,
+  "y": 1670,
+  "t": "팡세",
+  "a": "블레즈 파스칼",
+  "oa": "Blaise Pascal",
+  "ot": "Pensées",
+  "aliases": [
+   "파스칼"
+  ],
+  "ko": true
+ },
+ {
+  "r": 157,
+  "y": 1654,
+  "t": null,
+  "a": "블레즈 파스칼",
+  "oa": "Blaise Pascal",
+  "ot": "Scientific and Mathematical Essays",
+  "aliases": [
+   "파스칼"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 158,
+  "y": 1662,
+  "t": "아내들의 학교",
+  "a": "몰리에르",
+  "oa": "Molière",
+  "ot": "The School for Wives",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 159,
+  "y": 1663,
+  "t": null,
+  "a": "몰리에르",
+  "oa": "Molière",
+  "ot": "The Critique of the School for Wives",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 160,
+  "y": 1664,
+  "t": "타르튀프",
+  "a": "몰리에르",
+  "oa": "Molière",
+  "ot": "Tartuffe",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 161,
+  "y": 1665,
+  "t": "동 쥐앙",
+  "a": "몰리에르",
+  "oa": "Molière",
+  "ot": "Don Juan",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 162,
+  "y": 1668,
+  "t": "수전노 외",
+  "a": "몰리에르",
+  "oa": "Molière",
+  "ot": "The Miser",
+  "aliases": [
+   "수전노"
+  ],
+  "ko": true
+ },
+ {
+  "r": 163,
+  "y": 1670,
+  "t": "타르튀프. 서민귀족",
+  "a": "몰리에르",
+  "oa": "Molière",
+  "ot": "The Would-Be Gentleman",
+  "aliases": [
+   "서민귀족"
+  ],
+  "ko": true,
+  "note": "『타르튀프. 서민귀족』(동문선)에 수록"
+ },
+ {
+  "r": 164,
+  "y": 1673,
+  "t": "상상병 환자",
+  "a": "몰리에르",
+  "oa": "Molière",
+  "ot": "The Imaginary Invalid",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 165,
+  "y": 1670,
+  "t": "베레니스",
+  "a": "장 라신",
+  "oa": "Jean Racine",
+  "ot": "Bérénice",
+  "aliases": [
+   "라신"
+  ],
+  "ko": true
+ },
+ {
+  "r": 166,
+  "y": 1677,
+  "t": "페드르",
+  "a": "장 라신",
+  "oa": "Jean Racine",
+  "ot": "Phèdre",
+  "aliases": [
+   "라신"
+  ],
+  "ko": true
+ },
+ {
+  "r": 167,
+  "y": 1687,
+  "t": "프린키피아",
+  "a": "아이작 뉴턴",
+  "oa": "Isaac Newton",
+  "ot": "Mathematical Principles of Natural Philosophy",
+  "aliases": [
+   "뉴턴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 168,
+  "y": 1704,
+  "t": "광학",
+  "a": "아이작 뉴턴",
+  "oa": "Isaac Newton",
+  "ot": "Optics",
+  "aliases": [
+   "뉴턴"
+  ],
+  "ko": true
+ },
+ {
+  "r": 169,
+  "y": 1690,
+  "t": null,
+  "a": "크리스티안 하위헌스",
+  "oa": "Christiaan Huygens",
+  "ot": "Treatise on Light",
+  "aliases": [
+   "호이겐스"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 170,
+  "y": 1689,
+  "t": "관용에 관한 편지",
+  "a": "존 로크",
+  "oa": "John Locke",
+  "ot": "A Letter Concerning Toleration",
+  "aliases": [
+   "로크"
+  ],
+  "ko": true
+ },
+ {
+  "r": 171,
+  "y": 1689,
+  "t": "통치론",
+  "a": "존 로크",
+  "oa": "John Locke",
+  "ot": "Second Treatise of Government",
+  "aliases": [
+   "로크"
+  ],
+  "ko": true
+ },
+ {
+  "r": 172,
+  "y": 1689,
+  "t": "인간지성론",
+  "a": "존 로크",
+  "oa": "John Locke",
+  "ot": "An Essay Concerning Human Understanding",
+  "aliases": [
+   "로크"
+  ],
+  "ko": true
+ },
+ {
+  "r": 173,
+  "y": 1710,
+  "t": "인간 지식의 원리론",
+  "a": "조지 버클리",
+  "oa": "George Berkeley",
+  "ot": "The Principles of Human Knowledge",
+  "aliases": [
+   "버클리"
+  ],
+  "ko": true
+ },
+ {
+  "r": 174,
+  "y": 1748,
+  "t": "인간의 이해력에 관한 탐구",
+  "a": "데이비드 흄",
+  "oa": "David Hume",
+  "ot": "An Enquiry Concerning Human Understanding",
+  "aliases": [
+   "인간 지성에 관한 탐구",
+   "흄"
+  ],
+  "ko": true
+ },
+ {
+  "r": 175,
+  "y": 1726,
+  "t": "걸리버 여행기",
+  "a": "조너선 스위프트",
+  "oa": "Jonathan Swift",
+  "ot": "Gulliver's Travels",
+  "aliases": [
+   "스위프트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 176,
+  "y": 1759,
+  "t": "캉디드 혹은 낙관주의",
+  "a": "볼테르",
+  "oa": "Voltaire",
+  "ot": "Candide",
+  "aliases": [
+   "캉디드"
+  ],
+  "ko": true
+ },
+ {
+  "r": 177,
+  "y": 1762,
+  "t": "라모의 조카",
+  "a": "드니 디드로",
+  "oa": "Denis Diderot",
+  "ot": "Rameau's Nephew",
+  "aliases": [
+   "디드로"
+  ],
+  "ko": true
+ },
+ {
+  "r": 178,
+  "y": 1748,
+  "t": "법의 정신",
+  "a": "몽테스키외",
+  "oa": "Montesquieu",
+  "ot": "The Spirit of the Laws",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 179,
+  "y": 1755,
+  "t": "인간 불평등 기원론",
+  "a": "장 자크 루소",
+  "oa": "Jean-Jacques Rousseau",
+  "ot": "Discourse on the Origin of Inequality",
+  "aliases": [
+   "루소"
+  ],
+  "ko": true
+ },
+ {
+  "r": 180,
+  "y": 1755,
+  "t": "정치경제론·사회계약론 초고",
+  "a": "장 자크 루소",
+  "oa": "Jean-Jacques Rousseau",
+  "ot": "Discourse on Political Economy",
+  "aliases": [
+   "정치경제론",
+   "루소"
+  ],
+  "ko": true
+ },
+ {
+  "r": 181,
+  "y": 1762,
+  "t": "사회계약론",
+  "a": "장 자크 루소",
+  "oa": "Jean-Jacques Rousseau",
+  "ot": "The Social Contract",
+  "aliases": [
+   "루소"
+  ],
+  "ko": true
+ },
+ {
+  "r": 182,
+  "y": 1776,
+  "t": "국부론",
+  "a": "애덤 스미스",
+  "oa": "Adam Smith",
+  "ot": "The Wealth of Nations",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 183,
+  "y": 1776,
+  "t": "로마제국 쇠망사",
+  "a": "에드워드 기번",
+  "oa": "Edward Gibbon",
+  "ot": "The Decline and Fall of the Roman Empire",
+  "aliases": [
+   "기번"
+  ],
+  "ko": true
+ },
+ {
+  "r": 184,
+  "y": 1781,
+  "t": "순수이성비판",
+  "a": "임마누엘 칸트",
+  "oa": "Immanuel Kant",
+  "ot": "Critique of Pure Reason",
+  "aliases": [
+   "칸트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 185,
+  "y": 1785,
+  "t": "윤리형이상학 정초",
+  "a": "임마누엘 칸트",
+  "oa": "Immanuel Kant",
+  "ot": "Groundwork of the Metaphysics of Morals",
+  "aliases": [
+   "칸트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 186,
+  "y": 1788,
+  "t": "실천이성비판",
+  "a": "임마누엘 칸트",
+  "oa": "Immanuel Kant",
+  "ot": "Critique of Practical Reason",
+  "aliases": [
+   "칸트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 187,
+  "y": 1797,
+  "t": "윤리형이상학",
+  "a": "임마누엘 칸트",
+  "oa": "Immanuel Kant",
+  "ot": "The Metaphysics of Morals (excerpts, incl. The Science of Right)",
+  "aliases": [
+   "칸트"
+  ],
+  "ko": true,
+  "note": "「법이론」(The Science of Right) 등 발췌 수록분"
+ },
+ {
+  "r": 188,
+  "y": 1790,
+  "t": "판단력비판",
+  "a": "임마누엘 칸트",
+  "oa": "Immanuel Kant",
+  "ot": "Critique of Judgement",
+  "aliases": [
+   "칸트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 189,
+  "y": 1788,
+  "t": "페더럴리스트",
+  "a": "알렉산더 해밀턴",
+  "oa": "Alexander Hamilton, James Madison, John Jay",
+  "ot": "The Federalist",
+  "aliases": [
+   "제임스 매디슨",
+   "존 제이"
+  ],
+  "ko": true
+ },
+ {
+  "r": 190,
+  "y": 1859,
+  "t": "자유론",
+  "a": "존 스튜어트 밀",
+  "oa": "John Stuart Mill",
+  "ot": "On Liberty",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 191,
+  "y": 1861,
+  "t": "대의정부론",
+  "a": "존 스튜어트 밀",
+  "oa": "John Stuart Mill",
+  "ot": "Considerations on Representative Government",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 192,
+  "y": 1863,
+  "t": "공리주의",
+  "a": "존 스튜어트 밀",
+  "oa": "John Stuart Mill",
+  "ot": "Utilitarianism",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 193,
+  "y": 1791,
+  "t": null,
+  "a": "제임스 보즈웰",
+  "oa": "James Boswell",
+  "ot": "The Life of Samuel Johnson",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 194,
+  "y": 1789,
+  "t": null,
+  "a": "앙투안 라부아지에",
+  "oa": "Antoine Lavoisier",
+  "ot": "Elements of Chemistry",
+  "aliases": [
+   "라부아지에"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 195,
+  "y": 1855,
+  "t": null,
+  "a": "마이클 패러데이",
+  "oa": "Michael Faraday",
+  "ot": "Experimental Researches in Electricity",
+  "aliases": [
+   "패러데이"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 196,
+  "y": 1820,
+  "t": "법철학",
+  "a": "게오르크 빌헬름 프리드리히 헤겔",
+  "oa": "G. W. F. Hegel",
+  "ot": "The Philosophy of Right",
+  "aliases": [
+   "헤겔"
+  ],
+  "ko": true
+ },
+ {
+  "r": 197,
+  "y": 1837,
+  "t": "역사철학강의",
+  "a": "게오르크 빌헬름 프리드리히 헤겔",
+  "oa": "G. W. F. Hegel",
+  "ot": "The Philosophy of History",
+  "aliases": [
+   "헤겔"
+  ],
+  "ko": true
+ },
+ {
+  "r": 198,
+  "y": 1843,
+  "t": "공포와 전율",
+  "a": "쇠렌 키르케고르",
+  "oa": "Søren Kierkegaard",
+  "ot": "Fear and Trembling",
+  "aliases": [
+   "키르케고르",
+   "키에르케고르",
+   "쇠얀 키에르케고르"
+  ],
+  "ko": true
+ },
+ {
+  "r": 199,
+  "y": 1886,
+  "t": "선악의 저편",
+  "a": "프리드리히 니체",
+  "oa": "Friedrich Nietzsche",
+  "ot": "Beyond Good and Evil",
+  "aliases": [
+   "니체"
+  ],
+  "ko": true
+ },
+ {
+  "r": 200,
+  "y": 1835,
+  "t": "아메리카의 민주주의",
+  "a": "알렉시 드 토크빌",
+  "oa": "Alexis de Tocqueville",
+  "ot": "Democracy in America",
+  "aliases": [
+   "토크빌"
+  ],
+  "ko": true
+ },
+ {
+  "r": 201,
+  "y": 1832,
+  "t": "파우스트",
+  "a": "요한 볼프강 폰 괴테",
+  "oa": "Johann Wolfgang von Goethe",
+  "ot": "Faust",
+  "aliases": [
+   "괴테"
+  ],
+  "ko": true
+ },
+ {
+  "r": 202,
+  "y": 1846,
+  "t": "사촌 베트",
+  "a": "오노레 드 발자크",
+  "oa": "Honoré de Balzac",
+  "ot": "Cousin Bette",
+  "aliases": [
+   "사촌베트",
+   "발자크"
+  ],
+  "ko": true
+ },
+ {
+  "r": 203,
+  "y": 1815,
+  "t": "에마",
+  "a": "제인 오스틴",
+  "oa": "Jane Austen",
+  "ot": "Emma",
+  "aliases": [
+   "엠마"
+  ],
+  "ko": true
+ },
+ {
+  "r": 204,
+  "y": 1871,
+  "t": "미들마치",
+  "a": "조지 엘리엇",
+  "oa": "George Eliot",
+  "ot": "Middlemarch",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 205,
+  "y": 1857,
+  "t": "작은 도릿",
+  "a": "찰스 디킨스",
+  "oa": "Charles Dickens",
+  "ot": "Little Dorrit",
+  "aliases": [
+   "디킨스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 206,
+  "y": 1851,
+  "t": "모비 딕",
+  "a": "허먼 멜빌",
+  "oa": "Herman Melville",
+  "ot": "Moby Dick",
+  "aliases": [
+   "멜빌"
+  ],
+  "ko": true
+ },
+ {
+  "r": 207,
+  "y": 1884,
+  "t": "허클베리 핀의 모험",
+  "a": "마크 트웨인",
+  "oa": "Mark Twain",
+  "ot": "Adventures of Huckleberry Finn",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 208,
+  "y": 1859,
+  "t": "종의 기원",
+  "a": "찰스 다윈",
+  "oa": "Charles Darwin",
+  "ot": "On the Origin of Species",
+  "aliases": [
+   "다윈"
+  ],
+  "ko": true
+ },
+ {
+  "r": 209,
+  "y": 1871,
+  "t": "인간의 유래",
+  "a": "찰스 다윈",
+  "oa": "Charles Darwin",
+  "ot": "The Descent of Man",
+  "aliases": [
+   "다윈"
+  ],
+  "ko": true
+ },
+ {
+  "r": 210,
+  "y": 1867,
+  "t": "자본",
+  "a": "카를 마르크스",
+  "oa": "Karl Marx",
+  "ot": "Capital",
+  "aliases": [
+   "자본론",
+   "칼 마르크스",
+   "마르크스",
+   "프리드리히 엥겔스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 211,
+  "y": 1848,
+  "t": "공산당 선언",
+  "a": "카를 마르크스",
+  "oa": "Karl Marx",
+  "ot": "Manifesto of the Communist Party",
+  "aliases": [
+   "칼 마르크스",
+   "마르크스",
+   "프리드리히 엥겔스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 212,
+  "y": 1869,
+  "t": "전쟁과 평화",
+  "a": "레프 톨스토이",
+  "oa": "Leo Tolstoy",
+  "ot": "War and Peace",
+  "aliases": [
+   "톨스토이"
+  ],
+  "ko": true
+ },
+ {
+  "r": 213,
+  "y": 1880,
+  "t": "카라마조프가의 형제들",
+  "a": "표도르 도스토옙스키",
+  "oa": "Fyodor Dostoevsky",
+  "ot": "The Brothers Karamazov",
+  "aliases": [
+   "도스토예프스키"
+  ],
+  "ko": true
+ },
+ {
+  "r": 214,
+  "y": 1879,
+  "t": "인형의 집",
+  "a": "헨리크 입센",
+  "oa": "Henrik Ibsen",
+  "ot": "A Doll's House",
+  "aliases": [
+   "입센"
+  ],
+  "ko": true
+ },
+ {
+  "r": 215,
+  "y": 1884,
+  "t": "들오리",
+  "a": "헨리크 입센",
+  "oa": "Henrik Ibsen",
+  "ot": "The Wild Duck",
+  "aliases": [
+   "입센"
+  ],
+  "ko": true
+ },
+ {
+  "r": 216,
+  "y": 1890,
+  "t": "헤다 가블레르",
+  "a": "헨리크 입센",
+  "oa": "Henrik Ibsen",
+  "ot": "Hedda Gabler",
+  "aliases": [
+   "입센"
+  ],
+  "ko": true
+ },
+ {
+  "r": 217,
+  "y": 1892,
+  "t": "건축가 솔네스",
+  "a": "헨리크 입센",
+  "oa": "Henrik Ibsen",
+  "ot": "The Master Builder",
+  "aliases": [
+   "입센"
+  ],
+  "ko": true
+ },
+ {
+  "r": 218,
+  "y": 1890,
+  "t": "심리학의 원리",
+  "a": "윌리엄 제임스",
+  "oa": "William James",
+  "ot": "The Principles of Psychology",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 219,
+  "y": 1907,
+  "t": "실용주의",
+  "a": "윌리엄 제임스",
+  "oa": "William James",
+  "ot": "Pragmatism",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 220,
+  "y": 1910,
+  "t": "과학과 정신분석학",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "The Origin and Development of Psycho-Analysis",
+  "aliases": [
+   "정신분석학 개요",
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "프로이트 전집(열린책들)에 「정신분석에 관하여」 수록"
+ },
+ {
+  "r": 221,
+  "y": 1895,
+  "t": "히스테리 연구",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Studies on Hysteria",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 222,
+  "y": 1907,
+  "t": "성욕에 관한 세 편의 에세이",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "The Sexual Enlightenment of Children",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "프로이트 전집(열린책들)에 「어린아이의 성교육에 관하여」 수록"
+ },
+ {
+  "r": 223,
+  "y": 1900,
+  "t": "꿈의 해석",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "The Interpretation of Dreams",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 224,
+  "y": 1914,
+  "t": "정신분석학의 근본 개념",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "On Narcissism",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "『정신분석학의 근본 개념』(열린책들)에 수록"
+ },
+ {
+  "r": 225,
+  "y": 1915,
+  "t": "정신분석학의 근본 개념",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Instincts and Their Vicissitudes",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "『정신분석학의 근본 개념』(열린책들)에 수록"
+ },
+ {
+  "r": 226,
+  "y": 1915,
+  "t": "정신분석학의 근본 개념",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Repression",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "『정신분석학의 근본 개념』(열린책들)에 수록"
+ },
+ {
+  "r": 227,
+  "y": 1915,
+  "t": "정신분석학의 근본 개념",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "The Unconscious",
+  "aliases": [
+   "무의식에 관하여",
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "『정신분석학의 근본 개념』(열린책들)에 수록"
+ },
+ {
+  "r": 228,
+  "y": 1917,
+  "t": "정신분석 강의",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "A General Introduction to Psycho-Analysis",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 229,
+  "y": 1920,
+  "t": "쾌락 원칙을 넘어서",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Beyond the Pleasure Principle",
+  "aliases": [
+   "정신분석학의 근본 개념",
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 230,
+  "y": 1921,
+  "t": "집단심리학과 자아분석",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Group Psychology and the Analysis of the Ego",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 231,
+  "y": 1923,
+  "t": "정신분석학의 근본 개념",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "The Ego and the Id",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "『정신분석학의 근본 개념』(열린책들)에 수록"
+ },
+ {
+  "r": 232,
+  "y": 1926,
+  "t": "불안과 억압",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Inhibitions, Symptoms, and Anxiety",
+  "aliases": [
+   "정신병리학의 문제들",
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "『불안과 억압』(열린책들)에 「억압, 증상 그리고 불안」 수록"
+ },
+ {
+  "r": 233,
+  "y": 1915,
+  "t": "문명 속의 불만",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Thoughts for the Times on War and Death",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true,
+  "note": "『문명 속의 불만』(열린책들)에 「전쟁과 죽음에 대한 고찰」 수록"
+ },
+ {
+  "r": 234,
+  "y": 1930,
+  "t": "문명 속의 불만",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "Civilization and Its Discontents",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 235,
+  "y": 1933,
+  "t": "새로운 정신분석 강의",
+  "a": "지크문트 프로이트",
+  "oa": "Sigmund Freud",
+  "ot": "New Introductory Lectures on Psycho-Analysis",
+  "aliases": [
+   "지그문트 프로이트",
+   "프로이트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 236,
+  "y": 1903,
+  "t": "사유와 운동",
+  "a": "앙리 베르그송",
+  "oa": "Henri Bergson",
+  "ot": "An Introduction to Metaphysics",
+  "aliases": [
+   "베르그손",
+   "앙리 베르그손"
+  ],
+  "ko": true,
+  "note": "『사유와 운동』(문예출판사)에 「형이상학 입문」 수록"
+ },
+ {
+  "r": 237,
+  "y": 1938,
+  "t": "경험과 교육",
+  "a": "존 듀이",
+  "oa": "John Dewey",
+  "ot": "Experience and Education",
+  "aliases": [
+   "존 듀이의 경험과 교육"
+  ],
+  "ko": true
+ },
+ {
+  "r": 238,
+  "y": 1925,
+  "t": "과학과 근대세계",
+  "a": "알프레드 노스 화이트헤드",
+  "oa": "Alfred North Whitehead",
+  "ot": "Science and the Modern World",
+  "aliases": [
+   "화이트헤드"
+  ],
+  "ko": true
+ },
+ {
+  "r": 239,
+  "y": 1911,
+  "t": "화이트헤드의 수학이란 무엇인가",
+  "a": "알프레드 노스 화이트헤드",
+  "oa": "Alfred North Whitehead",
+  "ot": "An Introduction to Mathematics",
+  "aliases": [
+   "화이트헤드"
+  ],
+  "ko": true
+ },
+ {
+  "r": 240,
+  "y": 1912,
+  "t": "철학의 문제들",
+  "a": "버트런드 러셀",
+  "oa": "Bertrand Russell",
+  "ot": "The Problems of Philosophy",
+  "aliases": [
+   "러셀"
+  ],
+  "ko": true
+ },
+ {
+  "r": 241,
+  "y": 1929,
+  "t": "형이상학이란 무엇인가",
+  "a": "마르틴 하이데거",
+  "oa": "Martin Heidegger",
+  "ot": "What Is Metaphysics?",
+  "aliases": [
+   "하이데거"
+  ],
+  "ko": true
+ },
+ {
+  "r": 242,
+  "y": 1953,
+  "t": "철학적 탐구",
+  "a": "루트비히 비트겐슈타인",
+  "oa": "Ludwig Wittgenstein",
+  "ot": "Philosophical Investigations",
+  "aliases": [
+   "비트겐슈타인"
+  ],
+  "ko": true
+ },
+ {
+  "r": 243,
+  "y": 1928,
+  "t": "말씀과 신학",
+  "a": "카를 바르트",
+  "oa": "Karl Barth",
+  "ot": "The Word of God and the Word of Man",
+  "aliases": [
+   "칼 바르트"
+  ],
+  "ko": true,
+  "note": "원제 Das Wort Gottes und die Theologie"
+ },
+ {
+  "r": 244,
+  "y": 1902,
+  "t": "과학과 가설",
+  "a": "앙리 푸앵카레",
+  "oa": "Henri Poincaré",
+  "ot": "Science and Hypothesis",
+  "aliases": [
+   "푸앵카레"
+  ],
+  "ko": true
+ },
+ {
+  "r": 245,
+  "y": 1949,
+  "t": null,
+  "a": "막스 플랑크",
+  "oa": "Max Planck",
+  "ot": "Scientific Autobiography and Other Papers",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 246,
+  "y": 1916,
+  "t": "상대성의 특수이론과 일반이론",
+  "a": "알베르트 아인슈타인",
+  "oa": "Albert Einstein",
+  "ot": "Relativity: The Special and the General Theory",
+  "aliases": [
+   "아인슈타인"
+  ],
+  "ko": true
+ },
+ {
+  "r": 247,
+  "y": 1933,
+  "t": null,
+  "a": "아서 에딩턴",
+  "oa": "Arthur Eddington",
+  "ot": "The Expanding Universe",
+  "aliases": [
+   "에딩턴"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 248,
+  "y": 1934,
+  "t": null,
+  "a": "닐스 보어",
+  "oa": "Niels Bohr",
+  "ot": "Atomic Theory and the Description of Nature (selections)",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 249,
+  "y": 1949,
+  "t": null,
+  "a": "닐스 보어",
+  "oa": "Niels Bohr",
+  "ot": "Discussion with Einstein on Epistemological Problems in Atomic Physics",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 250,
+  "y": 1940,
+  "t": "수학자의 변명",
+  "a": "G. H. 하디",
+  "oa": "G. H. Hardy",
+  "ot": "A Mathematician's Apology",
+  "aliases": [
+   "어느 수학자의 변명",
+   "하디"
+  ],
+  "ko": true
+ },
+ {
+  "r": 251,
+  "y": 1958,
+  "t": "물리학과 철학",
+  "a": "베르너 하이젠베르크",
+  "oa": "Werner Heisenberg",
+  "ot": "Physics and Philosophy",
+  "aliases": [
+   "하이젠베르크"
+  ],
+  "ko": true
+ },
+ {
+  "r": 252,
+  "y": 1944,
+  "t": "생명이란 무엇인가",
+  "a": "에르빈 슈뢰딩거",
+  "oa": "Erwin Schrödinger",
+  "ot": "What Is Life?",
+  "aliases": [
+   "슈뢰딩거"
+  ],
+  "ko": true
+ },
+ {
+  "r": 253,
+  "y": 1937,
+  "t": null,
+  "a": "테오도시우스 도브잔스키",
+  "oa": "Theodosius Dobzhansky",
+  "ot": "Genetics and the Origin of Species",
+  "aliases": [],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 254,
+  "y": 1961,
+  "t": null,
+  "a": "콘래드 할 워딩턴",
+  "oa": "C. H. Waddington",
+  "ot": "The Nature of Life",
+  "aliases": [
+   "워딩턴"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 255,
+  "y": 1899,
+  "t": "유한계급론",
+  "a": "소스타인 베블런",
+  "oa": "Thorstein Veblen",
+  "ot": "The Theory of the Leisure Class",
+  "aliases": [
+   "베블런"
+  ],
+  "ko": true
+ },
+ {
+  "r": 256,
+  "y": 1920,
+  "t": "탐욕 사회",
+  "a": "리처드 H. 토니",
+  "oa": "R. H. Tawney",
+  "ot": "The Acquisitive Society",
+  "aliases": [
+   "탐욕사회와 기독교정신",
+   "리처드 헨리 토니",
+   "토니"
+  ],
+  "ko": true
+ },
+ {
+  "r": 257,
+  "y": 1936,
+  "t": "고용, 이자 및 화폐의 일반이론",
+  "a": "존 메이너드 케인스",
+  "oa": "John Maynard Keynes",
+  "ot": "The General Theory of Employment, Interest and Money",
+  "aliases": [
+   "케인스",
+   "케인즈"
+  ],
+  "ko": true
+ },
+ {
+  "r": 258,
+  "y": 1890,
+  "t": "황금가지",
+  "a": "제임스 조지 프레이저",
+  "oa": "James George Frazer",
+  "ot": "The Golden Bough",
+  "aliases": [
+   "프레이저"
+  ],
+  "ko": true,
+  "note": "발췌 수록"
+ },
+ {
+  "r": 259,
+  "y": 1919,
+  "t": "직업으로서의 정치",
+  "a": "막스 베버",
+  "oa": "Max Weber",
+  "ot": "Politics as a Vocation",
+  "aliases": [
+   "직업으로서의 정치·직업으로서의 학문"
+  ],
+  "ko": true,
+  "note": "『Essays in Sociology』 수록분 중"
+ },
+ {
+  "r": 260,
+  "y": 1917,
+  "t": "직업으로서의 학문",
+  "a": "막스 베버",
+  "oa": "Max Weber",
+  "ot": "Science as a Vocation",
+  "aliases": [
+   "직업으로서의 정치·직업으로서의 학문"
+  ],
+  "ko": true,
+  "note": "『Essays in Sociology』 수록분 중"
+ },
+ {
+  "r": 261,
+  "y": 1919,
+  "t": "중세의 가을",
+  "a": "요한 하위징아",
+  "oa": "Johan Huizinga",
+  "ot": "The Autumn of the Middle Ages",
+  "aliases": [
+   "하위징아"
+  ],
+  "ko": true
+ },
+ {
+  "r": 262,
+  "y": 1958,
+  "t": "구조인류학",
+  "a": "클로드 레비스트로스",
+  "oa": "Claude Lévi-Strauss",
+  "ot": "Structural Anthropology",
+  "aliases": [
+   "레비-스트로스",
+   "클로드 레비-스트로스"
+  ],
+  "ko": true,
+  "note": "종로서적 1983(절판)"
+ },
+ {
+  "r": 263,
+  "y": 1903,
+  "t": "밀림의 야수",
+  "a": "헨리 제임스",
+  "oa": "Henry James",
+  "ot": "The Beast in the Jungle",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 264,
+  "y": 1923,
+  "t": null,
+  "a": "조지 버나드 쇼",
+  "oa": "George Bernard Shaw",
+  "ot": "Saint Joan",
+  "aliases": [
+   "버나드 쇼"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 265,
+  "y": 1899,
+  "t": "어둠의 심연",
+  "a": "조지프 콘래드",
+  "oa": "Joseph Conrad",
+  "ot": "Heart of Darkness",
+  "aliases": [
+   "콘래드"
+  ],
+  "ko": true
+ },
+ {
+  "r": 266,
+  "y": 1897,
+  "t": "바냐 아저씨",
+  "a": "안톤 체호프",
+  "oa": "Anton Chekhov",
+  "ot": "Uncle Vanya",
+  "aliases": [
+   "체호프",
+   "안톤 파블로비치 체호프"
+  ],
+  "ko": true
+ },
+ {
+  "r": 267,
+  "y": 1921,
+  "t": "작가를 찾는 6인의 등장인물",
+  "a": "루이지 피란델로",
+  "oa": "Luigi Pirandello",
+  "ot": "Six Characters in Search of an Author",
+  "aliases": [
+   "피란델로"
+  ],
+  "ko": true
+ },
+ {
+  "r": 268,
+  "y": 1913,
+  "t": "스완의 사랑",
+  "a": "마르셀 프루스트",
+  "oa": "Marcel Proust",
+  "ot": "Swann in Love",
+  "aliases": [
+   "잃어버린 시간을 찾아서 1",
+   "프루스트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 269,
+  "y": 1923,
+  "t": "로스트 레이디",
+  "a": "윌라 캐더",
+  "oa": "Willa Cather",
+  "ot": "A Lost Lady",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 270,
+  "y": 1912,
+  "t": "베네치아에서의 죽음",
+  "a": "토마스 만",
+  "oa": "Thomas Mann",
+  "ot": "Death in Venice",
+  "aliases": [
+   "베니스에서의 죽음"
+  ],
+  "ko": true
+ },
+ {
+  "r": 271,
+  "y": 1916,
+  "t": "젊은 예술가의 초상",
+  "a": "제임스 조이스",
+  "oa": "James Joyce",
+  "ot": "A Portrait of the Artist as a Young Man",
+  "aliases": [
+   "조이스"
+  ],
+  "ko": true
+ },
+ {
+  "r": 272,
+  "y": 1927,
+  "t": "등대로",
+  "a": "버지니아 울프",
+  "oa": "Virginia Woolf",
+  "ot": "To the Lighthouse",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 273,
+  "y": 1915,
+  "t": "변신",
+  "a": "프란츠 카프카",
+  "oa": "Franz Kafka",
+  "ot": "The Metamorphosis",
+  "aliases": [
+   "변신·시골의사",
+   "카프카"
+  ],
+  "ko": true
+ },
+ {
+  "r": 274,
+  "y": 1914,
+  "t": null,
+  "a": "D. H. 로렌스",
+  "oa": "D. H. Lawrence",
+  "ot": "The Prussian Officer",
+  "aliases": [
+   "데이비드 허버트 로렌스"
+  ],
+  "ko": false,
+  "note": "국내 번역본 미확인"
+ },
+ {
+  "r": 275,
+  "y": 1922,
+  "t": "황무지",
+  "a": "T. S. 엘리엇",
+  "oa": "T. S. Eliot",
+  "ot": "The Waste Land",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 276,
+  "y": 1931,
+  "t": "상복이 어울리는 엘렉트라",
+  "a": "유진 오닐",
+  "oa": "Eugene O'Neill",
+  "ot": "Mourning Becomes Electra",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "r": 277,
+  "y": 1925,
+  "t": "위대한 개츠비",
+  "a": "F. 스콧 피츠제럴드",
+  "oa": "F. Scott Fitzgerald",
+  "ot": "The Great Gatsby",
+  "aliases": [
+   "스콧 피츠제럴드",
+   "피츠제럴드"
+  ],
+  "ko": true
+ },
+ {
+  "r": 278,
+  "y": 1930,
+  "t": "윌리엄 포크너",
+  "a": "윌리엄 포크너",
+  "oa": "William Faulkner",
+  "ot": "A Rose for Emily",
+  "aliases": [
+   "에밀리에게 장미를",
+   "포크너"
+  ],
+  "ko": true,
+  "note": "『윌리엄 포크너』(현대문학 세계문학 단편선)에 「에밀리에게 바치는 한 송이 장미」 수록"
+ },
+ {
+  "r": 279,
+  "y": 1939,
+  "t": "억척어멈과 그 자식들",
+  "a": "베르톨트 브레히트",
+  "oa": "Bertolt Brecht",
+  "ot": "Mother Courage and Her Children",
+  "aliases": [
+   "억척어멈과 그의 자식들",
+   "브레히트"
+  ],
+  "ko": true
+ },
+ {
+  "r": 280,
+  "y": 1936,
+  "t": "킬리만자로의 눈",
+  "a": "어니스트 헤밍웨이",
+  "oa": "Ernest Hemingway",
+  "ot": "The Short Happy Life of Francis Macomber",
+  "aliases": [
+   "어네스트 헤밍웨이",
+   "헤밍웨이"
+  ],
+  "ko": true,
+  "note": "『킬리만자로의 눈』(문학동네)에 「프랜시스 매코머의 짧고 행복한 생애」 수록"
+ },
+ {
+  "r": 281,
+  "y": 1945,
+  "t": "동물농장",
+  "a": "조지 오웰",
+  "oa": "George Orwell",
+  "ot": "Animal Farm",
+  "aliases": [
+   "오웰"
+  ],
+  "ko": true
+ },
+ {
+  "r": 282,
+  "y": 1953,
+  "t": "고도를 기다리며",
+  "a": "사뮈엘 베케트",
+  "oa": "Samuel Beckett",
+  "ot": "Waiting for Godot",
+  "aliases": [
+   "새뮤얼 베케트",
+   "베케트"
+  ],
+  "ko": true
+ }
+]

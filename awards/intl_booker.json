@@ -1,0 +1,175 @@
+[
+ {
+  "y": 2026,
+  "t": "1938 타이완 여행기",
+  "a": "양솽쯔",
+  "oa": "Yáng Shuāng-zǐ",
+  "ot": "Taiwan Travelogue",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2025,
+  "t": "하트 램프",
+  "a": "바누 무슈타크",
+  "oa": "Banu Mushtaq",
+  "ot": "Heart Lamp",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2024,
+  "t": "카이로스",
+  "a": "예니 에르펜베크",
+  "oa": "Jenny Erpenbeck",
+  "ot": "Kairos",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2023,
+  "t": "타임 셸터",
+  "a": "게오르기 고스포디노프",
+  "oa": "Georgi Gospodinov",
+  "ot": "Time Shelter",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2022,
+  "t": null,
+  "a": "기탄잘리 슈리",
+  "oa": "Geetanjali Shree",
+  "ot": "Tomb of Sand",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2021,
+  "t": "밤에는 모든 피가 검다",
+  "a": "다비드 디옵",
+  "oa": "David Diop",
+  "ot": "At Night All Blood Is Black",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2020,
+  "t": "그날 저녁의 불편함",
+  "a": "마리커 뤼카스 레이네펠트",
+  "oa": "Marieke Lucas Rijneveld",
+  "ot": "The Discomfort of Evening",
+  "aliases": [
+   "뤼카스 레이네벌트"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2019,
+  "t": "천체 : 세 자매 이야기",
+  "a": "조카 알하르티",
+  "oa": "Jokha Alharthi",
+  "ot": "Celestial Bodies",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2018,
+  "t": "방랑자들",
+  "a": "올가 토카르추크",
+  "oa": "Olga Tokarczuk",
+  "ot": "Flights",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2017,
+  "t": "말 한 마리가 술집에 들어왔다",
+  "a": "다비드 그로스만",
+  "oa": "David Grossman",
+  "ot": "A Horse Walks into a Bar",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2016,
+  "t": "채식주의자",
+  "a": "한강",
+  "oa": "Han Kang",
+  "ot": "The Vegetarian",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2015,
+  "a": "크러스너호르커이 라슬로",
+  "oa": "László Krasznahorkai",
+  "aliases": [],
+  "works": [
+   "사탄탱고",
+   "저항의 멜랑콜리",
+   "벵크하임 남작의 귀향"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2013,
+  "a": "리디아 데이비스",
+  "oa": "Lydia Davis",
+  "aliases": [],
+  "works": [
+   "이야기의 끝",
+   "불안의 변이",
+   "못해 그리고 안 할 거야"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2011,
+  "a": "필립 로스",
+  "oa": "Philip Roth",
+  "aliases": [],
+  "works": [
+   "에브리맨",
+   "울분",
+   "휴먼 스테인"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2009,
+  "a": "앨리스 먼로",
+  "oa": "Alice Munro",
+  "aliases": [],
+  "works": [
+   "디어 라이프",
+   "런어웨이",
+   "미움, 우정, 구애, 사랑, 결혼"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2007,
+  "a": "치누아 아체베",
+  "oa": "Chinua Achebe",
+  "aliases": [],
+  "works": [
+   "모든 것이 산산이 부서지다",
+   "더 이상 평안은 없다",
+   "신의 화살"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2005,
+  "a": "이스마일 카다레",
+  "oa": "Ismail Kadare",
+  "aliases": [],
+  "works": [
+   "부서진 사월",
+   "죽은 군대의 장군",
+   "피라미드"
+  ],
+  "ko": true
+ }
+]

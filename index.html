@@ -1,0 +1,2525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<title>크레마클럽 도서</title>
+<script>
+  // 저장된 테마가 없으면 시스템 설정을 따름
+  document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+</script>
+<style>
+  /* 테마: 색은 모두 변수. 기본은 다크, html[data-theme=light]면 라이트 */
+  :root { color-scheme: dark; --c151515: #151515; --c1a1a1a: #1a1a1a; --c1a3a2a: #1a3a2a; --c1a3a4a: #1a3a4a; --c1a3a5c: #1a3a5c; --c1a4a3a: #1a4a3a; --c1e4620: #1e4620; --c222: #222; --c2a2140: #2a2140; --c2a2a2a: #2a2a2a; --c2a2a3a: #2a2a3a; --c2ecc71: #2ecc71; --c333: #333; --c3498db: #3498db; --c3a1a3a: #3a1a3a; --c3a2020: #3a2020; --c3a2a10: #3a2a10; --c3a3410: #3a3410; --c3a3a3a: #3a3a3a; --c444: #444; --c4a1a1a: #4a1a1a; --c4a3a1a: #4a3a1a; --c555: #555; --c55efc4: #55efc4; --c5be37a: #5be37a; --c666: #666; --c74b9ff: #74b9ff; --c777: #777; --c888: #888; --c999: #999; --caaa: #aaa; --cb39ddb: #b39ddb; --cccc: #ccc; --ce084e0: #e084e0; --ce57373: #e57373; --ce67e22: #e67e22; --ce74c3c: #e74c3c; --ceee: #eee; --cf1c40f: #f1c40f; --cf39c12: #f39c12; --cf5d442: #f5d442; --cfff: #fff; }
+  html[data-theme="light"] { color-scheme: light; --c151515: #f2f2f2; --c1a1a1a: #ffffff; --c1a3a2a: #e3f5ea; --c1a3a4a: #e3f0fb; --c1a3a5c: #dde9f7; --c1a4a3a: #ddf3e8; --c1e4620: #e1f4e4; --c222: #ececec; --c2a2140: #ece6f7; --c2a2a2a: #e6e6e6; --c2a2a3a: #e8eaf6; --c2ecc71: #1e8449; --c333: #dcdcdc; --c3498db: #1f6fb2; --c3a1a3a: #f6e3f6; --c3a2020: #fde8e8; --c3a2a10: #fff0dc; --c3a3410: #fff3c4; --c3a3a3a: #d0d0d0; --c444: #d2d2d2; --c4a1a1a: #fde3e3; --c4a3a1a: #fff1d6; --c555: #b0b0b0; --c55efc4: #0e8a6a; --c5be37a: #1e7d32; --c666: #777777; --c74b9ff: #1a5fa0; --c777: #6a6a6a; --c888: #666666; --c999: #555555; --caaa: #555555; --cb39ddb: #5e35b1; --cccc: #333333; --ce084e0: #9b3a9b; --ce57373: #c0392b; --ce67e22: #d35400; --ce74c3c: #c0392b; --ceee: #111111; --cf1c40f: #a87d00; --cf39c12: #b35c00; --cf5d442: #7a6000; --cfff: #000000; }
+  .theme-btn { background: none; border: none; cursor: pointer; padding: 0 10px; display: flex; align-items: center; }
+  .theme-btn svg { width: 22px; height: 22px; display: block; overflow: visible; transition: transform .3s; }
+  .theme-btn:active svg { transform: scale(.85); }
+  /* 해: 호버하면 빛살이 빙글 돌고 얼굴이 살짝 커짐 */
+  .theme-btn .rays { transform-origin: 12px 12px; }
+  .theme-btn:hover .rays { animation: sun-spin 2.4s linear infinite; }
+  .theme-btn:hover .sun-face { animation: bob .6s ease-in-out infinite alternate; }
+  /* 달: 호버하면 갸웃거리고 별이 반짝 */
+  .theme-btn .moon { transform-origin: 12px 12px; }
+  .theme-btn:hover .moon { animation: tilt 1.2s ease-in-out infinite; }
+  .theme-btn .twinkle { opacity: 0; transform-origin: center; transform-box: fill-box; }
+  .theme-btn:hover .twinkle { animation: twinkle 1.2s ease-in-out infinite; }
+  .theme-btn:hover .twinkle.t2 { animation-delay: .4s; }
+  @keyframes sun-spin { to { transform: rotate(360deg); } }
+  @keyframes bob { to { transform: translateY(-1px) scale(1.04); } }
+  @keyframes tilt { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(10deg); } }
+  @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(.3); } 50% { opacity: 1; transform: scale(1); } }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { overflow-x: hidden; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--c1a1a1a);
+    color: var(--ceee);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--c1a1a1a);
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--c333);
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .header-title { font-size: 20px; font-weight: 700; flex: 1; }
+  .btn-sync {
+    background: var(--c333);
+    border: 1px solid var(--c555);
+    color: var(--cccc);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .btn-sync:hover { background: var(--c444); }
+  .btn-sync.syncing { opacity: 0.5; pointer-events: none; }
+  .meta {
+    font-size: 12px;
+    color: var(--c555);
+  }
+
+  /* Progress */
+  .progress-wrap {
+    display: none;
+    margin-top: 10px;
+  }
+  .progress-wrap.active { display: block; }
+  .progress-bar-bg {
+    height: 6px;
+    background: var(--c333);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--c3498db);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    width: 0%;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--c666);
+  }
+
+  /* Controls */
+  .topbar { position: sticky; top: 0; z-index: 100; background: var(--c1a1a1a); }
+  .topbar .tabs, .topbar .header { position: static; }
+  .controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--c1a1a1a);
+    border-bottom: 1px solid var(--c222);
+  }
+  /* 정렬·필터·장르·검색 컨트롤: 모양은 두 테마가 같고 색만 --ctl-* 변수로 다름 */
+  :root {
+    --ctl-bg: #232323; --ctl-border: #3a3a3a; --ctl-text: #aaa; --ctl-hover-bg: #2c2c2c; --ctl-hover-text: #eee;
+    --ctl-on-bg: #e8e8e8; --ctl-on-text: #151515; --ctl-shadow: 0 1px 2px rgba(0,0,0,.3);
+    --flt-bg: #3a2a10; --flt-border: #e67e22; --flt-text: #f39c12; --ctl-area: #1d1d1d;
+    --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23aaa' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  html[data-theme="light"] {
+    --ctl-bg: #fff; --ctl-border: #e3e3e3; --ctl-text: #555; --ctl-hover-bg: #f4f4f4; --ctl-hover-text: #222;
+    --ctl-on-bg: #2b2b2b; --ctl-on-text: #fff; --ctl-shadow: 0 1px 2px rgba(0,0,0,.05);
+    --flt-bg: #fff4e6; --flt-border: #f0a050; --flt-text: #c25e00; --ctl-area: #fafafa;
+    --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23666' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  .controls { background: var(--ctl-area); }
+  .sort-btn, .genre-select, .search-input {
+    height: 30px; box-sizing: border-box;
+    background-color: var(--ctl-bg); border: 1px solid var(--ctl-border); color: var(--ctl-text);
+    border-radius: 999px; font-size: 12px; outline: none; box-shadow: var(--ctl-shadow);
+    transition: background-color .15s, color .15s, border-color .15s;
+  }
+  .sort-btn { padding: 0 14px; cursor: pointer; }
+  .sort-btn:hover, .genre-select:hover { background-color: var(--ctl-hover-bg); color: var(--ctl-hover-text); }
+  .sort-btn.active { background-color: var(--ctl-on-bg); border-color: var(--ctl-on-bg); color: var(--ctl-on-text); box-shadow: none; }
+  /* 필터가 걸려 있으면 정렬 버튼과 구분되는 주황 알약 */
+  .filter-btn.active { background-color: var(--flt-bg); border-color: var(--flt-border); color: var(--flt-text); }
+  /* 기본 select 화살표는 브라우저마다 위치가 어긋나서 직접 그림 (세로 가운데) */
+  .genre-select {
+    appearance: none; -webkit-appearance: none; cursor: pointer;
+    padding: 0 30px 0 14px; line-height: 28px;
+    background-image: var(--chevron); background-repeat: no-repeat; background-position: right 12px center;
+  }
+  /* 최저 별점 슬라이더: 필터 버튼과 같은 알약, 걸리면 주황 */
+  .rating-filter {
+    display: inline-flex; align-items: center; gap: 8px; height: 30px; box-sizing: border-box; padding: 0 14px;
+    background-color: var(--ctl-bg); border: 1px solid var(--ctl-border); color: var(--ctl-text);
+    border-radius: 999px; font-size: 12px; box-shadow: var(--ctl-shadow); white-space: nowrap;
+  }
+  .rating-filter.active { background-color: var(--flt-bg); border-color: var(--flt-border); color: var(--flt-text); }
+  .slider-area { display: contents; }
+  .rating-filter label { min-width: 74px; }
+  .rating-filter.active label { cursor: pointer; }
+  .rating-filter.active label:hover { text-decoration: underline; }
+  /* 브라우저 기본 슬라이더 대신 직접 그림: 얇은 트랙 + 채워진 부분(--fill) + 동그란 손잡이, 색은 테마 변수 */
+  .rating-filter { --sl-on: var(--ctl-text); }
+  .rating-filter.active { --sl-on: var(--flt-border); }
+  .rating-filter input[type=range] {
+    -webkit-appearance: none; appearance: none; width: 96px; height: 16px; margin: 0; background: transparent; cursor: pointer;
+  }
+  .rating-filter input[type=range]::-webkit-slider-runnable-track {
+    height: 4px; border-radius: 2px;
+    background: linear-gradient(to right, var(--sl-on) 0 var(--fill, 0%), var(--ctl-border) var(--fill, 0%) 100%);
+  }
+  .rating-filter input[type=range]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--ctl-border); }
+  .rating-filter input[type=range]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--sl-on); }
+  .rating-filter input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 14px; height: 14px; margin-top: -5px; border-radius: 50%;
+    background: var(--ctl-bg); border: 2px solid var(--sl-on); box-sizing: border-box; box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    transition: transform .1s;
+  }
+  .rating-filter input[type=range]::-moz-range-thumb {
+    width: 14px; height: 14px; border-radius: 50%; background: var(--ctl-bg); border: 2px solid var(--sl-on); box-sizing: border-box;
+  }
+  .rating-filter input[type=range]:hover::-webkit-slider-thumb { transform: scale(1.15); }
+  .rating-filter input[type=range]:focus-visible { outline: none; }
+  /* 손잡이 두 개: 입력 두 개를 겹치고 트랙은 바깥 상자에 그림 (--a ~ --b 구간 채움) */
+  .rating-filter .dual { position: relative; display: inline-block; width: 120px; height: 16px; }
+  .rating-filter .dual::before { content: ''; position: absolute; left: 0; right: 0; top: 6px; height: 4px; border-radius: 2px;
+    background: linear-gradient(to right, var(--ctl-border) 0 var(--a, 0%), var(--sl-on) var(--a, 0%) var(--b, 100%), var(--ctl-border) var(--b, 100%) 100%); }
+  .rating-filter .dual input[type=range] { position: absolute; inset: 0; width: 100%; pointer-events: none; }
+  .rating-filter .dual input[type=range]::-webkit-slider-runnable-track { background: transparent; }
+  .rating-filter .dual input[type=range]::-moz-range-track, .rating-filter .dual input[type=range]::-moz-range-progress { background: transparent; }
+  .rating-filter .dual input[type=range]::-webkit-slider-thumb { pointer-events: auto; }
+  .rating-filter .dual input[type=range]::-moz-range-thumb { pointer-events: auto; }
+  .rating-filter input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--flt-bg); }
+  /* 추천 목록 고르기: 필터(알약)와 구분되는 네모난 드롭다운 */
+  .list-select {
+    appearance: none; -webkit-appearance: none; cursor: pointer; height: 30px; box-sizing: border-box; min-width: 230px;
+    padding: 0 32px 0 12px; border-radius: 6px; font-size: 13px; font-weight: 600; outline: none;
+    background-color: var(--ctl-bg); border: 1px solid var(--ctl-border); color: var(--ceee); box-shadow: var(--ctl-shadow);
+    background-image: var(--chevron); background-repeat: no-repeat; background-position: right 12px center;
+  }
+  .list-select:hover { background-color: var(--ctl-hover-bg); }
+  .list-select:focus { border-color: var(--ctl-text); }
+  /* 직접 만든 드롭다운: 목록 이름 옆 숫자(있는 책/전체)를 흐리게 */
+  .list-dd { position: relative; flex: none; }
+  button.list-select { display: flex; align-items: center; gap: 8px; text-align: left; }
+  .dd-count { color: var(--c888); font-weight: 400; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .list-dd-menu { display: none; position: absolute; top: calc(100% + 4px); left: 0; z-index: 50; min-width: 100%; max-height: 70vh; overflow-y: auto;
+    padding: 4px 0; border-radius: 6px; background: var(--c1a1a1a); border: 1px solid var(--ctl-border); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+  .list-dd.open .list-dd-menu { display: block; }
+  .dd-group { padding: 8px 12px 3px; font-size: 11px; font-weight: 600; color: var(--c888); }
+  .dd-item { display: flex; justify-content: space-between; gap: 16px; padding: 6px 12px 6px 20px; font-size: 13px; color: var(--ceee); cursor: pointer; white-space: nowrap; }
+  .dd-item:hover { background: var(--ctl-hover-bg); }
+  .dd-item.on { font-weight: 600; }
+  .kdc { display: inline-block; min-width: 2.2em; margin-right: 5px; padding: 0 4px; border-radius: 3px; font-size: 10.5px; line-height: 15px; text-align: center;
+    font-variant-numeric: tabular-nums; color: var(--c888); background: var(--c222); vertical-align: 1px; }
+  .kdc.pend:empty { display: none; }
+  /* 세부 분류 패널: 10번대 그리드 (누를 때마다 포함 → 제외 → 해제) */
+  .kdc-btn.on { border-color: var(--c2ecc71); color: var(--c2ecc71); }
+  .kdc-panel { position: fixed; z-index: 150; width: min(1000px, 96vw); max-height: 80vh; overflow: auto; padding: 12px 14px; border-radius: 8px;
+    background: var(--c1a1a1a); border: 1px solid var(--ctl-border); box-shadow: 0 10px 30px rgba(0,0,0,.3); font-size: 12px; color: var(--ceee); }
+  .kdc-panel .kp-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--c888); }
+  .kdc-panel .kp-head b { color: var(--ceee); }
+  .kdc-panel .kp-head button:first-of-type { margin-left: auto; }
+  .kdc-grid { display: grid; grid-template-columns: 86px repeat(10, minmax(0, 1fr)); gap: 3px; }
+  .kdc-grid.one { grid-template-columns: 86px repeat(5, minmax(0, 1fr)); }
+  .kdc-grid .kr { padding: 5px 4px; font-weight: 600; cursor: pointer; border-radius: 4px; white-space: nowrap; }
+  .kdc-grid .kr:hover, .kdc-grid .kc:hover { background: var(--ctl-hover-bg); }
+  .kdc-grid .kc { padding: 4px 5px; border-radius: 4px; border: 1px solid var(--c2a2a2a); cursor: pointer; overflow: hidden; user-select: none; }
+  .kdc-grid .kc .n { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--c999); font-size: 11px; }
+  .kdc-grid .kc .c { font-variant-numeric: tabular-nums; font-size: 10.5px; color: var(--c777); }
+  .kdc-grid .kc.zero { opacity: .45; }
+  .kdc-grid .kc.inc { background: var(--c1e4620); border-color: var(--c2ecc71); }
+  .kdc-panel .kp-codes { display: flex; align-items: center; gap: 8px; margin-top: 10px; color: var(--c888); }
+  .kdc-panel .kp-codes input { flex: 1; height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid var(--ctl-border); background: var(--ctl-bg); color: var(--ceee); font-size: 12px; }
+  .award-prizes { font-size: 11.5px; color: var(--c999); margin: 1px 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ctl-divider { align-self: center; width: 1px; height: 20px; background: var(--ctl-border); margin: 0 6px; flex: none; }
+  .search-input { flex: 1; min-width: 140px; padding: 0 14px; font-size: 13px; color: var(--ceee); }
+  .genre-select:focus, .search-input:focus { border-color: var(--ctl-text); }
+
+  /* Book grid - responsive, max 5 columns */
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 1200px) { .book-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 960px)  { .book-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 700px)  { .book-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .book-grid { grid-template-columns: 1fr; } }
+  .book-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--c1a1a1a);
+    border-bottom: 1px solid var(--c222);
+    transition: background 0.1s;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .book-item:hover { background: var(--c222); }
+  .book-cover {
+    width: 48px;
+    height: 68px;
+    border-radius: 3px;
+    object-fit: cover;
+    background: var(--c333);
+    flex-shrink: 0;
+  }
+  .book-info { flex: 1; min-width: 0; }
+  .book-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .book-title a { color: var(--ceee); text-decoration: none; }
+  .book-title a:hover { text-decoration: underline; }
+  .book-author {
+    font-size: 12px;
+    color: var(--c888);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .book-stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 11px;
+  }
+  .stat { color: var(--c888); }
+  .stat em { color: var(--cf1c40f); font-style: normal; font-weight: 600; }
+  .stat .reviews { color: var(--c3498db); }
+  .badge {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  .badge.yes24 { background: var(--c1a3a5c); color: var(--c74b9ff); }
+  .badge.aladin-best { background: var(--c3a1a3a); color: var(--ce084e0); }
+  .badge.aladin-steady { background: var(--c1a3a2a); color: var(--c55efc4); }
+  .book-rank {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: var(--c555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    flex-shrink: 0;
+  }
+
+  .result-count {
+    padding: 8px 24px;
+    font-size: 12px;
+    color: var(--c555);
+  }
+
+  /* 목록 검색 */
+  .list-panel { max-width: 980px; margin: 16px auto; padding: 0 16px; }
+  .list-panel h3 { margin: 0 0 6px; font-size: 16px; color: var(--ceee); }
+  .list-help { margin: 0 0 10px; font-size: 12px; line-height: 1.6; color: var(--c888); }
+  .list-help code { background: var(--c2a2a2a); padding: 1px 5px; border-radius: 4px; color: var(--cccc); }
+  .list-input-box { width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 10px; resize: vertical;
+    background: var(--ctl-bg); border: 1px solid var(--ctl-border); color: var(--ceee); font-family: inherit; font-size: 13px; line-height: 1.6; outline: none; }
+  .list-input-box:focus { border-color: var(--ctl-text); }
+  .list-actions { display: flex; gap: 8px; align-items: center; margin: 10px 0 14px; }
+  .list-status { font-size: 12px; color: var(--c888); }
+  .list-summary { font-size: 13px; color: var(--caaa); margin: 4px 0 10px; }
+  .list-summary b { color: var(--ceee); font-weight: 600; }
+  .list-row { display: grid; grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr) 90px; gap: 12px; align-items: center;
+    padding: 6px 0; border-top: 1px solid var(--c2a2a2a); }
+  .list-input { font-size: 13px; color: var(--cccc); word-break: break-all; }
+  .list-author { color: var(--c888); }
+  .list-no { display: inline-block; min-width: 24px; color: var(--c666); font-size: 12px; }
+  .list-hit { margin: 0; border: none !important; }
+  .list-miss { grid-column: 2 / 4; font-size: 12px; color: var(--ce57373); }
+  .list-miss a, .list-more { color: var(--c3498db); font-size: 12px; margin-left: 8px; cursor: pointer; text-decoration: none; }
+  .list-weak { font-size: 11px; font-weight: 400; color: var(--cf39c12); }
+  .suggest-top { padding: 4px 16px 0; }
+  .suggest-top .suggest { margin: 6px 0 0; }
+  .suggest { margin-top: 10px; font-size: 13px; color: var(--c888); }
+  .suggest a { display: inline-block; margin: 4px; padding: 4px 12px; border-radius: 999px; cursor: pointer;
+    background: var(--ctl-bg); border: 1px solid var(--ctl-border); color: var(--ceee); }
+  .suggest a:hover { background: var(--ctl-hover-bg); }
+  .suggest a span { margin-left: 6px; font-size: 11px; color: var(--c888); }
+  /* 문학상 */
+  .award-year { font-size: 11px !important; min-width: 34px; }
+  .award-orig { font-size: 11px; color: var(--c666); }
+  .award-arrow { color: var(--c888); }
+  .award-head { padding: 12px 16px 4px; }
+  .award-head h3 { font-size: 17px; margin: 2px 0; color: var(--ceee); }
+  .award-head h3 span { font-size: 12px; font-weight: 400; color: var(--c888); margin-left: 6px; }
+  .award-works { font-size: 12px; color: var(--caaa); }
+  .empty {
+    text-align: center;
+    padding: 80px 32px;
+    color: var(--c666);
+  }
+  .empty p { font-size: 15px; }
+
+  /* Book detail popup */
+  .popup-overlay {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6); z-index: 500; justify-content: center; align-items: center;
+  }
+  .popup-overlay.open { display: flex; }
+  .popup {
+    background: var(--c2a2a2a); border-radius: 12px; padding: 20px; width: 90%; max-width: 400px;
+    max-height: 80vh; overflow-y: auto;
+  }
+  .popup.wide { max-width: 640px; }
+  .cand-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--c333); }
+  .cand-row.chosen { background: var(--flt-bg); margin: 0 -8px; padding: 8px; border-radius: 8px; }
+  .cand-cover { width: 36px; height: 52px; object-fit: cover; border-radius: 3px; flex: none; }
+  .cand-info { flex: 1; min-width: 0; cursor: pointer; }
+  .cand-info:hover .cand-title { text-decoration: underline; }
+  .cand-title { font-size: 13px; font-weight: 600; color: var(--ceee); }
+  .cand-author { font-size: 12px; color: var(--c888); margin: 2px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cand-pick { flex: none; }
+  .cand-pick.on { font-size: 12px; color: var(--flt-text); padding: 0 8px; }
+  .cand-back { background: none; border: none; color: var(--c3498db); font-size: 12px; cursor: pointer; padding: 0 0 8px; }
+  .vol-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 10px; } .vol-links a { color: var(--c3498db); text-decoration: none; white-space: nowrap; } .vol-links a:hover { text-decoration: underline; }
+  .popup-close { float: right; background: none; border: none; color: var(--c888); font-size: 20px; cursor: pointer; }
+  .popup h3 { font-size: 16px; margin-bottom: 4px; padding-right: 30px; }
+  .popup .author { font-size: 13px; color: var(--c888); margin-bottom: 12px; }
+  .popup .detail-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--c333); font-size: 13px; }
+  .popup .detail-row .label { color: var(--c888); }
+  .popup .detail-row .val { color: var(--cccc); text-align: right; }
+  /* 책 팝업 구역: 크레마 / 밀리 / 도서관 / 정보 */
+  .dsec { padding: 10px 0; border-top: 1px solid var(--c333); }
+  .dsec-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; color: var(--ceee); }
+  .dsec-st { font-size: 12px; font-weight: 600; }
+  .dsec-st.yes { color: var(--c5be37a); }
+  .dsec-st.no { color: var(--c666); font-weight: 400; }
+  .dsec-body { margin-top: 6px; font-size: 12px; color: var(--caaa); line-height: 1.8; }
+  .dstat { display: inline-block; margin-right: 12px; }
+  .dstat > span { color: var(--c888); }
+  .dstat em { font-style: normal; color: var(--cf1c40f); font-weight: 600; }
+  .dlink { color: var(--c3498db); text-decoration: none; margin-left: 2px; }
+  .dhint { font-size: 11px; color: var(--c666); margin-top: 2px; }
+  .dsec .detail-row:last-child { border-bottom: none; }
+  .popup .cross-section { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--c444); }
+  .popup .cross-section h4 { font-size: 13px; color: var(--c999); margin-bottom: 6px; }
+  .popup .cross-badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin: 2px; }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid var(--c333);
+    background: var(--c1a1a1a);
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+  .tab {
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--c666);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .tab:hover { color: var(--caaa); }
+  .tab.active { color: var(--ceee); border-bottom-color: var(--c3498db); }
+  .badge.seoul { background: var(--c1a4a3a); color: var(--c2ecc71); }
+  .badge.lib { background: var(--c1a3a4a); color: var(--c74b9ff); cursor: pointer; }
+  .badge.lib:hover { text-decoration: underline; }
+  /* 동기화: 평소엔 탭 줄의 작은 버튼만, 누르면 요약 패널, 진행 중일 때만 진행 막대 */
+  .tab-sync { background: none; border: none; border-left: 1px solid var(--c333); color: var(--c888); font-size: 12px; padding: 0 16px; cursor: pointer; white-space: nowrap; }
+  .tab-sync:hover, .tab-sync.open { color: var(--cfff); background: var(--c222); }
+  .tab-sync.busy .busy-label { color: var(--cf1c40f); }
+  .tab-sync .t { color: var(--c666); margin-left: 10px; }
+  .result-count-inline { font-size: 13px; color: var(--cccc); font-weight: 600; margin-right: 6px; white-space: nowrap; }
+  .tab-sync .t b { color: var(--c999); font-weight: 500; }
+  .sync-summary:not(.open) { display: none; }
+  .header .header-top { display: none; }
+  .header:not(:has(.progress-wrap.active)) { display: none; }
+  .header { padding: 8px 24px; }
+  .progress-wrap { margin-top: 0; }
+  .sync-summary .btn-mini { background: var(--c2a2a2a); border: 1px solid var(--c444); color: var(--caaa); font-size: 11px; padding: 1px 8px; border-radius: 4px; cursor: pointer; margin-left: 4px; }
+  .sync-summary .btn-mini:hover { background: var(--c333); color: var(--cfff); }
+  .badge.no-seoul { background: var(--c4a1a1a); color: var(--ce74c3c); font-weight: 400; }
+  .badge.crema { background: var(--c4a3a1a); color: var(--cf1c40f); }
+  .star { background: none; border: none; color: var(--c555); font-size: 20px; cursor: pointer; padding: 0 4px; align-self: center; line-height: 1; }
+  /* 목록에선 별을 카드 오른쪽 위 모서리에 겹쳐 둬서 자리를 차지하지 않게 */
+  .book-item { position: relative; }
+  .book-item > .star { position: absolute; top: 8px; right: 6px; font-size: 15px; padding: 2px; color: var(--c3a3a3a); }
+  .book-item:hover > .star { color: var(--c777); }
+  .book-item > .star:hover, .book-item > .star.on { color: var(--cf1c40f); }
+  .book-item .book-title { padding-right: 14px; }
+  .star:hover { color: var(--cf1c40f); }
+  .star.on { color: var(--cf1c40f); }
+  .popup h3 .star { font-size: 18px; padding: 0 6px 0 0; vertical-align: -1px; }
+  .badge.tag-yes { background: var(--c1e4620); color: var(--c5be37a); font-weight: 600; }
+  .badge.tag-no { background: var(--c3a2020); color: var(--ce57373); font-weight: 600; }
+  .badge.tag-millie { background: var(--c3a3410); color: var(--cf5d442); font-weight: 600; }
+  .badge.tag-unknown { background: var(--c2a2a2a); color: var(--c888); font-weight: 600; }
+  .badge.tag-audio { background: var(--c2a2140); color: var(--cb39ddb); font-weight: 600; }
+
+  /* Sync summary bar */
+  .sync-summary {
+    display: flex;
+    gap: 16px;
+    padding: 8px 24px;
+    background: var(--c151515);
+    font-size: 12px;
+    color: var(--c666);
+    border-bottom: 1px solid var(--c222);
+    flex-wrap: wrap;
+  }
+  .sync-summary .src {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sync-summary .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .sync-summary .dot.ok { background: var(--c2ecc71); }
+  .sync-summary .dot.none { background: var(--c555); }
+  .sync-summary .cnt { color: var(--caaa); font-weight: 600; }
+  .sync-summary .time { color: var(--c555); }
+</style>
+</head>
+<body>
+<div class="topbar"><!-- 탭·동기화 패널·진행 막대·정렬 줄을 한 덩어리로 상단 고정 (높이가 바뀌어도 겹치지 않게) -->
+<div class="tabs">
+  <div class="tab active" data-tab="crema" onclick="switchTab('crema')">크레마클럽</div>
+  <div class="tab" data-tab="millie" onclick="switchTab('millie')">밀리의 서재</div>
+  <div class="tab" data-tab="libs" onclick="switchTab('libs')">서울도서관</div>
+  <div class="tab" data-tab="best" onclick="switchTab('best')">추천 목록</div>
+  <div class="tab" data-tab="favs" onclick="switchTab('favs')">즐겨찾기 <span id="favCount"></span></div>
+  <div class="tab" data-tab="search" onclick="switchTab('search')">검색</div>
+  <button class="theme-btn" id="btnTheme" onclick="toggleTheme()" title="라이트/다크 모드">☀</button>
+  <button class="tab-sync" id="btnSyncPanel" onclick="toggleSyncPanel()">동기화 ▾</button>
+</div>
+<div class="sync-summary" id="syncSummary"></div>
+<div class="header" id="headerArea">
+  <div class="header-top">
+    <div class="meta" id="metaInfo"></div>
+    <button class="btn-sync" id="btnSync" onclick="syncCurrent()"><span id="syncLabel">크레마클럽 동기화</span></button>
+  </div>
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+    <div class="progress-info">
+      <span id="progressStatus">준비 중...</span>
+      <span id="progressEta"></span>
+    </div>
+  </div>
+</div>
+<div class="controls" id="controlsArea">
+  <button class="sort-btn active" data-sort="rating" onclick="setSort('rating')">별점순</button>
+  <button class="sort-btn" data-sort="reviews" onclick="setSort('reviews')">리뷰수순</button>
+  <select class="genre-select" id="genreSelect" onchange="render()">
+    <option value="">전체 장르</option>
+  </select>
+  <span class="ctl-divider"></span>
+  <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
+  <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+  <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
+  <span class="slider-area" id="sliderArea"></span>
+</div>
+</div>
+<div class="popup-overlay" id="popupOverlay" onclick="if(event.target===this)closePopup()">
+  <div class="popup" id="popupContent"></div>
+</div>
+<div id="content">
+  <div class="empty"><p>동기화 버튼을 눌러 도서 목록을 가져오세요</p></div>
+</div>
+
+<script>
+let data = { books: [], bestsellers: {}, lastSync: null };
+let seoulData = { books: [], crossMatch: {}, lastSync: null };
+let libsData = { libs: [], cremaToLibs: {} };
+let millieData = { lastSync: null, count: 0, cremaToMillie: {} };
+let millieBooks = []; // 밀리 탭 목록 (setMillieData에서 만듦)
+function setMillieData(j) {
+  millieData = j;
+  const match = j.millieMatch || {};
+  // 밀리는 전자책·오디오북·개정판을 따로 올려서 같은 책이 여러 번 나옴 → 제목+저자 앞 2글자로 묶어 한 줄로.
+  // 대표 정보는 많이 담긴 판, 형식별 ID는 ebookId/audioId에 따로 기록
+  const byKey = new Map();
+  millieById = new Map();
+  for (const [id, title, author, cat, cover, take, reviews, audio, sub, star = 0, starN = 0, viewPct = null, viewTime = null] of j.books || []) {
+    const key = workKey(title) + '|' + authorK(author); // 판본(확장판·초판본 …)도 같은 책으로
+    // 장르: 상위 카테고리. '오디오북'은 형식이라 오디오북은 하위 카테고리(소설·인문 …)를 장르로
+    const genre = ((cat.trim() === '오디오북' ? sub : cat) || '기타').trim().replace('어린이/청소년', '어린이');
+    let g = byKey.get(key);
+    if (!g) byKey.set(key, g = { id, title, author, genre, cover, take: -1, reviews, star: 0, starN: 0, viewPct: null, viewTime: null, ebookId: null, audioId: null, cremaId: null, libIds: {} });
+    if (audio) g.audioId ||= id; else if (!g.ebookId) { g.ebookId = id; g.genre = genre; }
+    if (take > g.take) Object.assign(g, { id, cover: cover || g.cover, take, reviews, viewPct: viewPct ?? g.viewPct, viewTime: viewTime || g.viewTime });
+    if (starN > g.starN) Object.assign(g, { star, starN }); // 별점은 평가가 가장 많은 판
+    if (title.length < g.title.length) g.title = title;
+    g.cremaId ||= match[id]?.cremaId || null;
+    if (!Object.keys(g.libIds).length && match[id]?.libIds) g.libIds = match[id].libIds;
+    millieById.set(id, g);
+  }
+  millieBooks = [...byKey.values()];
+}
+let millieById = new Map(); // 밀리 책 ID(전자책·오디오북 어느 판이든) → 묶은 항목
+// 형식 표시: 전자책 / 오디오북 / 둘 다
+const millieFormats = (g) => [g.ebookId && '전자책', g.audioId && '오디오북'].filter(Boolean).join('·');
+// 밀리의 서재: 공개 목록이 카테고리별 상위 책뿐이라 '있음'만 확실하고, 못 찾으면 검색 링크를 준다
+const millieBookUrl = (id) => `https://www.millie.co.kr/v4/book/${id}`;
+const millieSearchUrl = (title) => `https://www.millie.co.kr/v3/search/result/${encodeURIComponent(title)}?type=total`;
+// 상세 팝업의 바깥 링크: 모두 네모 배경 배지 (크레마 초록, 밀리 노랑)
+const LINK_COLORS = { crema: 'var(--c1e4620);color:var(--c5be37a)', millie: 'var(--c3a3410);color:var(--cf5d442)' };
+const linkBadge = (kind, href, label) => `<a class="cross-badge" href="${href}" target="_blank" rel="noopener" style="background:${LINK_COLORS[kind]};text-decoration:none;margin:2px 4px 2px 0;display:inline-block">${label} ↗</a>`;
+function millieLinks(g) {
+  const a = (id, label) => linkBadge('millie', millieBookUrl(id), label);
+  return [g.ebookId && a(g.ebookId, '전자책'), g.audioId && a(g.audioId, '오디오북')].filter(Boolean).join(' ');
+}
+let mergedData = null; // 도서관 통합 목록 (탭을 열 때 불러옴)
+
+// ─── 즐겨찾기 ───
+// 서버(data-favorites.json)에 책 정보만 저장, 크레마·도서관 소장 여부는 서버가 조회 때마다 최신으로 붙여줌
+let favorites = [];
+let favKeys = new Set();
+const favCandidates = new Map(); // key → 추가할 때 보낼 책 정보 (화면에 그린 별 버튼마다 등록)
+const normT = (t) => (t || '').replace(/\s/g, '').toLowerCase();
+// 서버 authorKey와 같은 규칙 (첫 저자 이름 앞 2글자)
+function authorK(a) {
+  let s = (a || '').replace(/\([^)]*\)|[<>]/g, '').replace(/^\s*(지은이|저자|글|지음)\s*[:：]\s*/, '');
+  s = s.split(/[,/·;:]|\s+외|외\s*\d|\s+등/)[0];
+  s = s.replace(/\s*(공저|편저|저|지음|글|그림|역|옮김|엮음|편)\s*$/, '');
+  return s.replace(/[^가-힣a-zA-Z]/g, '').toLowerCase().slice(0, 2);
+}
+// 즐겨찾기는 책 단위: 어느 플랫폼에서 눌렀든 제목+저자로 같은 key (서버 favKey와 같은 규칙)
+// 판본 차이를 무시한 '같은 작품' 키: 초판본·확장판·개정판·○○ 에디션·리커버·양장·큰글자책 등을 떼고
+// 공백·문장부호를 없앤 제목. 권 표시((상)·(1)·2부)는 다른 책이므로 남긴다.
+const EDITION_WORDS = '초판본|초판|확장판|한글판|영문판|국문판|개정\\s*증보판|개정판|증보판|특별판|한정판|완전판|합본|무삭제판|리커버|양장본|양장|큰\\s*글[자씨]책?|보급판|기념판|에디션|edition|recover';
+const EDITION_PAREN_RE = new RegExp(`[(\\[{<][^)\\]}>]*(${EDITION_WORDS}|주년)[^)\\]}>]*[)\\]}>]`, 'gi');
+const EDITION_RE = new RegExp(`(?<=^|[\\s\\p{P}])(출간\\s*)?(\\d+\\s*주년\\s*)?(기념\\s*)?(${EDITION_WORDS})(?=$|[\\s\\p{P}])`, 'giu'); // 단어 단위로만 (양장피 ≠ 양장)
+const EDITION_NAMED_RE = /[가-힣a-z]+\s+(에디션|edition)/gi; // '블랙 에디션'처럼 이름 붙은 에디션
+const LEADING_TAG_RE = /^\s*[\[【][^\]】]*[\]】]\s*/; // [단독] [eBook] 같은 앞머리 표시
+// '스토너 - 존 윌리엄스 장편소설', '데미안 - 열린책들 세계문학 227', '데미안 - 에디터스 컬렉션' 같은 시리즈·장르 부제
+const GENRE_SUBTITLE_RE = /\s+[-:]\s+[^-:]*(장편\s*소설|소설|에세이|산문집|시집|세계\s*문학|문학\s*전집|전집|컬렉션|클래식|시리즈|총서)[^-:]*$/;
+function workKey(t) {
+  const k = (t || '').toLowerCase().replace(LEADING_TAG_RE, '').replace(GENRE_SUBTITLE_RE, '').replace(EDITION_PAREN_RE, ' ').replace(EDITION_NAMED_RE, ' ').replace(EDITION_RE, ' ').replace(/[\s\p{P}\p{S}]/gu, '');
+  return k || (t || '').replace(/\s/g, '').toLowerCase();
+}
+const favKeyOf = ({ title, author }) => 't:' + workKey(title) + '|' + authorK(author);
+// 제목 표기가 플랫폼마다 조금 달라도 같은 책이면 즐겨찾기로 보이게: key가 같거나, 서버가 붙여준 크레마/밀리 ID가 같으면 같은 책
+let favByCrema = new Map(), favByMillie = new Map();
+function favKeyFor(book) {
+  if (book.key && favKeys.has(book.key)) return book.key;
+  const k = favKeyOf(book);
+  if (favKeys.has(k)) return k;
+  return (book.cremaId && favByCrema.get(book.cremaId)) || (book.millieId && favByMillie.get(book.millieId)) || null;
+}
+const isFav = (book) => !!favKeyFor(book);
+
+function starBtn(book) {
+  const key = favKeyFor(book) || favKeyOf(book);
+  favCandidates.set(key, { key, title: book.title, author: book.author || '', publisher: book.publisher || '', cremaId: book.cremaId || null });
+  const on = favKeys.has(key);
+  return `<button class="star${on ? ' on' : ''}" data-fav-key="${esc(key).replace(/"/g, '&quot;')}" title="${on ? '즐겨찾기 해제' : '즐겨찾기'}" onclick="event.stopPropagation(); toggleFav(this.dataset.favKey)">${on ? '★' : '☆'}</button>`;
+}
+
+function setFavorites(items) {
+  favorites = items;
+  favKeys = new Set(items.map(f => f.key));
+  favByCrema = new Map(items.filter(f => f.cremaId).map(f => [f.cremaId, f.key]));
+  favByMillie = new Map(items.filter(f => f.millieId).map(f => [f.millieId, f.key]));
+  const c = document.getElementById('favCount');
+  if (c) c.textContent = items.length ? `(${items.length})` : '';
+}
+
+async function toggleFav(key) {
+  try {
+    if (favKeys.has(key)) {
+      await fetch('/api/favorites?key=' + encodeURIComponent(key), { method: 'DELETE' });
+      setFavorites(favorites.filter(f => f.key !== key));
+    } else {
+      const r = await (await fetch('/api/favorites', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(favCandidates.get(key)) })).json();
+      if (r.error) throw new Error(r.error);
+      setFavorites([r.item, ...favorites]);
+    }
+  } catch (e) {
+    alert('즐겨찾기 저장 실패: ' + e.message);
+    return;
+  }
+  if (currentTab !== 'favs' && curFilters()?.fav) return render(); // 즐겨찾기 필터 중이면 목록 다시
+  const on = favKeys.has(key);
+  for (const btn of document.querySelectorAll('.star')) {
+    if (btn.dataset.favKey !== key) continue;
+    btn.classList.toggle('on', on);
+    btn.textContent = on ? '★' : '☆';
+    btn.title = on ? '즐겨찾기 해제' : '즐겨찾기';
+  }
+  if (currentTab === 'favs') render();
+}
+
+function loadFavorites() {
+  return fetch('/api/favorites').then(r => r.json()).then(j => setFavorites(j.items || [])).catch(() => {});
+}
+// 통합 항목 → 서울도서관 책 (대출·추천·유형 등 서울도서관만 주는 정보)
+let seoulById = null, seoulByIdSrc = null;
+let cremaById = null, cremaByIdSrc = null;
+function cremaBookOf(id) {
+  if (!id) return null;
+  if (cremaByIdSrc !== data.books) { cremaById = new Map(data.books.map(b => [b.bookId, b])); cremaByIdSrc = data.books; }
+  return cremaById.get(id) || null;
+}
+function seoulBookOf(e) {
+  const id = e.ids?.seoul;
+  if (!id) return null;
+  if (seoulByIdSrc !== seoulData.books) { seoulById = new Map(seoulData.books.map(b => [b.id, b])); seoulByIdSrc = seoulData.books; }
+  return seoulById.get(id) || null;
+}
+const libName = (key) => key === 'seoul' ? '서울도서관' : (libsData.libs.find(l => l.key === key)?.name || key);
+let currentTab = 'crema';
+let currentSort = 'rating';
+let syncing = false;
+
+async function loadData() {
+  try {
+    // Load crema first (small), render immediately
+    const cremaResp = await fetch('/api/data');
+    const cremaJson = await cremaResp.json();
+    if (cremaJson && cremaJson.books) data = cremaJson;
+    updateMeta();
+    render();
+
+    loadFavorites();
+    fetch('/api/millie/data').then(r => r.json()).then(j => { setMillieData(j); updateMeta(); if (currentTab !== 'favs') render(); if (j.running) syncMillie(); }).catch(() => {});
+    fetch('/api/libs/data').then(r => r.json()).then(j => {
+      if (j && j.libs) { libsData = j; updateMeta(); if (currentTab === 'crema' || isBestTab()) render(); }
+      // 서버에서 구립도서관 동기화가 돌고 있으면 진행 상황에 다시 연결
+      if (j?.running) syncLibs();
+    }).catch(() => {});
+
+    // Then load seoul (large) in background
+    const seoulResp = await fetch('/api/seoul/data');
+    const seoulJson = await seoulResp.json();
+    if (seoulJson && seoulJson.books) seoulData = seoulJson;
+    updateMeta();
+    if (currentTab === 'libs') render(); // 서울도서관 대출·추천 정보 반영
+  } catch (e) { console.error('loadData:', e); }
+}
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+
+  // Update controls for each tab
+  const controls = document.getElementById('controlsArea');
+  if (tab === 'crema') {
+    currentSort = 'rating';
+    controls.innerHTML = `
+      <button class="sort-btn active" data-sort="rating" onclick="setSort('rating')">별점순</button>
+      <button class="sort-btn" data-sort="reviews" onclick="setSort('reviews')">리뷰수순</button>
+      <select class="genre-select" id="genreSelect" onchange="render()"><option value="">전체 장르</option></select>${kdcSelectHtml()}
+      <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
+      <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
+      ${sliderHtml()}`;
+  } else if (tab === 'millie') {
+    currentSort = 'popular';
+    controls.innerHTML = `
+      <button class="sort-btn active" data-sort="popular" onclick="setSort('popular')">인기순</button>
+      <button class="sort-btn" data-sort="rating" onclick="setSort('rating')">별점순</button>
+      <button class="sort-btn" data-sort="reviews" onclick="setSort('reviews')">리뷰수순</button>
+      <select class="genre-select" id="genreSelect" onchange="render()"><option value="">전체 장르</option></select>${kdcSelectHtml()}
+      <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
+      <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
+      <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
+      ${sliderHtml()}`;
+  } else if (isBestTab(tab)) {
+    // 추천 목록: 베스트셀러(YES24·알라딘) + 문학상 + 추천 목록을 드롭다운 하나로 고르고, 세로선 오른쪽은 필터
+    currentSort = 'yes24';
+    controls.innerHTML = `
+      <div class="list-dd" id="listDD"><button class="list-select" id="listDDBtn" onclick="toggleListDD(event)"></button><div class="list-dd-menu" id="listDDMenu"></div></div>
+      <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
+      <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
+      <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
+      <button class="sort-btn filter-btn" id="btnNotrFilter" onclick="cycleFilter('notr')" title="한국어 번역본을 확인하지 못한 책 숨기기">번역 없음 제외</button>
+      <button class="sort-btn filter-btn" id="btnNoebFilter" onclick="cycleFilter('noeb')" title="크레마·밀리 전자책·도서관 어디에도 없는 책 숨기기">전자책 없음 제외</button>`;
+    renderListDD(); ensureAwards().then(renderListDD); // 드롭다운 숫자용
+  } else if (tab === 'favs') {
+    currentSort = 'added';
+    controls.innerHTML = `
+      <button class="sort-btn active" data-sort="added" onclick="setSort('added')">최근 추가순</button>
+      <button class="sort-btn" data-sort="title" onclick="setSort('title')">제목순</button>
+      <button class="sort-btn" data-sort="kdc" onclick="setSort('kdc')">분류순</button>
+      <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
+      <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
+      <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      `;
+    loadFavorites().then(() => { if (currentTab === 'favs') render(); }); // 소장 정보 최신으로
+  } else if (tab === 'libs') {
+    currentSort = 'libcount';
+    controls.innerHTML = `
+      <button class="sort-btn active" data-sort="libcount" onclick="setSort('libcount')">소장 많은순</button>
+      <button class="sort-btn" data-sort="loanCnt" onclick="setSort('loanCnt')">서울도서관 대출순</button>
+      <button class="sort-btn" data-sort="recommend" onclick="setSort('recommend')">서울도서관 추천순</button>
+      <button class="sort-btn" data-sort="title" onclick="setSort('title')">제목순</button>
+      <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
+      <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
+      `;
+    if (!mergedData) {
+      document.getElementById('content').innerHTML = '<div class="empty"><p>도서관 통합 목록 불러오는 중...</p></div>';
+      ensureMerged().then(() => { if (currentTab === 'libs') render(); })
+        .catch(e => { document.getElementById('content').innerHTML = `<div class="empty"><p>불러오기 오류: ${esc(e.message)}</p></div>`; });
+    }
+  } else if (tab === 'search') {
+    currentSort = '';
+    controls.innerHTML = `<select class="genre-select" id="searchField" onchange="render()">
+        <option value="all">전체</option><option value="title">제목</option><option value="author">저자</option>
+      </select><input class="search-input" id="globalSearch" placeholder="제목이나 저자로 검색 — 크레마클럽 · 밀리의 서재 · 도서관 전체에서 찾아요 (비워 두면 목록 검색)" oninput="clearTimeout(searchTimer); searchTimer = setTimeout(render, 250)" autofocus>`;
+    ensureMerged().then(() => { if (currentTab === 'search') render(); }).catch(() => {});
+    setTimeout(() => document.getElementById('globalSearch')?.focus(), 0);
+  }
+  if ((tab === 'libs' || tab === 'favs') && !document.getElementById('kdcSelect')) controls.querySelector('.filter-btn')?.insertAdjacentHTML('beforebegin', kdcSelectHtml());
+  // 정렬·목록 고르기(왼쪽)와 필터(오른쪽)를 세로선으로 나눔
+  controls.querySelector('.filter-btn')?.insertAdjacentHTML('beforebegin', '<span class="ctl-divider"></span>');
+  updateMeta();
+  buildGenreOptions();
+  updateKdcSelect();
+  document.getElementById('kdcPanel')?.remove();
+  render();
+}
+
+function toggleTheme() {
+  const t = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = t;
+  localStorage.setItem('theme', t);
+  updateThemeButton();
+}
+const SUN_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+  <g class="rays" stroke="#f5a623" stroke-width="2" stroke-linecap="round">
+    <line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/>
+    <line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/>
+    <line x1="4.6" y1="4.6" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.4" y2="19.4"/>
+    <line x1="4.6" y1="19.4" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.4" y2="4.6"/>
+  </g>
+  <g class="sun-face">
+    <circle cx="12" cy="12" r="6" fill="#ffc93c" stroke="#f5a623" stroke-width="1"/>
+    <circle cx="10" cy="11.3" r=".9" fill="#6b4a00"/><circle cx="14" cy="11.3" r=".9" fill="#6b4a00"/>
+    <path d="M10.3 13.6 q1.7 1.5 3.4 0" stroke="#6b4a00" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <circle cx="8.6" cy="13.3" r=".9" fill="#ff8a65" opacity=".7"/><circle cx="15.4" cy="13.3" r=".9" fill="#ff8a65" opacity=".7"/>
+  </g>
+</svg>`;
+const MOON_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true">
+  <g class="moon">
+    <path d="M15.5 3.2a8.8 8.8 0 1 0 5.3 13.6A7.2 7.2 0 0 1 15.5 3.2z" fill="#ffe08a" stroke="#e8c45a" stroke-width="1"/>
+    <circle cx="6.6" cy="11.4" r=".85" fill="#5a4a1a"/><circle cx="9.6" cy="12.8" r=".85" fill="#5a4a1a"/>
+    <path d="M6.6 14.2 q1.3 1.1 2.6 .5" stroke="#5a4a1a" stroke-width=".9" fill="none" stroke-linecap="round"/>
+    <circle cx="5.4" cy="13.4" r=".9" fill="#ff9e80" opacity=".6"/>
+  </g>
+  <path class="twinkle" d="M19.5 2.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="#fff3b0"/>
+  <path class="twinkle t2" d="M21.5 9l.4.9.9.4-.9.4-.4.9-.4-.9-.9-.4.9-.4z" fill="#fff3b0"/>
+</svg>`;
+function updateThemeButton() {
+  const light = document.documentElement.dataset.theme === 'light';
+  const b = document.getElementById('btnTheme');
+  // 지금 테마를 보여줌: 다크면 달, 라이트면 해
+  b.innerHTML = light ? SUN_SVG : MOON_SVG;
+  b.title = light ? '다크 모드로' : '라이트 모드로';
+}
+updateThemeButton();
+
+function toggleSyncPanel() {
+  const open = document.getElementById('syncSummary').classList.toggle('open');
+  document.getElementById('btnSyncPanel').classList.toggle('open', open);
+}
+
+// 동기화 진행 중이면 탭 줄 버튼에도 표시 (패널을 닫아둬도 알 수 있게)
+new MutationObserver(renderSyncButton).observe(document.getElementById('progressWrap'), { attributes: true, attributeFilter: ['class'] });
+
+function syncCurrent() {
+  if (currentTab === 'crema') sync();
+  else syncLibs();
+}
+
+// 일주일 이내는 상대 시각, 넘으면 한국 시각 기준 절대 시각 (예: 10월 31일 15:10)
+const KST = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false });
+const KST_DATE = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: 'long', day: 'numeric' });
+function fmtDate(iso) {
+  if (!iso) return '미동기화';
+  const diff = Date.now() - new Date(iso);
+  if (diff < 60000) return '방금';
+  if (diff < 3600000) return Math.floor(diff / 60000) + '분 전';
+  if (diff < 86400000) return Math.floor(diff / 3600000) + '시간 전';
+  if (diff < 7 * 86400000) return Math.floor(diff / 86400000) + '일 전';
+  return KST.format(new Date(iso));
+}
+setInterval(() => updateSyncSummary(), 60000); // 상대 시각 갱신
+
+// 탭 줄 버튼: 소스별 마지막 동기화 시각을 늘 보이게
+function renderSyncButton() {
+  const btn = document.getElementById('btnSyncPanel');
+  if (!btn) return;
+  const libsLast = libsData.libs.map(l => l.lastSync).filter(Boolean).sort().pop(); // 서울도서관 포함
+  const busy = document.getElementById('progressWrap').classList.contains('active');
+  const t = (name, iso) => `<span class="t">${name} <b>${fmtDate(iso)}</b></span>`;
+  btn.classList.toggle('busy', busy);
+  btn.innerHTML = (busy ? '<span class="busy-label">동기화 중…</span>' : '')
+    + t('크레마', data.lastSync) + t('도서관', libsLast) + t('밀리', millieData.lastSync) + t('베스트', data.bestsellerSync) + ' ▾';
+}
+
+function updateSyncSummary() {
+  renderSyncButton();
+  const el = document.getElementById('syncSummary');
+  const cremaOk = data.books.length > 0;
+
+  el.innerHTML = `
+    <div class="src"><span class="dot ${cremaOk ? 'ok' : 'none'}"></span>크레마클럽 <span class="cnt">${data.books.length.toLocaleString()}권</span> <span class="time">${fmtDate(data.lastSync)}</span><button class="btn-mini" onclick="sync()">동기화</button></div>
+    ${libsSummary()}
+    <div class="src"><span class="dot ${millieData.count ? 'ok' : 'none'}"></span>밀리의 서재 <span class="cnt">${millieData.count.toLocaleString()}권</span> <span class="time" title="로그인 없이 볼 수 있는 카테고리별 상위 도서만">인기 도서만 · ${fmtDate(millieData.lastSync)}</span><button class="btn-mini" onclick="syncMillie()">동기화</button></div>
+    <div class="src"><span class="dot ${data.bestsellerLists ? 'ok' : 'none'}"></span>베스트셀러 <span class="time">${fmtDate(data.bestsellerSync)}</span><button class="btn-mini" id="btnBestSync" onclick="syncBestsellers()">새로고침</button></div>
+  `;
+}
+
+async function syncBestsellers() {
+  const btn = document.getElementById('btnBestSync');
+  btn.textContent = '받는 중...'; btn.disabled = true;
+  try {
+    const j = await (await fetch('/api/bestsellers/sync')).json();
+    if (j.error) throw new Error(j.error);
+    Object.assign(data, j);
+    render();
+  } catch (e) {
+    alert('베스트셀러 받기 실패: ' + e.message);
+  }
+  updateMeta();
+}
+
+function libsSummary() {
+  const synced = libsData.libs.filter(l => l.count);
+  const failed = libsData.libs.filter(l => l.error);
+  const times = synced.map(l => l.lastSync).filter(Boolean).sort();
+  const last = times[times.length - 1];
+  const oldest = times[0];
+  // 일부 도서관만 다시 받은 경우 가장 오래된 시각도 표시
+  const range = oldest && last && new Date(last) - new Date(oldest) > 3600000 ? ` <span class="time">(가장 오래된 곳 ${fmtDate(oldest)})</span>` : '';
+  const matched = data.books.filter(b => cremaLibKeys(b.bookId).length).length;
+  return `<div class="src"><span class="dot ${synced.length ? 'ok' : 'none'}"></span>도서관 <span class="cnt">${synced.length}/${libsData.libs.length || 25}곳</span>`
+    + (matched ? ` <span class="cnt">크레마 ${matched.toLocaleString()}권 소장</span>` : '')
+    + (failed.length ? ` <span class="time" title="${esc(failed.map(l => l.name + ': ' + l.error).join('\n'))}">실패 ${failed.length}곳</span>` : '')
+    + ` <span class="time">${fmtDate(last)}</span>${range}`
+    + `<button class="btn-mini" onclick="syncLibs()">동기화</button></div>`;
+}
+
+function updateMeta() {
+  const label = document.getElementById('syncLabel');
+  if (currentTab === 'crema') {
+    label.textContent = '크레마클럽 동기화';
+  } else if (currentTab === 'libs') {
+    label.textContent = '도서관 동기화';
+  } else if (currentTab === 'favs') {
+    label.textContent = '도서관 동기화';
+  } else {
+    label.textContent = '서울도서관 동기화';
+  }
+  document.getElementById('metaInfo').textContent = '';
+  updateSyncSummary();
+  buildGenreOptions();
+}
+
+// ─── 십진분류(KDC): 서버가 국립중앙도서관에서 받아 둔 번호. 목록엔 세 자리, 팝업엔 소수점까지 ───
+const KDC_MAIN = ['총류', '철학', '종교', '사회과학', '자연과학', '기술과학', '예술', '언어', '문학', '역사'];
+const KDC_DIV = {
+  '00': '총류', '01': '도서학·서지학', '02': '문헌정보학', '03': '백과사전', '04': '강연집·수필집·연설문집', '05': '일반 연속간행물', '06': '일반 학회·단체·기관', '07': '신문·저널리즘', '08': '일반 전집·총서', '09': '향토자료',
+  '10': '철학', '11': '형이상학', '12': '인식론·인과론·인간학', '13': '철학의 체계', '14': '경학', '15': '동양철학·사상', '16': '서양철학', '17': '논리학', '18': '심리학', '19': '윤리학·도덕철학',
+  '20': '종교', '21': '비교종교', '22': '불교', '23': '기독교', '24': '도교', '25': '천도교', '26': '신도 (옛 분류)', '27': '힌두교·브라만교', '28': '이슬람교', '29': '기타 제종교',
+  '30': '사회과학', '31': '통계자료', '32': '경제학', '33': '사회학·사회문제', '34': '정치학', '35': '행정학', '36': '법률·법학', '37': '교육학', '38': '풍습·예절·민속학', '39': '국방·군사학',
+  '40': '자연과학', '41': '수학', '42': '물리학', '43': '화학', '44': '천문학', '45': '지학', '46': '광물학', '47': '생명과학', '48': '식물학', '49': '동물학',
+  '50': '기술과학', '51': '의학', '52': '농업·농학', '53': '공학·공업일반·토목·환경', '54': '건축·건축학', '55': '기계공학', '56': '전기공학·통신·전자공학', '57': '화학공학', '58': '제조업', '59': '생활과학',
+  '60': '예술', '61': '건축 (옛 분류, 지금은 540)', '62': '조각·조형미술', '63': '공예', '64': '서예', '65': '회화·도화·디자인', '66': '사진예술', '67': '음악', '68': '공연예술·매체예술', '69': '오락·스포츠',
+  '70': '언어', '71': '한국어', '72': '중국어', '73': '일본어·기타 아시아어', '74': '영어', '75': '독일어', '76': '프랑스어', '77': '스페인어·포르투갈어', '78': '이탈리아어', '79': '기타 제어',
+  '80': '문학', '81': '한국문학', '82': '중국문학', '83': '일본문학·기타 아시아문학', '84': '영미문학', '85': '독일문학', '86': '프랑스문학', '87': '스페인·포르투갈문학', '88': '이탈리아문학', '89': '기타 제문학',
+  '90': '역사', '91': '아시아', '92': '유럽', '93': '아프리카', '94': '북아메리카', '95': '남아메리카', '96': '오세아니아', '97': '양극지방', '98': '지리', '99': '전기',
+};
+const KDC_LIT_FORM = ['', '시', '희곡', '소설', '수필', '연설·웅변', '일기·서간·기행', '풍자·유머', '르포르타주·기타'];
+function kdcDesc(c) {
+  if (!c) return '';
+  if (/^\dxx$/.test(c)) return KDC_MAIN[+c[0]] + ' (세부 분류 없음)';
+  const main = KDC_MAIN[+c[0]], div = KDC_DIV[c.slice(0, 2)] || '';
+  const form = c[0] === '8' && c[1] !== '0' ? KDC_LIT_FORM[+c[2]] || '' : '';
+  return [main, div !== main ? div : '', form].filter(Boolean).join(' › ');
+}
+let kdcData = {}, kdcJobInfo = null, kdcEnabled = false;
+const kdcKeyOf = (title, author) => favKeyOf({ title: title || '', author: author || '' });
+const kdcOf = (b) => kdcData[kdcKeyOf(b.title, b.author)] || null;
+function kdcTag(title, author) {
+  if (!kdcEnabled || !title) return '';
+  const k = kdcKeyOf(title, author), c = kdcData[k];
+  if (c) return `<span class="kdc" title="${esc(c)} ${esc(kdcDesc(c))}">${c.slice(0, 3)}</span>`;
+  return `<span class="kdc pend" data-kk="${esc(k).replace(/"/g, '&quot;')}" data-t="${esc(title).replace(/"/g, '&quot;')}" data-a="${esc(author || '').replace(/"/g, '&quot;')}"></span>`;
+}
+function loadKdc() {
+  return fetch('/api/kdc').then(r => r.json()).then(j => {
+    const wasEmpty = !Object.keys(kdcData).length;
+    kdcEnabled = j.enabled; kdcJobInfo = j.job; Object.assign(kdcData, j.map);
+    updateKdcSelect();
+    if (wasEmpty && Object.keys(kdcData).length) render();
+  }).catch(() => {});
+}
+// 받는 중이면 1분마다 다시 (필터 숫자용)
+setInterval(() => { if (kdcJobInfo?.running) loadKdc(); }, 60000);
+// 화면에 보이는 책만 그때그때 조회
+let kdcQueue = [], kdcTimer = null;
+const kdcObserver = new IntersectionObserver((ents) => {
+  for (const e of ents) if (e.isIntersecting) { kdcObserver.unobserve(e.target); kdcQueue.push(e.target); }
+  clearTimeout(kdcTimer); kdcTimer = setTimeout(kdcFlush, 150);
+}, { rootMargin: '300px' });
+function kdcObserve(root) { if (kdcEnabled) root.querySelectorAll('.kdc.pend:not([data-obs])').forEach(el => { el.dataset.obs = 1; kdcObserver.observe(el); }); }
+async function kdcFlush() {
+  const els = kdcQueue.splice(0, 40).filter(el => el.isConnected);
+  if (kdcQueue.length) kdcTimer = setTimeout(kdcFlush, 300);
+  const byKey = new Map();
+  for (const el of els) { const k = el.dataset.kk; if (kdcData[k]) fillKdcEl(el, kdcData[k]); else (byKey.get(k) || byKey.set(k, []).get(k)).push(el); }
+  if (!byKey.size) return;
+  try {
+    const items = [...byKey.keys()].map(k => { const el = byKey.get(k)[0]; return { k, t: el.dataset.t, a: el.dataset.a }; });
+    const j = await (await fetch('/api/kdc/lookup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items }) })).json();
+    for (const [k, c] of Object.entries(j.map || {})) {
+      if (c) kdcData[k] = c;
+      for (const el of byKey.get(k) || []) if (c) fillKdcEl(el, c); else el.classList.remove('pend');
+    }
+  } catch {}
+}
+function fillKdcEl(el, c) { el.classList.remove('pend'); el.textContent = c.slice(0, 3); el.title = c + ' ' + kdcDesc(c); }
+// 백번대 필터
+const KDC_FILTER_TABS = ['crema', 'millie', 'libs', 'favs'];
+function kdcSelectHtml() {
+  return '<select class="genre-select" id="kdcSelect" onchange="render(); refreshKdcPanel()" title="십진분류 (국립중앙도서관 분류번호)"></select>'
+    + '<button class="sort-btn kdc-btn" id="kdcDetailBtn" onclick="toggleKdcPanel(event)" title="10번대·세부 번호로 포함/제외">세부 분류</button>';
+}
+function updateKdcSelect() {
+  const sel = document.getElementById('kdcSelect');
+  if (!sel) return;
+  const cur = sel.value;
+  const j = kdcJobInfo;
+  const prog = j?.running ? ` · ${j.stage} 분류 받는 중 ${j.total ? Math.floor(j.done / j.total * 100) : 0}%` : '';
+  sel.innerHTML = `<option value="">전체 분류${prog}</option>` + KDC_MAIN.map((n, d) => `<option value="${d}"${String(d) === cur ? ' selected' : ''}>${d}00 ${n}</option>`).join('');
+  sel.style.display = kdcEnabled || Object.keys(kdcData).length ? '' : 'none';
+}
+// 탭마다 세부 조건: sel = 고른 10번대 앞 두 자리('32') + '?'(분류 모름), 비어 있으면 전체. codes = 입력칸 ('327 -327.2')
+const kdcDetail = {};
+const KDC_ALL_CELLS = [...Array(100).keys()].map(i => String(i).padStart(2, '0'));
+const kdcDet = () => kdcDetail[currentTab] ||= { sel: new Set(), codes: '' };
+function kdcCodeRules(d) {
+  const toks = d.codes.split(/[\s,]+/).filter(t => /^-?\d{1,3}(\.\d+)?$/.test(t));
+  return { inc: toks.filter(t => t[0] !== '-'), exc: toks.filter(t => t[0] === '-').map(t => t.slice(1)) };
+}
+const kdcDetailActive = (d = kdcDet()) => d.sel.size || kdcCodeRules(d).inc.length || kdcCodeRules(d).exc.length;
+// 책 키는 무거워서 책마다 한 번만 계산
+const bookKdc = (b, titleOf, authorOf) => kdcData[b._kk ??= kdcKeyOf(titleOf(b), authorOf(b))] || '';
+// 칸: 세 자리 번호가 있으면 앞 두 자리, 없거나 큰 분류만 알면('8xx') '?'
+const kdcCell = (c) => /^\d\d/.test(c) ? c.slice(0, 2) : '?';
+function kdcPass(c, main, d, r) {
+  if (main && c[0] !== main) return false;
+  if (c && r.exc.some(t => c.startsWith(t))) return false; // 세부 번호 '-'가 가장 먼저
+  if (c && r.inc.some(t => c.startsWith(t))) return true;  // 세부 번호는 칸 선택과 상관없이 추가
+  if (!d.sel.size) return !r.inc.length;
+  return d.sel.has(kdcCell(c));
+}
+function filterKdc(books, titleOf = b => b.title, authorOf = b => b.author) {
+  const main = document.getElementById('kdcSelect')?.value || '', d = kdcDet();
+  updateKdcBtn();
+  if (!main && !kdcDetailActive(d)) return books;
+  const r = kdcCodeRules(d);
+  return books.filter(b => kdcPass(bookKdc(b, titleOf, authorOf), main, d, r));
+}
+function updateKdcBtn() {
+  const btn = document.getElementById('kdcDetailBtn');
+  if (!btn) return;
+  const d = kdcDet(), r = kdcCodeRules(d);
+  const list = (a) => a.slice(0, 3).join('·') + (a.length > 3 ? ` 외 ${a.length - 3}` : '');
+  const name = (p) => p === '?' ? '모름' : p + '0';
+  // 반 넘게 골랐으면 빠진 것만 ('320·330 빼고')
+  const all = [...KDC_ALL_CELLS, '?'], picked = all.filter(p => d.sel.has(p)), left = all.filter(p => !d.sel.has(p));
+  const parts = [];
+  if (picked.length) parts.push(picked.length > all.length / 2 ? (left.length ? list(left.map(name)) + ' 빼고' : '전체') : list(picked.map(name)));
+  if (r.inc.length) parts.push('+' + list(r.inc));
+  if (r.exc.length) parts.push('-' + list(r.exc));
+  btn.classList.toggle('on', parts.length > 0);
+  btn.textContent = parts.length ? '세부: ' + parts.join(' ') : '세부 분류';
+}
+// 패널: 지금 탭 책들의 10번대별 권수와 함께
+function kdcTabBooks() {
+  if (currentTab === 'crema') return [data.books, b => b.title, b => b.author];
+  if (currentTab === 'millie') return [millieBooks, b => b.title, b => b.author];
+  if (currentTab === 'libs') return [mergedData || [], b => b.title, b => b.author];
+  if (currentTab === 'favs') return [favorites, b => b.title, b => b.author];
+  return [[], b => b.title, b => b.author];
+}
+function toggleKdcPanel(ev) {
+  ev?.stopPropagation();
+  const old = document.getElementById('kdcPanel');
+  if (old) { old.remove(); return; }
+  const p = document.createElement('div');
+  p.id = 'kdcPanel'; p.className = 'kdc-panel';
+  p.addEventListener('click', e => e.stopPropagation());
+  document.body.appendChild(p);
+  refreshKdcPanel();
+}
+function refreshKdcPanel() {
+  const p = document.getElementById('kdcPanel'), btn = document.getElementById('kdcDetailBtn');
+  if (!p || !btn) { p?.remove(); return; }
+  const main = document.getElementById('kdcSelect')?.value || '', d = kdcDet();
+  const [books, tOf, aOf] = kdcTabBooks();
+  const cnt = {};
+  for (const b of books) { const c = bookKdc(b, tOf, aOf); if (main && c[0] !== main) continue; const k = kdcCell(c); cnt[k] = (cnt[k] || 0) + 1; }
+  const rows = main ? [+main] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const cell = (pfx) => {
+    const n = cnt[pfx] || 0;
+    const name = KDC_DIV[pfx] && KDC_DIV[pfx] !== KDC_MAIN[+pfx[0]] ? KDC_DIV[pfx] : pfx[1] === '0' ? KDC_MAIN[+pfx[0]] + ' 일반' : '(미사용)';
+    return `<div class="kc${d.sel.has(pfx) ? ' inc' : ''}${n ? '' : ' zero'}" title="${pfx}0 ${esc(name)} · ${n.toLocaleString()}권" onclick="toggleKdcCell('${pfx}')"><b>${pfx}0</b> <span class="c">${n.toLocaleString()}</span><span class="n">${esc(name)}</span></div>`;
+  };
+  // 한 백번대만 볼 땐 5칸씩 두 줄로 크게
+  const grid = rows.map(m => `<div class="kr" onclick="toggleKdcRow(${m})" title="이 줄 전체 선택/해제">${m}00 ${KDC_MAIN[m]}</div>`
+    + (main ? [0, 1, 2, 3, 4].map(i => cell(`${m}${i}`)).join('') + '<div></div>' + [5, 6, 7, 8, 9].map(i => cell(`${m}${i}`)).join('')
+      : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => cell(`${m}${i}`)).join(''))).join('');
+  const nUnknown = cnt['?'] || 0;
+  const unknownCell = `<div class="kr"></div><div class="kc${d.sel.has('?') ? ' inc' : ''}${nUnknown ? '' : ' zero'}" style="grid-column: span 2" title="분류번호를 아직 모르거나 큰 분류만 아는 책" onclick="toggleKdcCell('?')"><b>분류 모름</b> <span class="c">${nUnknown.toLocaleString()}</span><span class="n">아직 못 받았거나 세부 번호 없음</span></div>`;
+  p.innerHTML = `<div class="kp-head"><b>세부 분류</b> 고른 칸의 책만 보여요 · 아무것도 안 고르면 전체 · 줄 이름을 누르면 그 줄 전체
+      <button class="sort-btn" onclick="selectAllKdc()">전체 선택</button><button class="sort-btn" onclick="resetKdcDetail()">전체 해제</button></div>
+    <div class="kdc-grid${main ? ' one' : ''}">${grid}${unknownCell}</div>
+    <div class="kp-codes">세부 번호 <input id="kdcCodes" placeholder="예: 327 -327.2 813.6  (앞자리가 같은 번호 모두 추가, -는 빼기)" value="${esc(d.codes)}" oninput="setKdcCodes(this.value)"></div>`;
+  const r = btn.getBoundingClientRect(), w = p.offsetWidth;
+  p.style.top = (r.bottom + 6) + 'px';
+  p.style.left = Math.max(8, Math.min(r.left, innerWidth - w - 8)) + 'px';
+}
+function toggleKdcCell(pfx) {
+  const d = kdcDet();
+  d.sel.has(pfx) ? d.sel.delete(pfx) : d.sel.add(pfx);
+  render(); refreshKdcPanel();
+}
+function toggleKdcRow(m) {
+  const d = kdcDet(), ps = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => `${m}${i}`);
+  const all = ps.every(p => d.sel.has(p));
+  for (const p of ps) all ? d.sel.delete(p) : d.sel.add(p);
+  render(); refreshKdcPanel();
+}
+// 전체 선택: 백번대를 골랐으면 그 줄만
+function selectAllKdc() {
+  const main = document.getElementById('kdcSelect')?.value || '', d = kdcDet();
+  for (const p of KDC_ALL_CELLS) if (!main || p[0] === main) d.sel.add(p);
+  if (!main) d.sel.add('?');
+  render(); refreshKdcPanel();
+}
+let kdcCodesTimer = null;
+function setKdcCodes(v) {
+  kdcDet().codes = v;
+  clearTimeout(kdcCodesTimer);
+  kdcCodesTimer = setTimeout(() => { render(); const inp = document.getElementById('kdcCodes'); const pos = inp?.selectionStart; refreshKdcPanel(); const n = document.getElementById('kdcCodes'); if (n) { n.focus(); n.setSelectionRange(pos, pos); } }, 300);
+}
+function resetKdcDetail() { kdcDetail[currentTab] = { sel: new Set(), codes: '' }; render(); refreshKdcPanel(); }
+document.addEventListener('click', (e) => { const p = document.getElementById('kdcPanel'); if (p && !p.contains(e.target) && e.target.id !== 'kdcDetailBtn') p.remove(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') document.getElementById('kdcPanel')?.remove(); });
+const CREMA_GENRE_ORDER = ['소설', '에세이/시', '경제/경영', '자기계발', '인문', '사회/정치', '역사', '종교', '예술/대중문화', '자연과학', '가정/살림', '건강/취미/여행',
+  '어린이/유아', '청소년', '국어/외국어', 'IT/모바일', '대학교재', '수험서/자격증', '잡지', '만화', '로맨스', '판타지/무협', '무료eBook'];
+const crGenreRank = (g) => { const i = CREMA_GENRE_ORDER.indexOf(g); return i < 0 ? 99 : i; };
+function buildGenreOptions() {
+  const select = document.getElementById('genreSelect');
+  if (!select) return;
+  const books = currentTab === 'crema' ? data.books : currentTab === 'millie' ? millieBooks : [];
+  const genres = new Set();
+  for (const b of books) {
+    if (b.genre) genres.add(b.genre);
+  }
+  // 서비스 메뉴 순서: 크레마는 크레마클럽 카테고리 순, 밀리는 수집할 때 카테고리를 돈 순서(= 밀리 메뉴 순)
+  const sorted = currentTab === 'crema'
+    ? [...genres].sort((a, b) => crGenreRank(a) - crGenreRank(b) || a.localeCompare(b, 'ko'))
+    : [...genres];
+  const current = select.value;
+  select.innerHTML = '<option value="">전체 장르</option>' +
+    sorted.map(g => `<option value="${g}"${g === current ? ' selected' : ''}>${g}</option>`).join('');
+}
+
+// Progress tracking
+let syncStartTime = 0;
+let etaRemaining = -1; // seconds
+let etaTimer = null;
+
+function startEtaTimer() {
+  stopEtaTimer();
+  etaTimer = setInterval(() => {
+    if (etaRemaining > 0) {
+      etaRemaining = Math.max(0, etaRemaining - 1);
+      document.getElementById('progressEta').textContent = formatEta(etaRemaining);
+    }
+  }, 1000);
+}
+
+function stopEtaTimer() {
+  if (etaTimer) { clearInterval(etaTimer); etaTimer = null; }
+}
+
+function updateProgress(msg) {
+  const fill = document.getElementById('progressFill');
+  const status = document.getElementById('progressStatus');
+
+  status.textContent = msg.status || msg;
+
+  if (!msg.page || !msg.totalPages) return;
+
+  const phase = msg.phase || '';
+  const page = msg.page;
+  const total = msg.totalPages;
+
+  let pct = 0;
+  if (phase === 'crema') {
+    pct = (page / total) * 70;
+  } else if (phase === 'genre') {
+    pct = 70 + (page / total) * 20;
+  } else if (phase === 'bestseller') {
+    pct = 90 + (page / total) * 8;
+  } else if (phase === 'libs') {
+    pct = (page / total) * 97;
+  } else if (phase === 'match') {
+    pct = 98;
+  }
+  pct = Math.min(pct, 99);
+  fill.style.width = pct + '%';
+
+  // ETA calculation
+  if (!updateProgress._history) updateProgress._history = [];
+  const elapsed = (Date.now() - syncStartTime) / 1000;
+  updateProgress._history.push({ t: elapsed, pct });
+
+  const h = updateProgress._history;
+  const first = h[0];
+  const pctDone = pct - first.pct;
+  const timeDone = elapsed - first.t;
+
+  if (pctDone > 2 && timeDone > 5) {
+    const rate = pctDone / timeDone;
+    etaRemaining = Math.round((100 - pct) / rate);
+  }
+}
+
+function formatEta(seconds) {
+  if (seconds < 0 || !isFinite(seconds)) return '';
+  const m = Math.floor(seconds / 60);
+  const s = Math.ceil(seconds % 60);
+  if (m > 0) return `약 ${m}분 ${s}초 남음`;
+  return `약 ${s}초 남음`;
+}
+
+async function sync() {
+  if (syncing) return;
+  syncing = true;
+  syncStartTime = Date.now();
+  updateProgress._history = [];
+  etaRemaining = -1;
+  startEtaTimer();
+  phaseStartTime = Date.now();
+  lastPhase = '';
+
+  const btn = document.getElementById('btnSync');
+  const wrap = document.getElementById('progressWrap');
+  const fill = document.getElementById('progressFill');
+
+  btn.classList.add('syncing');
+  document.getElementById('syncLabel').textContent = (currentTab === 'crema' ? '크레마클럽' : '서울도서관') + ' 동기화 중...';
+  wrap.classList.add('active');
+  fill.style.width = '0%';
+
+  function done() {
+    btn.classList.remove('syncing');
+    updateMeta();
+    syncing = false;
+    fill.style.width = '100%';
+    stopEtaTimer();
+    document.getElementById('progressEta').textContent = '';
+    setTimeout(() => wrap.classList.remove('active'), 2000);
+  }
+
+  try {
+    const es = new EventSource('/api/sync');
+    es.onmessage = (e) => {
+      const msg = JSON.parse(e.data);
+      if (msg.status || msg.page) {
+        updateProgress(msg);
+      }
+      if (msg.done) {
+        es.close();
+        // 책이 많아 완료 메시지에는 데이터를 싣지 않음 → 따로 받아옴
+        document.getElementById('progressStatus').textContent = '데이터 불러오는 중...';
+        Promise.all([
+          fetch('/api/data').then(r => r.json()).then(j => { data = { ...j, seoulMatch: j.seoulMatch || {} }; }),
+          // Reload seoul data too (cross match updated server-side)
+          fetch('/api/seoul/data').then(r => r.json()).then(j => { if (j && j.books) seoulData = j; }).catch(() => {}),
+        ]).then(() => {
+          render();
+          updateMeta();
+          document.getElementById('progressStatus').textContent = `완료! ${data.books.length.toLocaleString()}권`;
+        }).catch(e => {
+          document.getElementById('progressStatus').textContent = '데이터 불러오기 오류: ' + e.message;
+        }).finally(done);
+      }
+      if (msg.error) {
+        es.close();
+        document.getElementById('progressStatus').textContent = '오류: ' + msg.error;
+        done();
+      }
+    };
+    es.onerror = () => {
+      es.close();
+      document.getElementById('progressStatus').textContent = '연결 오류';
+      done();
+    };
+  } catch (e) {
+    document.getElementById('progressStatus').textContent = '오류: ' + e.message;
+    done();
+  }
+}
+
+function syncLibs() { syncJob('/api/libs/sync', '도서관 동기화 중...'); }
+function syncMillie() { syncJob('/api/millie/sync', '밀리의 서재 동기화 중...'); }
+
+// 서버 백그라운드 작업(도서관/밀리) 진행 상황을 받아 보여주고, 끝나면 데이터를 모두 다시 받는다
+function syncJob(url, label) {
+  if (syncing) return;
+  syncing = true;
+  syncStartTime = Date.now();
+  updateProgress._history = [];
+  etaRemaining = -1;
+  startEtaTimer();
+
+  const btn = document.getElementById('btnSync');
+  const wrap = document.getElementById('progressWrap');
+  const fill = document.getElementById('progressFill');
+  btn.classList.add('syncing');
+  document.getElementById('syncLabel').textContent = label;
+  wrap.classList.add('active');
+  fill.style.width = '0%';
+
+  function done() {
+    btn.classList.remove('syncing');
+    updateMeta();
+    syncing = false;
+    fill.style.width = '100%';
+    stopEtaTimer();
+    document.getElementById('progressEta').textContent = '';
+    setTimeout(() => wrap.classList.remove('active'), 4000);
+  }
+
+  // 서버 작업은 이 연결과 분리되어 있어 페이지를 닫아도 계속 진행됨
+  const es = new EventSource(url);
+  es.onmessage = (e) => {
+    const msg = JSON.parse(e.data);
+    if (msg.status || msg.page) updateProgress(msg);
+    if (msg.done) {
+      es.close();
+      const finalStatus = document.getElementById('progressStatus').textContent;
+      mergedData = null; // 통합 목록도 갱신됨
+      // 서울도서관도 같은 작업에서 받으므로 서울·크레마(서울 매칭) 데이터도 다시
+      Promise.all([
+        fetch('/api/libs/data').then(r => r.json()).then(j => { libsData = j; }),
+        fetch('/api/seoul/data').then(r => r.json()).then(j => { if (j && j.books) seoulData = j; }),
+        fetch('/api/data').then(r => r.json()).then(j => { if (j && j.books) data = j; }),
+        fetch('/api/millie/data').then(r => r.json()).then(j => { setMillieData(j); }),
+        loadFavorites(),
+      ]).then(() => { if (currentTab === 'libs') switchTab('libs'); else render(); })
+        .finally(() => { document.getElementById('progressStatus').textContent = finalStatus; done(); });
+    }
+    if (msg.error) {
+      es.close();
+      document.getElementById('progressStatus').textContent = '오류: ' + msg.error;
+      done();
+    }
+  };
+  es.onerror = () => { es.close(); document.getElementById('progressStatus').textContent = '연결 오류 (서버 작업은 계속될 수 있음 — 새로고침하면 다시 연결)'; done(); };
+}
+
+function setSort(sort) {
+  currentSort = sort;
+  awardAuthor = null; // 작가 상세 페이지에서 다른 목록으로
+  renderListDD();
+  document.querySelectorAll('.sort-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.sort === sort);
+  });
+  render();
+}
+
+const PAGE_SIZE = 1000;
+let sortedBooks = []; // full sorted list
+let displayCount = 0;
+
+function render() {
+  // Sort full list, then show first PAGE_SIZE
+  if (isBestTab() && currentSort.startsWith('award:')) sortedBooks = getSortedAwards();
+  else if (currentTab === 'crema' || isBestTab()) sortedBooks = getSortedCrema();
+  else if (currentTab === 'favs') sortedBooks = getSortedFavs();
+  else if (currentTab === 'millie') sortedBooks = getSortedMillie();
+  else if (currentTab === 'search') sortedBooks = getSearchResults();
+  else { if (!mergedData) return; sortedBooks = getSortedMerged(); }
+  displayCount = 0;
+  document.getElementById('content').innerHTML = '';
+  loadMore();
+}
+
+
+// 결과 수: 별도 줄 대신 정렬 줄 맨 왼쪽에
+function setResultCount(html) {
+  // 크레마·밀리·서울도서관 탭은 전체 목록이라 권수를 보여주지 않음
+  if (['crema', 'millie', 'libs'].includes(currentTab)) { document.getElementById('resultCount')?.remove(); return; }
+  const controls = document.getElementById('controlsArea');
+  let el = document.getElementById('resultCount');
+  if (!el) {
+    el = document.createElement('span');
+    el.id = 'resultCount';
+    el.className = 'result-count-inline';
+    controls.prepend(el); // 줄 맨 왼쪽, 정렬 버튼 앞
+  }
+  el.innerHTML = html;
+}
+
+function loadMore() {
+  const content = document.getElementById('content');
+  const start = displayCount;
+  const end = Math.min(displayCount + PAGE_SIZE, sortedBooks.length);
+
+  if (sortedBooks.length === 0) {
+    if (currentTab === 'search') {
+      const q = document.getElementById('globalSearch')?.value.trim();
+      setResultCount(q ? '0권' : '');
+      if (!q) { renderListSearch(); return; } // 검색어가 없으면 목록 검색
+      content.innerHTML = `<div class="empty"><p>어디에도 없어요${mergedData ? '' : ' (도서관 목록 불러오는 중…)'}</p>${suggestHtml(q)}</div>`;
+      return;
+    }
+    if (currentTab === 'favs' && !favorites.length) {
+      setResultCount('0권');
+      content.innerHTML = window.favEmptyHtml ? favEmptyHtml() : '<div class="empty"><p>목록에서 ☆를 눌러 관심 책을 추가하세요</p></div>';
+      return;
+    }
+    const hasData = currentTab === 'millie' ? millieBooks.length : currentTab === 'crema' || isBestTab() ? data.books.length : currentTab === 'favs' ? favorites.length : mergedData?.length;
+    setResultCount('0권');
+    const awardWait = isBestTab() && currentSort.startsWith('award:') && !awardsData;
+    content.innerHTML = `${isBestTab() ? awardAuthorHeader() : ''}<div class="empty"><p>${awardWait ? '수상작 목록 불러오는 중…' : hasData ? '결과 없음' : '동기화 버튼을 눌러 도서 목록을 가져오세요'}</p></div>`;
+    return;
+  }
+
+  // Count header (only on first load)
+  if (start === 0) {
+    setResultCount(`${sortedBooks.length.toLocaleString()}${sortedBooks[0]?.award && sortedBooks[0].author ? '명' : '권'}`); // 작가 단위 목록(노벨문학상 등)은 '명'
+    // 검색 결과가 적으면 철자가 비슷한 이름도 제안 (예: '움베르트 에코' → 요약본 몇 권 + '움베르토 에코' 제안)
+    const sug = currentTab === 'search' && sortedBooks.length <= 10 ? suggestHtml(document.getElementById('globalSearch')?.value || '') : '';
+    content.innerHTML = `${sug ? `<div class="suggest-top">${sug}</div>` : ''}${isBestTab() ? awardAuthorHeader() : ''}<div class="book-grid" id="bookGrid"></div>`;
+  }
+
+  const grid = document.getElementById('bookGrid');
+  let html = '';
+
+  if (currentTab === 'crema' || isBestTab()) {
+    const seoulMatch = data.seoulMatch || (seoulData.crossMatch && seoulData.crossMatch.cremaToSeoul) || {};
+    for (let i = start; i < end; i++) {
+      const b = sortedBooks[i];
+      html += b.award ? (b.author ? renderAwardAuthor(b, i) : renderAwardItem(b, i)) : b.authorBook ? renderSearchItem(b.authorBook, i) : b.best ? renderBestItem(b, i) : renderCremaItem(b, i, seoulMatch);
+    }
+  } else if (currentTab === 'favs') {
+    for (let i = start; i < end; i++) html += renderFavItem(sortedBooks[i], i);
+  } else if (currentTab === 'millie') {
+    for (let i = start; i < end; i++) html += renderMillieItem(sortedBooks[i], i);
+  } else if (currentTab === 'search') {
+    for (let i = start; i < end; i++) html += renderSearchItem(sortedBooks[i], i);
+  } else {
+    for (let i = start; i < end; i++) html += renderMergedItem(sortedBooks[i], i);
+  }
+
+  grid.insertAdjacentHTML('beforeend', html);
+  kdcObserve(grid);
+  displayCount = end;
+
+  // Remove old "load more" button
+  document.getElementById('loadMoreWrap')?.remove();
+
+  // Add "load more" if there's more
+  if (displayCount < sortedBooks.length) {
+    const remaining = sortedBooks.length - displayCount;
+    const wrap = document.createElement('div');
+    wrap.id = 'loadMoreWrap';
+    wrap.style.cssText = 'text-align:center;padding:16px;';
+    wrap.innerHTML = `<button onclick="loadMore()" style="padding:10px 32px;background:var(--c333);border:1px solid var(--c555);border-radius:6px;color:var(--cccc);font-size:13px;cursor:pointer">${remaining.toLocaleString()}권 더 보기</button>`;
+    content.appendChild(wrap);
+  }
+}
+
+// 크레마 탭 순환 필터: '' (전체) → 'has' (있음) → 'none' (없음) → ''
+// 탭마다 따로: 크레마 탭은 도서관·크레마, 도서관 탭은 크레마
+const filterState = { crema: { lib: '', millie: '', fav: '', rating: 0 }, millie: { lib: '', crema: '', fav: '', mstar: 0, mpct: 0, mtime: 0 }, best: { lib: '', crema: '', millie: '', fav: '', notr: '', noeb: '' }, libs: { crema: '', millie: '', fav: '' }, favs: { lib: '', crema: '', millie: '' } };
+const isBestTab = (tab = currentTab) => tab === 'best';
+const curFilters = () => filterState[currentTab];
+const FILTER_LABELS = { lib: ['도서관: 전체', '도서관 있음', '도서관 없음'], crema: ['크레마: 전체', '크레마 있음', '크레마 없음'], millie: ['밀리: 전체', '밀리 있음', '밀리 오디오북', '밀리 없음'], fav: ['☆ 즐겨찾기', '★ 즐겨찾기만'], notr: ['번역 없음 제외', '번역 없음 제외'], noeb: ['전자책 없음 제외', '전자책 없음 제외'] };
+const FILTER_BTN_IDS = { lib: 'btnLibFilter', crema: 'btnCremaFilter', millie: 'btnMillieFilter', fav: 'btnFavFilter', notr: 'btnNotrFilter', noeb: 'btnNoebFilter' };
+const FILTER_STATES = ['', 'has', 'none'];
+// 밀리는 전자책 있음(태그 '밀리') / 오디오북만(태그 '밀리 오디오북') / 없음(인기 목록에서 못 찾음)
+const MILLIE_STATES = ['', 'has', 'audio', 'none'];
+const statesOf = (which) => which === 'millie' ? MILLIE_STATES : ['fav', 'notr', 'noeb'].includes(which) ? ['', 'on'] : FILTER_STATES;
+const millieState = (id) => { const g = id && millieById.get(id); return !g ? 'none' : g.ebookId ? 'has' : 'audio'; };
+// 목록 필터: idOf(책) → 밀리 책 ID
+function filterMillie(books, f, idOf) {
+  return f.millie ? books.filter(b => millieState(idOf(b)) === f.millie) : books;
+}
+function cycleFilter(which) {
+  const f = curFilters();
+  const st = statesOf(which);
+  f[which] = st[(st.indexOf(f[which]) + 1) % st.length];
+  render();
+}
+// ─── 슬라이더 필터: 크레마 별점 / 밀리 별점·완독률·완독시간 ───
+// 별점은 평가가 10개 이상인 책만 대상(그보다 적으면 별점 없음 취급).
+// '이상' 슬라이더 범위: lo ~ 만점 (크레마 9.0, 밀리 별점 4.0, 완독률 40%). 맨 왼쪽 한 칸은 '전체'
+// 범위 슬라이더(완독시간): 0~10시간, 손잡이 두 개 (밀리 완독시간 중앙값 1.9시간, 99%선 13.7시간). 양 끝이면 '전체'
+const MIN_REVIEWS = 10;
+const SLIDER_DEFS = {
+  rating: { dir: 'ge', step: 0.1, lo: 9.0, max: 10, base: () => data.books, val: c => c && c.reviews >= MIN_REVIEWS ? c.rating : null,
+    fmt: v => `★ ${v.toFixed(1)} 이상`, off: '별점: 전체', tip: '크레마 별점 (10점 만점, 리뷰 10개 이상인 책만)' },
+  mstar: { dir: 'ge', step: 0.1, lo: 4.0, max: 5, base: () => millieBooks, val: g => g.starN >= MIN_REVIEWS ? g.star : null,
+    fmt: v => `★ ${v.toFixed(1)} 이상`, off: '별점: 전체', tip: '밀리 별점 (5점 만점, 평가 10개 이상인 책만)' },
+  mpct: { dir: 'ge', step: 5, lo: 40, max: 100, base: () => millieBooks, val: g => g.viewPct,
+    fmt: v => `완독률 ${v}% 이상`, off: '완독률: 전체', tip: '밀리 완독할 확률' },
+  // 완독시간은 손잡이 두 개로 최소~최대. 0이면 최소 없음, 10이면 최대 없음 (10시간 넘는 책 포함)
+  mtime: { dir: 'range', step: 0.5, min: 0, max: 10, base: () => millieBooks, val: g => g.viewTime ? g.viewTime / 3600 : null,
+    fmt: ([a, b]) => a > 0 && b < 10 ? `${a}~${b}시간` : a > 0 ? `${a}시간 이상` : `${b}시간 이하`, off: '완독시간: 전체', tip: '밀리 완독 예상 시간 (최소~최대)' },
+};
+// 별점순 보정에 쓰는 평균: 필터와 상관없이 목록 전체로 고정 → 필터를 켜도 필터 없을 때와 같은 순서
+// (크레마는 리뷰 없는 책(0점)까지 넣은 평균이라 낮음 → 리뷰 수가 많은 책이 위로)
+const priorCache = {};
+function ratingPrior(kind) {
+  const src = kind === 'millie' ? millieBooks : data.books;
+  if (priorCache[kind]?.src !== src) {
+    const v = kind === 'millie' ? src.filter(g => g.starN).map(g => g.star) : src.map(b => b.rating);
+    priorCache[kind] = { src, C: v.length ? v.reduce((a, b) => a + b, 0) / v.length : 0 };
+  }
+  return priorCache[kind].C;
+}
+const sliderRangeCache = {};
+function sliderRange(key) {
+  const d = SLIDER_DEFS[key], src = d.base(), c = sliderRangeCache[key];
+  if (c && c.src === src) return c;
+  const vals = src.map(d.val).filter(v => v != null && v > 0).sort((a, b) => a - b);
+  const q = (p) => vals.length ? vals[Math.min(vals.length - 1, Math.floor(vals.length * p))] : 0;
+  const snap = (v, f) => +(f(v / d.step) * d.step).toFixed(2);
+  if (d.dir === 'range') return sliderRangeCache[key] = { lo: d.min, hi: d.max, src };
+  const r = d.dir === 'ge' ? { lo: d.lo ?? snap(q(0.2), Math.floor), hi: d.max } : { lo: d.min, hi: d.hi ?? Math.max(d.min, snap(q(0.9), Math.ceil)) };
+  return sliderRangeCache[key] = { ...r, src };
+}
+function sliderHtml() { return '<span class="slider-area" id="sliderArea"></span>'; }
+function syncSliders() {
+  const area = document.getElementById('sliderArea');
+  const f = curFilters();
+  if (!area || !f) return;
+  const keys = Object.keys(f).filter(k => SLIDER_DEFS[k]);
+  if (area.dataset.keys !== keys.join()) {
+    area.dataset.keys = keys.join();
+    area.innerHTML = keys.map(k => `<span class="rating-filter" data-key="${k}" title="${SLIDER_DEFS[k].tip} · 글자를 누르거나 끝까지 밀면 해제"><label onclick="resetSlider('${k}')"></label>${SLIDER_DEFS[k].dir === 'range'
+      ? `<span class="dual"><input type="range" oninput="onSliderInput('${k}', this.value, 0)"><input type="range" oninput="onSliderInput('${k}', this.value, 1)"></span>`
+      : `<input type="range" oninput="onSliderInput('${k}', this.value)">`}</span>`).join('');
+  }
+  for (const k of keys) {
+    const d = SLIDER_DEFS[k], { lo, hi } = sliderRange(k), v = f[k];
+    const wrap = area.querySelector(`[data-key="${k}"]`), input = wrap.querySelector('input');
+    wrap.querySelector('label').textContent = v ? d.fmt(v) : d.off;
+    wrap.classList.toggle('active', !!v);
+    if (d.dir === 'range') {
+      const [a, b] = v || [lo, hi], pct = (x) => (x - lo) / (hi - lo) * 100 + '%';
+      wrap.querySelectorAll('input').forEach((el, i) => { el.min = lo; el.max = hi; el.step = d.step; el.value = i ? b : a; });
+      wrap.querySelector('input').style.zIndex = a > (lo + hi) / 2 ? 2 : ''; // 둘이 오른쪽 끝에 겹치면 아래 손잡이를 위로 (안 그러면 못 잡음)
+      const dual = wrap.querySelector('.dual');
+      dual.style.setProperty('--a', pct(a)); dual.style.setProperty('--b', pct(b));
+      continue;
+    }
+    input.step = String(d.step);
+    if (d.dir === 'ge') { input.min = +(lo - d.step).toFixed(2); input.max = hi; input.value = v || input.min; }
+    else { input.min = lo; input.max = +(hi + d.step).toFixed(2); input.value = v || input.max; }
+    input.style.setProperty('--fill', ((input.value - input.min) / (input.max - input.min) * 100) + '%'); // 트랙 채움
+  }
+}
+function resetSlider(key) { // 슬라이더 글자를 누르면 해제
+  const f = curFilters();
+  if (!f[key]) return;
+  f[key] = 0;
+  render();
+}
+let sliderTimer = null;
+function onSliderInput(key, val, handle) {
+  const d = SLIDER_DEFS[key], { lo, hi } = sliderRange(key), f = curFilters();
+  const v = +(Math.round(parseFloat(val) / d.step) * d.step).toFixed(2);
+  if (d.dir === 'range') { // 손잡이끼리 넘어가지 않게, 양 끝이면 해제
+    const r = f[key] ? [...f[key]] : [lo, hi];
+    r[handle] = handle ? Math.max(v, r[0]) : Math.min(v, r[1]);
+    f[key] = r[0] <= lo && r[1] >= hi ? 0 : r;
+  } else f[key] = (d.dir === 'ge' ? v < lo : v > hi) ? 0 : v;
+  syncSliders();
+  clearTimeout(sliderTimer);
+  sliderTimer = setTimeout(render, 150); // 끄는 동안 너무 자주 다시 그리지 않게
+}
+// cremaOf(책) → 크레마 책 (크레마 별점용). 밀리 슬라이더는 밀리 탭 항목에 바로 적용
+function filterSliders(books, f, cremaOf) {
+  for (const k of Object.keys(f)) {
+    const d = SLIDER_DEFS[k], v = f[k];
+    if (!d || !v) continue;
+    const get = k === 'rating' ? (b => d.val(cremaOf(b))) : d.val;
+    const ok = d.dir === 'range' ? (x => (v[0] <= d.min || x >= v[0]) && (v[1] >= d.max || x <= v[1])) : d.dir === 'ge' ? (x => x >= v) : (x => x <= v);
+    books = books.filter(b => { const x = get(b); return x != null && x > 0 && ok(x); });
+  }
+  return books;
+}
+
+function updateFilterButtons() {
+  syncSliders();
+  const f = curFilters();
+  for (const which of Object.keys(f)) {
+    const btn = document.getElementById(FILTER_BTN_IDS[which]);
+    if (!btn) continue;
+    btn.textContent = FILTER_LABELS[which][statesOf(which).indexOf(f[which])];
+    btn.classList.toggle('active', !!f[which]);
+  }
+}
+
+// 크레마 책의 소장 도서관 key 목록 (서울도서관 포함)
+function cremaLibKeys(bookId) {
+  const seoulMatch = data.seoulMatch || seoulData.crossMatch?.cremaToSeoul || {};
+  const keys = [...(libsData.cremaToLibs?.[bookId] || [])];
+  if (seoulMatch[bookId]) keys.unshift('seoul');
+  return keys;
+}
+
+const BEST_SORTS = ['yes24', 'aladin_best', 'aladin_steady'];
+
+function getSortedCrema() {
+  const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+  const genre = document.getElementById('genreSelect')?.value || '';
+  updateFilterButtons();
+
+  // 베스트셀러 정렬: 크레마에 없는 책까지 목록 전체를 순위대로 (크레마에 없는 책은 {best} 항목)
+  let books;
+  if (BEST_SORTS.includes(currentSort)) {
+    books = (data.bestsellerLists?.[currentSort] || []).map((e, idx) =>
+      cremaBookOf(e.cremaId) || { best: e, idx, title: e.title, author: e.author });
+  } else {
+    books = [...data.books];
+  }
+  const libKeysOf = (b) => b.best ? Object.keys(b.best.libIds || {}) : cremaLibKeys(b.bookId);
+
+  if (genre) books = books.filter(b => b.genre === genre);
+  books = filterKdc(books);
+  if (query) books = books.filter(b => b.title.toLowerCase().includes(query) || (b.author || '').toLowerCase().includes(query));
+  const f = curFilters();
+  if (f.lib === 'has') books = books.filter(b => libKeysOf(b).length);
+  else if (f.lib === 'none') books = books.filter(b => !libKeysOf(b).length);
+  // 밀리 '없음'은 인기 도서 목록에서 못 찾았다는 뜻
+  books = filterMillie(books, f, b => b.best ? b.best.millieId : millieData.cremaToMillie[b.bookId]);
+  if (f.fav) books = books.filter(b => isFav(b.best ? { title: b.best.title, author: b.best.author } : { title: b.title, author: b.author, cremaId: b.bookId }));
+  books = filterSliders(books, f, b => b.best ? null : b);
+  if (f.noeb) books = books.filter(b => !b.best || libKeysOf(b).length || millieState(b.best.millieId) === 'has');
+  if (BEST_SORTS.includes(currentSort)) {
+    if (f.crema === 'has') books = books.filter(b => !b.best);
+    else if (f.crema === 'none') books = books.filter(b => b.best);
+  }
+
+  if (currentSort === 'rating') {
+    // 리뷰가 적으면 평균 쪽으로 당긴 점수. 평균은 필터와 상관없이 크레마 전체로 고정
+    // (필터 결과로 평균을 내면 별점 필터를 켰을 때 평균이 높아져 리뷰 수 보정이 거의 사라졌음)
+    const C = ratingPrior('crema'), m = 50;
+    const score = (b) => (b.rating * b.reviews + C * m) / (b.reviews + m);
+    books.sort((a, b) => score(b) - score(a) || b.reviews - a.reviews);
+  } else if (currentSort === 'reviews') {
+    books.sort((a, b) => b.reviews - a.reviews || b.rating - a.rating);
+  }
+  return books;
+}
+
+// ─── 검색 탭: 크레마·밀리·도서관(통합 목록)을 한꺼번에 찾아 같은 책끼리 묶는다 ───
+let searchTimer = null;
+function ensureMerged() {
+  if (mergedData) return Promise.resolve();
+  return fetch('/api/libs/merged').then(r => r.json()).then(j => { mergedData = j.merged.map((e, i) => ({ ...e, _i: i })); });
+}
+const squash = (t) => (t || '').replace(/[\s\p{P}\p{S}]/gu, '').toLowerCase(); // 공백·문장부호 무시 ('총균쇠' = '총, 균, 쇠')
+const authorKey = authorK;
+function getSearchResults() {
+  const raw = document.getElementById('globalSearch')?.value || '';
+  if (!squash(raw)) return [];
+  return searchCatalog(raw, document.getElementById('searchField')?.value || 'all');
+}
+// 검색용으로 공백을 뺀 소문자 제목·저자·출판사를 목록마다 한 번만 만들어 둔다 (목록 검색은 수십 번 연달아 찾음)
+const sqIndexCache = new Map();
+function sqIndex(list, fields) {
+  let c = sqIndexCache.get(fields);
+  if (!c || c.src !== list) sqIndexCache.set(fields, c = { src: list, rows: list.map(b => fields(b).map(squash)) });
+  return c.rows;
+}
+const SQ_CREMA = b => [b.title, b.author], SQ_MERGED = m => [m.title, m.author], SQ_MILLIE = g => [g.title, g.author];
+// raw: 검색어. field: 전체(제목·저자) / 제목 / 저자
+// 붙여 쓴 검색어가 제목이나 저자에 들어 있거나, 띄어 쓴 낱말이 모두 제목·저자 어딘가에 있으면 찾음
+// (예: '움베르토 에코 중세' → 저자 움베르토 에코 + 제목 중세)
+function searchCatalog(raw, field = 'all') {
+  const q = squash(raw);
+  const words = raw.split(/\s+/).map(squash).filter(Boolean);
+  const inRow = (t, a, w) => (field !== 'author' && t.includes(w)) || (field !== 'title' && a.includes(w));
+  const hitRow = ([t, a]) => inRow(t, a, q) || (words.length > 1 && words.every(w => inRow(t, a, w)));
+  const groups = new Map();
+  // 판본을 뗀 제목+저자로 묶음. 다른 목록의 책이 크레마 책과 연결돼 있으면 그 크레마 책의 묶음으로
+  const workOf = (title, author) => 't:' + workKey(title) + '|' + authorKey(author);
+  const cremaGroup = new Map(); // 크레마 bookId → 묶음 key
+  const keyOf = (cremaId, title, author) => (cremaId && cremaGroup.get(cremaId)) || workOf(title, author);
+  const entry = (key, title, author) => {
+    let e = groups.get(key);
+    if (!e) groups.set(key, e = { title, author, cover: '', cremaId: null, libIds: null, mergedIdx: null, millieId: null, pop: 0 });
+    else if (title.length < e.title.length) e.title = title;
+    return e;
+  };
+  const sqC = sqIndex(data.books, SQ_CREMA);
+  for (let i = 0; i < data.books.length; i++) {
+    if (!hitRow(sqC[i])) continue;
+    const b = data.books[i];
+    const key = workOf(b.title, b.author);
+    cremaGroup.set(b.bookId, key);
+    const e = entry(key, b.title, b.author);
+    // 크레마에 판본이 여럿이면 리뷰가 가장 많은 판을 대표로
+    if (!e.cremaId || b.reviews > e.cremaReviews) Object.assign(e, { cremaId: b.bookId, cremaReviews: b.reviews, cover: b.cover });
+    e.pop += b.reviews;
+    e.millieId ||= millieData.cremaToMillie[b.bookId] || null;
+  }
+  const merged = mergedData || [], sqM = sqIndex(merged, SQ_MERGED);
+  for (let i = 0; i < merged.length; i++) {
+    if (!hitRow(sqM[i])) continue;
+    const m = merged[i];
+    const e = entry(keyOf(m.cremaId, m.title, m.author), m.title, m.author);
+    e.libIds = { ...m.ids, ...(e.libIds || {}) }; // 판본이 여럿이면 소장 도서관 합침
+    e.mergedIdx ??= m._i;
+    e.cremaId ||= m.cremaId; e.millieId ||= m.millieId || null; e.pop += m.libs.length * 20;
+  }
+  const sqL = sqIndex(millieBooks, SQ_MILLIE);
+  for (let i = 0; i < millieBooks.length; i++) {
+    if (!hitRow(sqL[i])) continue;
+    const g = millieBooks[i];
+    const e = entry(keyOf(g.cremaId, g.title, g.author), g.title, g.author);
+    e.millieId = g.id; e.cover ||= g.cover; e.pop += g.take / 50;
+    if (Object.keys(g.libIds).length) e.libIds = { ...g.libIds, ...(e.libIds || {}) };
+    e.cremaId ||= g.cremaId;
+  }
+  // 제목이 정확히 같음 > 검색어로 시작 > 검색어가 통째로 들어 있음 > 낱말이 흩어져 있음
+  const rank = (e) => { const t = squash(e.title), a = squash(e.author); return t === q ? 4 : t.startsWith(q) || a.startsWith(q) ? 3 : t.includes(q) || a.includes(q) ? 2 : 1; };
+  return [...groups.values()].sort((a, b) => rank(b) - rank(a) || b.pop - a.pop);
+}
+function searchLibCount(e) {
+  if (e.libIds) return Object.keys(e.libIds).length;
+  return e.cremaId ? cremaLibKeys(e.cremaId).length : 0;
+}
+function renderSearchItem(e, i) {
+  const open = e.cremaId ? `showBookDetail('crema','${e.cremaId}')` : e.mergedIdx != null ? `showBookDetail('libs',${e.mergedIdx})` : `showMillieDetail('${millieById.get(e.millieId)?.id}')`;
+  return `<div class="book-item" onclick="${open}" style="cursor:pointer">
+    <div class="book-rank">${i + 1}</div>
+    ${e.cover ? `<img class="book-cover" src="${e.cover}" loading="lazy" onerror="this.style.display='none'">` : ''}
+    <div class="book-info">
+      <div class="book-title">${esc(e.title)}</div>
+      <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author || '')}</div>
+      <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, libs: searchLibCount(e) })}</div>
+    </div>
+    ${starBtn({ title: e.title, author: e.author, cremaId: e.cremaId })}
+  </div>`;
+}
+
+// ─── 비슷한 이름 제안: 결과가 없을 때 철자가 한두 글자 다른 제목·저자를 찾는다 (예: 움베르트 에코 → 움베르토 에코) ───
+let suggestVocab = null, suggestSrc = null;
+// 첫 저자 이름만: '움베르토 에코 저/이윤기 역' → '움베르토 에코'
+const firstAuthor = (a) => (a || '').replace(/\([^)]*\)|\[[^\]]*\]/g, '').split(/[,/·;]|\s+외(?:\s|$)|\s+등(?:\s|$)/)[0]
+  .replace(/(\s*(공저|편저|편역|번역|저|지음|글|그림|역|번|옮김|엮음|편|기획|원작|감수|해설))+\s*$/, '').trim();
+function buildSuggestVocab() {
+  const key = [data.books, mergedData, millieBooks];
+  if (suggestVocab && suggestSrc.every((x, i) => x === key[i])) return suggestVocab;
+  const title = new Map(), author = new Map(); // squash → { text, n }
+  const add = (m, text, w) => { const k = squash(text); if (k.length < 2) return; const e = m.get(k); if (e) e.n += w; else m.set(k, { text, n: w }); };
+  for (const b of data.books) { add(title, b.title, 1 + b.reviews / 50); add(author, firstAuthor(b.author), 1 + b.reviews / 50); }
+  for (const m of mergedData || []) { add(title, m.title, m.libs.length); add(author, firstAuthor(m.author), m.libs.length); }
+  for (const g of millieBooks) { add(title, g.title, 1 + g.take / 1000); add(author, firstAuthor(g.author), 1 + g.take / 1000); }
+  // 길이별로 나눠 두면 비교할 후보가 크게 줄어든다
+  const byLen = (m) => { const a = []; for (const [k, v] of m) (a[k.length] ||= []).push([k, v]); return a; };
+  suggestSrc = key;
+  return suggestVocab = { title: byLen(title), author: byLen(author) };
+}
+function editDistance(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let rowMin = i;
+    for (let j = 1; j <= b.length; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (cur[j] < rowMin) rowMin = cur[j];
+    }
+    if (rowMin > max) return max + 1;
+    prev = cur;
+  }
+  return prev[b.length];
+}
+// q: squash한 검색어 → [{ text, field, d }] 가까운 순, 같으면 많이 있는 순
+function suggestSimilar(q, field = 'all', limit = 5) {
+  if (q.length < 2) return [];
+  const v = buildSuggestVocab();
+  const max = q.length <= 4 ? 1 : q.length <= 10 ? 2 : 3;
+  const out = [];
+  for (const f of field === 'all' ? ['author', 'title'] : [field]) {
+    for (let L = Math.max(2, q.length - max); L <= q.length + max; L++) {
+      for (const [k, e] of v[f][L] || []) {
+        if (k.includes(q) || q.includes(k)) continue; // 검색어를 품거나 검색어 일부인 이름은 이미 검색 결과에 있음
+        const d = editDistance(q, k, max);
+        if (d <= max) out.push({ text: e.text, field: f, d, n: e.n });
+      }
+    }
+  }
+  return out.sort((a, b) => a.d - b.d || b.n - a.n).slice(0, limit);
+}
+function suggestHtml(q) {
+  const sug = mergedData ? suggestSimilar(squash(q), document.getElementById('searchField')?.value || 'all') : [];
+  return sug.length ? `<p class="suggest">혹시 이걸 찾으셨나요? ${sug.map(x => `<a onclick='useSuggestion(${JSON.stringify(x.field)}, ${JSON.stringify(x.text).replace(/'/g, '&#39;')})'>${esc(x.text)}<span>${x.field === 'author' ? '저자' : '제목'}</span></a>`).join('')}</p>` : '';
+}
+function useSuggestion(field, text) {
+  document.getElementById('searchField').value = field;
+  document.getElementById('globalSearch').value = text;
+  render();
+}
+
+// ─── 문학상 수상작 (베스트셀러 탭): 서버 /api/awards가 크레마·밀리·도서관을 붙여 준다 ───
+// 연도 뜻: 상은 수상(시상) 연도, 추천 목록은 원서 출간 연도, 게이츠는 추천한 해
+const PUB_YEAR = '출간 연도';
+const AWARD_YEAR_LABEL = { nyt100: PUB_YEAR, guardian100: PUB_YEAR, time100: PUB_YEAR, modernlib100: PUB_YEAR, modernlib100_nonfiction: PUB_YEAR, books1001: PUB_YEAR, snu100: PUB_YEAR, greatbooks: PUB_YEAR, gates: '추천 연도', nyt10_nonfiction: '선정 연도', nyt10_fiction: '선정 연도', konomys: '선정 연도' };
+const AWARD_GROUPS = [
+  ['문학', [['nobel', '노벨문학상'], ['booker', '부커상'], ['intl_booker', '인터내셔널 부커상'], ['pulitzer_fiction', '퓰리처상 소설'],
+    ['nba_fiction', '전미도서상 소설'], ['womens_prize', '여성문학상'], ['akutagawa', '아쿠타가와상'], ['naoki', '나오키상'], ['honya_taisho', '서점대상'],
+    ['nyt10_fiction', '뉴욕타임스 올해의 책 (소설)'], ['time100', '타임 100대 영문 소설'], ['modernlib100', '모던 라이브러리 100 (소설)'], ['books1001', '죽기 전에 꼭 읽어야 할 소설 1001'],
+    ['genre_sf', 'SF·판타지 수상작'], ['genre_mys', '호러·미스터리 수상작']]],
+  ['비문학', [['pulitzer_nonfiction', '퓰리처상 논픽션'], ['pulitzer_history', '퓰리처상 역사'], ['pulitzer_biography', '퓰리처상 전기'],
+    ['nba_nonfiction', '전미도서상 논픽션'], ['baillie_gifford', '베일리 기퍼드상'], ['royal_society', '왕립학회 과학도서상'],
+    ['nyt10_nonfiction', '뉴욕타임스 올해의 책 (비문학)'], ['modernlib100_nonfiction', '모던 라이브러리 100 (논픽션)']]],
+  ['추천 목록', [['nyt100', '뉴욕타임스 21세기 최고의 책 100'], ['guardian100', '가디언 21세기 최고의 책 100'],
+    ['greatbooks', '시카고대 그레이트 북스'], ['snu100', '서울대 권장도서 100'], ['gates', '빌 게이츠 추천 도서']]],
+];
+// 장르문학 상은 한 목록으로: 같은 책은 하나로 묶고 받은 상을 모두 적음, 최근 수상 순
+const AWARD_COMBOS = {
+  genre_sf: ['SF·판타지', [['hugo', '휴고'], ['nebula', '네뷸러'], ['locus', '로커스'], ['clarke', '클라크'], ['world_fantasy', '세계환상']]],
+  genre_mys: ['호러·미스터리', [['bram_stoker', '브램 스토커'], ['edgar', '에드거'], ['dagger', '골드 대거'], ['konomys', '이미스 1위'], ['honkaku_mys', '본격미스터리대상']]],
+};
+const OLD_COMBO_KEY = Object.fromEntries(Object.entries(AWARD_COMBOS).flatMap(([c, [, ps]]) => ps.map(([k]) => [k, c])));
+function buildAwardCombos(lists) {
+  for (const [ck, [name, parts]] of Object.entries(AWARD_COMBOS)) {
+    const byKey = new Map(), items = [];
+    for (const [k, short] of parts) for (const e of lists[k]?.items || []) {
+      // 같은 책: 원제 앞부분('Babel' = 'Babel, or the Necessity of Violence') + 원저자, 또는 한국어 제목 + 저자
+      const ids = [squash(e.ot.split(/[:,(;]| or /)[0]) + '|' + squash(e.oa), ...(e.t ? ['ko|' + workKey(e.t) + '|' + firstAuthorSq(e.a)] : [])];
+      const prize = { n: short, y: e.y, note: e.note };
+      let m = ids.map(id => byKey.get(id)).find(Boolean);
+      if (!m) { m = { ...e, note: undefined, prizes: [] }; items.push(m); }
+      else if (!m.t && e.t) Object.assign(m, { ...e, note: undefined, y: m.y, prizes: m.prizes });
+      ids.forEach(id => byKey.set(id, m));
+      m.prizes.push(prize);
+      m.y = Math.max(m.y, e.y);
+    }
+    for (const m of items) m.prizes.sort((a, b) => a.y - b.y);
+    items.sort((a, b) => b.y - a.y);
+    if (items.length) lists[ck] = { name, items, combo: true };
+  }
+}
+// 상 이름 옆엔 짧은 부문 메모만 ('SF 장편', '해외편 1위'), 번역 정보 같은 긴 메모는 빼고
+const prizeNote = (n) => { const h = (n || '').split(/ · |\. |, /)[0]; return h.length <= 8 && !/옮김|역$|\d{4}/.test(h) ? h : ''; };
+const prizeText = (b) => b.prizes.map(p => `${p.n} ${p.y}${prizeNote(p.note) ? ` (${prizeNote(p.note)})` : ''}`).join(' · ');
+let awardsData = null, awardsLoading = null;
+let awardAuthor = null; // 작가 상세 페이지: { key, idx }
+function ensureAwards() {
+  return awardsLoading ||= fetch('/api/awards').then(r => r.json()).then(j => {
+    awardsData = j.lists || {}; buildAwardCombos(awardsData);
+    const old = OLD_COMBO_KEY[currentSort.slice(6)];
+    if (currentSort.startsWith('award:') && old) currentSort = 'award:' + old;
+    renderListDD();
+  });
+}
+// 드롭다운: 크레마·밀리·도서관 어디든 있는 책 수 / 전체 (작가 단위 목록은 책이 하나라도 있는 작가 수)
+const awardOwned = (x) => x.author ? Object.values(x.counts || {}).some(n => n > 0) : !!(x.cremaId || x.millieId || Object.keys(x.libIds || {}).length);
+const BEST_LIST_GROUP = ['베스트셀러', [['yes24', 'YES24 베스트'], ['aladin_best', '알라딘 베스트'], ['aladin_steady', '알라딘 스테디']]];
+function awardCountText(k) {
+  const l = awardsData?.[k];
+  return l ? `${l.items.filter(awardOwned).length}/${l.items.length}` : '';
+}
+function renderListDD() {
+  const btn = document.getElementById('listDDBtn'), menu = document.getElementById('listDDMenu');
+  if (!btn) return;
+  // 아직 파일이 없는 목록은 숨김 (목록을 받은 뒤)
+  const groups = [BEST_LIST_GROUP, ...AWARD_GROUPS.map(([g, opts]) => [g, opts.filter(([k]) => !awardsData || awardsData[k]).map(([k, n]) => ['award:' + k, n])])];
+  const count = (v) => v.startsWith('award:') ? awardCountText(v.slice(6)) : '';
+  const cur = groups.flatMap(([, o]) => o).find(([v]) => v === currentSort);
+  btn.innerHTML = cur ? `<span>${cur[1]}</span><span class="dd-count">${count(cur[0])}</span>` : '';
+  menu.innerHTML = groups.map(([g, opts]) => `<div class="dd-group">${g}</div>` + opts.map(([v, n]) =>
+    `<div class="dd-item${v === currentSort ? ' on' : ''}" onclick="pickListDD('${v}')"><span>${n}</span><span class="dd-count">${count(v)}</span></div>`).join('')).join('');
+}
+function toggleListDD(ev) {
+  ev.stopPropagation();
+  const dd = document.getElementById('listDD');
+  dd.classList.toggle('open');
+  if (dd.classList.contains('open')) dd.querySelector('.dd-item.on')?.scrollIntoView({ block: 'nearest' });
+}
+function pickListDD(v) {
+  document.getElementById('listDD').classList.remove('open');
+  setSort(v);
+}
+document.addEventListener('click', (e) => { const dd = document.getElementById('listDD'); if (dd && !dd.contains(e.target)) dd.classList.remove('open'); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') document.getElementById('listDD')?.classList.remove('open'); });
+const awardListOf = () => awardsData?.[currentSort.slice(6)] || null;
+function getSortedAwards() {
+  updateFilterButtons();
+  if (!awardsData) { ensureAwards().then(() => { if (isBestTab()) render(); }); return []; }
+  const list = awardListOf();
+  if (!list) return [];
+  if (awardAuthor) return getAwardAuthorBooks();
+  let books = list.items.map((e, idx) => ({ ...e, award: currentSort.slice(6), idx }));
+  const f = curFilters();
+  // 책 한 권이 조건을 모두 만족하는지. 작가 단위 목록(노벨상 등)은 그 작가 책 중 한 권이라도 만족하면 남김
+  const libN = (x) => Object.keys(x.libIds || {}).length;
+  const okBook = (x, title, author) => {
+    for (const [k, n] of [['lib', libN(x)], ['crema', x.cremaId ? 1 : 0]]) if ((f[k] === 'has' && !n) || (f[k] === 'none' && n)) return false;
+    if (f.millie && millieState(x.millieId) !== f.millie) return false;
+    if (f.fav && !isFav({ title, author, cremaId: x.cremaId, millieId: x.millieId })) return false;
+    if (f.noeb && !(x.cremaId || millieState(x.millieId) === 'has' || libN(x))) return false;
+    return true;
+  };
+  const anyFilter = f.lib || f.crema || f.millie || f.fav || f.notr || f.noeb;
+  if (anyFilter) {
+    if (books.some(b => b.author) && !mergedData) ensureMerged?.();
+    books = books.filter(b => b.author
+      ? awardAuthorBooksOf(b).some(g => okBook(g, g.title, g.author))
+      : (!f.notr || b.t) && okBook(b, b.t || b.ot, b.a));
+  }
+  books = filterSliders(books, f, b => b.author ? null : cremaBookOf(b.cremaId));
+  return books;
+}
+function renderAwardItem(b, i) {
+  const cb = cremaBookOf(b.cremaId), mg = b.millieId && millieById.get(b.millieId);
+  const cover = cb?.cover || mg?.cover || '';
+  const title = b.t || b.ot;
+  return `<div class="book-item" onclick="showAwardDetail('${b.award}', ${b.idx})" style="cursor:pointer">
+    <div class="book-rank award-year">${b.r ?? b.y}</div>
+    ${cover ? `<img class="book-cover" src="${cover}" loading="lazy" onerror="this.style.display='none'">` : ''}
+    <div class="book-info">
+      <div class="book-title">${esc(title)}</div>
+      <div class="book-author">${b.t ? kdcTag(b.t, b.a) : ''}${esc(b.a || b.oa)}${b.t ? ` <span class="award-orig">${esc(b.ot)}</span>` : ''}${b.r && b.y ? ` <span class="award-orig">· ${b.y < 0 ? `기원전 ${-b.y}` : b.y}</span>` : ''}${b.note ? ` <span class="award-orig">· ${esc(b.note)}</span>` : ''}</div>
+      ${b.prizes ? `<div class="award-prizes">${esc(prizeText(b))}</div>` : ''}
+      <div class="book-stats">${b.t ? '' : '<span class="badge tag-unknown" title="한국어 번역본을 확인하지 못했어요">번역본 없음</span> '}${statusTags({ crema: !!b.cremaId, libs: Object.keys(b.libIds || {}).length, millie: b.millieId || false })}
+        ${cb?.reviews ? ratingStat(cb, '크레마 ') : ''}${mg?.starN ? ` <span class="stat">밀리 ★ <em>${mg.star.toFixed(1)}</em></span>` : ''}</div>
+    </div>
+    ${starBtn({ title, author: b.a, cremaId: b.cremaId, millieId: b.millieId })}
+  </div>`;
+}
+// 작가 단위 수상(노벨문학상 등): 누르면 그 작가의 책 목록 페이지로
+function renderAwardAuthor(b, i) {
+  const c = b.counts;
+  return `<div class="book-item" onclick="openAwardAuthor('${b.award}', ${b.idx})" style="cursor:pointer">
+    <div class="book-rank award-year">${b.r ?? b.y}</div>
+    <div class="book-info">
+      <div class="book-title">${esc(b.a)} <span class="award-arrow">›</span></div>
+      <div class="book-author">${esc(b.oa)}${b.works?.length ? ` · ${b.works.map(esc).join(', ')}` : ''}</div>
+      <div class="book-stats">${c.crema ? `<span class="badge tag-yes">크레마 ${c.crema}권</span> ` : ''}${c.millie ? `<span class="badge tag-millie">밀리 ${c.millie}권</span> ` : ''}${c.libs ? `<span class="badge tag-yes">도서관 ${c.libs}권</span>` : ''}${!c.crema && !c.millie && !c.libs ? '<span class="badge tag-no">책 없음</span>' : ''}</div>
+    </div>
+  </div>`;
+}
+function showAwardDetail(key, idx) {
+  const b = awardsData[key].items[idx];
+  // 다른 상·목록에도 오른 같은 책 (원제·원저자 기준)
+  const sameYear = Object.entries(awardsData).filter(([, l]) => !l.combo).flatMap(([k, l]) => l.items.filter(x => !x.author && x.ot === b.ot && x.oa === b.oa).map(x => `${l.name} ${x.r ? `#${x.r}` : x.y}`));
+  const vols = awardVols = awardVolumes(b);
+  const volRow = vols.length > 1 ? [[`나뉜 권 ${vols.length}`, `<span class="vol-links">${vols.map((v, j) => `<a href="#" onclick="openAwardVolume('${key}', ${idx}, ${j}); return false">${esc(v.title)}</a>`).join('')}</span>`]] : [];
+  showDetail({ title: b.t || b.ot, author: b.a, cremaId: b.cremaId, millieId: b.millieId, libPairs: Object.entries(b.libIds || {}),
+    rows: [...volRow, ['수상·선정', esc([...new Set(sameYear)].join(', '))], ['원제', esc(b.ot)], ...(b.prizes ? [] : b.y ? [[AWARD_YEAR_LABEL[key] || '수상 연도', b.y < 0 ? `기원전 ${-b.y}년` : `${b.y}년`]] : []), ['원저자', esc(b.oa)], ...(b.t ? [] : [['한국어판', '번역본을 확인하지 못했어요']])] });
+}
+// 여러 권으로 나뉜 책: '울프홀' → 울프홀 1·2, 제목이 다른 권은 JSON의 vols (코펜하겐 3부작 → 어린 시절·청춘·의존)
+let awardVols = [];
+const VOL_REST_RE = /^(\d|상|중|하|[ⅰ-ⅹⅠ-Ⅹ]|제\d|[1-9]부)/, STRICT_VOL_RE = /^(\d{1,2}|상|중|하|\d{1,2}권|제\d{1,2}권|[ⅰ-ⅹⅠ-Ⅹ])$/;
+function awardVolumes(b) {
+  if (!b.t) return [];
+  const names = [b.a, ...(b.aliases || [])].filter(Boolean).map(squash);
+  const same = (author) => { const fa = firstAuthorSq(author), all = squash(author); return names.some(n => fa === n || (n.length >= 3 && all.includes(n))); };
+  const out = [], seen = new Set();
+  const push = (g) => { const k = squash(g.title) + '|' + squash(g.author); if (!seen.has(k)) { seen.add(k); out.push(g); } };
+  if (b.vols) {
+    for (const t of b.vols) {
+      const w = workKey(t);
+      // 그 권이 또 나뉘어 있을 수도 (블랙아웃 1·2)
+      const hits = searchCatalog(t, 'title').filter(g => same(g.author) && workKey(g.title).startsWith(w) && (workKey(g.title) === w || STRICT_VOL_RE.test(workKey(g.title).slice(w.length))));
+      hits.sort((x, y) => x.title.localeCompare(y.title, 'ko', { numeric: true })).forEach(push);
+    }
+    return out;
+  }
+  const base = workKey(b.t.replace(/\s*\d+\s*$/, ''));
+  // 같은 제목의 한 권짜리 책이 있으면 (삼체 → 삼체 2: 암흑의 숲은 다른 책) 제목 뒤에 권 표시만 붙은 것만
+  const single = searchCatalog(b.t, 'title').some(g => workKey(g.title) === workKey(b.t) && same(g.author));
+  const restOk = (r) => single ? STRICT_VOL_RE.test(r) : VOL_REST_RE.test(r);
+  for (const t of new Set([b.t.replace(/\s*\d+\s*$/, ''), ...(b.aliases || [])])) {
+    for (const g of searchCatalog(t, 'title')) {
+      const w = workKey(g.title);
+      if (w.startsWith(base) && restOk(w.slice(base.length)) && same(g.author)) push(g);
+    }
+  }
+  const num = (g) => +(workKey(g.title).slice(base.length).match(/^\d+/)?.[0] ?? ({ 상: 1, 중: 2, 하: 3 }[workKey(g.title).slice(base.length)[0]] ?? 99));
+  return out.map((g, i) => ({ g, i })).sort((x, y) => num(x.g) - num(y.g) || x.i - y.i).map(x => x.g).slice(0, 40);
+}
+function openAwardVolume(key, idx, j) {
+  const e = awardVols[j];
+  if (!e) return;
+  if (e.cremaId) showBookDetail('crema', e.cremaId);
+  else if (e.mergedIdx != null) showBookDetail('libs', e.mergedIdx);
+  else showMillieDetail(millieById.get(e.millieId)?.id);
+  document.getElementById('popupContent').insertAdjacentHTML('afterbegin', `<button class="cand-back" onclick="showAwardDetail('${key}', ${idx})">← ${esc(awardsData[key].items[idx].t)}</button>`);
+}
+function openAwardAuthor(key, idx) {
+  awardAuthor = { key, idx };
+  render();
+  window.scrollTo(0, 0);
+}
+// 작가 상세: 크레마·밀리·도서관에서 그 작가 책을 모두 찾아 같은 책끼리 묶는다 (검색 탭과 같은 방식)
+const firstAuthorSq = (a) => squash(firstAuthor(a));
+// 작가 단위 항목의 책들 (필터용, 데이터가 바뀌면 다시)
+const authorBooksCache = new Map();
+function awardAuthorBooksOf(b) {
+  const stamp = data.books.length + '|' + (mergedData?.length || 0) + '|' + millieBooks.length;
+  const k = b.award + ':' + b.idx, c = authorBooksCache.get(k);
+  if (c?.stamp === stamp) return c.books;
+  const books = authorBooksFor(awardsData[b.award].items[b.idx]).map(x => x.authorBook);
+  authorBooksCache.set(k, { stamp, books });
+  return books;
+}
+function getAwardAuthorBooks() { return authorBooksFor(awardsData[awardAuthor.key].items[awardAuthor.idx]); }
+function authorBooksFor(e) {
+  const names = [e.a, ...(e.aliases || [])].filter(Boolean).map(squash);
+  const same = (author) => { const fa = firstAuthorSq(author), all = squash(author); return names.some(n => fa === n || (n.length >= 3 && all.includes(n))); };
+  const seen = new Set(), out = [];
+  for (const n of [e.a, ...(e.aliases || [])].filter(Boolean)) {
+    for (const g of searchCatalog(n, 'author')) {
+      const k = g.title + '|' + g.author;
+      if (seen.has(k) || !same(g.author)) continue;
+      seen.add(k); out.push(g);
+    }
+  }
+  // 대표작 먼저, 그다음 인기순 (searchCatalog 순서)
+  const works = (e.works || []).map(workKey);
+  const wi = (g) => { const i = works.indexOf(workKey(g.title)); return i < 0 ? 99 : i; };
+  return out.map((g, i) => ({ authorBook: g, i })).sort((a, b) => wi(a.authorBook) - wi(b.authorBook) || a.i - b.i);
+}
+function awardAuthorHeader() {
+  if (!awardAuthor || !awardsData) return '';
+  const l = awardsData[awardAuthor.key], e = l.items[awardAuthor.idx];
+  return `<div class="award-head"><button class="cand-back" onclick="awardAuthor = null; render()">← ${esc(l.name)} 목록</button>
+    <h3>${esc(e.a)} <span>${esc(e.oa)} · ${esc(l.name)} ${e.r ? `#${e.r}` : e.y}</span></h3>
+    ${e.works?.length ? `<div class="award-works">대표작: ${e.works.map(esc).join(', ')}</div>` : ''}</div>`;
+}
+
+// ─── 목록 검색: 권장도서 목록 같은 걸 붙여 넣으면 줄마다 어디에 있는지 찾는다 ───
+let listText = '', listResults = null, listBusy = false;
+// 한 줄 → { title, author }. '제목 / 저자', '제목<TAB>저자', '제목 (저자)', '제목 - 저자' 모양을 알아본다
+function parseListLine(line) {
+  // 앞 번호·기호 떼기: '1.' '1)' '(1)' '[1]' '1번' '①' '- ' '• ', 엑셀 번호 칸('1<TAB>').
+  // 숫자 뒤에 기호나 탭이 있을 때만 번호로 봄 → '1984', '82년생 김지영', '7년의 밤'은 그대로
+  let s = line.replace(/^\s*(?:[(\[]\d{1,3}[)\]]|\d{1,3}\s*(?:[.)\]:](?!\d)|번\s)|\d{1,3}\t|[①-⑳]|[-*•·▶►○●□■◇◆※]+(?=\s))\s*/, '').replace(/[『』「」《》〈〉<>"“”'‘’]/g, ' ').trim();
+  if (!s) return null;
+  let m = s.split(/\t+|\s+\/\s+|\s*\|\s*/).map(x => x.trim()).filter(Boolean);
+  if (m.length >= 2) return { title: m[0], author: m[1], raw: line.trim() };
+  m = s.match(/^(.+?)\s*[(\[]([^()\[\]]+)[)\]]\s*$/); // 제목 (저자)
+  if (m && !/^\s*(상|하|중|\d+)\s*$/.test(m[2])) return { title: m[1].trim(), author: m[2].replace(/\s*(지음|저|글|엮음|옮김|역)\s*$/, '').trim(), raw: line.trim(), alt: s };
+  m = s.match(/^(.+?)\s+[-–—:]\s+(.+)$/); // 제목 - 저자 (또는 부제일 수도 있어서 alt에 줄 전체)
+  if (m) return { title: m[1].trim(), author: m[2].trim(), raw: line.trim(), alt: s };
+  return { title: s, author: '', raw: line.trim() };
+}
+// 제목으로 찾은 묶음 중 가장 그럴듯한 것: 저자가 맞는 것 우선, 제목이 같을수록, 같으면 인기순(searchCatalog 순서)
+function bestListMatch({ title, author, alt }) {
+  const tryTitle = (t) => {
+    const q = squash(t);
+    if (q.length < 1) return [];
+    const wk = workKey(t);
+    const score = (e) => workKey(e.title) === wk ? 3 : squash(e.title) === q ? 3 : squash(e.title).startsWith(q) ? 2 : 1;
+    return searchCatalog(t, 'title').map(e => ({ e, s: score(e) }));
+  };
+  let cands = tryTitle(title);
+  const ak = author && authorKey(author), aq = author && squash(author);
+  const authorOk = (e) => !author || authorKey(e.author) === ak || squash(e.author).includes(aq);
+  let byAuthor = cands.filter(c => authorOk(c.e));
+  if (author && !byAuthor.length && alt) { // '제목 - 부제'였을 수도 → 줄 전체를 제목으로
+    const c2 = tryTitle(alt);
+    if (c2.length) { cands = c2; byAuthor = c2; }
+  }
+  const pool = (byAuthor.length ? byAuthor : cands).slice().sort((a, b) => b.s - a.s); // 안정 정렬: 같은 점수면 인기순 유지
+  const best = pool[0];
+  if (!best) return { match: null, others: 0, suggest: suggestSimilar(squash(title), 'title')[0] || null };
+  // 확인 필요: 저자를 적었는데 안 맞거나, 제목이 같지도 검색어로 시작하지도 않음
+  // 후보 목록(모달용): 저자 맞는 것 먼저, 그다음 제목이 비슷한 순
+  const byScore = (a, b) => b.s - a.s;
+  const rest = cands.filter(c => !byAuthor.includes(c));
+  const all = [...byAuthor.slice().sort(byScore), ...rest.sort(byScore)].slice(0, 100).map(c => c.e);
+  return { match: best.e, others: cands.length - 1, cands: all, weak: (!!author && !byAuthor.length) || best.s < 2 };
+}
+async function runListSearch() {
+  const ta = document.getElementById('listInput');
+  listText = ta ? ta.value : listText;
+  const lines = listText.split(/\r?\n/).map(parseListLine).filter(Boolean);
+  if (!lines.length || listBusy) return;
+  listBusy = true; listResults = [];
+  try {
+    if (!mergedData) { renderListSearch('도서관 목록 불러오는 중…'); await ensureMerged(); }
+    for (let i = 0; i < lines.length; i++) {
+      listResults.push({ ...lines[i], ...bestListMatch(lines[i]) });
+      if (i % 5 === 4) { renderListSearch(`찾는 중… ${i + 1}/${lines.length}`); await new Promise(r => setTimeout(r)); }
+    }
+  } finally { listBusy = false; }
+  renderListSearch();
+}
+// '다른 후보 n건' → 목록 화면은 그대로 두고 모달로 후보를 보여준다. '이 책으로'를 누르면 그 줄의 결과를 바꿈
+function listSearchOne(i) {
+  const r = listResults?.[i];
+  if (!r) return;
+  const popup = document.getElementById('popupContent');
+  popup.classList.add('wide');
+  const item = (e, j) => {
+    const cb = e.cremaId && cremaBookOf(e.cremaId), mg = e.millieId && millieById.get(e.millieId);
+    const chosen = e === r.match;
+    return `<div class="cand-row${chosen ? ' chosen' : ''}">
+      ${e.cover ? `<img class="cand-cover" src="${e.cover}" loading="lazy" onerror="this.style.visibility='hidden'">` : '<span class="cand-cover"></span>'}
+      <div class="cand-info" onclick="openListCandidate(${i}, ${j})">
+        <div class="cand-title">${esc(e.title)}</div>
+        <div class="cand-author">${esc(e.author || '')}</div>
+        <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, libs: searchLibCount(e) })}
+          ${cb && cb.reviews ? `<span class="stat">크레마 ★ <em>${cb.rating}</em></span>` : ''}${mg && mg.starN ? ` <span class="stat">밀리 ★ <em>${mg.star.toFixed(1)}</em></span>` : ''}</div>
+      </div>
+      ${starBtn({ title: e.title, author: e.author, cremaId: e.cremaId, millieId: e.millieId })}
+      ${chosen ? '<span class="cand-pick on">선택됨</span>' : `<button class="sort-btn cand-pick" onclick="pickListCandidate(${i}, ${j})">이 책으로</button>`}
+    </div>`;
+  };
+  popup.innerHTML = `<button class="popup-close" onclick="closePopup()">✕</button>
+    <h3>후보 ${r.cands.length}건</h3>
+    <div class="author">${esc(r.title)}${r.author ? ' / ' + esc(r.author) : ''} — 책을 누르면 자세히, '이 책으로'를 누르면 이 줄의 결과를 바꿔요</div>
+    ${r.cands.map(item).join('')}`;
+  document.getElementById('popupOverlay').classList.add('open');
+  popup.scrollTop = 0;
+}
+function pickListCandidate(i, j) {
+  const r = listResults[i];
+  r.match = r.cands[j]; r.weak = false;
+  closePopup();
+  renderListSearch();
+}
+// 후보 자세히 → 팝업 맨 위에 '후보 목록으로' 버튼
+function openListCandidate(i, j) {
+  const e = listResults[i].cands[j];
+  document.getElementById('popupContent').classList.remove('wide');
+  if (e.cremaId) showBookDetail('crema', e.cremaId);
+  else if (e.mergedIdx != null) showBookDetail('libs', e.mergedIdx);
+  else showMillieDetail(millieById.get(e.millieId)?.id);
+  document.getElementById('popupContent').insertAdjacentHTML('afterbegin', `<button class="cand-back" onclick="listSearchOne(${i})">← 후보 목록으로</button>`);
+}
+function renderListSearch(busyMsg) {
+  if (currentTab !== 'search' || document.getElementById('globalSearch')?.value.trim()) return;
+  const content = document.getElementById('content');
+  const rows = listResults || [];
+  const found = rows.filter(r => r.match);
+  const cnt = (f) => found.filter(f).length;
+  const summary = rows.length && !busyMsg ? `<div class="list-summary">${rows.length}권 중 <b>크레마 ${cnt(r => r.match.cremaId)}</b> · <b>밀리 ${cnt(r => r.match.millieId)}</b> · <b>도서관 ${cnt(r => searchLibCount(r.match))}</b> · 못 찾음 ${rows.length - found.length}</div>` : '';
+  const rowHtml = (r, i) => {
+    const e = r.match;
+    // 입력 줄은 앞 번호·기호를 뗀 '제목 / 저자'로 (번호는 왼쪽에 따로)
+    const head = `<div class="list-input" title="${esc(r.raw)}"><span class="list-no">${i + 1}</span>${esc(r.title)}${r.author ? ` <span class="list-author">/ ${esc(r.author)}</span>` : ''}</div>`;
+    if (!e) return `<div class="list-row">${head}<div class="list-miss">못 찾음${r.suggest ? ` · 혹시 <a onclick='useSuggestion("title", ${JSON.stringify(r.suggest.text).replace(/'/g, '&#39;')})'>${esc(r.suggest.text)}</a>?` : ''} <a href="${millieSearchUrl(r.title)}" target="_blank" rel="noopener">밀리에서 검색</a></div></div>`;
+    const cb = e.cremaId && cremaBookOf(e.cremaId), mg = e.millieId && millieById.get(e.millieId);
+    const open = e.cremaId ? `showBookDetail('crema','${e.cremaId}')` : e.mergedIdx != null ? `showBookDetail('libs',${e.mergedIdx})` : `showMillieDetail('${mg?.id}')`;
+    return `<div class="list-row">${head}
+      <div class="book-item list-hit" onclick="${open}" style="cursor:pointer">
+        ${e.cover ? `<img class="book-cover" src="${e.cover}" loading="lazy" onerror="this.style.display='none'">` : ''}
+        <div class="book-info">
+          <div class="book-title">${esc(e.title)}${r.weak ? ' <span class="list-weak" title="저자가 다르거나 제목이 정확히 같지 않아요">확인 필요</span>' : ''}</div>
+          <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author || '')}</div>
+          <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, libs: searchLibCount(e) })}
+            ${cb && cb.reviews ? `<span class="stat">크레마 ★ <em>${cb.rating}</em></span>` : ''}${mg && mg.starN ? ` <span class="stat">밀리 ★ <em>${mg.star.toFixed(1)}</em></span>` : ''}</div>
+        </div>
+        ${starBtn({ title: e.title, author: e.author, cremaId: e.cremaId })}
+      </div>
+      ${r.others > 0 ? `<a class="list-more" onclick="listSearchOne(${i})">다른 후보 ${r.others}건</a>` : '<span></span>'}
+    </div>`;
+  };
+  // 입력창은 다시 그리지 않음 (입력 중 커서·스크롤 유지)
+  if (!document.getElementById('listPanel')) {
+    content.innerHTML = `<div class="list-panel" id="listPanel">
+      <h3>목록 검색</h3>
+      <p class="list-help">권장도서 목록처럼 여러 권을 한 줄에 한 권씩 붙여 넣으면, 줄마다 크레마클럽 · 밀리의 서재 · 도서관에 있는지 찾아요.
+        저자를 함께 쓰면 더 정확해요 — <code>제목 / 저자</code>, <code>제목 (저자)</code>, 엑셀에서 복사한 두 칸도 돼요. 앞의 번호·기호는 무시해요.</p>
+      <textarea id="listInput" class="list-input-box" rows="8" oninput="listText = this.value" placeholder="1. 데미안 / 헤르만 헤세&#10;2. 코스모스 (칼 세이건)&#10;총, 균, 쇠&#10;…"></textarea>
+      <div class="list-actions"><button class="sort-btn active" onclick="runListSearch()">목록에서 찾기</button>
+        <button class="sort-btn" onclick="listText=''; listResults=null; document.getElementById('listInput').value=''; renderListSearch()">지우기</button>
+        <span class="list-status" id="listStatus"></span></div>
+      <div id="listOut"></div></div>`;
+    document.getElementById('listInput').value = listText;
+  }
+  document.getElementById('listStatus').textContent = busyMsg || (mergedData ? '' : '도서관 목록 불러오는 중…');
+  document.getElementById('listOut').innerHTML = summary + rows.map(rowHtml).join('');
+  setResultCount(rows.length && !busyMsg ? `${found.length}/${rows.length}권` : '');
+}
+
+// ─── 밀리의 서재 탭 (크레마 탭과 같은 구성) ───
+function getSortedMillie() {
+  const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+  const genre = document.getElementById('genreSelect')?.value || '';
+  updateFilterButtons();
+  let books = millieBooks;
+  if (genre) books = books.filter(b => b.genre === genre);
+  books = filterKdc(books);
+  if (query) books = books.filter(b => b.title.toLowerCase().includes(query) || (b.author || '').toLowerCase().includes(query));
+  const f = filterState.millie;
+  const nLibs = (b) => Object.keys(b.libIds).length;
+  if (f.lib === 'has') books = books.filter(nLibs);
+  else if (f.lib === 'none') books = books.filter(b => !nLibs(b));
+  if (f.crema === 'has') books = books.filter(b => b.cremaId);
+  else if (f.crema === 'none') books = books.filter(b => !b.cremaId);
+  if (f.fav) books = books.filter(b => isFav({ title: b.title, author: b.author, cremaId: b.cremaId, millieId: b.id }));
+  books = filterSliders(books, f);
+  books = [...books];
+  if (currentSort === 'rating') {
+    // 크레마 별점순과 같은 보정: 평가가 적으면 평균 쪽으로 당김
+    const C = ratingPrior('millie'), m = 50;
+    const score = (b) => (b.star * b.starN + C * m) / (b.starN + m);
+    books.sort((a, b) => score(b) - score(a) || b.starN - a.starN);
+  } else if (currentSort === 'reviews') books.sort((a, b) => b.reviews - a.reviews || b.take - a.take);
+  else books.sort((a, b) => b.take - a.take);
+  return books;
+}
+
+function renderMillieItem(b, i) {
+  return `<div class="book-item" onclick="showMillieDetail('${b.id}')" style="cursor:pointer">
+    <div class="book-rank">${i + 1}</div>
+    ${b.cover ? `<img class="book-cover" src="${b.cover}" loading="lazy" onerror="this.style.display='none'">` : ''}
+    <div class="book-info">
+      <div class="book-title">${esc(b.title)}</div>
+      <div class="book-author">${kdcTag(b.title, b.author)}${esc(b.author)}</div>
+      <div class="book-stats">
+        ${b.ebookId ? '' : '<span class="badge tag-audio">오디오북</span>'}
+        ${statusTags({ crema: !!b.cremaId, libs: Object.keys(b.libIds).length })}
+        ${millieStat(b)}
+      </div>
+    </div>
+    ${starBtn({ title: b.title, author: b.author, cremaId: b.cremaId, millieId: b.id })}
+  </div>`;
+}
+
+// 밀리: 별점(5점 만점, 평가 수)과 서재에 담은 사람 수
+const COMPACT = new Intl.NumberFormat('ko-KR', { notation: 'compact', maximumFractionDigits: 1 });
+const millieStarText = (b) => b.starN ? `★ ${b.star.toFixed(2)} (${b.starN.toLocaleString()})` : '별점 없음';
+const millieTimeText = (sec) => { const m = Math.round(sec / 60); return m < 60 ? `${m}분` : `${Math.floor(m / 60)}시간${m % 60 ? ` ${m % 60}분` : ''}`; };
+const millieStat = (b) => (b.starN ? `<span class="stat" title="밀리 별점 (5점 만점) · ${b.starN.toLocaleString()}명 평가">★ <em>${b.star.toFixed(1)}</em> <span class="reviews">(${b.starN.toLocaleString()}명)</span></span> ` : '') + `<span class="stat" title="서재에 담은 사람 ${b.take.toLocaleString()}명 · 리뷰 ${b.reviews.toLocaleString()}개">담음 <em>${COMPACT.format(b.take)}</em></span>`;
+
+function showMillieDetail(id) {
+  const g = millieById.get(id);
+  if (!g) return;
+  showDetail({ title: g.title, author: g.author, cremaId: g.cremaId, millieId: g.id, libPairs: Object.entries(g.libIds),
+    rows: [['장르', esc(g.genre || '-')]] });
+}
+
+// 베스트셀러 중 크레마에 없는 책
+function renderBestItem(b, i) {
+  const e = b.best;
+  const keys = Object.keys(e.libIds || {});
+  return `<div class="book-item" onclick="showBestDetail('${currentSort}',${b.idx})" style="cursor:pointer">
+    <div class="book-rank">${e.rank}</div>
+    <div class="book-info">
+      <div class="book-title">${esc(e.title)}</div>
+      <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author)}</div>
+      <div class="book-stats">
+        ${statusTags({ crema: false, libs: keys.length, millie: e.millieId })}
+      </div>
+    </div>
+    ${starBtn({ title: e.title, author: e.author, publisher: e.publisher })}
+  </div>`;
+}
+
+function showBestDetail(src, idx) {
+  const e = data.bestsellerLists?.[src]?.[idx];
+  if (!e) return;
+  const LIST_NAMES = { yes24: 'YES24 베스트', aladin_best: '알라딘 베스트', aladin_steady: '알라딘 스테디' };
+  const nt = (t) => (t || '').replace(/[\s\p{P}\p{S}]/gu, '').toLowerCase();
+  const rows = [];
+  for (const [k, name] of Object.entries(LIST_NAMES)) {
+    const hit = k === src ? e : (data.bestsellerLists?.[k] || []).find(x => nt(x.title) === nt(e.title));
+    if (hit) rows.push([name, `#${hit.rank}`]);
+  }
+  if (e.link) rows.push(['', `<a href="${e.link}" target="_blank" rel="noopener" style="color:var(--c3498db)">${src === 'yes24' ? 'YES24' : '알라딘'}에서 보기</a>`]);
+  showDetail({ title: e.title, author: e.author, cremaId: e.cremaId, millieId: e.millieId, libPairs: Object.entries(e.libIds || {}), rows });
+}
+
+function getSortedFavs() {
+  updateFilterButtons();
+  const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+  const f = filterState.favs;
+  let books = filterKdc([...favorites]);
+  if (query) books = books.filter(b => b.title.toLowerCase().includes(query) || (b.author || '').toLowerCase().includes(query));
+  const nLibs = (b) => Object.keys(b.libIds || {}).length;
+  if (f.lib === 'has') books = books.filter(nLibs);
+  else if (f.lib === 'none') books = books.filter(b => !nLibs(b));
+  if (f.crema === 'has') books = books.filter(b => b.cremaId);
+  else if (f.crema === 'none') books = books.filter(b => !b.cremaId);
+  books = filterMillie(books, f, b => b.millieId);
+  books = filterSliders(books, f, b => cremaBookOf(b.cremaId));
+  // 분류순: 번호 순 (843 < 843.5 < 844), 큰 분류만 아는 '8xx'는 그 분류 끝, 모르는 책은 맨 뒤
+  const kdcNum = (x) => { const c = kdcOf(x); return !c ? Infinity : /xx$/.test(c) ? +c[0] * 100 + 99.9 : parseFloat(c); };
+  if (currentSort === 'title') books.sort((a, b) => a.title.localeCompare(b.title, 'ko'));
+  else if (currentSort === 'kdc') books.sort((a, b) => kdcNum(a) - kdcNum(b) || a.title.localeCompare(b.title, 'ko'));
+  else books.sort((a, b) => (b.addedAt || '').localeCompare(a.addedAt || ''));
+  return books;
+}
+
+function renderFavItem(b, i) {
+  const keys = Object.keys(b.libIds || {});
+  const onclick = b.cremaId ? `showBookDetail('crema','${b.cremaId}')` : `showFavDetail(${JSON.stringify(b.key).replace(/"/g, '&quot;')})`;
+  return `<div class="book-item" onclick="${onclick}" style="cursor:pointer">
+    <div class="book-rank">${i + 1}</div>
+    ${b.crema?.cover ? `<img class="book-cover" src="${b.crema.cover}" loading="lazy" onerror="this.style.display='none'">` : ''}
+    <div class="book-info">
+      <div class="book-title">${esc(b.title)}</div>
+      <div class="book-author">${kdcTag(b.title, b.author)}${esc(b.author)}</div>
+      <div class="book-stats">
+        ${statusTags({ crema: !!b.cremaId, libs: keys.length, millie: b.millieId })}
+      </div>
+    </div>
+    ${starBtn(b)}
+  </div>`;
+}
+
+// 크레마에 없는 즐겨찾기 책 팝업
+function showFavDetail(key) {
+  const b = favorites.find(f => f.key === key);
+  if (!b) return;
+  showDetail({ title: b.title, author: b.author, cremaId: b.cremaId, millieId: b.millieId, libPairs: Object.entries(b.libIds || {}),
+    rows: [['추가한 날', KST_DATE.format(new Date(b.addedAt))]], star: b });
+}
+
+function getSortedMerged() {
+  const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+  updateFilterButtons();
+  let books = filterKdc(mergedData);
+  const f = filterState.libs;
+  if (f.crema === 'has') books = books.filter(e => e.cremaId);
+  else if (f.crema === 'none') books = books.filter(e => !e.cremaId);
+  books = filterMillie(books, f, e => e.millieId);
+  if (f.fav) books = books.filter(e => isFav({ title: e.title, author: e.author, cremaId: e.cremaId, millieId: e.millieId }));
+  books = filterSliders(books, f, e => cremaBookOf(e.cremaId));
+  if (query) books = books.filter(e => e.title.toLowerCase().includes(query) || e.author.toLowerCase().includes(query));
+  books = [...books];
+  if (currentSort === 'title') books.sort((a, b) => a.title.localeCompare(b.title, 'ko'));
+  else if (currentSort === 'loanCnt' || currentSort === 'recommend') {
+    const field = currentSort === 'loanCnt' ? 'loanCnt' : 'recommendCnt';
+    books = books.filter(e => seoulBookOf(e)); // 서울도서관 책만 대출·추천 수가 있음
+    books.sort((a, b) => seoulBookOf(b)[field] - seoulBookOf(a)[field] || b.libs.length - a.libs.length);
+  }
+  else books.sort((a, b) => b.libs.length - a.libs.length || a.title.localeCompare(b.title, 'ko'));
+  return books;
+}
+
+function libBadge(keys, max = 3) {
+  const names = keys.map(libName);
+  return `<span class="badge lib" title="${esc(names.join(', '))}">${names.slice(0, max).join(' · ')}${names.length > max ? ` 외 ${names.length - max}곳` : ''}</span>`;
+}
+
+// 도서관의 해당 책 상세 페이지 (책 ID를 모르면 도서관 첫 화면)
+function libBookUrl(key, id) {
+  if (key === 'seoul') return id ? `https://elib.seoul.go.kr/contents/detail.do?no=${encodeURIComponent(id)}` : 'https://elib.seoul.go.kr';
+  const l = libsData.libs.find(x => x.key === key);
+  if (id && l?.detail) return l.detail.replace('{id}', encodeURIComponent(id));
+  return l?.base || '#';
+}
+
+// [[libKey, 책ID], ...] → 도서관 이름 링크 목록 (서울도서관 먼저)
+function libLinksHtml(pairs) {
+  return pairs.sort((a, b) => (b[0] === 'seoul') - (a[0] === 'seoul'))
+    .map(([k, id]) => `<a class="cross-badge" href="${libBookUrl(k, id)}" target="_blank" rel="noopener" title="${libName(k)}에서 이 책 보기" style="background:${k === 'seoul' ? 'var(--c1a4a3a);color:var(--c2ecc71)' : 'var(--c1a3a4a);color:var(--c74b9ff)'};text-decoration:none;margin:2px 4px 2px 0;display:inline-block">${libName(k)} ↗</a>`)
+    .join('');
+}
+
+// 목록 줄 맨 앞의 상태 태그. crema/libs가 undefined면 그 태그는 생략
+function statusTags({ crema, libs, millie } = {}) {
+  let html = '';
+  if (millie === false) html += '<span class="badge tag-unknown" title="밀리 인기 도서 목록에서 못 찾음 (밀리에 있을 수도 있음)">밀리 미확인</span> ';
+  if (millie) {
+    const g = millieById.get(millie);
+    // 전자책이 기본. 오디오북만 있는 책만 따로 표시
+    html += `<span class="badge tag-millie">밀리${g && !g.ebookId ? ' 오디오북' : ''}</span> `;
+  }
+  if (crema) html += '<span class="badge tag-yes">크레마</span> '; // 있을 때만 (밀리 태그와 같은 방식)
+  if (libs !== undefined && libsData.libs.some(l => l.count)) {
+    html += libs ? `<span class="badge tag-yes">도서관 ${libs}곳</span> ` : '<span class="badge tag-no">도서관 없음</span> ';
+  }
+  return html;
+}
+
+function renderMergedItem(e, i) {
+  const cb = cremaBookOf(e.cremaId);
+  const sb = seoulBookOf(e);
+  const cover = cb?.cover || sb?.cover;
+  let seoulInfo = '';
+  if (sb) {
+    seoulInfo = `<span class="stat">대출 <em>${sb.loanCnt}</em></span><span class="stat">추천 <span class="reviews">${sb.recommendCnt}</span></span>`;
+    if (sb.typeCode === 'TY02') seoulInfo += `<span class="badge seoul">서울 구독형·바로읽기</span>`;
+    else if (sb.typeCode === 'TY01') seoulInfo += `<span class="badge" style="background:var(--c2a2a3a);color:var(--c74b9ff)">서울 소장형</span>`;
+  }
+  return `<div class="book-item" onclick="showBookDetail('libs',${e._i})" style="cursor:pointer">
+    <div class="book-rank">${i + 1}</div>
+    ${cover ? `<img class="book-cover" src="${cover}" loading="lazy" onerror="this.style.display='none'">` : ''}
+    <div class="book-info">
+      <div class="book-title">${esc(e.title)}</div>
+      <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author)}</div>
+      <div class="book-stats">
+        ${statusTags({ crema: !!cb, millie: e.millieId })}
+        <span class="stat"><em>${e.libs.length}</em>곳 소장</span>
+        ${cb ? `<span class="stat">크레마 ★ <em>${cb.rating}</em></span>` : ''}
+        ${seoulInfo}
+      </div>
+    </div>
+    ${starBtn(e)}
+  </div>`;
+}
+
+// 평가는 한 줄로: ★ 평균점 (평가수)
+const ratingText = (b) => `★ ${b.rating} (${b.reviews.toLocaleString()})`;
+const ratingStat = (b, label = '') => `<span class="stat">${label}★ <em>${b.rating}</em> <span class="reviews">(${b.reviews.toLocaleString()})</span></span>`;
+
+function renderCremaItem(b, i, seoulMatch) {
+  const bs = data.bestsellers[b.bookId] || {};
+  const showRank = BEST_SORTS.includes(currentSort);
+  const rank = showRank ? (bs[currentSort] || '') : (i + 1);
+
+  // 베스트/스테디셀러 목록에선 순위·평가를 빼고 크레마/도서관 여부만 (나머지는 팝업에서)
+  let badges = '';
+  if (!showRank && bs.yes24) badges += `<span class="badge yes24">YES24 #${bs.yes24}</span> `;
+  if (!showRank && bs.aladin_best) badges += `<span class="badge aladin-best">알라딘 #${bs.aladin_best}</span> `;
+  if (!showRank && bs.aladin_steady) badges += `<span class="badge aladin-steady">스테디 #${bs.aladin_steady}</span> `;
+  const libKeys = cremaLibKeys(b.bookId); // 서울도서관 포함 (어느 도서관인지는 팝업에서)
+  // 베스트/스테디셀러 목록에선 크레마에 없는 책과 섞이므로 크레마 여부도 표시
+  const tags = statusTags({ crema: showRank ? true : undefined, libs: libKeys.length, millie: millieData.cremaToMillie[b.bookId] });
+
+  return `<div class="book-item" onclick="showBookDetail('crema','${b.bookId}')" style="cursor:pointer">
+    <div class="book-rank">${rank}</div>
+    <img class="book-cover" src="${b.cover}" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <div class="book-title">${esc(b.title)}</div>
+      <div class="book-author">${kdcTag(b.title, b.author)}${esc(b.author)}</div>
+      <div class="book-stats">
+        ${tags}
+        ${showRank ? '' : ratingStat(b)}
+        ${badges}
+      </div>
+    </div>
+    ${starBtn({ title: b.title, author: b.author, cremaId: b.bookId })}
+  </div>`;
+}
+
+const OWNER_NAMES = { OD: 'OPMS', AL: '알라딘', BQ: '북큐브', YE: 'YES24', KB: '교보문고', WJ: '웅진', IP: '인터파크', YP: '영풍문고' };
+
+function showBookDetail(tab, id) {
+  if (tab === 'libs') {
+    const e = mergedData[id];
+    if (!e) return;
+    const sb = seoulBookOf(e);
+    const rows = sb ? [['장르', esc(sb.genre || '-')], ['서울도서관 누적 대출', `${sb.loanCnt}회`], ['서울도서관 추천', `${sb.recommendCnt}회`]] : [];
+    return showDetail({ title: e.title, author: e.author, cremaId: e.cremaId, millieId: e.millieId, libPairs: Object.entries(e.ids), rows, star: e });
+  }
+  const b = cremaBookOf(id);
+  if (!b) return;
+  const bs = data.bestsellers[b.bookId] || {};
+  const rows = [['장르', esc(b.genre || '-')]];
+  if (bs.yes24) rows.push(['YES24 베스트', `#${bs.yes24}`]);
+  if (bs.aladin_best) rows.push(['알라딘 베스트', `#${bs.aladin_best}`]);
+  if (bs.aladin_steady) rows.push(['알라딘 스테디', `#${bs.aladin_steady}`]);
+  showDetail({ title: b.title, author: b.author, cremaId: b.bookId, rows });
+}
+
+// ─── 책 팝업 (모든 탭 공통): 크레마 → 밀리 → 도서관 → 그 밖의 정보 순서 ───
+// ctx: { title, author, cremaId, millieId, libPairs: [[도서관 key, 그 도서관 책 ID]], rows: [[이름, html]], star }
+// 비어 있는 연결은 서로 채운다 (크레마 ↔ 밀리, 크레마의 소장 도서관)
+function cremaLibPairs(bookId) {
+  const pairs = Object.entries(libsData.cremaLibIds?.[bookId] || {});
+  for (const k of libsData.cremaToLibs?.[bookId] || []) if (!pairs.some(p => p[0] === k)) pairs.push([k, null]);
+  const seoulId = (data.seoulMatch || seoulData.crossMatch?.cremaToSeoul || {})[bookId];
+  if (seoulId && !pairs.some(p => p[0] === 'seoul')) pairs.push(['seoul', seoulId]);
+  return pairs;
+}
+const millieDetailCache = new Map(); // 밀리 책 ID → 상세(전체 페이지 수 등) 요청
+function showDetail(ctx) {
+  const cremaId = ctx.cremaId || (ctx.millieId && millieById.get(ctx.millieId)?.cremaId) || null;
+  const cb = cremaId && cremaBookOf(cremaId);
+  const g = (ctx.millieId || (cremaId && millieData.cremaToMillie[cremaId])) ? millieById.get(ctx.millieId || millieData.cremaToMillie[cremaId]) : null;
+  const pairs = [...(ctx.libPairs || [])];
+  if (cremaId) for (const p of cremaLibPairs(cremaId)) if (!pairs.some(q => q[0] === p[0])) pairs.push(p);
+  const libsLoaded = seoulData.books.length > 0 || libsData.libs.some(l => l.count);
+  const sec = (name, ok, statusText, body = '') => `<div class="dsec">
+    <div class="dsec-head"><span>${name}</span><span class="dsec-st ${ok ? 'yes' : 'no'}">${statusText}</span></div>${body ? `<div class="dsec-body">${body}</div>` : ''}</div>`;
+  const stat = (label, val) => `<span class="dstat"><span>${label}</span> ${val}</span>`;
+
+  const crema = cb
+    ? sec('크레마클럽', true, '있음', `${cb.reviews ? stat('별점', `<em>★ ${cb.rating}</em> (${cb.reviews.toLocaleString()})`) : stat('별점', '리뷰 없음')}
+        <div style="margin-top:6px">${linkBadge('crema', `https://cremaclub.yes24.com/BookClub/Detail/${cb.bookId}`, '크레마에서 보기')}</div>`)
+    : sec('크레마클럽', false, '없음');
+  const millie = g
+    ? sec('밀리의 서재', true, millieFormats(g), `${stat('별점', g.starN ? `<em>★ ${g.star.toFixed(2)}</em> (${g.starN.toLocaleString()}명)` : '평가 10개 미만')}${g.reviews ? stat('리뷰', `<em>${g.reviews.toLocaleString()}</em>개`) : ''}${g.take > 0 ? stat('담음', `<em>${g.take.toLocaleString()}</em>명`) : ''}
+        ${g.viewPct != null ? stat('완독률', `<em>${g.viewPct}%</em>`) : ''}${g.viewTime ? stat('완독 예상', `<em>${millieTimeText(g.viewTime)}</em>`) : ''}
+        <div style="margin-top:6px">${millieLinks(g)}</div>`)
+    : sec('밀리의 서재', false, '확인 안 됨', `인기 도서 목록에 없어요<div style="margin-top:6px">${linkBadge('millie', millieSearchUrl(ctx.title), '밀리에서 검색')}</div>`);
+  const libs = pairs.length
+    ? sec('도서관', true, `${pairs.length}곳`, `${libLinksHtml(pairs)}<div class="dhint">누르면 그 도서관의 책 페이지로</div>`)
+    : sec('도서관', false, libsLoaded ? '없음' : '목록 없음 (동기화 필요)');
+  const kc = kdcData[kdcKeyOf(ctx.title, ctx.author)];
+  const kdcRow = kdcEnabled || kc ? [['십진분류', `<span id="dKdc">${kc ? `<b>${esc(kc)}</b> ${esc(kdcDesc(kc))}` : '불러오는 중…'}</span>`]] : [];
+  const rows = [...kdcRow, ['전체 페이지', '<span id="dPages">' + (g?.ebookId ? '불러오는 중…' : '-') + '</span>'], ...(ctx.rows || [])];
+  const info = `<div class="dsec">${rows.map(([k, v]) => `<div class="detail-row">${k ? `<span class="label">${k}</span>` : '<span></span>'}<span class="val">${v}</span></div>`).join('')}</div>`;
+
+  const popup = document.getElementById('popupContent');
+  popup.classList.remove('wide');
+  popup.innerHTML = `<button class="popup-close" onclick="closePopup()">✕</button>
+    <h3>${starBtn(ctx.star || { title: ctx.title, author: ctx.author, cremaId, millieId: g?.id })}${esc(ctx.title)}</h3>
+    <div class="author">${esc(ctx.author || '')}</div>
+    ${crema}${millie}${libs}${info}`;
+  document.getElementById('popupOverlay').classList.add('open');
+  popup.scrollTop = 0;
+
+  // 십진분류를 아직 모르면 이 책만 바로 조회
+  if (kdcEnabled && !kc && ctx.title) {
+    const k = kdcKeyOf(ctx.title, ctx.author);
+    fetch('/api/kdc/lookup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: [{ k, t: ctx.title, a: ctx.author || '' }] }) })
+      .then(r => r.json()).then(j => {
+        const c = j.map?.[k], el = document.getElementById('dKdc');
+        if (c) kdcData[k] = c;
+        if (el) el.innerHTML = c ? `<b>${esc(c)}</b> ${esc(kdcDesc(c))}` : '찾지 못했어요';
+      }).catch(() => {});
+  }
+  // 전체 페이지 수: 밀리 전자책 상세에만 있어서 팝업을 열 때 그 책만 받아옴
+  if (g?.ebookId) {
+    const id = g.ebookId;
+    if (!millieDetailCache.has(id)) millieDetailCache.set(id, fetch(`/api/millie/book/${id}`).then(r => r.json()).catch(() => ({})));
+    millieDetailCache.get(id).then(d => {
+      const el = document.getElementById('dPages');
+      if (el) el.textContent = d.totalPage ? `${d.totalPage.toLocaleString()}쪽 (밀리 전자책 기준)` : '-';
+    });
+  }
+}
+
+function closePopup() {
+  document.getElementById('popupOverlay').classList.remove('open');
+  document.getElementById('popupContent').classList.remove('wide');
+}
+
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+loadData();
+loadKdc();
+</script>
+</body>
+</html>

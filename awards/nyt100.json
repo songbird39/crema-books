@@ -1,0 +1,1016 @@
+[
+  {
+    "r": 1,
+    "y": 2011,
+    "t": "나의 눈부신 친구",
+    "a": "엘레나 페란테",
+    "oa": "Elena Ferrante",
+    "ot": "My Brilliant Friend",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 2,
+    "y": 2010,
+    "t": null,
+    "a": null,
+    "oa": "Isabel Wilkerson",
+    "ot": "The Warmth of Other Suns",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 3,
+    "y": 2009,
+    "t": "울프홀",
+    "a": "힐러리 맨틀",
+    "oa": "Hilary Mantel",
+    "ot": "Wolf Hall",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 4,
+    "y": 2003,
+    "t": "알려진 세계",
+    "a": "에드워드 P. 존스",
+    "oa": "Edward P. Jones",
+    "ot": "The Known World",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 5,
+    "y": 2001,
+    "t": "인생 수정",
+    "a": "조너선 프랜즌",
+    "oa": "Jonathan Franzen",
+    "ot": "The Corrections",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 6,
+    "y": 2004,
+    "t": "2666",
+    "a": "로베르토 볼라뇨",
+    "oa": "Roberto Bolaño",
+    "ot": "2666",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 7,
+    "y": 2016,
+    "t": "언더그라운드 레일로드",
+    "a": "콜슨 화이트헤드",
+    "oa": "Colson Whitehead",
+    "ot": "The Underground Railroad",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 8,
+    "y": 2001,
+    "t": "아우스터리츠",
+    "a": "W. G. 제발트",
+    "oa": "W.G. Sebald",
+    "ot": "Austerlitz",
+    "aliases": [
+      "W.G.제발트"
+    ],
+    "ko": true
+  },
+  {
+    "r": 9,
+    "y": 2005,
+    "t": "나를 보내지 마",
+    "a": "가즈오 이시구로",
+    "oa": "Kazuo Ishiguro",
+    "ot": "Never Let Me Go",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 10,
+    "y": 2004,
+    "t": "길리아드",
+    "a": "메릴린 로빈슨",
+    "oa": "Marilynne Robinson",
+    "ot": "Gilead",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 11,
+    "y": 2007,
+    "t": "오스카 와오의 짧고 놀라운 삶",
+    "a": "주노 디아스",
+    "oa": "Junot Díaz",
+    "ot": "The Brief Wondrous Life of Oscar Wao",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 12,
+    "y": 2005,
+    "t": "상실",
+    "a": "조앤 디디온",
+    "oa": "Joan Didion",
+    "ot": "The Year of Magical Thinking",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 13,
+    "y": 2006,
+    "t": "로드",
+    "a": "코맥 매카시",
+    "oa": "Cormac McCarthy",
+    "ot": "The Road",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 14,
+    "y": 2014,
+    "t": "윤곽",
+    "a": "레이첼 커스크",
+    "oa": "Rachel Cusk",
+    "ot": "Outline",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 15,
+    "y": 2017,
+    "t": "파친코",
+    "a": "이민진",
+    "oa": "Min Jin Lee",
+    "ot": "Pachinko",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 16,
+    "y": 2000,
+    "t": "캐벌리어와 클레이의 놀라운 모험",
+    "a": "마이클 셰이본",
+    "oa": "Michael Chabon",
+    "ot": "The Amazing Adventures of Kavalier & Clay",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 17,
+    "y": 2015,
+    "t": "배반",
+    "a": "폴 비티",
+    "oa": "Paul Beatty",
+    "ot": "The Sellout",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 18,
+    "y": 2017,
+    "t": "바르도의 링컨",
+    "a": "조지 손더스",
+    "oa": "George Saunders",
+    "ot": "Lincoln in the Bardo",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 19,
+    "y": 2018,
+    "t": "세이 나씽",
+    "a": "패트릭 라든 키프",
+    "oa": "Patrick Radden Keefe",
+    "ot": "Say Nothing",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 20,
+    "y": 2001,
+    "t": null,
+    "a": null,
+    "oa": "Percival Everett",
+    "ot": "Erasure",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 21,
+    "y": 2016,
+    "t": "쫓겨난 사람들",
+    "a": "매튜 데스몬드",
+    "oa": "Matthew Desmond",
+    "ot": "Evicted",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 22,
+    "y": 2012,
+    "t": "안나와디의 아이들",
+    "a": "캐서린 부",
+    "oa": "Katherine Boo",
+    "ot": "Behind the Beautiful Forevers",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 23,
+    "y": 2001,
+    "t": "미움, 우정, 구애, 사랑, 결혼",
+    "a": "앨리스 먼로",
+    "oa": "Alice Munro",
+    "ot": "Hateship, Friendship, Courtship, Loveship, Marriage",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 24,
+    "y": 2018,
+    "t": "오버스토리",
+    "a": "리처드 파워스",
+    "oa": "Richard Powers",
+    "ot": "The Overstory",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 25,
+    "y": 2003,
+    "t": null,
+    "a": null,
+    "oa": "Adrian Nicole LeBlanc",
+    "ot": "Random Family",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 26,
+    "y": 2001,
+    "t": "속죄",
+    "a": "이언 매큐언",
+    "oa": "Ian McEwan",
+    "ot": "Atonement",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 27,
+    "y": 2013,
+    "t": "아메리카나",
+    "a": "치마만다 응고지 아디치에",
+    "oa": "Chimamanda Ngozi Adichie",
+    "ot": "Americanah",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 28,
+    "y": 2004,
+    "t": "클라우드 아틀라스",
+    "a": "데이비드 미첼",
+    "oa": "David Mitchell",
+    "ot": "Cloud Atlas",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 29,
+    "y": 2000,
+    "t": null,
+    "a": null,
+    "oa": "Helen DeWitt",
+    "ot": "The Last Samurai",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 30,
+    "y": 2017,
+    "t": "묻히지 못한 자들의 노래",
+    "a": "제스민 워드",
+    "oa": "Jesmyn Ward",
+    "ot": "Sing, Unburied, Sing",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 31,
+    "y": 2000,
+    "t": "하얀 이빨",
+    "a": "제이디 스미스",
+    "oa": "Zadie Smith",
+    "ot": "White Teeth",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 32,
+    "y": 2004,
+    "t": "아름다움의 선",
+    "a": "앨런 홀링허스트",
+    "oa": "Alan Hollinghurst",
+    "ot": "The Line of Beauty",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 33,
+    "y": 2011,
+    "t": "바람의 잔해를 줍다",
+    "a": "제스민 워드",
+    "oa": "Jesmyn Ward",
+    "ot": "Salvage the Bones",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 34,
+    "y": 2014,
+    "t": null,
+    "a": null,
+    "oa": "Claudia Rankine",
+    "ot": "Citizen",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 35,
+    "y": 2006,
+    "t": "펀 홈",
+    "a": "앨리슨 벡델",
+    "oa": "Alison Bechdel",
+    "ot": "Fun Home",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 36,
+    "y": 2015,
+    "t": "세상과 나 사이",
+    "a": "타네히시 코츠",
+    "oa": "Ta-Nehisi Coates",
+    "ot": "Between the World and Me",
+    "aliases": [
+      "타네하시 코츠"
+    ],
+    "ko": true
+  },
+  {
+    "r": 37,
+    "y": 2008,
+    "t": "세월",
+    "a": "아니 에르노",
+    "oa": "Annie Ernaux",
+    "ot": "The Years",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 38,
+    "y": 1998,
+    "t": "야만스러운 탐정들",
+    "a": "로베르토 볼라뇨",
+    "oa": "Roberto Bolaño",
+    "ot": "The Savage Detectives",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 39,
+    "y": 2010,
+    "t": "깡패단의 방문",
+    "a": "제니퍼 이건",
+    "oa": "Jennifer Egan",
+    "ot": "A Visit From the Goon Squad",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 40,
+    "y": 2014,
+    "t": "메이블 이야기",
+    "a": "헬렌 맥도널드",
+    "oa": "Helen Macdonald",
+    "ot": "H Is for Hawk",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 41,
+    "y": 2021,
+    "t": "이처럼 사소한 것들",
+    "a": "클레어 키건",
+    "oa": "Claire Keegan",
+    "ot": "Small Things Like These",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 42,
+    "y": 2014,
+    "t": "일곱 건의 살인에 대한 간략한 역사",
+    "a": "말런 제임스",
+    "oa": "Marlon James",
+    "ot": "A Brief History of Seven Killings",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 43,
+    "y": 2005,
+    "t": "전후 유럽 1945~2005",
+    "a": "토니 주트",
+    "oa": "Tony Judt",
+    "ot": "Postwar",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 44,
+    "y": 2015,
+    "t": "다섯 번째 계절",
+    "a": "N. K. 제미신",
+    "oa": "N.K. Jemisin",
+    "ot": "The Fifth Season",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 45,
+    "y": 2015,
+    "t": "아르고호의 선원들",
+    "a": "매기 넬슨",
+    "oa": "Maggie Nelson",
+    "ot": "The Argonauts",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 46,
+    "y": 2013,
+    "t": "황금방울새",
+    "a": "도나 타트",
+    "oa": "Donna Tartt",
+    "ot": "The Goldfinch",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 47,
+    "y": 2008,
+    "t": "자비",
+    "a": "토니 모리슨",
+    "oa": "Toni Morrison",
+    "ot": "A Mercy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 48,
+    "y": 2000,
+    "t": "페르세폴리스",
+    "a": "마르얀 사트라피",
+    "oa": "Marjane Satrapi",
+    "ot": "Persepolis",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 49,
+    "y": 2007,
+    "t": "채식주의자",
+    "a": "한강",
+    "oa": "Han Kang",
+    "ot": "The Vegetarian",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 50,
+    "y": 2022,
+    "t": "트러스트",
+    "a": "에르난 디아스",
+    "oa": "Hernan Diaz",
+    "ot": "Trust",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 51,
+    "y": 2013,
+    "t": "라이프 애프터 라이프",
+    "a": "케이트 앳킨슨",
+    "oa": "Kate Atkinson",
+    "ot": "Life After Life",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 52,
+    "y": 2011,
+    "t": "기차의 꿈",
+    "a": "데니스 존슨",
+    "oa": "Denis Johnson",
+    "ot": "Train Dreams",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 53,
+    "y": 2004,
+    "t": "런어웨이",
+    "a": "앨리스 먼로",
+    "oa": "Alice Munro",
+    "ot": "Runaway",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 54,
+    "y": 2013,
+    "t": "12월 10일",
+    "a": "조지 손더스",
+    "oa": "George Saunders",
+    "ot": "Tenth of December",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 55,
+    "y": 2006,
+    "t": "문명전쟁",
+    "a": "로렌스 라이트",
+    "oa": "Lawrence Wright",
+    "ot": "The Looming Tower",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 56,
+    "y": 2013,
+    "t": null,
+    "a": null,
+    "oa": "Rachel Kushner",
+    "ot": "The Flamethrowers",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 57,
+    "y": 2001,
+    "t": "노동의 배신",
+    "a": "바버라 에런라이크",
+    "oa": "Barbara Ehrenreich",
+    "ot": "Nickel and Dimed",
+    "aliases": [
+      "바바라 에렌라이히"
+    ],
+    "ko": true
+  },
+  {
+    "r": 58,
+    "y": 2022,
+    "t": "진실에 다가가기",
+    "a": "후아 쉬",
+    "oa": "Hua Hsu",
+    "ot": "Stay True",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 59,
+    "y": 2002,
+    "t": "미들섹스",
+    "a": "제프리 유제니디스",
+    "oa": "Jeffrey Eugenides",
+    "ot": "Middlesex",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 60,
+    "y": 2018,
+    "t": "헤비",
+    "a": "키에스 레이먼",
+    "oa": "Kiese Laymon",
+    "ot": "Heavy",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 61,
+    "y": 2022,
+    "t": "내 이름은 데몬 코퍼헤드",
+    "a": "바버라 킹솔버",
+    "oa": "Barbara Kingsolver",
+    "ot": "Demon Copperhead",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 62,
+    "y": 2014,
+    "t": null,
+    "a": null,
+    "oa": "Ben Lerner",
+    "ot": "10:04",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 63,
+    "y": 2005,
+    "t": null,
+    "a": null,
+    "oa": "Mary Gaitskill",
+    "ot": "Veronica",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 64,
+    "y": 2018,
+    "t": null,
+    "a": null,
+    "oa": "Rebecca Makkai",
+    "ot": "The Great Believers",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 65,
+    "y": 2004,
+    "t": "미국을 노린 음모",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "The Plot Against America",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 66,
+    "y": 2011,
+    "t": "우리, 짐승들",
+    "a": "저스틴 토레스",
+    "oa": "Justin Torres",
+    "ot": "We the Animals",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 67,
+    "y": 2012,
+    "t": "부모와 다른 아이들",
+    "a": "앤드류 솔로몬",
+    "oa": "Andrew Solomon",
+    "ot": "Far From the Tree",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 68,
+    "y": 2018,
+    "t": "친구",
+    "a": "시그리드 누네즈",
+    "oa": "Sigrid Nunez",
+    "ot": "The Friend",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 69,
+    "y": 2010,
+    "t": null,
+    "a": null,
+    "oa": "Michelle Alexander",
+    "ot": "The New Jim Crow",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 70,
+    "y": 2006,
+    "t": null,
+    "a": null,
+    "oa": "Edward P. Jones",
+    "ot": "All Aunt Hagar’s Children",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 71,
+    "y": 1971,
+    "t": "어린 시절",
+    "a": "토베 디틀레우센",
+    "oa": "Tove Ditlevsen",
+    "ot": "The Copenhagen Trilogy",
+    "aliases": [],
+    "ko": true,
+    "vols": [
+      "어린 시절",
+      "청춘",
+      "의존"
+    ]
+  },
+  {
+    "r": 72,
+    "y": 2013,
+    "t": "붉은 인간의 최후",
+    "a": "스베틀라나 알렉시예비치",
+    "oa": "Svetlana Alexievich",
+    "ot": "Secondhand Time",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 73,
+    "y": 2012,
+    "t": null,
+    "a": null,
+    "oa": "Robert Caro",
+    "ot": "The Passage of Power",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 74,
+    "y": 2008,
+    "t": "올리브 키터리지",
+    "a": "엘리자베스 스트라우트",
+    "oa": "Elizabeth Strout",
+    "ot": "Olive Kitteridge",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 75,
+    "y": 2017,
+    "t": "서쪽으로",
+    "a": "모신 하미드",
+    "oa": "Mohsin Hamid",
+    "ot": "Exit West",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 76,
+    "y": 2022,
+    "t": "내일 또 내일 또 내일",
+    "a": "개브리얼 제빈",
+    "oa": "Gabrielle Zevin",
+    "ot": "Tomorrow, and Tomorrow, and Tomorrow",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 77,
+    "y": 2018,
+    "t": "미국식 결혼",
+    "a": "타야리 존스",
+    "oa": "Tayari Jones",
+    "ot": "An American Marriage",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 78,
+    "y": 2021,
+    "t": null,
+    "a": null,
+    "oa": "Jon Fosse",
+    "ot": "Septology",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 79,
+    "y": 2015,
+    "t": "청소부 매뉴얼",
+    "a": "루시아 벌린",
+    "oa": "Lucia Berlin",
+    "ot": "A Manual for Cleaning Women",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 80,
+    "y": 2014,
+    "t": "잃어버린 아이 이야기",
+    "a": "엘레나 페란테",
+    "oa": "Elena Ferrante",
+    "ot": "The Story of the Lost Child",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 81,
+    "y": 2011,
+    "t": "펄프헤드",
+    "a": "존 제러마이아 설리번",
+    "oa": "John Jeremiah Sullivan",
+    "ot": "Pulphead",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 82,
+    "y": 2017,
+    "t": "태풍의 계절",
+    "a": "페르난다 멜초르",
+    "oa": "Fernanda Melchor",
+    "ot": "Hurricane Season",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 83,
+    "y": 2020,
+    "t": "우리가 세상을 이해하길 멈출 때",
+    "a": "벵하민 라바투트",
+    "oa": "Benjamín Labatut",
+    "ot": "When We Cease to Understand the World",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 84,
+    "y": 2010,
+    "t": "암 : 만병의 황제의 역사",
+    "a": "싯다르타 무케르지",
+    "oa": "Siddhartha Mukherjee",
+    "ot": "The Emperor of All Maladies",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 85,
+    "y": 2000,
+    "t": "패스토럴리아",
+    "a": "조지 손더스",
+    "oa": "George Saunders",
+    "ot": "Pastoralia",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 86,
+    "y": 2018,
+    "t": null,
+    "a": null,
+    "oa": "David W. Blight",
+    "ot": "Frederick Douglass",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 87,
+    "y": 2021,
+    "t": "디트랜지션, 베이비",
+    "a": "토리 피터스",
+    "oa": "Torrey Peters",
+    "ot": "Detransition, Baby",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 88,
+    "y": 2009,
+    "t": "불안의 변이",
+    "a": "리디아 데이비스",
+    "oa": "Lydia Davis",
+    "ot": "The Collected Stories of Lydia Davis",
+    "aliases": [],
+    "ko": true,
+    "note": "봄날의책 2023, 강경이 옮김. 알라딘 원제 표기 기준이나 600쪽이라 일부만 수록됐을 수 있음"
+  },
+  {
+    "r": 89,
+    "y": 2016,
+    "t": "귀환",
+    "a": "히샴 마타르",
+    "oa": "Hisham Matar",
+    "ot": "The Return",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 90,
+    "y": 2015,
+    "t": "동조자",
+    "a": "비엣 타인 응우옌",
+    "oa": "Viet Thanh Nguyen",
+    "ot": "The Sympathizer",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 91,
+    "y": 2000,
+    "t": "휴먼 스테인",
+    "a": "필립 로스",
+    "oa": "Philip Roth",
+    "ot": "The Human Stain",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 92,
+    "y": 2002,
+    "t": "버려진 사랑",
+    "a": "엘레나 페란테",
+    "oa": "Elena Ferrante",
+    "ot": "The Days of Abandonment",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 93,
+    "y": 2014,
+    "t": "스테이션 일레븐",
+    "a": "에밀리 세인트존 맨델",
+    "oa": "Emily St. John Mandel",
+    "ot": "Station Eleven",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 94,
+    "y": 2005,
+    "t": "온 뷰티",
+    "a": "제이디 스미스",
+    "oa": "Zadie Smith",
+    "ot": "On Beauty",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 95,
+    "y": 2012,
+    "t": "시체들을 끌어내라",
+    "a": "힐러리 맨틀",
+    "oa": "Hilary Mantel",
+    "ot": "Bring Up the Bodies",
+    "aliases": [],
+    "ko": true
+  },
+  {
+    "r": 96,
+    "y": 2019,
+    "t": null,
+    "a": null,
+    "oa": "Saidiya Hartman",
+    "ot": "Wayward Lives, Beautiful Experiments",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 97,
+    "y": 2013,
+    "t": null,
+    "a": null,
+    "oa": "Jesmyn Ward",
+    "ot": "Men We Reaped",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 98,
+    "y": 2001,
+    "t": "벨칸토",
+    "a": "앤 패칫",
+    "oa": "Ann Patchett",
+    "ot": "Bel Canto",
+    "aliases": [
+      "앤 패챗"
+    ],
+    "ko": true
+  },
+  {
+    "r": 99,
+    "y": 2014,
+    "t": null,
+    "a": null,
+    "oa": "Ali Smith",
+    "ot": "How to Be Both",
+    "aliases": [],
+    "ko": false
+  },
+  {
+    "r": 100,
+    "y": 2007,
+    "t": null,
+    "a": null,
+    "oa": "Denis Johnson",
+    "ot": "Tree of Smoke",
+    "aliases": [],
+    "ko": false
+  }
+]

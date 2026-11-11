@@ -1,0 +1,374 @@
+[
+ {
+  "y": 2026,
+  "t": null,
+  "a": "킷 채프먼",
+  "oa": "Kit Chapman",
+  "ot": "The Age of Alchemy",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2025,
+  "t": "아웃사이더",
+  "a": "마수드 후사인",
+  "oa": "Masud Husain",
+  "ot": "Our Brains, Our Selves: What a Neurologist's Patients Taught Him About the Brain",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2024,
+  "t": "화성에 도시를 세운다면",
+  "a": "켈리 와이너스미스, 잭 와이너스미스",
+  "oa": "Kelly Weinersmith, Zach Weinersmith",
+  "ot": "A City on Mars",
+  "aliases": [
+   "잭 와이너스미스"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2023,
+  "t": "이토록 굉장한 세계",
+  "a": "에드 용",
+  "oa": "Ed Yong",
+  "ot": "An Immense World",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2022,
+  "t": "지구 생명의 (아주) 짧은 역사",
+  "a": "헨리 지",
+  "oa": "Henry Gee",
+  "ot": "A (Very) Short History of Life on Earth",
+  "aliases": [
+   "지구 생명의 아주 짧은 역사"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2021,
+  "t": "작은 것들이 만든 거대한 세계",
+  "a": "멀린 셸드레이크",
+  "oa": "Merlin Sheldrake",
+  "ot": "Entangled Life",
+  "aliases": [
+   "멀린 셀드레이크"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2020,
+  "t": "자신의 존재에 대해 사과하지 말 것",
+  "a": "카밀라 팡",
+  "oa": "Camilla Pang",
+  "ot": "Explaining Humans",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2019,
+  "t": "보이지 않는 여자들",
+  "a": "캐럴라인 크리아도 페레스",
+  "oa": "Caroline Criado Perez",
+  "ot": "Invisible Women",
+  "aliases": [
+   "캐롤라인 크리아도 페레즈"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2018,
+  "t": "나를 발견하는 뇌과학",
+  "a": "사라-제인 블레이크모어",
+  "oa": "Sarah-Jayne Blakemore",
+  "ot": "Inventing Ourselves: The Secret Life of the Teenage Brain",
+  "aliases": [
+   "사라제인 블레이크모어"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2017,
+  "t": "테스토스테론 렉스",
+  "a": "코델리아 파인",
+  "oa": "Cordelia Fine",
+  "ot": "Testosterone Rex",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2016,
+  "t": "자연의 발명",
+  "a": "안드레아 울프",
+  "oa": "Andrea Wulf",
+  "ot": "The Invention of Nature",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2015,
+  "t": "인류세의 모험",
+  "a": "가이아 빈스",
+  "oa": "Gaia Vince",
+  "ot": "Adventures in the Anthropocene",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2014,
+  "t": "사소한 것들의 과학",
+  "a": "마크 미오도닉",
+  "oa": "Mark Miodownik",
+  "ot": "Stuff Matters",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2013,
+  "t": null,
+  "a": "숀 캐럴",
+  "oa": "Sean Carroll",
+  "ot": "The Particle at the End of the Universe",
+  "aliases": [
+   "션 캐럴"
+  ],
+  "ko": false
+ },
+ {
+  "y": 2012,
+  "t": "인포메이션",
+  "a": "제임스 글릭",
+  "oa": "James Gleick",
+  "ot": "The Information",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2011,
+  "t": "파도관찰자를 위한 가이드",
+  "a": "개빈 프레터피니",
+  "oa": "Gavin Pretor-Pinney",
+  "ot": "The Wavewatcher's Companion",
+  "aliases": [],
+  "ko": true,
+  "note": "한국어판 2025년 김영사"
+ },
+ {
+  "y": 2010,
+  "t": "생명의 도약",
+  "a": "닉 레인",
+  "oa": "Nick Lane",
+  "ot": "Life Ascending",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2009,
+  "t": "경이의 시대",
+  "a": "리처드 홈스",
+  "oa": "Richard Holmes",
+  "ot": "The Age of Wonder",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2008,
+  "t": "6도의 악몽",
+  "a": "마크 라이너스",
+  "oa": "Mark Lynas",
+  "ot": "Six Degrees",
+  "aliases": [
+   "6도의 멸종"
+  ],
+  "ko": true
+ },
+ {
+  "y": 2007,
+  "t": "행복에 걸려 비틀거리다",
+  "a": "대니얼 길버트",
+  "oa": "Daniel Gilbert",
+  "ot": "Stumbling on Happiness",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2006,
+  "t": "일렉트릭 유니버스",
+  "a": "데이비드 보더니스",
+  "oa": "David Bodanis",
+  "ot": "Electric Universe",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2005,
+  "t": "물리학으로 보는 사회",
+  "a": "필립 볼",
+  "oa": "Philip Ball",
+  "ot": "Critical Mass",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2004,
+  "t": "거의 모든 것의 역사",
+  "a": "빌 브라이슨",
+  "oa": "Bill Bryson",
+  "ot": "A Short History of Nearly Everything",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2003,
+  "t": null,
+  "a": "크리스 맥매너스",
+  "oa": "Chris McManus",
+  "ot": "Right Hand, Left Hand",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2002,
+  "t": "호두껍질 속의 우주",
+  "a": "스티븐 호킹",
+  "oa": "Stephen Hawking",
+  "ot": "The Universe in a Nutshell",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2001,
+  "t": null,
+  "a": "로버트 쿤지그",
+  "oa": "Robert Kunzig",
+  "ot": "Mapping the Deep",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2000,
+  "t": "엘러건트 유니버스",
+  "a": "브라이언 그린",
+  "oa": "Brian Greene",
+  "ot": "The Elegant Universe",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1999,
+  "t": "우리 수학자 모두는 약간 미친 겁니다",
+  "a": "폴 호프만",
+  "oa": "Paul Hoffman",
+  "ot": "The Man Who Loved Only Numbers",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1998,
+  "t": "총, 균, 쇠",
+  "a": "재레드 다이아몬드",
+  "oa": "Jared Diamond",
+  "ot": "Guns, Germs, and Steel",
+  "aliases": [
+   "총균쇠"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1997,
+  "t": null,
+  "a": "앨런 워커, 팻 시프먼",
+  "oa": "Alan Walker, Pat Shipman",
+  "ot": "The Wisdom of the Bones",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1996,
+  "t": "전염병의 문화사",
+  "a": "아노 카렌",
+  "oa": "Arno Karlen",
+  "ot": "Plague's Progress",
+  "aliases": [],
+  "ko": true,
+  "note": "한국어판은 미국판 Man and Microbes 번역"
+ },
+ {
+  "y": 1995,
+  "t": "화학의 변명",
+  "a": "존 엠슬리",
+  "oa": "John Emsley",
+  "ot": "The Consumer's Good Chemical Guide",
+  "aliases": [],
+  "ko": true,
+  "note": "한국어판 3권(사이언스북스 2000)"
+ },
+ {
+  "y": 1994,
+  "t": "유전자 언어",
+  "a": "스티브 존스",
+  "oa": "Steve Jones",
+  "ot": "The Language of the Genes",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1993,
+  "t": null,
+  "a": "스티븐 로즈",
+  "oa": "Steven Rose",
+  "ot": "The Making of Memory",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1992,
+  "t": "제3의 침팬지",
+  "a": "재레드 다이아몬드",
+  "oa": "Jared Diamond",
+  "ot": "The Rise and Fall of the Third Chimpanzee",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1991,
+  "t": "원더풀 라이프",
+  "a": "스티븐 제이 굴드",
+  "oa": "Stephen Jay Gould",
+  "ot": "Wonderful Life",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1990,
+  "t": "황제의 새 마음",
+  "a": "로저 펜로즈",
+  "oa": "Roger Penrose",
+  "ot": "The Emperor's New Mind",
+  "aliases": [
+   "황제의 새마음"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1989,
+  "t": null,
+  "a": "로저 르윈",
+  "oa": "Roger Lewin",
+  "ot": "Bones of Contention",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1988,
+  "t": null,
+  "a": null,
+  "oa": "British Medical Association",
+  "ot": "Living with Risk",
+  "aliases": [],
+  "ko": false
+ }
+]

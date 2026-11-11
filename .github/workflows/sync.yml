@@ -1,0 +1,67 @@
+# 매일 새벽 3시(KST) 크레마·베스트셀러·도서관(+일요일엔 밀리) 동기화 → GitHub Pages 배포
+# 데이터(크롤링 결과)는 저장소가 아니라 'state' 릴리스의 파일로 보관한다 (용량이 커서)
+name: sync
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  push:
+    branches: [main]
+    paths-ignore: ['README.md']
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'full: 크롤링 후 배포 / export: 지금 데이터로 배포만'
+        type: choice
+        options: [full, export]
+        default: full
+      millie:
+        description: '밀리의 서재도 받기 (2시간+)'
+        type: boolean
+        default: false
+concurrency:
+  group: sync
+  cancel-in-progress: false
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+env:
+  # 해외 IP를 막는 도서관 → Mac에서 받음 (sync-kr.yml)
+  SKIP_LIBS: seongdong,seongbuk,yeongdeungpo,songpa
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci --omit=dev
+      - name: 이전 데이터 받기
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          gh release download state -p state.tar.gz -p kr-libs.json --clobber || gh release download state -p state.tar.gz --clobber
+          tar xzf state.tar.gz && ls -la data*.json
+      - name: 동기화 + 내보내기
+        env:
+          MODE: ${{ github.event_name == 'push' && 'export' || inputs.mode || 'full' }}
+          MILLIE: ${{ inputs.millie && '1' || '' }}
+          NL_API_KEY: ${{ secrets.NL_API_KEY }}
+        run: node scripts/sync.js
+      - name: 데이터 저장
+        if: github.event_name != 'push'
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          tar czf state.tar.gz data.json data-libs.json data-seoul.json data-millie.json data-kdc.json
+          gh release upload state state.tar.gz --clobber
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: sync
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

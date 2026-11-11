@@ -1,0 +1,796 @@
+[
+ {
+  "y": 2026,
+  "t": "잃어버린 얼굴",
+  "a": "사쿠라다 도모야",
+  "oa": "櫻田智也",
+  "ot": "失われた貌",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2026,
+  "t": null,
+  "a": "리처드 데밍",
+  "oa": "Richard Deming",
+  "ot": "私立探偵マニー・ムーン",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위 (일본 독자 편집 '매니 문' 단편집)"
+ },
+ {
+  "y": 2025,
+  "t": "지뢰 글리코",
+  "a": "아오사키 유고",
+  "oa": "青崎有吾",
+  "ot": "地雷グリコ",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2025,
+  "t": null,
+  "a": "마보융",
+  "oa": "马伯庸",
+  "ot": "两京十五日",
+  "aliases": [
+   "마백용"
+  ],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2024,
+  "t": "가연물",
+  "a": "요네자와 호노부",
+  "oa": "米澤穂信",
+  "ot": "可燃物",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2024,
+  "t": "내 눈물이 너를 베리라",
+  "a": "S. A. 코스비",
+  "oa": "S. A. Cosby",
+  "ot": "Razorblade Tears",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2023,
+  "t": "폭탄",
+  "a": "오승호",
+  "oa": "呉勝浩",
+  "ot": "爆弾",
+  "aliases": [
+   "고 가쓰히로"
+  ],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2023,
+  "t": "나의 작은 무법자",
+  "a": "크리스 휘타커",
+  "oa": "Chris Whitaker",
+  "ot": "We Begin at the End",
+  "aliases": [
+   "크리스 휘태커"
+  ],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2022,
+  "t": "흑뢰성",
+  "a": "요네자와 호노부",
+  "oa": "米澤穂信",
+  "ot": "黒牢城",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2022,
+  "t": null,
+  "a": "앤서니 호로위츠",
+  "oa": "Anthony Horowitz",
+  "ot": "Moonflower Murders",
+  "aliases": [
+   "앤서니 호로비츠"
+  ],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2021,
+  "t": null,
+  "a": "쓰지 마사키",
+  "oa": "辻真先",
+  "ot": "たかが殺人じゃないか 昭和24年の推理小説",
+  "aliases": [],
+  "ko": false,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2021,
+  "t": "숨겨진 건 죽음",
+  "a": "앤서니 호로위츠",
+  "oa": "Anthony Horowitz",
+  "ot": "The Sentence Is Death",
+  "aliases": [
+   "앤서니 호로비츠"
+  ],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2020,
+  "t": "영매탐정 조즈카",
+  "a": "아이자와 사코",
+  "oa": "相沢沙呼",
+  "ot": "medium 霊媒探偵城塚翡翠",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2020,
+  "t": "중요한 건 살인",
+  "a": "앤서니 호로위츠",
+  "oa": "Anthony Horowitz",
+  "ot": "The Word Is Murder",
+  "aliases": [
+   "앤서니 호로비츠"
+  ],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2019,
+  "t": "지금부터의 내일",
+  "a": "하라 료",
+  "oa": "原尞",
+  "ot": "それまでの明日",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2019,
+  "t": "맥파이 살인 사건",
+  "a": "앤서니 호로위츠",
+  "oa": "Anthony Horowitz",
+  "ot": "Magpie Murders",
+  "aliases": [
+   "앤서니 호로비츠"
+  ],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2018,
+  "t": "시인장의 살인",
+  "a": "이마무라 마사히로",
+  "oa": "今村昌弘",
+  "ot": "屍人荘の殺人",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2018,
+  "t": null,
+  "a": "R. D. 윙필드",
+  "oa": "R. D. Wingfield",
+  "ot": "A Killing Frost",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2017,
+  "t": null,
+  "a": "다케모토 겐지",
+  "oa": "竹本健治",
+  "ot": "涙香迷宮",
+  "aliases": [],
+  "ko": false,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2017,
+  "t": "더 파더",
+  "a": "안데슈 루슬룬드, 스테판 툰베리",
+  "oa": "Anders Roslund, Stefan Thunberg",
+  "ot": "Björndansen",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위 · 한국어판 이승재 옮김, 검은숲, 2018 (전2권)"
+ },
+ {
+  "y": 2016,
+  "t": "왕과 서커스",
+  "a": "요네자와 호노부",
+  "oa": "米澤穂信",
+  "ot": "王とサーカス",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2016,
+  "t": "스킨 컬렉터",
+  "a": "제프리 디버",
+  "oa": "Jeffery Deaver",
+  "ot": "The Skin Collector",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2015,
+  "t": "야경",
+  "a": "요네자와 호노부",
+  "oa": "米澤穂信",
+  "ot": "満願",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2015,
+  "t": "알렉스",
+  "a": "피에르 르메트르",
+  "oa": "Pierre Lemaitre",
+  "ot": "Alex",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2014,
+  "t": "녹스머신",
+  "a": "노리즈키 린타로",
+  "oa": "法月綸太郎",
+  "ot": "ノックス・マシン",
+  "aliases": [
+   "녹스 머신"
+  ],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2014,
+  "t": "11/22/63",
+  "a": "스티븐 킹",
+  "oa": "Stephen King",
+  "ot": "11/22/63",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2013,
+  "t": "64 육사",
+  "a": "요코야마 히데오",
+  "oa": "横山秀夫",
+  "ot": "64（ロクヨン）",
+  "aliases": [
+   "64"
+  ],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2013,
+  "t": "록 아티스트",
+  "a": "스티브 해밀턴",
+  "oa": "Steve Hamilton",
+  "ot": "The Lock Artist",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2012,
+  "t": "제노사이드",
+  "a": "다카노 가즈아키",
+  "oa": "高野和明",
+  "ot": "ジェノサイド",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2012,
+  "t": "시리얼리스트",
+  "a": "데이비드 고든",
+  "oa": "David Gordon",
+  "ot": "The Serialist",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2011,
+  "t": "악의 교전",
+  "a": "기시 유스케",
+  "oa": "貴志祐介",
+  "ot": "悪の教典",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2011,
+  "t": null,
+  "a": "캐럴 오코넬",
+  "oa": "Carol O'Connell",
+  "ot": "Bone by Bone",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2010,
+  "t": "신참자",
+  "a": "히가시노 게이고",
+  "oa": "東野圭吾",
+  "ot": "新参者",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2010,
+  "t": "개의 힘",
+  "a": "돈 윈슬로",
+  "oa": "Don Winslow",
+  "ot": "The Power of the Dog",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2009,
+  "t": "골든 슬럼버",
+  "a": "이사카 고타로",
+  "oa": "伊坂幸太郎",
+  "ot": "ゴールデンスランバー",
+  "aliases": [
+   "이사카 코타로"
+  ],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2009,
+  "t": "차일드 44",
+  "a": "톰 롭 스미스",
+  "oa": "Tom Rob Smith",
+  "ot": "Child 44",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2008,
+  "t": "경관의 피",
+  "a": "사사키 조",
+  "oa": "佐々木譲",
+  "ot": "警官の血",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2008,
+  "t": "콜드 문",
+  "a": "제프리 디버",
+  "oa": "Jeffery Deaver",
+  "ot": "The Cold Moon",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2007,
+  "t": "유니버설 횡메르카토르 지도의 독백",
+  "a": "히라야마 유메아키",
+  "oa": "平山夢明",
+  "ot": "独白するユニバーサル横メルカトル",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2007,
+  "t": null,
+  "a": "로리 린 드러먼드",
+  "oa": "Laurie Lynn Drummond",
+  "ot": "Anything You Say Can and Will Be Used Against You",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2006,
+  "t": "용의자 X의 헌신",
+  "a": "히가시노 게이고",
+  "oa": "東野圭吾",
+  "ot": "容疑者Xの献身",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2006,
+  "t": null,
+  "a": "잭 리치",
+  "oa": "Jack Ritchie",
+  "ot": "クライム・マシン",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위 (일본 독자 편집 단편집)"
+ },
+ {
+  "y": 2005,
+  "t": "잘린 머리에게 물어봐",
+  "a": "노리즈키 린타로",
+  "oa": "法月綸太郎",
+  "ot": "生首に聞いてみろ",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2005,
+  "t": "핑거스미스",
+  "a": "세라 워터스",
+  "oa": "Sarah Waters",
+  "ot": "Fingersmith",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2004,
+  "t": "벚꽃 지는 계절에 그대를 그리워하네",
+  "a": "우타노 쇼고",
+  "oa": "歌野晶午",
+  "ot": "葉桜の季節に君を想うということ",
+  "aliases": [
+   "벚꽃지는 계절에 그대를 그리워하네"
+  ],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2004,
+  "t": "끌림",
+  "a": "세라 워터스",
+  "oa": "Sarah Waters",
+  "ot": "Affinity",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2003,
+  "t": "사라진 이틀",
+  "a": "요코야마 히데오",
+  "oa": "横山秀夫",
+  "ot": "半落ち",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2003,
+  "t": null,
+  "a": "제러미 드론필드",
+  "oa": "Jeremy Dronfield",
+  "ot": "The Locust Farm",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2002,
+  "t": "모방범",
+  "a": "미야베 미유키",
+  "oa": "宮部みゆき",
+  "ot": "模倣犯",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2002,
+  "t": null,
+  "a": "보스턴 테란",
+  "oa": "Boston Teran",
+  "ot": "God Is a Bullet",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2001,
+  "t": null,
+  "a": "아와사카 쓰마오",
+  "oa": "泡坂妻夫",
+  "ot": "奇術探偵 曾我佳城全集",
+  "aliases": [],
+  "ko": false,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2001,
+  "t": null,
+  "a": "짐 톰슨",
+  "oa": "Jim Thompson",
+  "ot": "Pop. 1280",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 2000,
+  "t": "영원의 아이",
+  "a": "덴도 아라타",
+  "oa": "天童荒太",
+  "ot": "永遠の仔",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 2000,
+  "t": "탄착점",
+  "a": "스티븐 헌터",
+  "oa": "Stephen Hunter",
+  "ot": "Point of Impact",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1999,
+  "t": "레이디 조커",
+  "a": "다카무라 가오루",
+  "oa": "髙村薫",
+  "ot": "レディ・ジョーカー",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1999,
+  "t": null,
+  "a": "시어도어 로작",
+  "oa": "Theodore Roszak",
+  "ot": "Flicker",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1998,
+  "t": "아웃",
+  "a": "기리노 나쓰오",
+  "oa": "桐野夏生",
+  "ot": "OUT",
+  "aliases": [
+   "기리노 나츠오"
+  ],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1998,
+  "t": null,
+  "a": "R. D. 윙필드",
+  "oa": "R. D. Wingfield",
+  "ot": "A Touch of Frost",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1997,
+  "t": "불야성",
+  "a": "하세 세이슈",
+  "oa": "馳星周",
+  "ot": "不夜城",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1997,
+  "t": "책 사냥꾼의 죽음",
+  "a": "존 더닝",
+  "oa": "John Dunning",
+  "ot": "Booked to Die",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1996,
+  "t": "화이트아웃",
+  "a": "심포 유이치",
+  "oa": "真保裕一",
+  "ot": "ホワイトアウト",
+  "aliases": [
+   "화이트 아웃",
+   "신포 유이치"
+  ],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1996,
+  "t": "여류 조각가",
+  "a": "미네트 월터스",
+  "oa": "Minette Walters",
+  "ot": "The Sculptress",
+  "aliases": [
+   "미넷 월터스"
+  ],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1995,
+  "t": null,
+  "a": "야마구치 마사야",
+  "oa": "山口雅也",
+  "ot": "ミステリーズ",
+  "aliases": [],
+  "ko": false,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1995,
+  "t": "심플 플랜",
+  "a": "스콧 스미스",
+  "oa": "Scott Smith",
+  "ot": "A Simple Plan",
+  "aliases": [
+   "심플플랜"
+  ],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1994,
+  "t": "마크스의 산",
+  "a": "다카무라 가오루",
+  "oa": "髙村薫",
+  "ot": "マークスの山",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1994,
+  "t": null,
+  "a": "미첼 스미스",
+  "oa": "Mitchell Smith",
+  "ot": "Stone City",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1993,
+  "t": null,
+  "a": "후나도 요이치",
+  "oa": "船戸与一",
+  "ot": "砂のクロニクル",
+  "aliases": [],
+  "ko": false,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1993,
+  "t": null,
+  "a": "레지널드 힐",
+  "oa": "Reginald Hill",
+  "ot": "Bones and Silence",
+  "aliases": [],
+  "ko": false,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1992,
+  "t": "스쳐 지나간 거리",
+  "a": "시미즈 다쓰오",
+  "oa": "志水辰夫",
+  "ot": "行きずりの街",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1992,
+  "t": "소망 그리고 욕망",
+  "a": "P. D. 제임스",
+  "oa": "P. D. James",
+  "ot": "Devices and Desires",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1991,
+  "t": "신주쿠 상어",
+  "a": "오사와 아리마사",
+  "oa": "大沢在昌",
+  "ot": "新宿鮫",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1991,
+  "t": "장미의 이름",
+  "a": "움베르토 에코",
+  "oa": "Umberto Eco",
+  "ot": "Il nome della rosa",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1989,
+  "t": "내가 죽인 소녀",
+  "a": "하라 료",
+  "oa": "原尞",
+  "ot": "私が殺した少女",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1989,
+  "t": "양들의 침묵",
+  "a": "토머스 해리스",
+  "oa": "Thomas Harris",
+  "ot": "The Silence of the Lambs",
+  "aliases": [],
+  "ko": true,
+  "note": "해외편 1위"
+ },
+ {
+  "y": 1988,
+  "t": "전설 없는 땅",
+  "a": "후나도 요이치",
+  "oa": "船戸与一",
+  "ot": "伝説なき地",
+  "aliases": [],
+  "ko": true,
+  "note": "국내편 1위"
+ },
+ {
+  "y": 1988,
+  "t": "메인",
+  "a": "트리베니언",
+  "oa": "Trevanian",
+  "ot": "The Main",
+  "aliases": [
+   "메인 스트리트",
+   "트레바니언"
+  ],
+  "ko": true,
+  "note": "해외편 1위"
+ }
+]

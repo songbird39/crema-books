@@ -1,0 +1,764 @@
+[
+ {
+  "y": 2025,
+  "t": null,
+  "a": "라비 알라메딘",
+  "oa": "Rabih Alameddine",
+  "ot": "The True True Story of Raja the Gullible (and His Mother)",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2024,
+  "t": "제임스",
+  "a": "퍼시벌 에버렛",
+  "oa": "Percival Everett",
+  "ot": "James",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2023,
+  "t": "암전들",
+  "a": "저스틴 토레스",
+  "oa": "Justin Torres",
+  "ot": "Blackouts",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2022,
+  "t": "우주의 알",
+  "a": "테스 건티",
+  "oa": "Tess Gunty",
+  "ot": "The Rabbit Hutch",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2021,
+  "t": null,
+  "a": "제이슨 모트",
+  "oa": "Jason Mott",
+  "ot": "Hell of a Book",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2020,
+  "t": null,
+  "a": "찰스 유",
+  "oa": "Charles Yu",
+  "ot": "Interior Chinatown",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2019,
+  "t": "신뢰 연습",
+  "a": "수잔 최",
+  "oa": "Susan Choi",
+  "ot": "Trust Exercise",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2018,
+  "t": "친구",
+  "a": "시그리드 누네즈",
+  "oa": "Sigrid Nunez",
+  "ot": "The Friend",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2017,
+  "t": "묻히지 못한 자들의 노래",
+  "a": "제스민 워드",
+  "oa": "Jesmyn Ward",
+  "ot": "Sing, Unburied, Sing",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2016,
+  "t": "언더그라운드 레일로드",
+  "a": "콜슨 화이트헤드",
+  "oa": "Colson Whitehead",
+  "ot": "The Underground Railroad",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2015,
+  "t": null,
+  "a": "애덤 존슨",
+  "oa": "Adam Johnson",
+  "ot": "Fortune Smiles",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2014,
+  "t": null,
+  "a": "필 클레이",
+  "oa": "Phil Klay",
+  "ot": "Redeployment",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2013,
+  "t": null,
+  "a": "제임스 맥브라이드",
+  "oa": "James McBride",
+  "ot": "The Good Lord Bird",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2012,
+  "t": "라운드 하우스",
+  "a": "루이스 어드리크",
+  "oa": "Louise Erdrich",
+  "ot": "The Round House",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2011,
+  "t": "바람의 잔해를 줍다",
+  "a": "제스민 워드",
+  "oa": "Jesmyn Ward",
+  "ot": "Salvage the Bones",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2010,
+  "t": null,
+  "a": "제이미 고든",
+  "oa": "Jaimy Gordon",
+  "ot": "Lord of Misrule",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2009,
+  "t": "거대한 지구를 돌려라",
+  "a": "칼럼 매캔",
+  "oa": "Colum McCann",
+  "ot": "Let the Great World Spin",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2008,
+  "t": null,
+  "a": "피터 매티슨",
+  "oa": "Peter Matthiessen",
+  "ot": "Shadow Country",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2007,
+  "t": null,
+  "a": "데니스 존슨",
+  "oa": "Denis Johnson",
+  "ot": "Tree of Smoke",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2006,
+  "t": null,
+  "a": "리처드 파워스",
+  "oa": "Richard Powers",
+  "ot": "The Echo Maker",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2005,
+  "t": null,
+  "a": "윌리엄 T. 볼먼",
+  "oa": "William T. Vollmann",
+  "ot": "Europe Central",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2004,
+  "t": null,
+  "a": "릴리 턱",
+  "oa": "Lily Tuck",
+  "ot": "The News from Paraguay",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2003,
+  "t": null,
+  "a": "셜리 해저드",
+  "oa": "Shirley Hazzard",
+  "ot": "The Great Fire",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2002,
+  "t": null,
+  "a": "줄리아 글래스",
+  "oa": "Julia Glass",
+  "ot": "Three Junes",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 2001,
+  "t": "인생 수정",
+  "a": "조너선 프랜즌",
+  "oa": "Jonathan Franzen",
+  "ot": "The Corrections",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 2000,
+  "t": "인 아메리카",
+  "a": "수잔 손택",
+  "oa": "Susan Sontag",
+  "ot": "In America",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1999,
+  "t": "기다림",
+  "a": "하 진",
+  "oa": "Ha Jin",
+  "ot": "Waiting",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1998,
+  "t": null,
+  "a": "앨리스 맥더멋",
+  "oa": "Alice McDermott",
+  "ot": "Charming Billy",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1997,
+  "t": "콜드마운틴의 사랑",
+  "a": "찰스 프레지어",
+  "oa": "Charles Frazier",
+  "ot": "Cold Mountain",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1996,
+  "t": null,
+  "a": "앤드리아 배럿",
+  "oa": "Andrea Barrett",
+  "ot": "Ship Fever and Other Stories",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1995,
+  "t": "새버스의 극장",
+  "a": "필립 로스",
+  "oa": "Philip Roth",
+  "ot": "Sabbath's Theater",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1994,
+  "t": null,
+  "a": "윌리엄 개디스",
+  "oa": "William Gaddis",
+  "ot": "A Frolic of His Own",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1993,
+  "t": "시핑 뉴스",
+  "a": "애니 프루",
+  "oa": "E. Annie Proulx",
+  "ot": "The Shipping News",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1992,
+  "t": "모두 다 예쁜 말들",
+  "a": "코맥 매카시",
+  "oa": "Cormac McCarthy",
+  "ot": "All the Pretty Horses",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1991,
+  "t": "짝짓기",
+  "a": "노먼 러시",
+  "oa": "Norman Rush",
+  "ot": "Mating",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1990,
+  "t": null,
+  "a": "찰스 존슨",
+  "oa": "Charles Johnson",
+  "ot": "Middle Passage",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1989,
+  "t": null,
+  "a": "존 케이시",
+  "oa": "John Casey",
+  "ot": "Spartina",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1988,
+  "t": "패리스 트라웃",
+  "a": "피트 덱스터",
+  "oa": "Pete Dexter",
+  "ot": "Paris Trout",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1987,
+  "t": null,
+  "a": "래리 하이네만",
+  "oa": "Larry Heinemann",
+  "ot": "Paco's Story",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1986,
+  "t": null,
+  "a": "E. L. 닥터로",
+  "oa": "E. L. Doctorow",
+  "ot": "World's Fair",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1985,
+  "t": "화이트 노이즈",
+  "a": "돈 드릴로",
+  "oa": "Don DeLillo",
+  "ot": "White Noise",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1984,
+  "t": null,
+  "a": "엘런 길크리스트",
+  "oa": "Ellen Gilchrist",
+  "ot": "Victory Over Japan",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1983,
+  "t": "컬러 퍼플",
+  "a": "앨리스 워커",
+  "oa": "Alice Walker",
+  "ot": "The Color Purple",
+  "aliases": [
+   "더 컬러 퍼플"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1983,
+  "t": null,
+  "a": "유도라 웰티",
+  "oa": "Eudora Welty",
+  "ot": "The Collected Stories of Eudora Welty",
+  "aliases": [],
+  "ko": false,
+  "note": "현대문학 『유도라 웰티』(2019)는 The Selected Stories 번역이라 제외"
+ },
+ {
+  "y": 1982,
+  "t": "토끼는 부자다",
+  "a": "존 업다이크",
+  "oa": "John Updike",
+  "ot": "Rabbit Is Rich",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1982,
+  "t": "안녕, 내일 또 만나",
+  "a": "윌리엄 맥스웰",
+  "oa": "William Maxwell",
+  "ot": "So Long, See You Tomorrow",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1981,
+  "t": null,
+  "a": "라이트 모리스",
+  "oa": "Wright Morris",
+  "ot": "Plains Song",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1981,
+  "t": "기괴한 라디오",
+  "a": "존 치버",
+  "oa": "John Cheever",
+  "ot": "The Stories of John Cheever",
+  "aliases": [
+   "돼지가 우물에 빠졌던 날",
+   "그게 누구였는지만 말해봐",
+   "사랑의 기하학"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1980,
+  "t": "소피의 선택",
+  "a": "윌리엄 스타이런",
+  "oa": "William Styron",
+  "ot": "Sophie's Choice",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1980,
+  "t": "가아프가 본 세상",
+  "a": "존 어빙",
+  "oa": "John Irving",
+  "ot": "The World According to Garp",
+  "aliases": [
+   "가프"
+  ],
+  "ko": true
+ },
+ {
+  "y": 1979,
+  "t": "카차토를 쫓아서",
+  "a": "팀 오브라이언",
+  "oa": "Tim O'Brien",
+  "ot": "Going After Cacciato",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1978,
+  "t": null,
+  "a": "메리 리 세틀",
+  "oa": "Mary Lee Settle",
+  "ot": "Blood Tie",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1977,
+  "t": null,
+  "a": "월리스 스테그너",
+  "oa": "Wallace Stegner",
+  "ot": "The Spectator Bird",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1976,
+  "t": null,
+  "a": "윌리엄 개디스",
+  "oa": "William Gaddis",
+  "ot": "J R",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1975,
+  "t": null,
+  "a": "로버트 스톤",
+  "oa": "Robert Stone",
+  "ot": "Dog Soldiers",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1975,
+  "t": null,
+  "a": "토머스 윌리엄스",
+  "oa": "Thomas Williams",
+  "ot": "The Hair of Harold Roux",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1974,
+  "t": "중력의 무지개",
+  "a": "토머스 핀천",
+  "oa": "Thomas Pynchon",
+  "ot": "Gravity's Rainbow",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1974,
+  "t": null,
+  "a": "아이작 바셰비스 싱어",
+  "oa": "Isaac Bashevis Singer",
+  "ot": "A Crown of Feathers and Other Stories",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1973,
+  "t": "키메라",
+  "a": "존 바스",
+  "oa": "John Barth",
+  "ot": "Chimera",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1973,
+  "t": "아우구스투스",
+  "a": "존 윌리엄스",
+  "oa": "John Williams",
+  "ot": "Augustus",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1972,
+  "t": "플래너리 오코너",
+  "a": "플래너리 오코너",
+  "oa": "Flannery O'Connor",
+  "ot": "The Complete Stories",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1971,
+  "t": null,
+  "a": "솔 벨로",
+  "oa": "Saul Bellow",
+  "ot": "Mr. Sammler's Planet",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1970,
+  "t": "그들",
+  "a": "조이스 캐롤 오츠",
+  "oa": "Joyce Carol Oates",
+  "ot": "them",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1969,
+  "t": "스텝",
+  "a": "저지 코진스키",
+  "oa": "Jerzy Kosinski",
+  "ot": "Steps",
+  "aliases": [
+   "져지 코신스키"
+  ],
+  "ko": true,
+  "note": "태창출판부 1978, 지방훈 옮김 (국립중앙도서관 서지)"
+ },
+ {
+  "y": 1968,
+  "t": null,
+  "a": "손턴 와일더",
+  "oa": "Thornton Wilder",
+  "ot": "The Eighth Day",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1967,
+  "t": "수선공",
+  "a": "버나드 맬러머드",
+  "oa": "Bernard Malamud",
+  "ot": "The Fixer",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1966,
+  "t": "캐서린 앤 포터",
+  "a": "캐서린 앤 포터",
+  "oa": "Katherine Anne Porter",
+  "ot": "The Collected Stories of Katherine Anne Porter",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1965,
+  "t": "허조그",
+  "a": "솔 벨로",
+  "oa": "Saul Bellow",
+  "ot": "Herzog",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1964,
+  "t": "쎈토",
+  "a": "존 업다이크",
+  "oa": "John Updike",
+  "ot": "The Centaur",
+  "aliases": [
+   "쎈토 : 반인반마"
+  ],
+  "ko": true,
+  "note": "덕문출판사 1973, 이덕형 옮김 (국립중앙도서관 서지, 부제 半人半馬)"
+ },
+ {
+  "y": 1963,
+  "t": null,
+  "a": "J. F. 파워스",
+  "oa": "J. F. Powers",
+  "ot": "Morte d'Urban",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1962,
+  "t": "영화광",
+  "a": "워커 퍼시",
+  "oa": "Walker Percy",
+  "ot": "The Moviegoer",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1961,
+  "t": null,
+  "a": "콘래드 리히터",
+  "oa": "Conrad Richter",
+  "ot": "The Waters of Kronos",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1960,
+  "t": "굿바이, 콜럼버스",
+  "a": "필립 로스",
+  "oa": "Philip Roth",
+  "ot": "Goodbye, Columbus",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1959,
+  "t": "요술통",
+  "a": "버나드 맬러머드",
+  "oa": "Bernard Malamud",
+  "ot": "The Magic Barrel",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1958,
+  "t": "왑샷 가문 연대기",
+  "a": "존 치버",
+  "oa": "John Cheever",
+  "ot": "The Wapshot Chronicle",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1957,
+  "t": null,
+  "a": "라이트 모리스",
+  "oa": "Wright Morris",
+  "ot": "The Field of Vision",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1956,
+  "t": null,
+  "a": "존 오하라",
+  "oa": "John O'Hara",
+  "ot": "Ten North Frederick",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1955,
+  "t": null,
+  "a": "윌리엄 포크너",
+  "oa": "William Faulkner",
+  "ot": "A Fable",
+  "aliases": [],
+  "ko": false
+ },
+ {
+  "y": 1954,
+  "t": "오기 마치의 모험",
+  "a": "솔 벨로",
+  "oa": "Saul Bellow",
+  "ot": "The Adventures of Augie March",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1953,
+  "t": "보이지 않는 인간",
+  "a": "랠프 엘리슨",
+  "oa": "Ralph Ellison",
+  "ot": "Invisible Man",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1952,
+  "t": "지상에서 영원으로",
+  "a": "제임스 존스",
+  "oa": "James Jones",
+  "ot": "From Here to Eternity",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1951,
+  "t": "포크너 자선 단편집",
+  "a": "윌리엄 포크너",
+  "oa": "William Faulkner",
+  "ot": "The Collected Stories of William Faulkner",
+  "aliases": [],
+  "ko": true
+ },
+ {
+  "y": 1950,
+  "t": null,
+  "a": "넬슨 올그런",
+  "oa": "Nelson Algren",
+  "ot": "The Man with the Golden Arm",
+  "aliases": [],
+  "ko": false
+ }
+]
