@@ -1,7 +1,7 @@
 // GitHub Actions용 자동 동기화: 서버를 띄우고 화면의 동기화 버튼과 같은 API를 차례로 부른 뒤 site/로 내보낸다.
 // 환경 변수
 //   MODE=full|export   full: 크롤링 후 내보내기 (기본), export: 지금 데이터로 내보내기만
-//   MILLIE=1           밀리의 서재도 받기 (2시간 넘게 걸려서 주 1회). 비우면 일요일(KST)에만
+//   MILLIE=all         밀리 별점을 전부 다시 받기 (2시간+). 비우면 매일 조금씩(순위 전체 + 별점은 없는 책 먼저, 있는 책은 2주마다)
 //   SKIP_LIBS=a,b      해외 IP를 막는 도서관 (kr-libs.json으로 따로 받음)
 //   NL_API_KEY         국립중앙도서관 키 (십진분류)
 //   KDC_MINUTES=60     십진분류 조회를 기다리는 최대 시간
@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 3456;
 const BASE = `http://localhost:${PORT}`;
 const MODE = process.env.MODE || 'full';
 const SKIP = (process.env.SKIP_LIBS || '').split(',').filter(Boolean);
-const kstDay = new Date(Date.now() + 9 * 3600e3).getUTCDay();
-const MILLIE = process.env.MILLIE ? process.env.MILLIE === '1' || process.env.MILLIE === 'true' : kstDay === 0;
+const MILLIE_POINTS = ['1', 'true', 'all'].includes(process.env.MILLIE) ? 'all' : 'rolling';
+const MILLIE = true; // 밀리는 매일 (별점은 나눠서)
 const report = require('./report');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
@@ -104,7 +104,7 @@ async function snapshot() {
       await step('크레마클럽·베스트셀러', () => runSse('/api/sync', '크레마클럽·베스트셀러'));
       const keys = Object.keys(before.libs).filter(k => !SKIP.includes(k));
       await step(`도서관 ${keys.length}곳`, () => runSse('/api/libs/sync?keys=' + keys.join(','), `도서관 ${keys.length}곳`));
-      if (MILLIE) await step('밀리의 서재', () => runSse('/api/millie/sync', '밀리의 서재'));
+      await step('밀리의 서재' + (MILLIE_POINTS === 'all' ? ' (별점 전부)' : ''), () => runSse('/api/millie/sync?points=' + MILLIE_POINTS, '밀리의 서재'));
       // 십진분류: 서버가 켜지고 20초 뒤 새 책들을 백그라운드로 조회함 → 끝나길 기다림
       await step('십진분류', async () => {
         const until = Date.now() + (+process.env.KDC_MINUTES || 60) * 60e3;

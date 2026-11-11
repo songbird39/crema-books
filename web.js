@@ -140,11 +140,12 @@
       btn.before(adm);
       const menu = document.createElement('div');
       menu.id = 'accountMenu';
-      menu.innerHTML = `<button id="accAdmin" hidden>관리자 화면 (동기화 기록)</button><button id="accImport">기존 즐겨찾기 가져오기 (data-favorites.json)</button><button id="accLogout">로그아웃</button><input type="file" id="accFile" accept=".json,application/json" hidden>`;
+      menu.innerHTML = `<button id="accAdmin" hidden>관리자 화면 (동기화 기록)</button><button id="accImport">기존 즐겨찾기 가져오기 (data-favorites.json)</button><button id="accSettings">설정 · 탈퇴</button><button id="accLogout">로그아웃</button><input type="file" id="accFile" accept=".json,application/json" hidden>`;
       document.body.appendChild(menu);
       menu.querySelector('#accAdmin').onclick = () => { location.href = 'admin.html'; };
       menu.querySelector('#accImport').onclick = () => menu.querySelector('#accFile').click();
       menu.querySelector('#accFile').onchange = (e) => { if (e.target.files[0]) importFavs(e.target.files[0]); e.target.value = ''; toggleMenu(false); };
+      menu.querySelector('#accSettings').onclick = () => { toggleMenu(false); openSettings(); };
       menu.querySelector('#accLogout').onclick = () => { logout(); toggleMenu(false); };
       document.addEventListener('click', (e) => { if (!menu.contains(e.target)) toggleMenu(false); });
     }
@@ -179,7 +180,46 @@
   const whenReady = (fn) => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn, { once: true }) : fn();
   // 로그인하면: 미리 넣어 둔 즐겨찾기(pending_favorites) 가져오기 + 관리자인지 확인
   // (onAuthStateChange 안에서 바로 Supabase를 부르면 막힐 수 있어서 setTimeout으로 밖에서)
+  // 설정(쓰는 플랫폼 등)을 계정에 저장 → 다른 기기에서도 같게
+  // 계정에 저장된 게 있으면 그걸 쓰고, 없으면 이 기기 설정을 올림
+  async function loadAccountSettings() {
+    const { data, error } = await sb.from('user_settings').select('settings').maybeSingle();
+    if (error) return; // 테이블이 아직 없을 때 등
+    if (data?.settings && Object.keys(data.settings).length) whenReady(() => window.setSettings?.(data.settings, { silent: true }));
+    else if (window.getSettings) saveAccountSettings(window.getSettings());
+  }
+  let saveTimer = null;
+  function saveAccountSettings(st) {
+    if (!user) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => sb.from('user_settings').upsert({ user_id: user.id, settings: st, updated_at: new Date().toISOString() }).then(({ error }) => { if (error) console.warn('설정 저장 실패', error.message); }), 500);
+  }
+  window.onSettingsChange = saveAccountSettings;
+
+  // 설정 창의 계정 부분 (index.html openSettings가 부름)
+  window.accountSettingsHtml = () => `<div class="settings-sec"><h4>계정</h4>${user
+    ? `<p class="settings-note">${esc(user.email)} 로 로그인 중 · 설정과 즐겨찾기가 계정에 저장돼요</p>
+       <button class="settings-btn" onclick="accountLogout()">로그아웃</button><button class="settings-btn danger" onclick="accountDelete()">탈퇴</button>`
+    : `<p class="settings-note">로그인하면 설정과 즐겨찾기를 계정에 저장해서 다른 기기에서도 볼 수 있어요</p>
+       <button class="settings-btn" onclick="closePopup(); accountLogin()">구글로 로그인</button>`}</div>`;
+  window.accountLogin = () => login();
+  window.accountLogout = async () => { await logout(); closePopup(); };
+  // 탈퇴: 한 번 확인 → 즐겨찾기·설정·계정 삭제 (Supabase delete_my_account)
+  window.accountDelete = async () => {
+    if (!user) return;
+    if (!confirm(`정말 탈퇴할까요?\n\n${user.email} 계정과 즐겨찾기 ${favorites.length}권, 설정이 모두 지워지고 되돌릴 수 없어요.`)) return;
+    const { error } = await sb.rpc('delete_my_account');
+    if (error) { alert('탈퇴 실패: ' + error.message); return; }
+    await sb.auth.signOut().catch(() => {});
+    localStorage.removeItem('settings');
+    closePopup();
+    alert('탈퇴했어요. 그동안 이용해 주셔서 고마워요.');
+    location.reload();
+  };
+  const esc = (t) => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
   async function onLogin() {
+    loadAccountSettings();
     const [claim, admin] = await Promise.all([sb.rpc('claim_pending_favorites'), sb.rpc('is_admin')]);
     isAdmin = admin.data === true;
     whenReady(renderAccount);

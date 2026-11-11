@@ -71,3 +71,26 @@ begin
 end $$;
 revoke execute on function public.claim_pending_favorites() from public, anon;
 grant execute on function public.claim_pending_favorites() to authenticated;
+
+-- ─── 사용자 설정 (쓰는 플랫폼 등) ───
+create table if not exists public.user_settings (
+  user_id    uuid primary key default auth.uid() references auth.users(id) on delete cascade,
+  settings   jsonb not null default '{}',
+  updated_at timestamptz not null default now()
+);
+alter table public.user_settings enable row level security;
+drop policy if exists "own settings" on public.user_settings;
+create policy "own settings" on public.user_settings for all to authenticated
+  using (user_id = auth.uid()) with check (user_id = auth.uid());
+
+-- ─── 탈퇴: 내 계정 삭제 (즐겨찾기·설정은 계정과 같이 지워짐) ───
+create or replace function public.delete_my_account() returns void
+language plpgsql security definer set search_path = public, auth as $$
+declare e text := lower(auth.jwt() ->> 'email');
+begin
+  if auth.uid() is null then raise exception '로그인이 필요해요'; end if;
+  delete from public.pending_favorites where lower(email) = e;
+  delete from auth.users where id = auth.uid();
+end $$;
+revoke execute on function public.delete_my_account() from public, anon;
+grant execute on function public.delete_my_account() to authenticated;

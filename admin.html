@@ -71,7 +71,7 @@
 </head>
 <body>
 <header>
-  <a href="./">← 도서 브라우저</a>
+  <a href="./">← 전자책 검색</a>
   <h1>관리자 · 동기화 기록</h1>
   <span class="sp"></span>
   <span id="who" class="mute"></span>
@@ -131,7 +131,9 @@ function bookList(label, sample, total, link, open) {
 function changesHtml(name, c, link, millie) {
   if (!c) return '';
   const w = c.warning ? ` ${badge('partial', WARN[c.warning] || c.warning)}` : '';
-  const head = `<div class="head">${esc(name)} <span class="mute">· 이전 ${n(c.prev)} → 이번에 받음 ${n(c.received)}</span>${w}</div>`;
+  const p = c.points; // 밀리 별점
+  const pts = p ? `<div class="mute" style="font-size:12px;margin:2px 0 4px">별점 ${p.mode === 'all' ? '전부 다시' : '나눠 받기'}: 처음 받은 책 ${n(p.missing)} · 2주 지나 갱신 ${n(p.refresh)} · 성공 ${n(p.ok)}${p.failed ? ` · <span class="err">실패 ${n(p.failed)}</span>` : ''} — 아직 못 받은 책 ${n(p.stillMissing)} · 2주 넘은 책 ${n(p.stale)}</div>` : '';
+  const head = `<div class="head">${esc(name)} <span class="mute">· 이전 ${n(c.prev)} → 이번 순위 ${n(c.received)}</span>${w}</div>${pts}`;
   const lists = millie
     ? bookList('없어진 것을 확인해서 지운 책', c.removedSample, c.removed, link, true)
       + bookList('순위에서만 빠진 책 (밀리에 있음, 남김)', c.keptSample, c.kept, link)
@@ -221,7 +223,7 @@ function runSummary(r) {
   const parts = [];
   const b = s.before, a = s.after;
   if (a) parts.push(`크레마 ${n(a.crema.count)}${delta(b?.crema.count, a.crema.count)}`);
-  if (a && s.millie) parts.push(`밀리 ${n(a.millie.count)}${delta(b?.millie.count, a.millie.count)}`);
+  if (a) parts.push(`밀리 ${n(a.millie.count)}${delta(b?.millie.count, a.millie.count)}`);
   const rm = removedTotal(a, r.started_at);
   if (rm) parts.push(`<span class="down">지운 책 ${n(rm)}</span>`);
   const failed = (s.steps || []).filter(x => !x.ok).map(x => x.name);
@@ -253,7 +255,7 @@ function runDetail(r) {
     const bl = s.after.bestsellers.lists || {};
     h += `<h3>그 밖의 데이터</h3><table>
       <tr><td>크레마클럽</td><td class="num">${n(s.before.crema.count)} → ${n(s.after.crema.count)}${delta(s.before.crema.count, s.after.crema.count)}</td></tr>
-      <tr><td>밀리의 서재</td><td class="num">${n(s.before.millie.count)} → ${n(s.after.millie.count)}${delta(s.before.millie.count, s.after.millie.count)}${s.millie ? '' : ' <span class="mute">(이번엔 안 받음)</span>'}</td></tr>
+      <tr><td>밀리의 서재</td><td class="num">${n(s.before.millie.count)} → ${n(s.after.millie.count)}${delta(s.before.millie.count, s.after.millie.count)}</td></tr>
       <tr><td>십진분류</td><td class="num">${n(s.before.kdc.count)} → ${n(s.after.kdc.count)}${delta(s.before.kdc.count, s.after.kdc.count)}</td></tr>
       <tr><td>베스트셀러 목록</td><td class="num">${Object.entries(bl).map(([k, v]) => `${esc(k)} ${v}`).join(' · ')}</td></tr></table>`;
   }
@@ -280,7 +282,7 @@ function renderRuns(runs) {
     ${runs.map(r => {
       // 6시간 넘게 '진행 중'이면 기록이 끊긴 것
       const st = r.status === 'running' && Date.now() - new Date(r.started_at) > 6 * 36e5 ? 'failed' : r.status;
-      const kind = r.workflow === 'sync-kr' ? '도서관 4곳 (Mac)' : r.mode === 'export' ? '배포만' : '전체 동기화' + (r.summary?.millie ? ' + 밀리' : '');
+      const kind = r.workflow === 'sync-kr' ? '도서관 4곳 (Mac)' : r.mode === 'export' ? '배포만' : '전체 동기화';
       const ms = r.finished_at ? new Date(r.finished_at) - new Date(r.started_at) : null;
       return `<tr class="run"><td>${fmtTime(r.started_at)}</td><td>${esc(kind)} <span class="mute">· ${esc(TRIGGER[r.trigger] || r.trigger || '')}</span></td>
         <td>${badge(st, st !== r.status ? '중단됨' : null)}</td><td class="num">${r.finished_at ? dur(ms) : r.status === 'running' ? ago(r.started_at) + ' 시작' : '—'}</td><td>${runSummary(r)}</td></tr>

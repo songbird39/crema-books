@@ -7,7 +7,7 @@ cp -R server.js libraries.js match.js retention.js google-login.js web.js manife
 for f in data.json data-libs.json data-seoul.json data-millie.json; do [ -f "$f" ] && cp "$f" "$OUT/"; done
 echo '{ "items": [] }' > "$OUT/data-favorites.json"
 cat > "$OUT/README.txt" <<'TXT'
-도서 브라우저 — 크레마클럽 · 밀리의 서재 · 서울 도서관 25곳 전자책을 한 번에 찾아보기
+전자책 검색 — 크레마클럽 · 밀리의 서재 · 서울 도서관 25곳 전자책을 한 번에 찾아보기
 
 1. Node.js가 필요해요 (https://nodejs.org 에서 LTS 설치).
 2. Mac: "start.command"를 더블클릭 (처음엔 우클릭 → 열기).

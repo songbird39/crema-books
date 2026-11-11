@@ -706,31 +706,46 @@ async function crawlMillie(onProgress) {
   };
   await Promise.all(Array.from({ length: 4 }, worker));
   const rows = [...books.values()];
-  await crawlMilliePoints(rows, onProgress, loadMillie().books);
+  // 별점은 runMillieJob에서 따로 (없는 책 먼저, 있는 책은 2주마다) → 여기선 이전 값을 그대로 옮김
+  const prev = new Map((loadMillie().books || []).map(r => [r[0], r]));
+  for (const r of rows) { const p = prev.get(r[0]); if (p) { r[9] = p[9] || 0; r[10] = p[10] || 0; } }
   return { books: rows, categories: cats.size, failed };
 }
 
 // 3) 책마다 별점 (5점 만점, 책 페이지와 같은 공개 API) → 행 [9] 평균, [10] 평가 수
 // 실패한 책은 이전 동기화 값을 그대로 둔다
-async function crawlMilliePoints(rows, onProgress, prevRows = []) {
-  const prev = new Map(prevRows.map(r => [r[0], r]));
-  const queue = rows.slice();
-  let done = 0;
+// rows 중 targets(행)만 받아서 행을 고치고 pointsAt[id]에 받은 날짜를 남김. 실패한 책은 그대로 (다음에 다시)
+async function crawlMilliePoints(targets, onProgress, pointsAt) {
+  const queue = targets.slice();
+  let done = 0, ok = 0;
   const worker = async () => {
     while (queue.length) {
       const r = queue.shift();
       try {
         const d = await fetchMillieJson(`https://apis.millie.co.kr/public/content/detail/point/${r[0]}/`, 1);
         r[9] = parseFloat(d?.average_point) || 0; r[10] = d?.point_count || 0;
-      } catch {
-        const p = prev.get(r[0]); r[9] = p?.[9] || 0; r[10] = p?.[10] || 0;
-      }
-      if (++done % 200 === 0 || !queue.length) onProgress?.({ status: `밀리의 서재 별점 ${done.toLocaleString()}/${rows.length.toLocaleString()}`, phase: 'millie', page: done, totalPages: rows.length });
+        pointsAt[r[0]] = new Date().toISOString(); ok++;
+      } catch {}
+      if (++done % 200 === 0 || !queue.length) onProgress?.({ status: `밀리의 서재 별점 ${done.toLocaleString()}/${targets.length.toLocaleString()}`, phase: 'millie', page: done, totalPages: targets.length });
       await new Promise(res => setTimeout(res, 400));
     }
   };
   // 천천히 (6개 동시 + 50ms 간격으로 2만 5천 번 요청했다가 밀리에서 IP가 차단됨)
   await Promise.all(Array.from({ length: 2 }, worker));
+  return { tried: targets.length, ok };
+}
+
+// 별점 받을 책 고르기
+//  all: 전부 / rolling: 별점을 아직 안 받은 책 전부(최대 MILLIE_NEW_MAX) + 받은 지 2주 넘은 책 중 오래된 순으로 전체의 1/14
+const MILLIE_POINTS_DAYS = 14, MILLIE_NEW_MAX = 6000;
+function pickMilliePoints(books, pointsAt, mode) {
+  if (mode === 'all') return { targets: books.slice(), missing: books.filter(r => !pointsAt[r[0]]).length, refresh: books.filter(r => pointsAt[r[0]]).length };
+  const missing = books.filter(r => !pointsAt[r[0]]).slice(0, MILLIE_NEW_MAX);
+  const old = Date.now() - MILLIE_POINTS_DAYS * 864e5;
+  const quota = Math.ceil(books.length / MILLIE_POINTS_DAYS);
+  const refresh = books.filter(r => pointsAt[r[0]] && Date.parse(pointsAt[r[0]]) < old)
+    .sort((a, b) => pointsAt[a[0]].localeCompare(pointsAt[b[0]])).slice(0, quota);
+  return { targets: [...missing, ...refresh], missing: missing.length, refresh: refresh.length };
 }
 
 // 밀리 책 → 크레마 bookId / 통합 목록 항목 / 베스트셀러 / 즐겨찾기에 millieId를 붙이는 제목 색인
@@ -746,7 +761,7 @@ function findMillie(title, author) {
 // 밀리는 공개 목록이 카테고리별 인기 순위(상위 100권)뿐이라 순위에서 빠졌다고 없어진 게 아님 →
 // 한 번 본 책은 계속 두고(누적), 이번에 안 보인 책은 책 상세 API로 하나씩 확인해서 없어진 게 확실할 때만 지운다.
 // 없어짐: 404·400(잘못된 책 번호) 또는 is_serviced=false. 그 밖의 오류는 확인 못 함 → 남김.
-const MILLIE_VERIFY_MAX = 8000; // 한 번에 확인하는 최대 권수 (나머지는 남겨 두고 다음에)
+const MILLIE_VERIFY_MAX = 1500; // 하루에 확인하는 최대 권수 (오래 안 보인 책부터, 나머지는 다음 날)
 async function millieBookState(id) {
   try {
     const r = await fetch(`https://apis.millie.co.kr/v3/content/detail/book/${id}/`, { signal: AbortSignal.timeout(20000), headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36', 'Accept': 'application/json' } });
@@ -787,20 +802,31 @@ async function reconcileMillie(prev, rows, onProgress) {
 }
 
 let millieJob = { running: false, status: null, listeners: new Set() };
-async function runMillieJob() {
+// pointsMode: 'rolling'(매일 자동 동기화) | 'all'(전부 다시)
+async function runMillieJob(pointsMode = 'all') {
   millieJob.running = true;
   const send = (o) => { if (o.status) millieJob.status = o.status; for (const l of millieJob.listeners) l(o); };
   try {
     send({ status: '밀리의 서재 카테고리 받는 중...', phase: 'millie', page: 0, totalPages: 1 });
     const r = await crawlMillie(send);
     if (!r.books.length) throw new Error('받은 책이 없습니다');
-    const m = await reconcileMillie(loadMillie(), r.books, send);
-    fs.writeFileSync(MILLIE_FILE, JSON.stringify({ lastSync: new Date().toISOString(), categories: r.categories, failed: r.failed, books: m.books, seen: m.seen, changes: m.changes }));
+    const prevM = loadMillie();
+    const m = await reconcileMillie(prevM, r.books, send);
+    // 별점 받은 날짜: 처음엔 기록이 없으니, 예전 동기화에서 이미 받은 책은 그 동기화 날짜로 (한꺼번에 다시 받지 않게)
+    const pointsAt = prevM.pointsAt || Object.fromEntries((prevM.books || []).map(x => [x[0], prevM.lastSync || new Date(0).toISOString()]));
+    const keepIds = new Set(m.books.map(x => x[0]));
+    for (const id of Object.keys(pointsAt)) if (!keepIds.has(id)) delete pointsAt[id]; // 지운 책만 (순위에서만 빠진 책은 별점 기록 유지)
+    const pick = pickMilliePoints(m.books, pointsAt, pointsMode);
+    send({ status: `밀리의 서재 별점: 없는 책 ${pick.missing.toLocaleString()} · 2주 지난 책 ${pick.refresh.toLocaleString()}`, phase: 'millie', page: 0, totalPages: pick.targets.length });
+    const pr = await crawlMilliePoints(pick.targets, send, pointsAt);
+    m.changes.points = { mode: pointsMode, missing: pick.missing, refresh: pick.refresh, ok: pr.ok, failed: pr.tried - pr.ok,
+      stillMissing: m.books.filter(x => !pointsAt[x[0]]).length, stale: m.books.filter(x => pointsAt[x[0]] && Date.parse(pointsAt[x[0]]) < Date.now() - MILLIE_POINTS_DAYS * 864e5).length };
+    fs.writeFileSync(MILLIE_FILE, JSON.stringify({ lastSync: new Date().toISOString(), categories: r.categories, failed: r.failed, books: m.books, seen: m.seen, pointsAt, changes: m.changes }));
     millieFinder = null;
     send({ status: '매칭 중...', phase: 'match' });
     rebuildLibMatch();
     const c = m.changes;
-    send({ status: `완료! 밀리의 서재 ${m.books.length.toLocaleString()}권 (이번 순위 ${r.books.length.toLocaleString()} · 새 책 ${c.added} · 없어진 것 확인 ${c.removed} · 순위에만 빠진 책 ${c.kept}${c.unknown ? ` · 확인 못 해 남김 ${c.unknown}` : ''} · 카테고리 ${r.categories}개${r.failed ? `, 실패 ${r.failed}건` : ''})` });
+    send({ status: `완료! 밀리의 서재 ${m.books.length.toLocaleString()}권 (이번 순위 ${r.books.length.toLocaleString()} · 새 책 ${c.added} · 없어진 것 확인 ${c.removed} · 순위에만 빠진 책 ${c.kept}${c.unknown ? ` · 확인 못 해 남김 ${c.unknown}` : ''} · 별점 ${pr.ok.toLocaleString()}/${pr.tried.toLocaleString()}권 받음 · 카테고리 ${r.categories}개${r.failed ? `, 실패 ${r.failed}건` : ''})` });
     send({ done: true });
   } catch (e) {
     send({ error: e.message });
@@ -821,7 +847,7 @@ app.get('/api/millie/sync', (req, res) => {
   millieJob.listeners.add(send);
   res.on('close', () => millieJob.listeners.delete(send));
   if (millieJob.running) send({ status: '이미 진행 중인 동기화에 연결됨 · ' + (millieJob.status || ''), phase: 'millie' });
-  else runMillieJob();
+  else runMillieJob(req.query.points === 'rolling' ? 'rolling' : 'all');
 });
 
 // 책 팝업용: 밀리 책 상세에서 전체 페이지 수 (팝업을 열 때 한 권씩, 메모리에 캐시)
@@ -1310,6 +1336,6 @@ rebuildLibMatch();
 process.on('SIGINT', () => { try { saveKdc(true); } finally { process.exit(0); } });
 
 app.listen(PORT, () => {
-  console.log(`\n  도서 브라우저`);
+  console.log(`\n  전자책 검색`);
   console.log(`  http://localhost:${PORT}\n`);
 });
