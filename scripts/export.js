@@ -9,6 +9,7 @@ const ROOT = path.join(__dirname, '..');
 const ENDPOINTS = {
   '/api/data': 'api/data.json',
   '/api/millie/data': 'api/millie-data.json',
+  '/api/ridi/data': 'api/ridi-data.json',
   '/api/libs/data': 'api/libs-data.json',
   '/api/libs/merged': 'api/libs-merged.json',
   '/api/seoul/data': 'api/seoul-data.json',
@@ -23,7 +24,7 @@ const ENDPOINTS = {
     const r = await fetch(BASE + ep);
     if (!r.ok) throw new Error(`${ep}: HTTP ${r.status}`);
     const j = await r.json();
-    if (ep === '/api/millie/data' || ep === '/api/libs/data') { j.running = false; j.status = null; }
+    if (ep === '/api/millie/data' || ep === '/api/ridi/data' || ep === '/api/libs/data') { j.running = false; j.status = null; }
     if (ep === '/api/kdc') j.job = { running: false, stage: '완료', done: 0, total: 0 };
     got[ep] = j;
     const s = JSON.stringify(j);
@@ -31,11 +32,12 @@ const ENDPOINTS = {
     console.log(`${file}: ${(s.length / 1e6).toFixed(1)}MB`);
   }
   // 관리자 화면용 데이터 현황 (작은 파일)
-  const d = got['/api/data'], m = got['/api/millie/data'];
+  const d = got['/api/data'], m = got['/api/millie/data'], r = got['/api/ridi/data'];
   const status = {
     crema: { count: d.books?.length || 0, lastSync: d.lastSync || null, lastCrawl: d.lastCremaCrawl || null, changes: d.cremaChanges || null },
     bestsellers: { lists: Object.fromEntries(Object.entries(d.bestsellerLists || {}).map(([k, v]) => [k, v.length])), lastSync: d.bestsellerSync || null },
     millie: { count: m.count || 0, lastSync: m.lastSync || null, changes: m.changes || null },
+    ridi: { count: r.count || 0, lastSync: r.lastSync || null, changes: r.changes || null },
     kdc: { count: Object.keys(got['/api/kdc'].map || {}).length },
     libs: Object.fromEntries(got['/api/libs/data'].libs.map(x => [x.key, { name: x.name, count: x.count || 0, total: x.total || 0, lastSync: x.lastSync || null, failedPages: x.failedPages || 0, error: x.error || null, detail: x.detail || null, changes: x.changes || null }])),
   };

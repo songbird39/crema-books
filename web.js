@@ -12,6 +12,7 @@
   const STATIC_API = {
     '/api/data': 'api/data.json',
     '/api/millie/data': 'api/millie-data.json',
+    '/api/ridi/data': 'api/ridi-data.json',
     '/api/libs/data': 'api/libs-data.json',
     '/api/libs/merged': 'api/libs-merged.json',
     '/api/seoul/data': 'api/seoul-data.json',
@@ -46,13 +47,14 @@
   // 서버의 enrichFav와 같은 일: 크레마·밀리·도서관 소장 정보를 지금 데이터로 붙인다
   let ix = null, ixSrc = [];
   function index() {
-    const src = [data.books, mergedData, millieData.books, libsData.cremaLibIds];
+    const src = [data.books, mergedData, millieData.books, libsData.cremaLibIds, ridiData.books];
     if (!ix || src.some((s, i) => s !== ixSrc[i])) {
       ixSrc = src;
       ix = {
         cremaById: new Map(data.books.map(b => [b.bookId, b])),
         findCrema: Match.buildTitleIndex(data.books),
         findMerged: mergedData ? Match.buildTitleIndex(mergedData) : () => null,
+        findRidi: ridiData.books ? Match.buildTitleIndex(ridiData.books.map(([id, title, author]) => ({ id, title, author }))) : () => null,
         findMillie: millieData.books ? Match.buildTitleIndex(millieData.books.map(([id, title, author]) => ({ id, title, author }))) : () => null,
       };
     }
@@ -68,7 +70,7 @@
       libIds = { ...(cremaLibIds[cb.bookId] || {}) };
       if (seoulMatch[cb.bookId]) libIds.seoul = seoulMatch[cb.bookId];
     } else libIds = x.findMerged(f.title, f.author || '')?.ids || {};
-    return { ...f, millieId: x.findMillie(cb?.title || f.title, cb?.author || f.author || '')?.id || null, cremaId: cb?.bookId || null,
+    return { ...f, millieId: x.findMillie(cb?.title || f.title, cb?.author || f.author || '')?.id || null, ridiId: x.findRidi(cb?.title || f.title, cb?.author || f.author || '')?.id || null, cremaId: cb?.bookId || null,
       crema: cb ? { rating: cb.rating, reviews: cb.reviews, cover: cb.cover } : null, libIds };
   }
   // 즐겨찾기 탭에선 도서관 통합 목록·밀리 목록까지 받은 뒤에 붙인다 (다른 탭에선 별 표시만 필요해서 기다리지 않음)

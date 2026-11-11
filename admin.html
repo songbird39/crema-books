@@ -116,6 +116,7 @@ let LIB_DETAIL = {}; // 도서관 key → 상세 페이지 주소 템플릿 ({id
 const LINKS = {
   crema: (id) => `https://cremaclub.yes24.com/BookClub/Detail/${encodeURIComponent(id)}`,
   millie: (id) => `https://www.millie.co.kr/v4/book/${encodeURIComponent(id)}`,
+  ridi: (id) => `https://select.ridibooks.com/book/${encodeURIComponent(id)}`,
   lib: (key) => (id) => LIB_DETAIL[key] ? LIB_DETAIL[key].replace('{id}', encodeURIComponent(id)) : null,
 };
 const WARN = { incomplete: '다 받지 못해서 아무것도 지우지 않음', drop: '받은 권수가 이전보다 크게 줄어서 아무것도 지우지 않음 ⚠' };
@@ -133,10 +134,10 @@ function changesHtml(name, c, link, millie) {
   const w = c.warning ? ` ${badge('partial', WARN[c.warning] || c.warning)}` : '';
   const p = c.points; // 밀리 별점
   const pts = p ? `<div class="mute" style="font-size:12px;margin:2px 0 4px">별점 ${p.mode === 'all' ? '전부 다시' : '나눠 받기'}: 처음 받은 책 ${n(p.missing)} · 2주 지나 갱신 ${n(p.refresh)} · 성공 ${n(p.ok)}${p.failed ? ` · <span class="err">실패 ${n(p.failed)}</span>` : ''} — 아직 못 받은 책 ${n(p.stillMissing)} · 2주 넘은 책 ${n(p.stale)}</div>` : '';
-  const head = `<div class="head">${esc(name)} <span class="mute">· 이전 ${n(c.prev)} → 이번 순위 ${n(c.received)}</span>${w}</div>${pts}`;
+  const head = `<div class="head">${esc(name)} <span class="mute">· 이전 ${n(c.prev)} → 이번에 받음 ${n(c.received)}</span>${w}</div>${pts}`;
   const lists = millie
     ? bookList('없어진 것을 확인해서 지운 책', c.removedSample, c.removed, link, true)
-      + bookList('순위에서만 빠진 책 (밀리에 있음, 남김)', c.keptSample, c.kept, link)
+      + bookList(millie === 'ridi' ? '목록에서만 빠진 책 (리디에 있음, 남김)' : '순위에서만 빠진 책 (밀리에 있음, 남김)', c.keptSample, c.kept, link)
       + bookList('확인하지 못해서 남긴 책', c.unknownSample, c.unknown, link)
       + bookList('새 책', c.addedSample, c.added, link)
     : bookList('지운 책 (연속 2번 안 보임)', c.removedSample, c.removed, link, true)
@@ -151,10 +152,11 @@ function allChanges(snap, since) {
   let h = '';
   if (fresh(snap.crema.changes)) h += changesHtml('크레마클럽', snap.crema.changes, LINKS.crema);
   if (fresh(snap.millie.changes)) h += changesHtml('밀리의 서재', snap.millie.changes, LINKS.millie, true);
+  if (fresh(snap.ridi?.changes)) h += changesHtml('리디셀렉트', snap.ridi.changes, LINKS.ridi, 'ridi');
   for (const [k, l] of Object.entries(snap.libs)) { if (l.detail) LIB_DETAIL[k] ||= l.detail; if (fresh(l.changes)) h += changesHtml(l.name, l.changes, LINKS.lib(k)); }
   return h;
 }
-const removedTotal = (snap, since) => !snap ? 0 : [snap.crema.changes, snap.millie.changes, ...Object.values(snap.libs).map(l => l.changes)]
+const removedTotal = (snap, since) => !snap ? 0 : [snap.crema.changes, snap.millie.changes, snap.ridi?.changes, ...Object.values(snap.libs).map(l => l.changes)]
   .filter(c => c && (!since || c.at >= since)).reduce((a, c) => a + (c.removed || 0), 0);
 
 async function main() {
@@ -195,6 +197,7 @@ function renderStatus(s) {
   <div class="cards">
     ${card('크레마클럽', n(s.crema.count) + '권', '크롤링 ' + ago(s.crema.lastCrawl || s.crema.lastSync), stale(s.crema.lastCrawl || s.crema.lastSync, 2))}
     ${card('밀리의 서재', n(s.millie.count) + '권', '동기화 ' + ago(s.millie.lastSync), stale(s.millie.lastSync, 9))}
+    ${s.ridi ? card('리디셀렉트', n(s.ridi.count) + '권', '동기화 ' + ago(s.ridi.lastSync), stale(s.ridi.lastSync, 2)) : ''}
     ${card('베스트셀러', ago(s.bestsellers.lastSync), best, stale(s.bestsellers.lastSync, 2))}
     ${card('도서관', `${okLibs}/${libs.length}곳 정상`, '3일 넘었거나 오류면 표시', okLibs < libs.length)}
     ${card('십진분류', n(s.kdc.count) + '권', '국립중앙도서관 조회')}
@@ -224,6 +227,7 @@ function runSummary(r) {
   const b = s.before, a = s.after;
   if (a) parts.push(`크레마 ${n(a.crema.count)}${delta(b?.crema.count, a.crema.count)}`);
   if (a) parts.push(`밀리 ${n(a.millie.count)}${delta(b?.millie.count, a.millie.count)}`);
+  if (a?.ridi) parts.push(`리디 ${n(a.ridi.count)}${delta(b?.ridi?.count, a.ridi.count)}`);
   const rm = removedTotal(a, r.started_at);
   if (rm) parts.push(`<span class="down">지운 책 ${n(rm)}</span>`);
   const failed = (s.steps || []).filter(x => !x.ok).map(x => x.name);
@@ -256,6 +260,7 @@ function runDetail(r) {
     h += `<h3>그 밖의 데이터</h3><table>
       <tr><td>크레마클럽</td><td class="num">${n(s.before.crema.count)} → ${n(s.after.crema.count)}${delta(s.before.crema.count, s.after.crema.count)}</td></tr>
       <tr><td>밀리의 서재</td><td class="num">${n(s.before.millie.count)} → ${n(s.after.millie.count)}${delta(s.before.millie.count, s.after.millie.count)}</td></tr>
+      ${s.after.ridi ? `<tr><td>리디셀렉트</td><td class="num">${n(s.before.ridi?.count)} → ${n(s.after.ridi.count)}${delta(s.before.ridi?.count, s.after.ridi.count)}</td></tr>` : ''}
       <tr><td>십진분류</td><td class="num">${n(s.before.kdc.count)} → ${n(s.after.kdc.count)}${delta(s.before.kdc.count, s.after.kdc.count)}</td></tr>
       <tr><td>베스트셀러 목록</td><td class="num">${Object.entries(bl).map(([k, v]) => `${esc(k)} ${v}`).join(' · ')}</td></tr></table>`;
   }

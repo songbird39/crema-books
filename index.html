@@ -467,6 +467,8 @@
   .popup h3 .star { font-size: 18px; padding: 0 6px 0 0; vertical-align: -1px; }
   .badge.tag-yes { background: var(--c1e4620); color: var(--c5be37a); font-weight: 600; }
   .badge.tag-no { background: var(--c3a2020); color: var(--ce57373); font-weight: 600; }
+  .badge.tag-ridi { background: rgba(31,140,230,.16); color: #3d9df0; font-weight: 600; }
+  [data-theme="light"] .badge.tag-ridi { color: #1f7cd0; }
   .badge.tag-millie { background: var(--c3a3410); color: var(--cf5d442); font-weight: 600; }
   .badge.tag-unknown { background: var(--c2a2a2a); color: var(--c888); font-weight: 600; }
   .badge.tag-audio { background: var(--c2a2140); color: var(--cb39ddb); font-weight: 600; }
@@ -498,7 +500,7 @@
   .sync-summary .time { color: var(--c555); }
 
   /* 설정 */
-  html.no-crema #btnCremaFilter, html.no-millie #btnMillieFilter, html.no-libs #btnLibFilter { display: none; }
+  html.no-crema #btnCremaFilter, html.no-millie #btnMillieFilter, html.no-libs #btnLibFilter, html.no-ridi #btnRidiFilter { display: none; }
   .settings-sec { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--c444); }
   .settings-sec h4 { font-size: 13px; color: var(--c999); margin-bottom: 6px; }
   .settings-note { font-size: 12px; color: var(--c888); margin-bottom: 8px; }
@@ -555,6 +557,7 @@
   <div class="tab-list"><!-- 모바일에선 짧은 이름(.tl-long 숨김) + 옆으로 밀기 -->
   <div class="tab active" data-tab="crema" onclick="switchTab('crema')">크레마<span class="tl-long">클럽</span></div>
   <div class="tab" data-tab="millie" onclick="switchTab('millie')">밀리<span class="tl-long">의 서재</span></div>
+  <div class="tab" data-tab="ridi" onclick="switchTab('ridi')">리디<span class="tl-long">셀렉트</span></div>
   <div class="tab" data-tab="libs" onclick="switchTab('libs')"><span class="tl-long">서울</span>도서관</div>
   <div class="tab" data-tab="best" onclick="switchTab('best')">추천<span class="tl-long"> 목록</span></div>
   <div class="tab" data-tab="favs" onclick="switchTab('favs')">즐겨찾기 <span id="favCount"></span></div>
@@ -586,6 +589,7 @@
   <span class="ctl-divider"></span>
   <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
   <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
   <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
   <span class="slider-area" id="sliderArea"></span>
 </div>
@@ -633,12 +637,32 @@ const millieFormats = (g) => [g.ebookId && '전자책', g.audioId && '오디오�
 const millieBookUrl = (id) => `https://www.millie.co.kr/v4/book/${id}`;
 const millieSearchUrl = (title) => `https://www.millie.co.kr/v3/search/result/${encodeURIComponent(title)}?type=total`;
 // 상세 팝업의 바깥 링크: 모두 네모 배경 배지 (크레마 초록, 밀리 노랑)
-const LINK_COLORS = { crema: 'var(--c1e4620);color:var(--c5be37a)', millie: 'var(--c3a3410);color:var(--cf5d442)' };
+const LINK_COLORS = { crema: 'var(--c1e4620);color:var(--c5be37a)', millie: 'var(--c3a3410);color:var(--cf5d442)', ridi: 'rgba(31,140,230,.16);color:#3d9df0' };
 const linkBadge = (kind, href, label) => `<a class="cross-badge" href="${href}" target="_blank" rel="noopener" style="background:${LINK_COLORS[kind]};text-decoration:none;margin:2px 4px 2px 0;display:inline-block">${label} ↗</a>`;
 function millieLinks(g) {
   const a = (id, label) => linkBadge('millie', millieBookUrl(id), label);
   return [g.ebookId && a(g.ebookId, '전자책'), g.audioId && a(g.audioId, '오디오북')].filter(Boolean).join(' ');
 }
+// ─── 리디셀렉트: 셀렉트 전체 목록 (카테고리별로 끝까지 받음 → '없음'도 확실) ───
+// 줄: [id, 제목, 저자, 출판사, 카테고리, 별점(5점), 평가 수, 카테고리 안 인기 순위]
+let ridiData = { lastSync: null, count: 0, cremaToRidi: {}, millieToRidi: {} };
+let ridiBooks = [], ridiById = new Map();
+function setRidiData(j) {
+  ridiData = j;
+  const match = j.ridiMatch || {};
+  ridiById = new Map();
+  ridiBooks = (j.books || []).map(([id, title, author, publisher, cat, star = 0, starN = 0, rank = 0]) => {
+    const m = match[id] || {};
+    const g = { id, title, author, publisher, genre: cat || '기타', star, starN, rank, cover: `https://img.ridicdn.net/cover/${id}/large`,
+      cremaId: m.cremaId || null, millieId: m.millieId || null, libIds: m.libIds || {} };
+    ridiById.set(id, g);
+    return g;
+  });
+}
+const ridiBookUrl = (id) => `https://select.ridibooks.com/book/${id}`;
+const ridiSearchUrl = (title) => `https://select.ridibooks.com/search?q=${encodeURIComponent(title)}`;
+// 어느 책이든 → 리디셀렉트 책 ID (서버가 붙인 ridiId, 없으면 크레마·밀리 연결로)
+const ridiOf = (x) => !x ? null : (x.ridiId && ridiById.has(x.ridiId) ? x.ridiId : null) || (x.cremaId && ridiData.cremaToRidi?.[x.cremaId]) || (x.millieId && ridiData.millieToRidi?.[x.millieId]) || null;
 let mergedData = null; // 도서관 통합 목록 (탭을 열 때 불러옴)
 
 // ─── 즐겨찾기 ───
@@ -753,6 +777,7 @@ async function loadData() {
 
     loadFavorites();
     fetch('/api/millie/data').then(r => r.json()).then(j => { setMillieData(j); updateMeta(); if (currentTab !== 'favs') render(); if (j.running) syncMillie(); }).catch(() => {});
+    fetch('/api/ridi/data').then(r => r.json()).then(j => { setRidiData(j); updateMeta(); if (currentTab !== 'favs') render(); if (j.running) syncRidi(); }).catch(() => {});
     fetch('/api/libs/data').then(r => r.json()).then(j => {
       if (j && j.libs) { libsData = j; updateMeta(); if (currentTab === 'crema' || isBestTab()) render(); }
       // 서버에서 구립도서관 동기화가 돌고 있으면 진행 상황에 다시 연결
@@ -782,6 +807,7 @@ function switchTab(tab) {
       <select class="genre-select" id="genreSelect" onchange="render()"><option value="">전체 장르</option></select>${kdcSelectHtml()}
       <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
       <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
       <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
       ${sliderHtml()}`;
   } else if (tab === 'millie') {
@@ -793,8 +819,20 @@ function switchTab(tab) {
       <select class="genre-select" id="genreSelect" onchange="render()"><option value="">전체 장르</option></select>${kdcSelectHtml()}
       <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
       <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
+      <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
       <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
       ${sliderHtml()}`;
+  } else if (tab === 'ridi') {
+    currentSort = 'popular';
+    controls.innerHTML = `
+      <button class="sort-btn active" data-sort="popular" onclick="setSort('popular')">인기순</button>
+      <button class="sort-btn" data-sort="rating" onclick="setSort('rating')">별점순</button>
+      <button class="sort-btn" data-sort="reviews" onclick="setSort('reviews')">평가수순</button>
+      <select class="genre-select" id="genreSelect" onchange="render()"><option value="">전체 장르</option></select>${kdcSelectHtml()}
+      <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
+      <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
+      <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>`;
   } else if (isBestTab(tab)) {
     // 추천 목록: 베스트셀러(YES24·알라딘) + 문학상 + 추천 목록을 드롭다운 하나로 고르고, 세로선 오른쪽은 필터
     currentSort = 'yes24';
@@ -803,9 +841,10 @@ function switchTab(tab) {
       <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
       <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
       <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
       <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
       <button class="sort-btn filter-btn" id="btnNotrFilter" onclick="cycleFilter('notr')" title="한국어 번역본을 확인하지 못한 책 숨기기">번역 없음 제외</button>
-      <button class="sort-btn filter-btn" id="btnNoebFilter" onclick="cycleFilter('noeb')" title="크레마·밀리 전자책·도서관 어디에도 없는 책 숨기기">전자책 없음 제외</button>`;
+      <button class="sort-btn filter-btn" id="btnNoebFilter" onclick="cycleFilter('noeb')" title="크레마·밀리 전자책·리디·도서관 어디에도 없는 책 숨기기">전자책 없음 제외</button>`;
     renderListDD(); ensureAwards().then(renderListDD); // 드롭다운 숫자용
   } else if (tab === 'favs') {
     currentSort = 'added';
@@ -816,6 +855,7 @@ function switchTab(tab) {
       <button class="sort-btn filter-btn" id="btnLibFilter" onclick="cycleFilter('lib')">도서관: 전체</button>
       <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
       <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
       `;
     loadFavorites().then(() => { if (currentTab === 'favs') render(); }); // 소장 정보 최신으로
   } else if (tab === 'libs') {
@@ -827,6 +867,7 @@ function switchTab(tab) {
       <button class="sort-btn" data-sort="title" onclick="setSort('title')">제목순</button>
       <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
       <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
+      <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
       <button class="sort-btn filter-btn" id="btnFavFilter" onclick="cycleFilter('fav')">☆ 즐겨찾기</button>
       `;
     if (!mergedData) {
@@ -838,7 +879,7 @@ function switchTab(tab) {
     currentSort = '';
     controls.innerHTML = `<select class="genre-select" id="searchField" onchange="render()">
         <option value="all">전체</option><option value="title">제목</option><option value="author">저자</option>
-      </select><input class="search-input" id="globalSearch" placeholder="제목이나 저자로 검색 — 크레마클럽 · 밀리의 서재 · 도서관 전체에서 찾아요 (비워 두면 목록 검색)" oninput="clearTimeout(searchTimer); searchTimer = setTimeout(render, 250)" autofocus>`;
+      </select><input class="search-input" id="globalSearch" placeholder="제목이나 저자로 검색 — 크레마클럽 · 밀리의 서재 · 리디셀렉트 · 도서관 전체에서 찾아요 (비워 두면 목록 검색)" oninput="clearTimeout(searchTimer); searchTimer = setTimeout(render, 250)" autofocus>`;
     ensureMerged().then(() => { if (currentTab === 'search') render(); }).catch(() => {});
     setTimeout(() => document.getElementById('globalSearch')?.focus(), 0);
   }
@@ -934,10 +975,10 @@ function renderSyncButton() {
   // 탭 줄은 좁아서 월/일만 (한국 시각), 마우스를 올리면 자세히
   const t = (name, iso) => `<span class="t" title="${iso ? KST.format(new Date(iso)) + ' (' + fmtDate(iso) + ')' : '미동기화'}">${name} <b>${fmtMD(iso)}</b></span>`;
   btn.classList.toggle('busy', busy);
-  const oldest = [data.lastSync, libsLast, millieData.lastSync, data.bestsellerSync].filter(Boolean).sort()[0];
+  const oldest = [data.lastSync, libsLast, millieData.lastSync, ridiData.lastSync, data.bestsellerSync].filter(Boolean).sort()[0];
   btn.innerHTML = (busy ? '<span class="busy-label">동기화 중…</span>' : '')
     + `<span class="t-m">동기화 <b>${fmtMD(oldest)}</b></span>` // 모바일: 가장 오래된 날짜 하나만
-    + t('크레마', data.lastSync) + t('도서관', libsLast) + t('밀리', millieData.lastSync) + t('베스트', data.bestsellerSync) + ' ▾';
+    + t('크레마', data.lastSync) + t('도서관', libsLast) + t('밀리', millieData.lastSync) + t('리디', ridiData.lastSync) + t('베스트', data.bestsellerSync) + ' ▾';
 }
 
 function updateSyncSummary() {
@@ -949,6 +990,7 @@ function updateSyncSummary() {
     <div class="src"><span class="dot ${cremaOk ? 'ok' : 'none'}"></span>크레마클럽 <span class="cnt">${data.books.length.toLocaleString()}권</span> <span class="time">${fmtDate(data.lastSync)}</span><button class="btn-mini" onclick="sync()">동기화</button></div>
     ${libsSummary()}
     <div class="src"><span class="dot ${millieData.count ? 'ok' : 'none'}"></span>밀리의 서재 <span class="cnt">${millieData.count.toLocaleString()}권</span> <span class="time" title="로그인 없이 볼 수 있는 카테고리별 상위 도서만">인기 도서만 · ${fmtDate(millieData.lastSync)}</span><button class="btn-mini" onclick="syncMillie()">동기화</button></div>
+    <div class="src"><span class="dot ${ridiData.count ? 'ok' : 'none'}"></span>리디셀렉트 <span class="cnt">${ridiData.count.toLocaleString()}권</span> <span class="time">${fmtDate(ridiData.lastSync)}</span><button class="btn-mini" onclick="syncRidi()">동기화</button></div>
     <div class="src"><span class="dot ${data.bestsellerLists ? 'ok' : 'none'}"></span>베스트셀러 <span class="time">${fmtDate(data.bestsellerSync)}</span><button class="btn-mini" id="btnBestSync" onclick="syncBestsellers()">새로고침</button></div>
   `;
 }
@@ -1064,7 +1106,7 @@ async function kdcFlush() {
 }
 function fillKdcEl(el, c) { el.classList.remove('pend'); el.textContent = c.slice(0, 3); el.title = c + ' ' + kdcDesc(c); }
 // 백번대 필터
-const KDC_FILTER_TABS = ['crema', 'millie', 'libs', 'favs'];
+const KDC_FILTER_TABS = ['crema', 'millie', 'ridi', 'libs', 'favs'];
 function kdcSelectHtml() {
   return '<select class="genre-select" id="kdcSelect" onchange="render(); refreshKdcPanel()" title="십진분류 (국립중앙도서관 분류번호)"></select>'
     + '<button class="sort-btn kdc-btn" id="kdcDetailBtn" onclick="toggleKdcPanel(event)" title="10번대·세부 번호로 포함/제외">세부 분류</button>';
@@ -1124,6 +1166,7 @@ function updateKdcBtn() {
 function kdcTabBooks() {
   if (currentTab === 'crema') return [data.books, b => b.title, b => b.author];
   if (currentTab === 'millie') return [millieBooks, b => b.title, b => b.author];
+  if (currentTab === 'ridi') return [ridiBooks, b => b.title, b => b.author];
   if (currentTab === 'libs') return [mergedData || [], b => b.title, b => b.author];
   if (currentTab === 'favs') return [favorites, b => b.title, b => b.author];
   return [[], b => b.title, b => b.author];
@@ -1198,7 +1241,7 @@ const crGenreRank = (g) => { const i = CREMA_GENRE_ORDER.indexOf(g); return i < 
 function buildGenreOptions() {
   const select = document.getElementById('genreSelect');
   if (!select) return;
-  const books = currentTab === 'crema' ? data.books : currentTab === 'millie' ? millieBooks : [];
+  const books = currentTab === 'crema' ? data.books : currentTab === 'millie' ? millieBooks : currentTab === 'ridi' ? ridiBooks : [];
   const genres = new Set();
   for (const b of books) {
     if (b.genre) genres.add(b.genre);
@@ -1353,6 +1396,7 @@ async function sync() {
 
 function syncLibs() { syncJob('/api/libs/sync', '도서관 동기화 중...'); }
 function syncMillie() { syncJob('/api/millie/sync', '밀리의 서재 동기화 중...'); }
+function syncRidi() { syncJob('/api/ridi/sync', '리디셀렉트 동기화 중...'); }
 
 // 서버 백그라운드 작업(도서관/밀리) 진행 상황을 받아 보여주고, 끝나면 데이터를 모두 다시 받는다
 function syncJob(url, label) {
@@ -1396,6 +1440,7 @@ function syncJob(url, label) {
         fetch('/api/seoul/data').then(r => r.json()).then(j => { if (j && j.books) seoulData = j; }),
         fetch('/api/data').then(r => r.json()).then(j => { if (j && j.books) data = j; }),
         fetch('/api/millie/data').then(r => r.json()).then(j => { setMillieData(j); }),
+        fetch('/api/ridi/data').then(r => r.json()).then(j => { setRidiData(j); }),
         loadFavorites(),
       ]).then(() => { if (currentTab === 'libs') switchTab('libs'); else render(); })
         .finally(() => { document.getElementById('progressStatus').textContent = finalStatus; done(); });
@@ -1429,6 +1474,7 @@ function render() {
   else if (currentTab === 'crema' || isBestTab()) sortedBooks = getSortedCrema();
   else if (currentTab === 'favs') sortedBooks = getSortedFavs();
   else if (currentTab === 'millie') sortedBooks = getSortedMillie();
+  else if (currentTab === 'ridi') sortedBooks = getSortedRidi();
   else if (currentTab === 'search') sortedBooks = getSearchResults();
   else { if (!mergedData) return; sortedBooks = getSortedMerged(); }
   displayCount = 0;
@@ -1440,7 +1486,7 @@ function render() {
 // 결과 수: 별도 줄 대신 정렬 줄 맨 왼쪽에
 function setResultCount(html) {
   // 크레마·밀리·서울도서관 탭은 전체 목록이라 권수를 보여주지 않음
-  if (['crema', 'millie', 'libs'].includes(currentTab)) { document.getElementById('resultCount')?.remove(); return; }
+  if (['crema', 'millie', 'ridi', 'libs'].includes(currentTab)) { document.getElementById('resultCount')?.remove(); return; }
   const controls = document.getElementById('controlsArea');
   let el = document.getElementById('resultCount');
   if (!el) {
@@ -1470,7 +1516,7 @@ function loadMore() {
       content.innerHTML = window.favEmptyHtml ? favEmptyHtml() : '<div class="empty"><p>목록에서 ☆를 눌러 관심 책을 추가하세요</p></div>';
       return;
     }
-    const hasData = currentTab === 'millie' ? millieBooks.length : currentTab === 'crema' || isBestTab() ? data.books.length : currentTab === 'favs' ? favorites.length : mergedData?.length;
+    const hasData = currentTab === 'millie' ? millieBooks.length : currentTab === 'ridi' ? ridiBooks.length : currentTab === 'crema' || isBestTab() ? data.books.length : currentTab === 'favs' ? favorites.length : mergedData?.length;
     setResultCount('0권');
     const awardWait = isBestTab() && currentSort.startsWith('award:') && !awardsData;
     content.innerHTML = `${isBestTab() ? awardAuthorHeader() : ''}<div class="empty"><p>${awardWait ? '수상작 목록 불러오는 중…' : hasData ? '결과 없음' : '동기화 버튼을 눌러 도서 목록을 가져오세요'}</p></div>`;
@@ -1498,6 +1544,8 @@ function loadMore() {
     for (let i = start; i < end; i++) html += renderFavItem(sortedBooks[i], i);
   } else if (currentTab === 'millie') {
     for (let i = start; i < end; i++) html += renderMillieItem(sortedBooks[i], i);
+  } else if (currentTab === 'ridi') {
+    for (let i = start; i < end; i++) html += renderRidiItem(sortedBooks[i], i);
   } else if (currentTab === 'search') {
     for (let i = start; i < end; i++) html += renderSearchItem(sortedBooks[i], i);
   } else {
@@ -1524,11 +1572,11 @@ function loadMore() {
 
 // 크레마 탭 순환 필터: '' (전체) → 'has' (있음) → 'none' (없음) → ''
 // 탭마다 따로: 크레마 탭은 도서관·크레마, 도서관 탭은 크레마
-const filterState = { crema: { lib: '', millie: '', fav: '', rating: 0 }, millie: { lib: '', crema: '', fav: '', mstar: 0, mpct: 0, mtime: 0 }, best: { lib: '', crema: '', millie: '', fav: '', notr: '', noeb: '' }, libs: { crema: '', millie: '', fav: '' }, favs: { lib: '', crema: '', millie: '' } };
+const filterState = { crema: { lib: '', millie: '', ridi: '', fav: '', rating: 0 }, millie: { lib: '', crema: '', ridi: '', fav: '', mstar: 0, mpct: 0, mtime: 0 }, ridi: { lib: '', crema: '', millie: '', fav: '' }, best: { lib: '', crema: '', millie: '', ridi: '', fav: '', notr: '', noeb: '' }, libs: { crema: '', millie: '', ridi: '', fav: '' }, favs: { lib: '', crema: '', millie: '', ridi: '' } };
 const isBestTab = (tab = currentTab) => tab === 'best';
 const curFilters = () => filterState[currentTab];
-const FILTER_LABELS = { lib: ['도서관: 전체', '도서관 있음', '도서관 없음'], crema: ['크레마: 전체', '크레마 있음', '크레마 없음'], millie: ['밀리: 전체', '밀리 있음', '밀리 오디오북', '밀리 없음'], fav: ['☆ 즐겨찾기', '★ 즐겨찾기만'], notr: ['번역 없음 제외', '번역 없음 제외'], noeb: ['전자책 없음 제외', '전자책 없음 제외'] };
-const FILTER_BTN_IDS = { lib: 'btnLibFilter', crema: 'btnCremaFilter', millie: 'btnMillieFilter', fav: 'btnFavFilter', notr: 'btnNotrFilter', noeb: 'btnNoebFilter' };
+const FILTER_LABELS = { lib: ['도서관: 전체', '도서관 있음', '도서관 없음'], crema: ['크레마: 전체', '크레마 있음', '크레마 없음'], millie: ['밀리: 전체', '밀리 있음', '밀리 오디오북', '밀리 없음'], ridi: ['리디: 전체', '리디 있음', '리디 없음'], fav: ['☆ 즐겨찾기', '★ 즐겨찾기만'], notr: ['번역 없음 제외', '번역 없음 제외'], noeb: ['전자책 없음 제외', '전자책 없음 제외'] };
+const FILTER_BTN_IDS = { lib: 'btnLibFilter', crema: 'btnCremaFilter', millie: 'btnMillieFilter', ridi: 'btnRidiFilter', fav: 'btnFavFilter', notr: 'btnNotrFilter', noeb: 'btnNoebFilter' };
 const FILTER_STATES = ['', 'has', 'none'];
 // 밀리는 전자책 있음(태그 '밀리') / 오디오북만(태그 '밀리 오디오북') / 없음(인기 목록에서 못 찾음)
 const MILLIE_STATES = ['', 'has', 'audio', 'none'];
@@ -1537,6 +1585,10 @@ const millieState = (id) => { const g = id && millieById.get(id); return !g ? 'n
 // 목록 필터: idOf(책) → 밀리 책 ID
 function filterMillie(books, f, idOf) {
   return f.millie ? books.filter(b => millieState(idOf(b)) === f.millie) : books;
+}
+// 목록 필터: idOf(책) → 리디셀렉트 책 ID (없으면 null)
+function filterRidi(books, f, idOf) {
+  return f.ridi === 'has' ? books.filter(b => idOf(b)) : f.ridi === 'none' ? books.filter(b => !idOf(b)) : books;
 }
 function cycleFilter(which) {
   const f = curFilters();
@@ -1646,7 +1698,7 @@ function filterSliders(books, f, cremaOf) {
 
 function updateFilterButtons() {
   syncSliders();
-  const f = curFilters();
+  const f = curFilters() || {}; // 검색 탭엔 필터가 없음
   for (const which of Object.keys(f)) {
     const btn = document.getElementById(FILTER_BTN_IDS[which]);
     if (!btn) continue;
@@ -1688,9 +1740,11 @@ function getSortedCrema() {
   else if (f.lib === 'none') books = books.filter(b => !libKeysOf(b).length);
   // 밀리 '없음'은 인기 도서 목록에서 못 찾았다는 뜻
   books = filterMillie(books, f, b => b.best ? b.best.millieId : millieData.cremaToMillie[b.bookId]);
+  const ridiOfB = (b) => b.best ? ridiOf(b.best) : ridiData.cremaToRidi?.[b.bookId];
+  books = filterRidi(books, f, ridiOfB);
   if (f.fav) books = books.filter(b => isFav(b.best ? { title: b.best.title, author: b.best.author } : { title: b.title, author: b.author, cremaId: b.bookId }));
   books = filterSliders(books, f, b => b.best ? null : b);
-  if (f.noeb) books = books.filter(b => (!b.best && plat('crema')) || (plat('libs') && libKeysOf(b).length) || (plat('millie') && millieState(b.best ? b.best.millieId : millieData.cremaToMillie[b.bookId]) === 'has'));
+  if (f.noeb) books = books.filter(b => (!b.best && plat('crema')) || (plat('libs') && libKeysOf(b).length) || (plat('millie') && millieState(b.best ? b.best.millieId : millieData.cremaToMillie[b.bookId]) === 'has') || (plat('ridi') && ridiOfB(b)));
   if (BEST_SORTS.includes(currentSort)) {
     if (f.crema === 'has') books = books.filter(b => !b.best);
     else if (f.crema === 'none') books = books.filter(b => b.best);
@@ -1720,7 +1774,7 @@ function getSearchResults() {
   const raw = document.getElementById('globalSearch')?.value || '';
   if (!squash(raw)) return [];
   return searchCatalog(raw, document.getElementById('searchField')?.value || 'all')
-    .filter(e => (plat('crema') && e.cremaId) || (plat('millie') && e.millieId) || (plat('libs') && searchLibCount(e)));
+    .filter(e => (plat('crema') && e.cremaId) || (plat('millie') && e.millieId) || (plat('ridi') && e.ridiId) || (plat('libs') && searchLibCount(e)));
 }
 // 검색용으로 공백을 뺀 소문자 제목·저자·출판사를 목록마다 한 번만 만들어 둔다 (목록 검색은 수십 번 연달아 찾음)
 const sqIndexCache = new Map();
@@ -1729,7 +1783,7 @@ function sqIndex(list, fields) {
   if (!c || c.src !== list) sqIndexCache.set(fields, c = { src: list, rows: list.map(b => fields(b).map(squash)) });
   return c.rows;
 }
-const SQ_CREMA = b => [b.title, b.author], SQ_MERGED = m => [m.title, m.author], SQ_MILLIE = g => [g.title, g.author];
+const SQ_CREMA = b => [b.title, b.author], SQ_MERGED = m => [m.title, m.author], SQ_MILLIE = g => [g.title, g.author], SQ_RIDI = r => [r.title, r.author];
 // raw: 검색어. field: 전체(제목·저자) / 제목 / 저자
 // 붙여 쓴 검색어가 제목이나 저자에 들어 있거나, 띄어 쓴 낱말이 모두 제목·저자 어딘가에 있으면 찾음
 // (예: '움베르토 에코 중세' → 저자 움베르토 에코 + 제목 중세)
@@ -1745,7 +1799,7 @@ function searchCatalog(raw, field = 'all') {
   const keyOf = (cremaId, title, author) => (cremaId && cremaGroup.get(cremaId)) || workOf(title, author);
   const entry = (key, title, author) => {
     let e = groups.get(key);
-    if (!e) groups.set(key, e = { title, author, cover: '', cremaId: null, libIds: null, mergedIdx: null, millieId: null, pop: 0 });
+    if (!e) groups.set(key, e = { title, author, cover: '', cremaId: null, libIds: null, mergedIdx: null, millieId: null, ridiId: null, pop: 0 });
     else if (title.length < e.title.length) e.title = title;
     return e;
   };
@@ -1760,6 +1814,7 @@ function searchCatalog(raw, field = 'all') {
     if (!e.cremaId || b.reviews > e.cremaReviews) Object.assign(e, { cremaId: b.bookId, cremaReviews: b.reviews, cover: b.cover });
     e.pop += b.reviews;
     e.millieId ||= millieData.cremaToMillie[b.bookId] || null;
+    e.ridiId ||= ridiData.cremaToRidi?.[b.bookId] || null;
   }
   const merged = mergedData || [], sqM = sqIndex(merged, SQ_MERGED);
   for (let i = 0; i < merged.length; i++) {
@@ -1768,7 +1823,7 @@ function searchCatalog(raw, field = 'all') {
     const e = entry(keyOf(m.cremaId, m.title, m.author), m.title, m.author);
     e.libIds = { ...m.ids, ...(e.libIds || {}) }; // 판본이 여럿이면 소장 도서관 합침
     e.mergedIdx ??= m._i;
-    e.cremaId ||= m.cremaId; e.millieId ||= m.millieId || null; e.pop += m.libs.length * 20;
+    e.cremaId ||= m.cremaId; e.millieId ||= m.millieId || null; e.ridiId ||= m.ridiId || null; e.pop += m.libs.length * 20;
   }
   const sqL = sqIndex(millieBooks, SQ_MILLIE);
   for (let i = 0; i < millieBooks.length; i++) {
@@ -1778,6 +1833,16 @@ function searchCatalog(raw, field = 'all') {
     e.millieId = g.id; e.cover ||= g.cover; e.pop += g.take / 50;
     if (Object.keys(g.libIds).length) e.libIds = { ...g.libIds, ...(e.libIds || {}) };
     e.cremaId ||= g.cremaId;
+    e.ridiId ||= ridiData.millieToRidi?.[g.id] || null;
+  }
+  const sqR = sqIndex(ridiBooks, SQ_RIDI);
+  for (let i = 0; i < ridiBooks.length; i++) {
+    if (!hitRow(sqR[i])) continue;
+    const r = ridiBooks[i];
+    const e = entry(keyOf(r.cremaId, r.title, r.author), r.title, r.author);
+    e.ridiId = r.id; e.cover ||= r.cover; e.pop += r.starN / 5;
+    if (Object.keys(r.libIds).length) e.libIds = { ...r.libIds, ...(e.libIds || {}) };
+    e.cremaId ||= r.cremaId; e.millieId ||= r.millieId;
   }
   // 제목이 정확히 같음 > 검색어로 시작 > 검색어가 통째로 들어 있음 > 낱말이 흩어져 있음
   const rank = (e) => { const t = squash(e.title), a = squash(e.author); return t === q ? 4 : t.startsWith(q) || a.startsWith(q) ? 3 : t.includes(q) || a.includes(q) ? 2 : 1; };
@@ -1788,14 +1853,15 @@ function searchLibCount(e) {
   return e.cremaId ? cremaLibKeys(e.cremaId).length : 0;
 }
 function renderSearchItem(e, i) {
-  const open = e.cremaId ? `showBookDetail('crema','${e.cremaId}')` : e.mergedIdx != null ? `showBookDetail('libs',${e.mergedIdx})` : `showMillieDetail('${millieById.get(e.millieId)?.id}')`;
+  const open = e.cremaId ? `showBookDetail('crema','${e.cremaId}')` : e.mergedIdx != null ? `showBookDetail('libs',${e.mergedIdx})` 
+    : e.millieId ? `showMillieDetail('${millieById.get(e.millieId)?.id}')` : `showRidiDetail('${e.ridiId}')`;
   return `<div class="book-item" onclick="${open}" style="cursor:pointer">
     <div class="book-rank">${i + 1}</div>
     ${e.cover ? `<img class="book-cover" src="${e.cover}" loading="lazy" onerror="this.style.display='none'">` : ''}
     <div class="book-info">
       <div class="book-title">${esc(e.title)}</div>
       <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author || '')}</div>
-      <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, libs: searchLibCount(e) })}</div>
+      <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, ridi: ridiOf(e), libs: searchLibCount(e) })}</div>
     </div>
     ${starBtn({ title: e.title, author: e.author, cremaId: e.cremaId })}
   </div>`;
@@ -1914,7 +1980,7 @@ function ensureAwards() {
   });
 }
 // 드롭다운: 크레마·밀리·도서관 어디든 있는 책 수 / 전체 (작가 단위 목록은 책이 하나라도 있는 작가 수)
-const awardOwned = (x) => x.author ? Object.values(x.counts || {}).some(n => n > 0) : !!(x.cremaId || x.millieId || Object.keys(x.libIds || {}).length);
+const awardOwned = (x) => x.author ? Object.values(x.counts || {}).some(n => n > 0) : !!(x.cremaId || x.millieId || x.ridiId || Object.keys(x.libIds || {}).length);
 const BEST_LIST_GROUP = ['베스트셀러', [['yes24', 'YES24 베스트'], ['aladin_best', '알라딘 베스트'], ['aladin_steady', '알라딘 스테디']]];
 function awardCountText(k) {
   const l = awardsData?.[k];
@@ -1957,11 +2023,12 @@ function getSortedAwards() {
   const okBook = (x, title, author) => {
     for (const [k, n] of [['lib', libN(x)], ['crema', x.cremaId ? 1 : 0]]) if ((f[k] === 'has' && !n) || (f[k] === 'none' && n)) return false;
     if (f.millie && millieState(x.millieId) !== f.millie) return false;
+    if ((f.ridi === 'has' && !ridiOf(x)) || (f.ridi === 'none' && ridiOf(x))) return false;
     if (f.fav && !isFav({ title, author, cremaId: x.cremaId, millieId: x.millieId })) return false;
-    if (f.noeb && !((plat('crema') && x.cremaId) || (plat('millie') && millieState(x.millieId) === 'has') || (plat('libs') && libN(x)))) return false;
+    if (f.noeb && !((plat('crema') && x.cremaId) || (plat('millie') && millieState(x.millieId) === 'has') || (plat('ridi') && ridiOf(x)) || (plat('libs') && libN(x)))) return false;
     return true;
   };
-  const anyFilter = f.lib || f.crema || f.millie || f.fav || f.notr || f.noeb;
+  const anyFilter = f.lib || f.crema || f.millie || f.ridi || f.fav || f.notr || f.noeb;
   if (anyFilter) {
     if (books.some(b => b.author) && !mergedData) ensureMerged?.();
     books = books.filter(b => b.author
@@ -1982,7 +2049,7 @@ function renderAwardItem(b, i) {
       <div class="book-title">${esc(title)}</div>
       <div class="book-author">${b.t ? kdcTag(b.t, b.a) : ''}${esc(b.a || b.oa)}${b.t ? ` <span class="award-orig">${esc(b.ot)}</span>` : ''}${b.r && b.y ? ` <span class="award-orig">· ${b.y < 0 ? `기원전 ${-b.y}` : b.y}</span>` : ''}${b.note ? ` <span class="award-orig">· ${esc(b.note)}</span>` : ''}</div>
       ${b.prizes ? `<div class="award-prizes">${esc(prizeText(b))}</div>` : ''}
-      <div class="book-stats">${b.t ? '' : '<span class="badge tag-unknown" title="한국어 번역본을 확인하지 못했어요">번역본 없음</span> '}${statusTags({ crema: !!b.cremaId, libs: Object.keys(b.libIds || {}).length, millie: b.millieId || false })}
+      <div class="book-stats">${b.t ? '' : '<span class="badge tag-unknown" title="한국어 번역본을 확인하지 못했어요">번역본 없음</span> '}${statusTags({ crema: !!b.cremaId, libs: Object.keys(b.libIds || {}).length, ridi: ridiOf(b), millie: b.millieId || false })}
         ${cb?.reviews ? ratingStat(cb, '크레마 ') : ''}${mg?.starN ? ` <span class="stat">밀리 ★ <em>${mg.star.toFixed(1)}</em></span>` : ''}</div>
     </div>
     ${starBtn({ title, author: b.a, cremaId: b.cremaId, millieId: b.millieId })}
@@ -1996,7 +2063,7 @@ function renderAwardAuthor(b, i) {
     <div class="book-info">
       <div class="book-title">${esc(b.a)} <span class="award-arrow">›</span></div>
       <div class="book-author">${esc(b.oa)}${b.works?.length ? ` · ${b.works.map(esc).join(', ')}` : ''}</div>
-      <div class="book-stats">${plat('crema') && c.crema ? `<span class="badge tag-yes">크레마 ${c.crema}권</span> ` : ''}${plat('millie') && c.millie ? `<span class="badge tag-millie">밀리 ${c.millie}권</span> ` : ''}${plat('libs') && c.libs ? `<span class="badge tag-yes">도서관 ${c.libs}권</span>` : ''}${!(plat('crema') && c.crema) && !(plat('millie') && c.millie) && !(plat('libs') && c.libs) ? '<span class="badge tag-no">책 없음</span>' : ''}</div>
+      <div class="book-stats">${plat('crema') && c.crema ? `<span class="badge tag-yes">크레마 ${c.crema}권</span> ` : ''}${plat('millie') && c.millie ? `<span class="badge tag-millie">밀리 ${c.millie}권</span> ` : ''}${plat('ridi') && c.ridi ? `<span class="badge tag-ridi">리디 ${c.ridi}권</span> ` : ''}${plat('libs') && c.libs ? `<span class="badge tag-yes">도서관 ${c.libs}권</span>` : ''}${!(plat('crema') && c.crema) && !(plat('millie') && c.millie) && !(plat('ridi') && c.ridi) && !(plat('libs') && c.libs) ? '<span class="badge tag-no">책 없음</span>' : ''}</div>
     </div>
   </div>`;
 }
@@ -2162,7 +2229,7 @@ function listSearchOne(i) {
       <div class="cand-info" onclick="openListCandidate(${i}, ${j})">
         <div class="cand-title">${esc(e.title)}</div>
         <div class="cand-author">${esc(e.author || '')}</div>
-        <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, libs: searchLibCount(e) })}
+        <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, ridi: ridiOf(e), libs: searchLibCount(e) })}
           ${cb && cb.reviews ? `<span class="stat">크레마 ★ <em>${cb.rating}</em></span>` : ''}${mg && mg.starN ? ` <span class="stat">밀리 ★ <em>${mg.star.toFixed(1)}</em></span>` : ''}</div>
       </div>
       ${starBtn({ title: e.title, author: e.author, cremaId: e.cremaId, millieId: e.millieId })}
@@ -2211,7 +2278,7 @@ function renderListSearch(busyMsg) {
         <div class="book-info">
           <div class="book-title">${esc(e.title)}${r.weak ? ' <span class="list-weak" title="저자가 다르거나 제목이 정확히 같지 않아요">확인 필요</span>' : ''}</div>
           <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author || '')}</div>
-          <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, libs: searchLibCount(e) })}
+          <div class="book-stats">${statusTags({ crema: !!e.cremaId, millie: e.millieId || false, ridi: ridiOf(e), libs: searchLibCount(e) })}
             ${cb && cb.reviews ? `<span class="stat">크레마 ★ <em>${cb.rating}</em></span>` : ''}${mg && mg.starN ? ` <span class="stat">밀리 ★ <em>${mg.star.toFixed(1)}</em></span>` : ''}</div>
         </div>
         ${starBtn({ title: e.title, author: e.author, cremaId: e.cremaId })}
@@ -2252,6 +2319,7 @@ function getSortedMillie() {
   else if (f.lib === 'none') books = books.filter(b => !nLibs(b));
   if (f.crema === 'has') books = books.filter(b => b.cremaId);
   else if (f.crema === 'none') books = books.filter(b => !b.cremaId);
+  books = filterRidi(books, f, b => ridiOf({ cremaId: b.cremaId, millieId: b.id }) || (b.ebookId && ridiOf({ millieId: b.ebookId })));
   if (f.fav) books = books.filter(b => isFav({ title: b.title, author: b.author, cremaId: b.cremaId, millieId: b.id }));
   books = filterSliders(books, f);
   books = [...books];
@@ -2274,7 +2342,7 @@ function renderMillieItem(b, i) {
       <div class="book-author">${kdcTag(b.title, b.author)}${esc(b.author)}</div>
       <div class="book-stats">
         ${b.ebookId ? '' : '<span class="badge tag-audio">오디오북</span>'}
-        ${statusTags({ crema: !!b.cremaId, libs: Object.keys(b.libIds).length })}
+        ${statusTags({ crema: !!b.cremaId, libs: Object.keys(b.libIds).length, ridi: ridiOf({ cremaId: b.cremaId, millieId: b.id }) || (b.ebookId && ridiOf({ millieId: b.ebookId })) })}
         ${millieStat(b)}
       </div>
     </div>
@@ -2295,6 +2363,57 @@ function showMillieDetail(id) {
     rows: [['장르', esc(g.genre || '-')]] });
 }
 
+// ─── 리디셀렉트 탭 ───
+function getSortedRidi() {
+  const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+  const genre = document.getElementById('genreSelect')?.value || '';
+  updateFilterButtons();
+  let books = ridiBooks;
+  if (genre) books = books.filter(b => b.genre === genre);
+  books = filterKdc(books);
+  if (query) books = books.filter(b => b.title.toLowerCase().includes(query) || (b.author || '').toLowerCase().includes(query));
+  const f = filterState.ridi;
+  const nLibs = (b) => Object.keys(b.libIds).length;
+  if (f.lib === 'has') books = books.filter(nLibs);
+  else if (f.lib === 'none') books = books.filter(b => !nLibs(b));
+  if (f.crema === 'has') books = books.filter(b => b.cremaId);
+  else if (f.crema === 'none') books = books.filter(b => !b.cremaId);
+  books = filterMillie(books, f, b => b.millieId);
+  if (f.fav) books = books.filter(b => isFav({ title: b.title, author: b.author, cremaId: b.cremaId, millieId: b.millieId }));
+  books = [...books];
+  if (currentSort === 'rating') {
+    // 평가가 적으면 평균 쪽으로 당긴 점수 (크레마·밀리 별점순과 같은 보정)
+    const rated = ridiBooks.filter(b => b.starN);
+    const C = rated.reduce((s, b) => s + b.star * b.starN, 0) / (rated.reduce((s, b) => s + b.starN, 0) || 1), m = 30;
+    const score = (b) => (b.star * b.starN + C * m) / (b.starN + m);
+    books.sort((a, b) => score(b) - score(a) || b.starN - a.starN);
+  } else if (currentSort === 'reviews') books.sort((a, b) => b.starN - a.starN || a.rank - b.rank);
+  else books.sort((a, b) => a.rank - b.rank || b.starN - a.starN); // 카테고리마다 인기 1위, 2위 … 순서로 섞임
+  return books;
+}
+const ridiStat = (b) => b.starN ? `<span class="stat" title="리디 구매자 별점 (5점 만점) · ${b.starN.toLocaleString()}명 평가">★ <em>${b.star.toFixed(1)}</em> <span class="reviews">(${b.starN.toLocaleString()}명)</span></span>` : '';
+function renderRidiItem(b, i) {
+  return `<div class="book-item" onclick="showRidiDetail('${b.id}')" style="cursor:pointer">
+    <div class="book-rank">${i + 1}</div>
+    <img class="book-cover" src="${b.cover}" loading="lazy" onerror="this.style.display='none'">
+    <div class="book-info">
+      <div class="book-title">${esc(b.title)}</div>
+      <div class="book-author">${kdcTag(b.title, b.author)}${esc(b.author)}</div>
+      <div class="book-stats">
+        ${statusTags({ crema: !!b.cremaId, millie: b.millieId || undefined, libs: Object.keys(b.libIds).length })}
+        ${ridiStat(b)}
+      </div>
+    </div>
+    ${starBtn({ title: b.title, author: b.author, publisher: b.publisher, cremaId: b.cremaId, millieId: b.millieId })}
+  </div>`;
+}
+function showRidiDetail(id) {
+  const r = ridiById.get(id);
+  if (!r) return;
+  showDetail({ title: r.title, author: r.author, cremaId: r.cremaId, millieId: r.millieId, ridiId: r.id, libPairs: Object.entries(r.libIds),
+    rows: [['장르', esc(r.genre || '-')], ['출판사', esc(r.publisher || '-')]] });
+}
+
 // 베스트셀러 중 크레마에 없는 책
 function renderBestItem(b, i) {
   const e = b.best;
@@ -2305,7 +2424,7 @@ function renderBestItem(b, i) {
       <div class="book-title">${esc(e.title)}</div>
       <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author)}</div>
       <div class="book-stats">
-        ${statusTags({ crema: false, libs: keys.length, millie: e.millieId })}
+        ${statusTags({ crema: false, libs: keys.length, millie: e.millieId, ridi: ridiOf(e) })}
       </div>
     </div>
     ${starBtn({ title: e.title, author: e.author, publisher: e.publisher })}
@@ -2338,6 +2457,7 @@ function getSortedFavs() {
   if (f.crema === 'has') books = books.filter(b => b.cremaId);
   else if (f.crema === 'none') books = books.filter(b => !b.cremaId);
   books = filterMillie(books, f, b => b.millieId);
+  books = filterRidi(books, f, ridiOf);
   books = filterSliders(books, f, b => cremaBookOf(b.cremaId));
   // 분류순: 번호 순 (843 < 843.5 < 844), 큰 분류만 아는 '8xx'는 그 분류 끝, 모르는 책은 맨 뒤
   const kdcNum = (x) => { const c = kdcOf(x); return !c ? Infinity : /xx$/.test(c) ? +c[0] * 100 + 99.9 : parseFloat(c); };
@@ -2357,7 +2477,7 @@ function renderFavItem(b, i) {
       <div class="book-title">${esc(b.title)}</div>
       <div class="book-author">${kdcTag(b.title, b.author)}${esc(b.author)}</div>
       <div class="book-stats">
-        ${statusTags({ crema: !!b.cremaId, libs: keys.length, millie: b.millieId })}
+        ${statusTags({ crema: !!b.cremaId, libs: keys.length, millie: b.millieId, ridi: ridiOf(b) })}
       </div>
     </div>
     ${starBtn(b)}
@@ -2380,6 +2500,7 @@ function getSortedMerged() {
   if (f.crema === 'has') books = books.filter(e => e.cremaId);
   else if (f.crema === 'none') books = books.filter(e => !e.cremaId);
   books = filterMillie(books, f, e => e.millieId);
+  books = filterRidi(books, f, ridiOf);
   if (f.fav) books = books.filter(e => isFav({ title: e.title, author: e.author, cremaId: e.cremaId, millieId: e.millieId }));
   books = filterSliders(books, f, e => cremaBookOf(e.cremaId));
   if (query) books = books.filter(e => e.title.toLowerCase().includes(query) || e.author.toLowerCase().includes(query));
@@ -2415,9 +2536,10 @@ function libLinksHtml(pairs) {
 }
 
 // 목록 줄 맨 앞의 상태 태그. crema/libs가 undefined면 그 태그는 생략
-function statusTags({ crema, libs, millie } = {}) {
+function statusTags({ crema, libs, millie, ridi } = {}) {
   let html = '';
   if (!plat('millie')) millie = undefined;
+  if (!plat('ridi')) ridi = undefined;
   if (!plat('crema')) crema = undefined;
   if (!plat('libs')) libs = undefined;
   if (millie === false) html += '<span class="badge tag-unknown" title="밀리 인기 도서 목록에서 못 찾음 (밀리에 있을 수도 있음)">밀리 미확인</span> ';
@@ -2426,6 +2548,7 @@ function statusTags({ crema, libs, millie } = {}) {
     // 전자책이 기본. 오디오북만 있는 책만 따로 표시
     html += `<span class="badge tag-millie">밀리${g && !g.ebookId ? ' 오디오북' : ''}</span> `;
   }
+  if (ridi) html += '<span class="badge tag-ridi">리디</span> '; // 있을 때만 (전체 목록이라 없으면 없는 것)
   if (crema) html += '<span class="badge tag-yes">크레마</span> '; // 있을 때만 (밀리 태그와 같은 방식)
   if (libs !== undefined && libsData.libs.some(l => l.count)) {
     html += libs ? `<span class="badge tag-yes">도서관 ${libs}곳</span> ` : '<span class="badge tag-no">도서관 없음</span> ';
@@ -2450,7 +2573,7 @@ function renderMergedItem(e, i) {
       <div class="book-title">${esc(e.title)}</div>
       <div class="book-author">${kdcTag(e.title, e.author)}${esc(e.author)}</div>
       <div class="book-stats">
-        ${statusTags({ crema: !!cb, millie: e.millieId })}
+        ${statusTags({ crema: !!cb, millie: e.millieId, ridi: ridiOf(e) })}
         <span class="stat"><em>${e.libs.length}</em>곳 소장</span>
         ${cb ? `<span class="stat">크레마 ★ <em>${cb.rating}</em></span>` : ''}
         ${seoulInfo}
@@ -2476,7 +2599,7 @@ function renderCremaItem(b, i, seoulMatch) {
   if (!showRank && bs.aladin_steady) badges += `<span class="badge aladin-steady">스테디 #${bs.aladin_steady}</span> `;
   const libKeys = cremaLibKeys(b.bookId); // 서울도서관 포함 (어느 도서관인지는 팝업에서)
   // 베스트/스테디셀러 목록에선 크레마에 없는 책과 섞이므로 크레마 여부도 표시
-  const tags = statusTags({ crema: showRank ? true : undefined, libs: libKeys.length, millie: millieData.cremaToMillie[b.bookId] });
+  const tags = statusTags({ crema: showRank ? true : undefined, libs: libKeys.length, millie: millieData.cremaToMillie[b.bookId], ridi: ridiData.cremaToRidi?.[b.bookId] });
 
   return `<div class="book-item" onclick="showBookDetail('crema','${b.bookId}')" style="cursor:pointer">
     <div class="book-rank">${rank}</div>
@@ -2545,6 +2668,12 @@ function showDetail(ctx) {
         ${g.viewPct != null ? stat('완독률', `<em>${g.viewPct}%</em>`) : ''}${g.viewTime ? stat('완독 예상', `<em>${millieTimeText(g.viewTime)}</em>`) : ''}
         <div style="margin-top:6px">${millieLinks(g)}</div>`)
     : sec('밀리의 서재', false, '확인 안 됨', `인기 도서 목록에 없어요<div style="margin-top:6px">${linkBadge('millie', millieSearchUrl(ctx.title), '밀리에서 검색')}</div>`);
+  const rid = ridiOf({ ridiId: ctx.ridiId, cremaId, millieId: g?.id }) || (g?.ebookId && ridiOf({ millieId: g.ebookId })) || (g?.audioId && ridiOf({ millieId: g.audioId }));
+  const rb = rid && ridiById.get(rid);
+  const ridi = !plat('ridi') ? '' : rb
+    ? sec('리디셀렉트', true, '있음', `${stat('별점', rb.starN ? `<em>★ ${rb.star.toFixed(2)}</em> (${rb.starN.toLocaleString()}명)` : '평가 없음')}
+        <div style="margin-top:6px">${linkBadge('ridi', ridiBookUrl(rb.id), '리디셀렉트에서 보기')}</div>`)
+    : sec('리디셀렉트', false, ridiData.count ? '없음' : '목록 없음 (동기화 필요)', `<div>${linkBadge('ridi', ridiSearchUrl(ctx.title), '리디셀렉트에서 검색')}</div>`);
   const libs = pairs.length
     ? sec('도서관', true, `${pairs.length}곳`, `${libLinksHtml(pairs)}<div class="dhint">누르면 그 도서관의 책 페이지로</div>`)
     : sec('도서관', false, libsLoaded ? '없음' : '목록 없음 (동기화 필요)');
@@ -2558,7 +2687,7 @@ function showDetail(ctx) {
   popup.innerHTML = `<button class="popup-close" onclick="closePopup()">✕</button>
     <h3>${starBtn(ctx.star || { title: ctx.title, author: ctx.author, cremaId, millieId: g?.id })}${esc(ctx.title)}</h3>
     <div class="author">${esc(ctx.author || '')}</div>
-    ${crema}${millie}${libs}${info}`;
+    ${crema}${millie}${ridi}${libs}${info}`;
   document.getElementById('popupOverlay').classList.add('open');
   popup.scrollTop = 0;
 
@@ -2585,8 +2714,8 @@ function showDetail(ctx) {
 
 // ─── 설정: 쓰는 플랫폼 (안 쓰는 플랫폼은 탭·필터·표시에서 뺌) ───
 // 이 기기(localStorage)에 저장. 웹 버전에선 로그인하면 계정에도 저장돼서 다른 기기와 같아짐 (web.js)
-const PLATFORMS = [['crema', '크레마클럽', '크레마'], ['millie', '밀리의 서재', '밀리'], ['libs', '도서관', '도서관']];
-const DEFAULT_SETTINGS = { platforms: { crema: true, millie: true, libs: true }, theme: localStorage.getItem('theme') || 'system' };
+const PLATFORMS = [['crema', '크레마클럽', '크레마'], ['millie', '밀리의 서재', '밀리'], ['ridi', '리디셀렉트', '리디'], ['libs', '도서관', '도서관']];
+const DEFAULT_SETTINGS = { platforms: { crema: true, millie: true, ridi: true, libs: true }, theme: localStorage.getItem('theme') || 'system' };
 let settings = (() => {
   try { const s = JSON.parse(localStorage.getItem('settings') || '{}'); return { ...DEFAULT_SETTINGS, ...s, platforms: { ...DEFAULT_SETTINGS.platforms, ...(s.platforms || {}) } }; }
   catch { return structuredClone(DEFAULT_SETTINGS); }
@@ -2612,6 +2741,7 @@ function applySettings() {
   for (const f of Object.values(filterState)) {
     if (!plat('crema') && 'crema' in f) f.crema = '';
     if (!plat('millie') && 'millie' in f) f.millie = '';
+    if (!plat('ridi') && 'ridi' in f) f.ridi = '';
     if (!plat('libs') && 'lib' in f) f.lib = '';
   }
   const visible = [...document.querySelectorAll('.tab')].filter(t => t.style.display !== 'none');

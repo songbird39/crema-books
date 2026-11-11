@@ -288,6 +288,7 @@ function matchBestsellerLists(lists, cremaBooks, merged) {
       b.cremaId = cb?.bookId || null;
       b.libIds = findLibByTitle(b.title, b.author || '')?.ids || {};
       b.millieId = findMillie(b.title, b.author || '');
+      b.ridiId = findRidi(b.title, b.author || '');
       if (cb) (bestsellers[cb.bookId] ||= {})[src] ??= b.rank;
     }
   }
@@ -452,7 +453,7 @@ function enrichFav(f) {
   } else {
     libIds = ix.findMerged(f.title, f.author || '')?.ids || {};
   }
-  return { ...f, millieId: findMillie(cb?.title || f.title, cb?.author || f.author || ''), cremaId: cb?.bookId || null, crema: cb ? { rating: cb.rating, reviews: cb.reviews, cover: cb.cover } : null, libIds };
+  return { ...f, millieId: findMillie(cb?.title || f.title, cb?.author || f.author || ''), ridiId: findRidi(cb?.title || f.title, cb?.author || f.author || ''), cremaId: cb?.bookId || null, crema: cb ? { rating: cb.rating, reviews: cb.reviews, cover: cb.cover } : null, libIds };
 }
 
 app.get('/api/favorites', (req, res) => {
@@ -922,19 +923,19 @@ const titleKeys = (t) => {
 let awardsCache = null;
 function buildAwards() {
   const files = AWARD_META.map(([k]) => path.join(AWARD_DIR, `${k}.json`));
-  const stamp = [DATA_FILE, LIBS_FILE, MILLIE_FILE, ...files].map(f => { try { return fs.statSync(f).mtimeMs; } catch { return 0; } }).join();
+  const stamp = [DATA_FILE, LIBS_FILE, MILLIE_FILE, RIDI_FILE, ...files].map(f => { try { return fs.statSync(f).mtimeMs; } catch { return 0; } }).join();
   if (awardsCache?.stamp === stamp) return awardsCache.data;
-  const crema = loadData().books || [], merged = loadLibs().merged || [], millie = loadMillie().books || [];
+  const crema = loadData().books || [], merged = loadLibs().merged || [], millie = loadMillie().books || [], ridi = loadRidi().books || [];
   const cremaById = new Map(crema.map(b => [b.bookId, b]));
   // 제목 키 → 책 여러 권 (같은 제목 다른 저자를 저자로 가려냄)
   const index = (rows, titleOf) => { const m = new Map(); for (const r of rows) for (const k of titleKeys(titleOf(r))) { const a = m.get(k); if (a) a.push(r); else m.set(k, [r]); } return m; };
-  const iC = index(crema, b => b.title), iL = index(merged, m => m.title), iM = index(millie, r => r[1]);
+  const iC = index(crema, b => b.title), iL = index(merged, m => m.title), iM = index(millie, r => r[1]), iR = index(ridi, r => r[1]);
   // 작가 단위 목록용: 책마다 첫 저자 키·저자 칸 전체 키 (필요할 때 한 번만)
   const authorKeysOf = (rows, authorOf) => { let c; return () => c ||= { fa: rows.map(r => firstAuthorSq(authorOf(r))), all: rows.map(r => sqz(authorOf(r))) }; };
-  const akC = authorKeysOf(crema, b => b.author), akM = authorKeysOf(millie, r => r[2]), akL = authorKeysOf(merged, m => m.author);
+  const akC = authorKeysOf(crema, b => b.author), akM = authorKeysOf(millie, r => r[2]), akL = authorKeysOf(merged, m => m.author), akR = authorKeysOf(ridi, r => r[2]);
   // 첫 저자 키 → 책들 (권으로 나뉜 책 찾기용)
   const byAuthor = (rows, authorOf) => { const m = new Map(); for (const r of rows) { const k = firstAuthorSq(authorOf(r)); const a = m.get(k); if (a) a.push(r); else m.set(k, [r]); } return m; };
-  const aC = byAuthor(crema, b => b.author), aL = byAuthor(merged, m => m.author), aM = byAuthor(millie, r => r[2]);
+  const aC = byAuthor(crema, b => b.author), aL = byAuthor(merged, m => m.author), aM = byAuthor(millie, r => r[2]), aR = byAuthor(ridi, r => r[2]);
   const VOLUME_RE = /^(\d{1,2}|상|중|하|\d{1,2}권|제\d{1,2}권|[ⅰ-ⅹⅠ-Ⅹ]|i{1,3}|iv|v)$/;
   // 원서·대역·학습용 판 (한국어 번역본이 아님): '캉디드 Candide (영어 원서 읽기)' 같은 것
   const FOREIGN_RE = /원서|영문판|영어판|불어판|프랑스어판|독일어판|영한대역|대역판|클리프노트|영어\s*소설|오디오북'|원어민|프랑스어|독일어|스페인어|이탈리아어/;
@@ -971,12 +972,12 @@ function buildAwards() {
       if (!e.t && e.works) { // 작가 단위: 그 작가 책 수 (저자 키는 목록마다 한 번만 계산해 둔 것으로)
         const keys = names.map(sqz);
         const n = (ak) => { let c = 0; for (let i = 0; i < ak.fa.length; i++) if (sameAuthorKeys(ak.fa[i], ak.all[i], keys)) c++; return c; };
-        return { ...e, author: true, counts: { crema: n(akC()), millie: n(akM()), libs: n(akL()) } };
+        return { ...e, author: true, counts: { crema: n(akC()), millie: n(akM()), libs: n(akL()), ridi: n(akR()) } };
       }
       const titles = [e.t, ...(e.aliases || [])].filter(Boolean); // aliases엔 다른 번역 제목·저자 표기가 섞여 있음
-      if (!titles.length) return { ...e, cremaId: null, millieId: null, libIds: {} };
-      const cb = find(iC, titles, names, b => b.author, aC, b => b.title, b => b.reviews || 0), lb = find(iL, titles, names, m => m.author, aL, m => m.title, m => Object.keys(m.ids || {}).length), mr = find(iM, titles, names, r => r[2], aM, r => r[1], r => r[5] || 0);
-      return { ...e, cremaId: cb?.bookId || (lb?.cremaId && !FOREIGN_RE.test(cremaById.get(lb.cremaId)?.title || '') && sameAuthor(cremaById.get(lb.cremaId)?.author, names) ? lb.cremaId : null), millieId: mr?.[0] || null, libIds: lb?.ids || {} };
+      if (!titles.length) return { ...e, cremaId: null, millieId: null, ridiId: null, libIds: {} };
+      const cb = find(iC, titles, names, b => b.author, aC, b => b.title, b => b.reviews || 0), lb = find(iL, titles, names, m => m.author, aL, m => m.title, m => Object.keys(m.ids || {}).length), mr = find(iM, titles, names, r => r[2], aM, r => r[1], r => r[5] || 0), rr = find(iR, titles, names, r => r[2], aR, r => r[1], r => r[6] || 0);
+      return { ...e, cremaId: cb?.bookId || (lb?.cremaId && !FOREIGN_RE.test(cremaById.get(lb.cremaId)?.title || '') && sameAuthor(cremaById.get(lb.cremaId)?.author, names) ? lb.cremaId : null), millieId: mr?.[0] || null, ridiId: rr?.[0] || null, libIds: lb?.ids || {} };
     }) };
   }
   awardsCache = { stamp, data: lists };
@@ -992,6 +993,140 @@ app.get('/api/millie/data', (req, res) => {
   const libs = loadLibs();
   res.json({ lastSync: d.lastSync || null, count: (d.books || []).length, changes: d.changes || null, running: millieJob.running, cremaToMillie: libs.cremaToMillie || {},
     books: d.books || [], millieMatch: libs.millieMatch || {} });
+});
+
+// ─── 리디셀렉트 ───
+// 로그인 없이 쓰는 select-api: 최상위 카테고리(19개)를 인기순으로 끝까지 받으면 전체 목록 (약 7만 5천 권, 한 쪽 50권)
+// 별점은 목록에 같이 옴(review_summary, 5점 만점). 브라우저 User-Agent가 없으면 Cloudflare가 막음.
+// 줄: [id, 제목, 저자, 출판사, 카테고리, 별점, 평가 수, 카테고리 안 인기 순위]
+const RIDI_FILE = path.join(__dirname, 'data-ridi.json');
+const RIDI_API = 'https://select-api.ridibooks.com/api';
+const RIDI_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
+function loadRidi() {
+  try { return JSON.parse(fs.readFileSync(RIDI_FILE, 'utf8')); }
+  catch { return { books: [] }; }
+}
+async function fetchRidiJson(url, retries = 3) {
+  for (let i = 0; ; i++) {
+    try {
+      const resp = await fetch(url, { signal: AbortSignal.timeout(30000), headers: { 'User-Agent': RIDI_UA, 'Accept': 'application/json' } });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      return await resp.json();
+    } catch (e) {
+      if (i >= retries) throw e;
+      await new Promise(r => setTimeout(r, 3000 * (i + 1)));
+    }
+  }
+}
+const ridiRow = (b, cat, rank) => {
+  const rs = b.review_summary || {};
+  return [String(b.id), (b.title?.main || '').trim(), (b.authors?.author || []).map(a => a.name).join(', '), b.publisher?.name || '', cat,
+    rs.buyer_rating_count ? Math.round(rs.buyer_rating_average * 100) / 100 : 0, rs.buyer_rating_count || 0, rank];
+};
+async function crawlRidi(onProgress) {
+  const cats = (await fetchRidiJson(`${RIDI_API}/categories`)).map(c => [c.id, c.name]);
+  const jobs = []; // [카테고리 id, 이름, 쪽]
+  for (const [id, name] of cats) {
+    const d = await fetchRidiJson(`${RIDI_API}/books?category=${id}&sort=popular&page=1&size=50`);
+    for (let p = 1; p <= (d.total_page || 0); p++) jobs.push([id, name, p]);
+  }
+  const books = new Map();
+  let done = 0, failed = 0;
+  const queue = jobs.slice();
+  await Promise.all(Array.from({ length: 2 }, async () => {
+    for (let j; (j = queue.shift());) {
+      const [id, name, p] = j;
+      try {
+        const d = await fetchRidiJson(`${RIDI_API}/books?category=${id}&sort=popular&page=${p}&size=50`);
+        (d.books || []).forEach((b, i) => { if (b?.id && !books.has(String(b.id))) books.set(String(b.id), ridiRow(b, name, (p - 1) * 50 + i + 1)); });
+      } catch (e) { failed++; console.error(`ridi ${id} p${p}:`, e.message); }
+      if (++done % 50 === 0 || !queue.length) onProgress?.({ status: `리디셀렉트 ${done}/${jobs.length}쪽 · ${books.size.toLocaleString()}권`, phase: 'ridi', page: done, totalPages: jobs.length });
+      await new Promise(r => setTimeout(r, 300));
+    }
+  }));
+  return { books: [...books.values()], categories: cats.length, pages: jobs.length, failed };
+}
+// 이번 목록에 없는 책은 여러 권 조회(b_ids, 300권씩)로 확인: 응답에 없으면 셀렉트에서 빠진 것 → 지움, 있으면 남김.
+// 조회가 실패하면 확인 못 함 → 남김. 그래도 받은 권수가 이전보다 5% 넘게 줄면 사이트 이상으로 보고 아무것도 지우지 않음.
+async function reconcileRidi(prev, rows, onProgress) {
+  const now = new Date().toISOString();
+  const prevBooks = prev.books || [];
+  const ids = new Set(rows.map(r => r[0])), prevIds = new Set(prevBooks.map(r => r[0]));
+  const added = rows.filter(r => !prevIds.has(r[0]));
+  const gone = prevBooks.filter(r => !ids.has(r[0]));
+  const state = new Map(), fresh = new Map();
+  for (let i = 0; i < gone.length; i += 300) {
+    const chunk = gone.slice(i, i + 300);
+    try {
+      const got = await fetchRidiJson(`${RIDI_API}/books?b_ids=${chunk.map(r => r[0]).join(',')}`);
+      if (!Array.isArray(got)) throw new Error('응답 형식');
+      const found = new Map(got.map(b => [String(b.id), b]));
+      for (const r of chunk) { const b = found.get(r[0]); state.set(r[0], b ? 'exists' : 'gone'); if (b) fresh.set(r[0], ridiRow(b, r[4], r[7])); }
+    } catch (e) { console.error('ridi verify:', e.message); }
+    onProgress?.({ status: `리디셀렉트: 목록에서 빠진 책 확인 ${Math.min(i + 300, gone.length).toLocaleString()}/${gone.length.toLocaleString()}`, phase: 'ridi' });
+    await new Promise(r => setTimeout(r, 300));
+  }
+  let warning = null;
+  if (prevBooks.length && rows.length < prevBooks.length * 0.95) warning = 'drop';
+  const removed = warning ? [] : gone.filter(r => state.get(r[0]) === 'gone');
+  const kept = gone.filter(r => state.get(r[0]) === 'exists').map(r => fresh.get(r[0]) || r);
+  const unknown = gone.filter(r => !state.has(r[0]) || (warning && state.get(r[0]) === 'gone'));
+  const S = 50, pair = r => [r[0], r[1]];
+  const changes = { at: now, prev: prevBooks.length, received: rows.length, added: added.length, removed: removed.length, kept: kept.length, unknown: unknown.length, warning,
+    addedSample: added.slice(0, S).map(pair), removedSample: removed.slice(0, S).map(pair), keptSample: kept.slice(0, S).map(pair), unknownSample: unknown.slice(0, S).map(pair) };
+  return { books: [...rows, ...kept, ...unknown], changes };
+}
+let ridiFinder = null;
+function findRidi(title, author) {
+  if (!ridiFinder) {
+    const rows = loadRidi().books || [];
+    ridiFinder = buildTitleIndex(rows.map(([id, title, author]) => ({ id, title, author })));
+  }
+  return ridiFinder(title, author)?.id || null;
+}
+const ridiJob = { running: false, status: null, listeners: new Set() };
+async function runRidiJob() {
+  ridiJob.running = true;
+  const send = (o) => { if (o.status) ridiJob.status = o.status; for (const l of ridiJob.listeners) l(o); };
+  try {
+    send({ status: '리디셀렉트 카테고리 받는 중...', phase: 'ridi', page: 0, totalPages: 1 });
+    const r = await crawlRidi(send);
+    if (!r.books.length) throw new Error('받은 책이 없습니다');
+    const m = await reconcileRidi(loadRidi(), r.books, send);
+    m.changes.failedPages = r.failed;
+    fs.writeFileSync(RIDI_FILE, JSON.stringify({ lastSync: new Date().toISOString(), categories: r.categories, failed: r.failed, books: m.books, changes: m.changes }));
+    ridiFinder = null;
+    send({ status: '매칭 중...', phase: 'match' });
+    rebuildLibMatch();
+    const c = m.changes;
+    send({ status: `완료! 리디셀렉트 ${m.books.length.toLocaleString()}권 (새 책 ${c.added} · 빠진 책 ${c.removed} · 남김 ${c.kept + c.unknown}${r.failed ? ` · 실패한 쪽 ${r.failed}` : ''})` });
+    send({ done: true });
+  } catch (e) {
+    send({ error: e.message });
+  } finally {
+    ridiJob.running = false;
+    ridiJob.listeners.clear();
+  }
+}
+app.get('/api/ridi/sync', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+  const send = (obj) => {
+    try { res.write(`data: ${JSON.stringify(obj)}\n\n`); } catch (e) {}
+    if (obj.done || obj.error) res.end();
+  };
+  ridiJob.listeners.add(send);
+  res.on('close', () => ridiJob.listeners.delete(send));
+  if (ridiJob.running) send({ status: '이미 진행 중인 동기화에 연결됨 · ' + (ridiJob.status || ''), phase: 'ridi' });
+  else runRidiJob();
+});
+app.get('/api/ridi/data', (req, res) => {
+  const d = loadRidi();
+  const libs = loadLibs();
+  res.json({ lastSync: d.lastSync || null, count: (d.books || []).length, changes: d.changes || null, running: ridiJob.running,
+    cremaToRidi: libs.cremaToRidi || {}, millieToRidi: libs.millieToRidi || {},
+    books: d.books || [], ridiMatch: libs.ridiMatch || {} });
 });
 
 // ─── Seoul elib ───
@@ -1189,10 +1324,15 @@ function rebuildLibMatch() {
   // 크레마 bookId → 밀리 책 ID
   libsData.cremaToMillie = {};
   for (const b of cremaBooks) { const m = findMillie(b.title, b.author || ''); if (m) libsData.cremaToMillie[b.bookId] = m; }
+  // 크레마 bookId → 리디셀렉트 책 ID, 밀리 책 ID → 리디셀렉트 책 ID
+  libsData.cremaToRidi = {};
+  for (const b of cremaBooks) { const r = findRidi(b.title, b.author || ''); if (r) libsData.cremaToRidi[b.bookId] = r; }
+  libsData.millieToRidi = {};
+  for (const [id, title, author] of loadMillie().books || []) { const r = findRidi(title, author || ''); if (r) libsData.millieToRidi[id] = r; }
   if (!Object.keys(libsData.books || {}).length) { saveLibs(libsData); return rematchBestsellers(); }
   Object.assign(libsData, buildLibMatch(libsData, cremaBooks));
   libsData.merged = buildMergedCatalog(libsData, loadSeoul().books || [], cremaBooks);
-  for (const e of libsData.merged) { const m = findMillie(e.title, e.author || ''); if (m) e.millieId = m; }
+  for (const e of libsData.merged) { const m = findMillie(e.title, e.author || ''); if (m) e.millieId = m; const r = findRidi(e.title, e.author || ''); if (r) e.ridiId = r; }
   // 밀리 책 → 크레마 bookId / 소장 도서관 (밀리 탭용)
   const findCrema = buildTitleIndex(cremaBooks);
   const findMerged = buildTitleIndex(libsData.merged);
@@ -1201,6 +1341,15 @@ function rebuildLibMatch() {
     const c = findCrema(title, author || '')?.bookId || null;
     const ids = findMerged(title, author || '')?.ids || {};
     if (c || Object.keys(ids).length) libsData.millieMatch[id] = { cremaId: c, libIds: ids };
+  }
+  // 리디 책 → 크레마 bookId / 밀리 책 ID / 소장 도서관 (리디 탭용)
+  const findMillieRow = buildTitleIndex((loadMillie().books || []).map(([id, title, author]) => ({ id, title, author })));
+  libsData.ridiMatch = {};
+  for (const [id, title, author] of loadRidi().books || []) {
+    const c = findCrema(title, author || '')?.bookId || null;
+    const m = findMillieRow(title, author || '')?.id || null;
+    const ids = findMerged(title, author || '')?.ids || {};
+    if (c || m || Object.keys(ids).length) libsData.ridiMatch[id] = { cremaId: c, millieId: m, libIds: ids };
   }
   saveLibs(libsData);
   console.log(`Lib match: crema ${Object.keys(libsData.cremaToLibs).length}, merged ${libsData.merged.length}, millie↔crema ${Object.keys(libsData.cremaToMillie).length}`);

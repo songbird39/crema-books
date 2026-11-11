@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 OUT="dist/BookBrowser"
 rm -rf dist && mkdir -p "$OUT"
 cp -R server.js libraries.js match.js retention.js google-login.js web.js manifest.webmanifest icons index.html package.json package-lock.json certs awards node_modules start.command start.bat "$OUT/"
-for f in data.json data-libs.json data-seoul.json data-millie.json; do [ -f "$f" ] && cp "$f" "$OUT/"; done
+for f in data.json data-libs.json data-seoul.json data-millie.json data-ridi.json; do [ -f "$f" ] && cp "$f" "$OUT/"; done
 echo '{ "items": [] }' > "$OUT/data-favorites.json"
 cat > "$OUT/README.txt" <<'TXT'
 전자책 검색 — 크레마클럽 · 밀리의 서재 · 서울 도서관 25곳 전자책을 한 번에 찾아보기

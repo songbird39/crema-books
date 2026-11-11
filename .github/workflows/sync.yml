@@ -58,7 +58,7 @@ jobs:
         if: github.event_name != 'push'
         env: { GH_TOKEN: '${{ github.token }}' }
         run: |
-          tar czf state.tar.gz data.json data-libs.json data-seoul.json data-millie.json data-kdc.json
+          tar czf state.tar.gz $(ls data.json data-libs.json data-seoul.json data-millie.json data-kdc.json data-ridi.json 2>/dev/null)
           gh release upload state state.tar.gz --clobber
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }

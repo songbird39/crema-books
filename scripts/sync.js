@@ -64,11 +64,12 @@ async function runSse(url, label) {
 // 데이터 현황 (동기화 전후 비교용)
 async function snapshot() {
   const get = async (p) => (await fetch(BASE + p)).json();
-  const [d, l, m, k] = await Promise.all([get('/api/data'), get('/api/libs/data'), get('/api/millie/data'), get('/api/kdc')]);
+  const [d, l, m, k, r] = await Promise.all([get('/api/data'), get('/api/libs/data'), get('/api/millie/data'), get('/api/kdc'), get('/api/ridi/data')]);
   return {
     crema: { count: d.books?.length || 0, lastSync: d.lastSync || null, lastCrawl: d.lastCremaCrawl || null, changes: d.cremaChanges || null },
     bestsellers: { lists: Object.fromEntries(Object.entries(d.bestsellerLists || {}).map(([k, v]) => [k, v.length])), lastSync: d.bestsellerSync || null },
     millie: { count: m.count || 0, lastSync: m.lastSync || null, changes: m.changes || null },
+    ridi: { count: r.count || 0, lastSync: r.lastSync || null, changes: r.changes || null },
     kdc: { count: Object.keys(k.map || {}).length },
     libs: Object.fromEntries(l.libs.map(x => [x.key, { name: x.name, count: x.count || 0, total: x.total || 0, lastSync: x.lastSync || null, failedPages: x.failedPages || 0, error: x.error || null, detail: x.detail || null, changes: x.changes || null }])),
   };
@@ -92,7 +93,7 @@ async function snapshot() {
     }
     before = await snapshot();
     // 이전 동기화의 변화 기록은 빼고 (이번 기록은 after에)
-    delete before.crema.changes; delete before.millie.changes; for (const l of Object.values(before.libs)) delete l.changes;
+    delete before.crema.changes; delete before.millie.changes; delete before.ridi.changes; for (const l of Object.values(before.libs)) delete l.changes;
     const step = async (name, fn) => {
       const s0 = Date.now();
       const r = await fn().catch(e => ({ ok: false, status: e.message }));
@@ -105,6 +106,7 @@ async function snapshot() {
       const keys = Object.keys(before.libs).filter(k => !SKIP.includes(k));
       await step(`도서관 ${keys.length}곳`, () => runSse('/api/libs/sync?keys=' + keys.join(','), `도서관 ${keys.length}곳`));
       await step('밀리의 서재' + (MILLIE_POINTS === 'all' ? ' (별점 전부)' : ''), () => runSse('/api/millie/sync?points=' + MILLIE_POINTS, '밀리의 서재'));
+      await step('리디셀렉트', () => runSse('/api/ridi/sync', '리디셀렉트'));
       // 십진분류: 서버가 켜지고 20초 뒤 새 책들을 백그라운드로 조회함 → 끝나길 기다림
       await step('십진분류', async () => {
         const until = Date.now() + (+process.env.KDC_MINUTES || 60) * 60e3;
