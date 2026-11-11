@@ -118,6 +118,15 @@ async function snapshot() {
       });
     }
     after = await snapshot();
+    // 크롤링하는 동안 화면 코드가 새로 배포됐을 수 있으니 최신 화면 파일로 내보냄 (예전 화면으로 덮어쓰지 않게)
+    if (process.env.GITHUB_ACTIONS && MODE === 'full') {
+      try {
+        const git = (...a) => require('child_process').execFileSync('git', a, { cwd: ROOT, stdio: 'pipe' }).toString();
+        git('fetch', '--depth=1', 'origin', 'main');
+        git('checkout', 'FETCH_HEAD', '--', 'index.html', 'web.js', 'google-login.js', 'match.js', 'admin.html', 'manifest.webmanifest', 'icons', 'scripts/export.js');
+        log('최신 화면 코드로 내보냄');
+      } catch (e) { log('최신 화면 코드 받기 실패 (지금 코드로 내보냄): ' + e.message); }
+    }
     await step('내보내기', async () => {
       const exp = spawn(process.execPath, [path.join(__dirname, 'export.js'), BASE, path.join(ROOT, 'site')], { stdio: 'inherit' });
       const code = await new Promise(r => exp.on('exit', r));

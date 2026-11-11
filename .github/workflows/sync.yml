@@ -18,8 +18,9 @@ on:
         description: '밀리의 서재도 받기 (2시간+)'
         type: boolean
         default: false
+# 크롤링(몇 시간)과 코드 배포(push, 몇 분)는 따로 줄을 선다 → 코드 배포가 크롤링을 기다리지 않음
 concurrency:
-  group: sync
+  group: ${{ github.event_name == 'push' && 'deploy' || 'sync' }}
   cancel-in-progress: false
 permissions:
   contents: write
