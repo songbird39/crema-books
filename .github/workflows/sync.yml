@@ -47,6 +47,8 @@ jobs:
         env:
           MODE: ${{ github.event_name == 'push' && 'export' || inputs.mode || 'full' }}
           MILLIE: ${{ inputs.millie && '1' || '' }}
+          # 십진분류는 밀린 책(도서관 8만 권)을 매일 조금씩: 최대 30분만 기다림
+          KDC_MINUTES: '30'
           NL_API_KEY: ${{ secrets.NL_API_KEY }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
@@ -62,6 +64,10 @@ jobs:
   deploy:
     needs: sync
     runs-on: ubuntu-latest
+    # Pages 배포는 한 번에 하나만 (코드 배포와 동기화 배포가 겹치면 GitHub이 거절함)
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
