@@ -549,7 +549,7 @@ async function lookupKdc(key, title, author, isbn) {
   return { c: m ? m + 'xx' : null, s: m ? 'n' : undefined };
 }
 // 동시에 여러 개 조회 (화면 요청과 백그라운드 작업이 같은 줄을 씀)
-const KDC_CONCURRENCY = 4;
+const KDC_CONCURRENCY = +process.env.KDC_CONCURRENCY || 4; // 한꺼번에 밀린 걸 받을 때만 늘림
 let kdcActive = 0;
 const kdcWaiters = [], kdcPending = new Map();
 async function kdcSlot(fn, urgent) { // 화면 요청(urgent)은 줄 맨 앞에
@@ -557,16 +557,18 @@ async function kdcSlot(fn, urgent) { // 화면 요청(urgent)은 줄 맨 앞에
   kdcActive++;
   try { return await fn(); } finally { kdcActive--; kdcWaiters.shift()?.(); }
 }
-function getKdc(k, title, author, isbn, urgent) {
+// force: 번호를 못 찾았던 책을 다시 찾기 (kdcSyncAll의 마지막 단계)
+function getKdc(k, title, author, isbn, urgent, force) {
   const map = kdcMap();
-  if (k in map) return Promise.resolve(map[k]);
+  if (k in map && !force) return Promise.resolve(map[k]);
   if (kdcPending.has(k)) return kdcPending.get(k);
   const key = nlKey();
   if (!key) return Promise.resolve(null);
   const run = async () => {
     try {
       const v = await lookupKdc(key, title, author, isbn);
-      map[k] = v.s ? v : { c: v.c };
+      // 못 찾은 건 날짜를 남겨 두고 KDC_RETRY_DAYS 뒤에 다시 찾음
+      map[k] = v.c ? (v.s ? v : { c: v.c }) : { c: null, t: new Date().toISOString().slice(0, 10) };
       kdcDirty++; saveKdc();
       return map[k];
     } catch (e) { return null; } // 실패는 저장하지 않음 (다음에 다시)
@@ -578,6 +580,26 @@ function getKdc(k, title, author, isbn, urgent) {
 }
 // 백그라운드: 밀리 → 크레마 → 리디 → 도서관 순서로 아직 없는 책을 모두
 const kdcJob = { running: false, stage: '', done: 0, total: 0 };
+const KDC_RETRY_DAYS = 60;
+// 못 찾았던 책: 날짜가 없거나(예전 기록) 60일 지났으면 다시 찾을 차례
+const kdcRetryDue = (v) => v && !v.c && (!v.t || Date.now() - Date.parse(v.t) > KDC_RETRY_DAYS * 864e5);
+async function kdcRunStage(name, todo, force) {
+  Object.assign(kdcJob, { stage: name, done: 0, total: todo.length });
+  const queue = todo.slice();
+  await Promise.all(Array.from({ length: KDC_CONCURRENCY }, async () => {
+    for (let r; (r = queue.shift());) {
+      // 인터넷이 끊기는 등 조회에 실패하면 건너뛰지 않고 기다렸다가 다시 (5초 → 최대 5분, 8번까지)
+      for (let tries = 0, wait = 5000; tries < 8; tries++, wait = Math.min(wait * 2, 300000)) {
+        if (await getKdc(favKey(r[0], r[1]), r[0], r[1], r[2], false, force)) break;
+        kdcJob.waiting = true;
+        await new Promise(res => setTimeout(res, wait));
+      }
+      kdcJob.waiting = false;
+      kdcJob.done++;
+    }
+  }));
+  saveKdc(true);
+}
 async function kdcSyncAll() {
   if (kdcJob.running || !nlKey()) return;
   kdcJob.running = true;
@@ -589,25 +611,15 @@ async function kdcSyncAll() {
       ['리디', () => (loadRidi().books || []).map(r => [r[1], r[2], null])],
       ['도서관', () => (loadLibs().merged || []).map(m => [m.title, m.author, m.isbn || null])],
     ];
+    // 1) 아직 안 찾아본 책
     for (const [name, rows] of stages) {
       const map = kdcMap(), seen = new Set();
-      const todo = rows().filter(([t, a]) => { const k = favKey(t, a); if (k in map || seen.has(k)) return false; seen.add(k); return true; });
-      Object.assign(kdcJob, { stage: name, done: 0, total: todo.length });
-      const queue = todo.slice();
-      await Promise.all(Array.from({ length: KDC_CONCURRENCY }, async () => {
-        for (let r; (r = queue.shift());) {
-          // 인터넷이 끊기는 등 조회에 실패하면 건너뛰지 않고 기다렸다가 다시 (5초 → 최대 5분, 8번까지)
-          for (let tries = 0, wait = 5000; tries < 8; tries++, wait = Math.min(wait * 2, 300000)) {
-            if (await getKdc(favKey(r[0], r[1]), r[0], r[1], r[2])) break;
-            kdcJob.waiting = true;
-            await new Promise(res => setTimeout(res, wait));
-          }
-          kdcJob.waiting = false;
-          kdcJob.done++;
-        }
-      }));
-      saveKdc(true);
+      await kdcRunStage(name, rows().filter(([t, a]) => { const k = favKey(t, a); if (k in map || seen.has(k)) return false; seen.add(k); return true; }));
     }
+    // 2) 번호를 못 찾았던 책을 다시 (국립중앙도서관에 나중에 등록되기도 함). 지금 목록에 있는 책만, 즐겨찾기부터
+    const map = kdcMap(), seen = new Set(), retry = [];
+    for (const [, rows] of stages) for (const r of rows()) { const k = favKey(r[0], r[1]); if (!seen.has(k) && kdcRetryDue(map[k])) { seen.add(k); retry.push(r); } }
+    await kdcRunStage('못 찾은 책 다시', retry, true);
     kdcJob.stage = '완료';
   } finally { kdcJob.running = false; saveKdc(true); }
 }
@@ -1250,6 +1262,22 @@ function buildCrossMatch(seoulBooks, cremaBooks) {
   return { seoulToCrema, cremaToSeoul };
 }
 
+// 서울도서관 책 ID 중 같은 책(제목+저자)이 소장형만(own) / 구독형만(sub) 있는 것 → 화면에서 종류 설정(소장형·구독형)대로 뺄 때 씀
+// 둘 다 있는 책은 어느 쪽 목록에도 없음 (한쪽만 꺼도 남김)
+app.get('/api/seoul/kinds', (req, res) => {
+  const books = loadSeoul().books || [];
+  const groups = new Map();
+  for (const b of books) {
+    const k = workKey(b.title || '') + '|' + authorKey(b.author || '');
+    const g = groups.get(k) || { ids: [], sub: false, own: false };
+    g.ids.push(String(b.id));
+    if (b.typeCode === 'TY02') g.sub = true; else g.own = true;
+    groups.set(k, g);
+  }
+  const own = [], sub = [];
+  for (const g of groups.values()) if (g.own !== g.sub) (g.own ? own : sub).push(...g.ids);
+  res.json({ own, sub });
+});
 app.get('/api/seoul/data', (req, res) => {
   const full = loadSeoul();
   // Send slim version - strip large fields

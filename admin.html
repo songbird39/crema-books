@@ -196,15 +196,15 @@ async function main() {
 
 // 버그 신고: 처리 안 한 것 먼저, 처리한 건 접어서
 function renderBugs(res) {
-  if (res.error) return `<h2>버그 신고</h2><p class="mute">못 불러옴: ${esc(res.error.message)} (supabase/schema.sql의 bug_reports를 SQL Editor에서 실행했는지 확인)</p>`;
+  if (res.error) return `<h2>버그 신고 및 기능 제안</h2><p class="mute">못 불러옴: ${esc(res.error.message)} (supabase/schema.sql의 bug_reports를 SQL Editor에서 실행했는지 확인)</p>`;
   const all = res.data || [], open = all.filter(b => b.status === 'open'), done = all.filter(b => b.status !== 'open');
   const row = (b) => `<tr><td class="mute" style="white-space:nowrap">${fmtTime(b.created_at)}</td><td>${esc(b.email || '익명')}</td>
     <td style="white-space:pre-wrap">${esc(b.message)}<div class="mute" style="font-size:12px;word-break:break-all">${esc(b.page || '')}</div></td>
     <td><button class="btn" data-bug="${b.id}" data-status="${b.status}">${b.status === 'open' ? '처리 완료' : '다시 열기'}</button></td></tr>`;
   const table = (rows) => `<table><tr><th>보낸 때</th><th>보낸 사람</th><th>내용</th><th></th></tr>${rows.map(row).join('')}</table>`;
-  return `<h2>버그 신고 <span class="mute">· 처리 안 함 ${open.length}건</span></h2>`
-    + (open.length ? table(open) : '<p class="mute">처리 안 한 신고가 없어요</p>')
-    + (done.length ? `<details><summary class="mute">처리한 신고 ${done.length}건</summary>${table(done)}</details>` : '');
+  return `<h2>버그 신고 및 기능 제안 <span class="mute">· 처리 안 함 ${open.length}건</span></h2>`
+    + (open.length ? table(open) : '<p class="mute">처리 안 한 글이 없어요</p>')
+    + (done.length ? `<details><summary class="mute">처리한 글 ${done.length}건</summary>${table(done)}</details>` : '');
 }
 
 function renderStatus(s) {

@@ -601,33 +601,53 @@
 </div>
 
 <script>
-// ─── 서울대 전자도서관(key가 snu_로 시작): 재학생·교직원만 빌릴 수 있어서 설정에서 플랫폼(교보·YES24·북큐브)별로 켠 것만 보임 ───
-// 끈 것은 받은 데이터에서 아예 빼 둔다 (탭·배지·필터·검색·소장 수가 모두 그대로 맞음). 설정을 바꾸면 새로고침
+// ─── 데이터를 받을 때 빼 두는 도서관 (탭·배지·필터·검색·소장 수가 모두 그대로 맞음). 설정을 바꾸면 새로고침 ───
+// 서울대 전자도서관(key가 snu_로 시작): 재학생·교직원만 빌릴 수 있어서 플랫폼(교보·YES24·북큐브)별로 켠 것만
+// 종류(소장형·구독형): 구독형은 서울도서관의 구독형·바로읽기 책뿐 (나머지 도서관은 모두 소장형)
 const SNU_LIBS = [['snu_kyobo', '교보'], ['snu_yes24', 'YES24'], ['snu_bookcube', '북큐브']];
+const LIB_TYPES = [['own', '소장형', '구립도서관·서울대·서울도서관 소장형'], ['sub', '구독형', '서울도서관 구독형·바로읽기']];
 const snuKeysOf = (st) => SNU_LIBS.map(([k]) => k).filter(k => st?.snuLibs?.[k]).sort().join(',');
-const SNU_ON = (() => { try { return snuKeysOf(JSON.parse(localStorage.getItem('settings') || '{}')); } catch { return ''; } })();
-const libHidden = (k) => k.startsWith('snu') && !SNU_ON.split(',').includes(k);
-if (SNU_ON.split(',').length < SNU_LIBS.length) {
-  const dropIds = (o) => { if (o) for (const k of Object.keys(o)) if (libHidden(k)) delete o[k]; };
+const typesOf = (st) => LIB_TYPES.map(([k]) => k).filter(k => st?.libTypes?.[k] !== false).join(',') || 'own,sub';
+const pruneSig = (st) => snuKeysOf(st) + '|' + typesOf(st);
+const SETTINGS0 = (() => { try { return JSON.parse(localStorage.getItem('settings') || '{}'); } catch { return {}; } })();
+const SNU_ON = snuKeysOf(SETTINGS0), PRUNE_SIG = pruneSig(SETTINGS0);
+const OWN_ON = typesOf(SETTINGS0).includes('own'), SUB_ON = typesOf(SETTINGS0).includes('sub');
+const libHidden = (k) => (k.startsWith('snu') && !SNU_ON.split(',').includes(k)) || (!OWN_ON && k !== 'seoul');
+let seoulKinds = null; // { own: Set, sub: Set } 소장형만/구독형만 있는 서울도서관 책 ID
+const seoulIdHidden = (id) => !!seoulKinds && ((!OWN_ON && seoulKinds.own.has(String(id))) || (!SUB_ON && seoulKinds.sub.has(String(id))));
+const keyHidden = (k, id) => libHidden(k) || (k === 'seoul' && seoulIdHidden(id));
+if (SNU_ON.split(',').length < SNU_LIBS.length || !OWN_ON || !SUB_ON) {
+  const dropIds = (o) => { if (o) for (const k of Object.keys(o)) if (keyHidden(k, o[k])) delete o[k]; };
+  const seoulTypeHidden = (b) => (!OWN_ON && b.typeCode !== 'TY02') || (!SUB_ON && b.typeCode === 'TY02');
   const PRUNE = {
     '/api/libs/data': (j) => {
       j.libs = (j.libs || []).filter(l => !libHidden(l.key));
       for (const v of Object.values(j.cremaLibIds || {})) dropIds(v);
       for (const [id, a] of Object.entries(j.cremaToLibs || {})) { const f = a.filter(k => !libHidden(k)); if (f.length) j.cremaToLibs[id] = f; else delete j.cremaToLibs[id]; }
     },
-    '/api/libs/merged': (j) => { j.merged = (j.merged || []).filter(e => { dropIds(e.ids); e.libs = (e.libs || []).filter(k => !libHidden(k)); return e.libs.length; }); },
+    '/api/libs/merged': (j) => { j.merged = (j.merged || []).filter(e => { dropIds(e.ids); e.libs = (e.libs || []).filter(k => k in (e.ids || {})); return e.libs.length; }); },
     '/api/millie/data': (j) => { for (const m of Object.values(j.millieMatch || {})) dropIds(m.libIds); },
     '/api/ridi/data': (j) => { for (const m of Object.values(j.ridiMatch || {})) dropIds(m.libIds); },
-    '/api/data': (j) => { for (const l of Object.values(j.bestsellerLists || {})) for (const b of l) dropIds(b.libIds); },
+    '/api/data': (j) => {
+      for (const l of Object.values(j.bestsellerLists || {})) for (const b of l) dropIds(b.libIds);
+      for (const [c, id] of Object.entries(j.seoulMatch || {})) if (seoulIdHidden(id)) delete j.seoulMatch[c];
+    },
+    '/api/seoul/data': (j) => {
+      j.books = (j.books || []).filter(b => !seoulTypeHidden(b));
+      const cm = j.crossMatch?.cremaToSeoul || {};
+      for (const [c, id] of Object.entries(cm)) if (seoulIdHidden(id)) delete cm[c];
+    },
     '/api/awards': (j) => { for (const l of Object.values(j.lists || {})) for (const x of l.items || []) dropIds(x.libIds); },
     '/api/favorites': (j) => { for (const f of j.items || []) dropIds(f.libIds); dropIds(j.item?.libIds); },
   };
   const f0 = window.fetch.bind(window);
+  // 종류를 하나 껐으면 서울도서관 책 종류 목록부터 받아 둠 (작음)
+  const kindsP = OWN_ON && SUB_ON ? Promise.resolve() : f0('/api/seoul/kinds').then(r => r.json()).then(k => { seoulKinds = { own: new Set(k.own), sub: new Set(k.sub) }; }).catch(e => console.error('seoul kinds', e));
   window.fetch = async (url, opts) => {
     const r = await f0(url, opts);
     const p = typeof url === 'string' && url.startsWith('/api/') ? url.split('?')[0] : null;
     if (!p || !PRUNE[p] || !r.ok) return r;
-    const j = await r.json();
+    const [j] = await Promise.all([r.json(), kindsP]);
     try { PRUNE[p](j); } catch (e) { console.error('prune', p, e); }
     const res = new Response('{}', { status: r.status, headers: { 'Content-Type': 'application/json' } });
     res.json = async () => j; // 큰 목록을 다시 문자열로 만들지 않게
@@ -2771,7 +2791,7 @@ window.setSettings = (s, { silent } = {}) => {
   settings = { ...DEFAULT_SETTINGS, ...s, platforms: { ...DEFAULT_SETTINGS.platforms, ...(s?.platforms || {}) } };
   if (!PLATFORMS.some(([k]) => plat(k))) settings.platforms = { ...DEFAULT_SETTINGS.platforms };
   localStorage.setItem('settings', JSON.stringify(settings));
-  if (snuKeysOf(settings) !== SNU_ON) { // 서울대 전자도서관은 데이터를 받을 때 빼므로 계정에 저장한 뒤 다시 받기
+  if (pruneSig(settings) !== PRUNE_SIG) { // 서울대 전자도서관·도서관 종류는 데이터를 받을 때 빼므로 계정에 저장한 뒤 다시 받기
     sessionStorage.setItem('tabAfterReload', currentTab);
     const saved = Promise.resolve(silent ? null : window.onSettingsChange?.(settings, { now: true })).catch(() => {});
     // 설정 창에서 바꾼 거면 창을 닫을 때 다시 받음 (여러 개를 한 번에 고를 수 있게)
@@ -2811,16 +2831,19 @@ function openSettings() {
       ${PLATFORMS.map(([k, name]) => `<label class="settings-row"><input type="checkbox" data-plat="${k}" ${plat(k) ? 'checked' : ''} onchange="togglePlatform(this)"> ${name}</label>`).join('')}
     </div>
     <div class="settings-sec" id="settingsSnu"><h4>도서관</h4>
-      <p class="settings-note">서울대 전자도서관 — 재학생·교직원만 빌릴 수 있어요. 바꾸면 설정 창을 닫을 때 반영돼요.</p>
+      <p class="settings-note">바꾸면 설정 창을 닫을 때 반영돼요.</p>
+      <div class="settings-note" style="margin-top:6px">종류</div>
+      ${LIB_TYPES.map(([k, name, desc]) => `<label class="settings-row"><input type="checkbox" ${settings.libTypes?.[k] !== false ? 'checked' : ''} onchange="toggleLibType(this)" data-k="${k}"> ${name} <span class="settings-note">· ${desc}</span></label>`).join('')}
+      <div class="settings-note" style="margin-top:6px">서울대 전자도서관 — 재학생·교직원만 빌릴 수 있어요</div>
       ${SNU_LIBS.map(([k, name]) => `<label class="settings-row"><input type="checkbox" ${settings.snuLibs?.[k] ? 'checked' : ''} onchange="window.setSettings({ ...settings, snuLibs: { ...(settings.snuLibs || {}), [this.dataset.k]: this.checked } })" data-k="${k}"> 서울대 ${name}</label>`).join('')}
     </div>
     <div class="settings-sec"><h4>화면</h4>
       <div class="settings-seg">${[['system', '시스템 설정'], ['light', '라이트'], ['dark', '다크']].map(([v, l]) =>
         `<label><input type="radio" name="theme" value="${v}" ${(settings.theme || 'system') === v ? 'checked' : ''} onchange="window.setSettings({ ...settings, theme: this.value })"> ${l}</label>`).join('')}</div>
     </div>${acct}${window.sendBugReport ? `
-    <div class="settings-sec"><h4>버그 신고</h4>
-      <p class="settings-note">이상한 점이나 바라는 점을 적어 주세요. 지금 보는 화면 주소가 같이 가요.</p>
-      <textarea id="bugText" class="bug-text" maxlength="4000" rows="4" placeholder="예: 리디 탭에서 별점순으로 바꾸면 목록이 비어요"></textarea>
+    <div class="settings-sec"><h4>버그 신고 및 기능 제안</h4>
+      <p class="settings-note">이상한 점이나 있으면 좋겠는 기능을 적어 주세요. 지금 보는 화면 주소가 같이 가요.</p>
+      <textarea id="bugText" class="bug-text" maxlength="4000" rows="4" placeholder="예: 리디 탭에서 별점순으로 바꾸면 목록이 비어요 / 알라딘 중고도 같이 보여 주세요"></textarea>
       <button class="settings-btn" id="bugSend" onclick="submitBugReport()">보내기</button> <span class="settings-note" id="bugMsg"></span>
     </div>` : ''}`;
   box.classList.remove('wide');
@@ -2834,6 +2857,11 @@ async function submitBugReport() {
   try { await window.sendBugReport(text, currentTab); ta.value = ''; msg.textContent = '보냈어요. 고마워요!'; }
   catch (e) { msg.textContent = '보내기 실패: ' + e.message; }
   btn.disabled = false;
+}
+function toggleLibType(el) {
+  const next = { own: settings.libTypes?.own !== false, sub: settings.libTypes?.sub !== false, [el.dataset.k]: el.checked };
+  if (!next.own && !next.sub) { el.checked = true; alert('소장형·구독형 중 하나는 골라야 해요'); return; }
+  window.setSettings({ ...settings, libTypes: next });
 }
 function togglePlatform(el) {
   const next = { ...settings.platforms, [el.dataset.plat]: el.checked };

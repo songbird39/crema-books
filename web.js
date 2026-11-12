@@ -16,6 +16,7 @@
     '/api/libs/data': 'api/libs-data.json',
     '/api/libs/merged': 'api/libs-merged.json',
     '/api/seoul/data': 'api/seoul-data.json',
+    '/api/seoul/kinds': 'api/seoul-kinds.json',
     '/api/awards': 'api/awards.json',
     '/api/kdc': 'api/kdc.json',
   };
