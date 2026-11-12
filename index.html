@@ -225,6 +225,7 @@
     background: var(--c1a1a1a); border: 1px solid var(--ctl-border); box-shadow: 0 10px 30px rgba(0,0,0,.3); font-size: 12px; color: var(--ceee); }
   .kdc-panel .kp-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--c888); }
   .kdc-panel .kp-head b { color: var(--ceee); }
+  .snu-panel { width: 270px; }
   .kdc-panel .kp-head button:first-of-type { margin-left: auto; }
   .kdc-grid { display: grid; grid-template-columns: 86px repeat(10, minmax(0, 1fr)); gap: 3px; }
   .kdc-grid.one { grid-template-columns: 86px repeat(5, minmax(0, 1fr)); }
@@ -558,7 +559,7 @@
   <div class="tab active" data-tab="crema" onclick="switchTab('crema')">크레마<span class="tl-long">클럽</span></div>
   <div class="tab" data-tab="millie" onclick="switchTab('millie')">밀리<span class="tl-long">의 서재</span></div>
   <div class="tab" data-tab="ridi" onclick="switchTab('ridi')">리디<span class="tl-long">셀렉트</span></div>
-  <div class="tab" data-tab="libs" onclick="switchTab('libs')"><span class="tl-long">서울</span>도서관</div>
+  <div class="tab" data-tab="libs" onclick="switchTab('libs')"><span class="tl-long" id="libsTabSeoul">서울</span>도서관</div>
   <div class="tab" data-tab="best" onclick="switchTab('best')">추천<span class="tl-long"> 목록</span></div>
   <div class="tab" data-tab="favs" onclick="switchTab('favs')">즐겨찾기 <span id="favCount"></span></div>
   <div class="tab" data-tab="search" onclick="switchTab('search')">검색</div>
@@ -805,6 +806,9 @@ async function loadData() {
     const cremaResp = await fetch('/api/data');
     const cremaJson = await cremaResp.json();
     if (cremaJson && cremaJson.books) data = cremaJson;
+    const backTab = sessionStorage.getItem('tabAfterReload'); // 설정 바꾸고 새로고침했으면 보던 탭으로
+    sessionStorage.removeItem('tabAfterReload');
+    if (backTab && backTab !== 'crema' && document.querySelector(`.tab[data-tab="${backTab}"]`)) switchTab(backTab);
     updateMeta();
     render();
 
@@ -898,6 +902,7 @@ function switchTab(tab) {
       <button class="sort-btn" data-sort="loanCnt" onclick="setSort('loanCnt')">서울도서관 대출순</button>
       <button class="sort-btn" data-sort="recommend" onclick="setSort('recommend')">서울도서관 추천순</button>
       <button class="sort-btn" data-sort="title" onclick="setSort('title')">제목순</button>
+      <button class="sort-btn${SNU_ON ? ' active' : ''}" id="btnSnu" onclick="toggleSnuPanel(event)" title="서울대 전자도서관을 목록에 넣기">서울대: ${SNU_ON ? SNU_LIBS.filter(([k]) => SNU_ON.split(',').includes(k)).map(([, n]) => n).join('·') : '끔'} ▾</button>
       <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
       <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
       <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
@@ -923,6 +928,7 @@ function switchTab(tab) {
   buildGenreOptions();
   updateKdcSelect();
   document.getElementById('kdcPanel')?.remove();
+  document.getElementById('snuPanel')?.remove();
   render();
 }
 
@@ -1204,6 +1210,31 @@ function kdcTabBooks() {
   if (currentTab === 'favs') return [favorites, b => b.title, b => b.author];
   return [[], b => b.title, b => b.author];
 }
+// 도서관 탭의 '서울대' 버튼: 서울대 전자도서관(교보·YES24·북큐브)을 골라 적용 → 계정에 저장하고 다시 받기
+function toggleSnuPanel(ev) {
+  ev?.stopPropagation();
+  const old = document.getElementById('snuPanel');
+  if (old) { old.remove(); return; }
+  const btn = document.getElementById('btnSnu'), r = btn.getBoundingClientRect();
+  const p = document.createElement('div');
+  p.id = 'snuPanel'; p.className = 'kdc-panel snu-panel';
+  p.style.top = (r.bottom + 6) + 'px'; p.style.left = Math.max(8, Math.min(r.left, innerWidth - 280)) + 'px';
+  p.addEventListener('click', e => e.stopPropagation());
+  p.innerHTML = `<div class="kp-head"><b>서울대 전자도서관</b></div>
+    <p class="settings-note">서울대 학생·교직원만 빌릴 수 있어요. 켠 곳은 도서관 목록·소장 수·검색에 들어가요.</p>
+    ${SNU_LIBS.map(([k, n]) => `<label class="settings-row"><input type="checkbox" data-k="${k}" ${SNU_ON.split(',').includes(k) ? 'checked' : ''}> ${n}</label>`).join('')}
+    <div style="display:flex;gap:6px;margin-top:8px"><button class="settings-btn" onclick="applySnuPanel()">적용</button><button class="settings-btn" onclick="document.getElementById('snuPanel').remove()">닫기</button></div>`;
+  document.body.appendChild(p);
+}
+function applySnuPanel() {
+  const snuLibs = {};
+  document.querySelectorAll('#snuPanel input[data-k]').forEach(i => { snuLibs[i.dataset.k] = i.checked; });
+  const p = document.getElementById('snuPanel');
+  if (snuKeysOf({ snuLibs }) === SNU_ON) { p.remove(); return; }
+  p.querySelector('.kp-head b').textContent = '불러오는 중...';
+  window.setSettings({ ...settings, snuLibs });
+}
+document.addEventListener('click', (e) => { const p = document.getElementById('snuPanel'); if (p && !p.contains(e.target) && e.target.id !== 'btnSnu') p.remove(); });
 function toggleKdcPanel(ev) {
   ev?.stopPropagation();
   const old = document.getElementById('kdcPanel');
@@ -2755,17 +2786,25 @@ let settings = (() => {
 })();
 function plat(k) { return settings.platforms[k] !== false; }
 // 다른 곳(web.js: 계정에 저장된 설정)에서 설정을 바꿀 때
+let snuReload = null; // 설정 창을 닫으면 다시 받기 (저장이 끝난 뒤)
 window.setSettings = (s, { silent } = {}) => {
   settings = { ...DEFAULT_SETTINGS, ...s, platforms: { ...DEFAULT_SETTINGS.platforms, ...(s?.platforms || {}) } };
   if (!PLATFORMS.some(([k]) => plat(k))) settings.platforms = { ...DEFAULT_SETTINGS.platforms };
   localStorage.setItem('settings', JSON.stringify(settings));
+  if (snuKeysOf(settings) !== SNU_ON) { // 서울대 전자도서관은 데이터를 받을 때 빼므로 계정에 저장한 뒤 다시 받기
+    sessionStorage.setItem('tabAfterReload', currentTab);
+    const saved = Promise.resolve(silent ? null : window.onSettingsChange?.(settings, { now: true })).catch(() => {});
+    // 설정 창에서 바꾼 거면 창을 닫을 때 다시 받음 (여러 개를 한 번에 고를 수 있게)
+    if (document.getElementById('settingsSnu') && document.getElementById('popupOverlay').classList.contains('open')) { snuReload = saved; return saved; }
+    return saved.then(() => location.reload());
+  }
+  snuReload = null;
   applySettings();
   if (!silent) window.onSettingsChange?.(settings);
 };
 window.getSettings = () => settings;
 function applySettings() {
   applyTheme(settings.theme);
-  if (snuKeysOf(settings) !== SNU_ON) return location.reload(); // 서울대 전자도서관은 데이터를 받을 때 빼므로 다시 받기
   for (const [k] of PLATFORMS) {
     document.documentElement.classList.toggle('no-' + k, !plat(k));
     const tab = document.querySelector(`.tab[data-tab="${k}"]`);
@@ -2791,8 +2830,8 @@ function openSettings() {
       <p class="settings-note">끈 플랫폼은 탭·필터·책 표시·검색 결과에서 빠져요.</p>
       ${PLATFORMS.map(([k, name]) => `<label class="settings-row"><input type="checkbox" data-plat="${k}" ${plat(k) ? 'checked' : ''} onchange="togglePlatform(this)"> ${name}</label>`).join('')}
     </div>
-    <div class="settings-sec"><h4>도서관</h4>
-      <p class="settings-note">서울대 전자도서관 — 재학생·교직원만 빌릴 수 있어요. 바꾸면 새로고침돼요.</p>
+    <div class="settings-sec" id="settingsSnu"><h4>도서관</h4>
+      <p class="settings-note">서울대 전자도서관 — 재학생·교직원만 빌릴 수 있어요. 바꾸면 설정 창을 닫을 때 반영돼요.</p>
       ${SNU_LIBS.map(([k, name]) => `<label class="settings-row"><input type="checkbox" ${settings.snuLibs?.[k] ? 'checked' : ''} onchange="window.setSettings({ ...settings, snuLibs: { ...(settings.snuLibs || {}), [this.dataset.k]: this.checked } })" data-k="${k}"> 서울대 ${name}</label>`).join('')}
     </div>
     <div class="settings-sec"><h4>화면</h4>
@@ -2809,6 +2848,7 @@ function togglePlatform(el) {
 }
 
 function closePopup() {
+  if (snuReload) { const p = snuReload; snuReload = null; document.getElementById('popupContent').innerHTML = '<div class="empty"><p>서울대 전자도서관 반영 중...</p></div>'; p.then(() => location.reload()); return; }
   document.getElementById('popupOverlay').classList.remove('open');
   document.getElementById('popupContent').classList.remove('wide');
 }
@@ -2819,6 +2859,7 @@ function esc(s) {
   return d.innerHTML;
 }
 
+if (SNU_ON) document.getElementById('libsTabSeoul')?.remove(); // 서울대도 넣으면 그냥 '도서관'
 applySettings();
 loadData();
 loadKdc();

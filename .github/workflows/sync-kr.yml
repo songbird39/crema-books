@@ -1,4 +1,4 @@
-# 해외 IP를 막는 도서관 4곳을 Mac(self-hosted runner)에서 받는다. 매일 새벽 2시(KST), 메인 동기화 전.
+# 해외 IP를 막는 도서관 4곳과 리디셀렉트를 Mac(self-hosted runner)에서 받는다. 매일 새벽 2시(KST), 메인 동기화 전.
 # Mac에 runner를 등록한 뒤 저장소 변수 KR_RUNNER=1 을 설정해야 돈다 (없으면 건너뜀).
 name: sync-kr
 on:
@@ -17,11 +17,14 @@ jobs:
       - run: npm ci --omit=dev
       - name: 이전 결과 받기
         env: { GH_TOKEN: '${{ github.token }}' }
-        run: gh release download state -p kr-libs.json --clobber || true
+        run: |
+          gh release download state -p kr-libs.json --clobber || true
+          gh release download state -p kr-ridi.json --clobber || true
       - run: node scripts/sync-kr.js
         env:
           KR_LIBS: seongdong,seongbuk,yeongdeungpo,songpa
+          KR_RIDI: '1'
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
       - name: 올리기
         env: { GH_TOKEN: '${{ github.token }}' }
-        run: gh release upload state kr-libs.json --clobber
+        run: gh release upload state kr-libs.json $(ls kr-ridi.json 2>/dev/null) --clobber

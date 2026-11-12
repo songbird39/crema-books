@@ -191,10 +191,14 @@
     else if (window.getSettings) saveAccountSettings(window.getSettings());
   }
   let saveTimer = null;
-  function saveAccountSettings(st) {
-    if (!user) return;
+  // now: 바로 저장하고 끝날 때까지 기다림 (서울대 도서관처럼 저장 뒤 새로고침하는 설정)
+  function saveAccountSettings(st, { now } = {}) {
+    if (!user) return Promise.resolve();
     clearTimeout(saveTimer);
-    saveTimer = setTimeout(() => sb.from('user_settings').upsert({ user_id: user.id, settings: st, updated_at: new Date().toISOString() }).then(({ error }) => { if (error) console.warn('설정 저장 실패', error.message); }), 500);
+    const save = () => sb.from('user_settings').upsert({ user_id: user.id, settings: st, updated_at: new Date().toISOString() }).then(({ error }) => { if (error) console.warn('설정 저장 실패', error.message); });
+    if (now) return save();
+    saveTimer = setTimeout(save, 500);
+    return Promise.resolve();
   }
   window.onSettingsChange = saveAccountSettings;
 

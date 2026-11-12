@@ -30,6 +30,8 @@ permissions:
 env:
   # 해외 IP를 막는 도서관 → Mac에서 받음 (sync-kr.yml)
   SKIP_LIBS: seongdong,seongbuk,yeongdeungpo,songpa
+  # 리디셀렉트도 해외 IP를 막음(403) → Mac에서 받은 kr-ridi.json을 씀
+  SKIP_RIDI: '1'
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -42,7 +44,9 @@ jobs:
       - name: 이전 데이터 받기
         env: { GH_TOKEN: '${{ github.token }}' }
         run: |
-          gh release download state -p state.tar.gz -p kr-libs.json --clobber || gh release download state -p state.tar.gz --clobber
+          gh release download state -p state.tar.gz --clobber
+          gh release download state -p kr-libs.json --clobber || true
+          gh release download state -p kr-ridi.json --clobber || true
           tar xzf state.tar.gz && ls -la data*.json
       - name: 동기화 + 내보내기
         env:

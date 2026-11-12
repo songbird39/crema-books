@@ -1,6 +1,7 @@
 node_modules/
 data*.json
 kr-libs.json
+kr-ridi.json
 state.tar.gz
 nl-key.txt
 dist/
