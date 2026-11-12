@@ -576,7 +576,7 @@ function getKdc(k, title, author, isbn, urgent) {
   kdcPending.set(k, p);
   return p;
 }
-// 백그라운드: 밀리 → 크레마 → 도서관 순서로 아직 없는 책을 모두
+// 백그라운드: 밀리 → 크레마 → 리디 → 도서관 순서로 아직 없는 책을 모두
 const kdcJob = { running: false, stage: '', done: 0, total: 0 };
 async function kdcSyncAll() {
   if (kdcJob.running || !nlKey()) return;
@@ -586,6 +586,7 @@ async function kdcSyncAll() {
       ['즐겨찾기', () => loadFavs().items.map(f => [f.title, f.author, null])],
       ['밀리', () => (loadMillie().books || []).map(r => [r[1], r[2], null])],
       ['크레마', () => (loadData().books || []).map(b => [b.title, b.author, null])],
+      ['리디', () => (loadRidi().books || []).map(r => [r[1], r[2], null])],
       ['도서관', () => (loadLibs().merged || []).map(m => [m.title, m.author, m.isbn || null])],
     ];
     for (const [name, rows] of stages) {
@@ -1023,8 +1024,10 @@ const ridiRow = (b, cat, rank) => {
   return [String(b.id), (b.title?.main || '').trim(), (b.authors?.author || []).map(a => a.name).join(', '), b.publisher?.name || '', cat,
     rs.buyer_rating_count ? Math.round(rs.buyer_rating_average * 100) / 100 : 0, rs.buyer_rating_count || 0, rank];
 };
-async function crawlRidi(onProgress) {
-  const cats = (await fetchRidiJson(`${RIDI_API}/categories`)).map(c => [c.id, c.name]);
+// part/parts: 카테고리를 parts 묶음으로 나눠 part번째만 받음 (Mac에서 날마다 조금씩, 일주일에 한 바퀴)
+async function crawlRidi(onProgress, part = 0, parts = 1) {
+  const allCats = (await fetchRidiJson(`${RIDI_API}/categories`)).map(c => [c.id, c.name]);
+  const cats = allCats.filter((_, i) => i % parts === part);
   const jobs = []; // [카테고리 id, 이름, 쪽]
   for (const [id, name] of cats) {
     const d = await fetchRidiJson(`${RIDI_API}/books?category=${id}&sort=popular&page=1&size=50`);
@@ -1044,13 +1047,16 @@ async function crawlRidi(onProgress) {
       await new Promise(r => setTimeout(r, 300));
     }
   }));
-  return { books: [...books.values()], categories: cats.length, pages: jobs.length, failed };
+  return { books: [...books.values()], categories: allCats.length, catNames: cats.map(c => c[1]), pages: jobs.length, failed };
 }
 // 이번 목록에 없는 책은 여러 권 조회(b_ids, 300권씩)로 확인: 응답에 없으면 셀렉트에서 빠진 것 → 지움, 있으면 남김.
 // 조회가 실패하면 확인 못 함 → 남김. 그래도 받은 권수가 이전보다 5% 넘게 줄면 사이트 이상으로 보고 아무것도 지우지 않음.
-async function reconcileRidi(prev, rows, onProgress) {
+// scope(카테고리 이름 목록)를 주면 그 카테고리의 이전 책만 비교하고 나머지는 그대로 둠 (나눠 받기)
+async function reconcileRidi(prev, rows, onProgress, scope = null) {
   const now = new Date().toISOString();
-  const prevBooks = prev.books || [];
+  const ids0 = new Set(rows.map(r => r[0]));
+  const outside = scope ? (prev.books || []).filter(r => !scope.includes(r[4]) && !ids0.has(r[0])) : [];
+  const prevBooks = scope ? (prev.books || []).filter(r => scope.includes(r[4]) || ids0.has(r[0])) : (prev.books || []);
   const ids = new Set(rows.map(r => r[0])), prevIds = new Set(prevBooks.map(r => r[0]));
   const added = rows.filter(r => !prevIds.has(r[0]));
   const gone = prevBooks.filter(r => !ids.has(r[0]));
@@ -1072,9 +1078,9 @@ async function reconcileRidi(prev, rows, onProgress) {
   const kept = gone.filter(r => state.get(r[0]) === 'exists').map(r => fresh.get(r[0]) || r);
   const unknown = gone.filter(r => !state.has(r[0]) || (warning && state.get(r[0]) === 'gone'));
   const S = 50, pair = r => [r[0], r[1]];
-  const changes = { at: now, prev: prevBooks.length, received: rows.length, added: added.length, removed: removed.length, kept: kept.length, unknown: unknown.length, warning,
+  const changes = { at: now, scope, prev: prevBooks.length, received: rows.length, added: added.length, removed: removed.length, kept: kept.length, unknown: unknown.length, warning,
     addedSample: added.slice(0, S).map(pair), removedSample: removed.slice(0, S).map(pair), keptSample: kept.slice(0, S).map(pair), unknownSample: unknown.slice(0, S).map(pair) };
-  return { books: [...rows, ...kept, ...unknown], changes };
+  return { books: [...rows, ...kept, ...unknown, ...outside], changes };
 }
 let ridiFinder = null;
 function findRidi(title, author) {
@@ -1085,21 +1091,21 @@ function findRidi(title, author) {
   return ridiFinder(title, author)?.id || null;
 }
 const ridiJob = { running: false, status: null, listeners: new Set() };
-async function runRidiJob() {
+async function runRidiJob(part = 0, parts = 1) {
   ridiJob.running = true;
   const send = (o) => { if (o.status) ridiJob.status = o.status; for (const l of ridiJob.listeners) l(o); };
   try {
     send({ status: '리디셀렉트 카테고리 받는 중...', phase: 'ridi', page: 0, totalPages: 1 });
-    const r = await crawlRidi(send);
+    const r = await crawlRidi(send, part, parts);
     if (!r.books.length) throw new Error('받은 책이 없습니다');
-    const m = await reconcileRidi(loadRidi(), r.books, send);
+    const m = await reconcileRidi(loadRidi(), r.books, send, parts > 1 ? r.catNames : null);
     m.changes.failedPages = r.failed;
     fs.writeFileSync(RIDI_FILE, JSON.stringify({ lastSync: new Date().toISOString(), categories: r.categories, failed: r.failed, books: m.books, changes: m.changes }));
     ridiFinder = null;
     send({ status: '매칭 중...', phase: 'match' });
     rebuildLibMatch();
     const c = m.changes;
-    send({ status: `완료! 리디셀렉트 ${m.books.length.toLocaleString()}권 (새 책 ${c.added} · 빠진 책 ${c.removed} · 남김 ${c.kept + c.unknown}${r.failed ? ` · 실패한 쪽 ${r.failed}` : ''})` });
+    send({ status: `완료! 리디셀렉트 ${m.books.length.toLocaleString()}권 (${parts > 1 ? `이번엔 ${r.catNames.join('·')} · ` : ''}새 책 ${c.added} · 빠진 책 ${c.removed} · 남김 ${c.kept + c.unknown}${r.failed ? ` · 실패한 쪽 ${r.failed}` : ''})` });
     send({ done: true });
   } catch (e) {
     send({ error: e.message });
@@ -1119,7 +1125,7 @@ app.get('/api/ridi/sync', (req, res) => {
   ridiJob.listeners.add(send);
   res.on('close', () => ridiJob.listeners.delete(send));
   if (ridiJob.running) send({ status: '이미 진행 중인 동기화에 연결됨 · ' + (ridiJob.status || ''), phase: 'ridi' });
-  else runRidiJob();
+  else { const parts = Math.max(1, +req.query.parts || 1); runRidiJob(Math.min(parts - 1, Math.max(0, +req.query.part || 0)), parts); }
 });
 app.get('/api/ridi/data', (req, res) => {
   const d = loadRidi();

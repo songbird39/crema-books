@@ -7,11 +7,18 @@ const path = require('path');
 const { LIBRARIES, crawlLibrary } = require('../libraries');
 const report = require('./report');
 const { reconcile } = require('../retention');
-const keys = (process.env.KR_LIBS || '').split(',').filter(Boolean);
+// 나눠 받기: 요일(한국 시간)마다 일부만 → 일주일에 한 바퀴. KR_DAY=all 이면 전부, 0~6이면 그 요일 몫
+const DAYS = 7;
+const DAY = process.env.KR_DAY === 'all' ? null : process.env.KR_DAY ? +process.env.KR_DAY : new Date(Date.now() + 9 * 3600e3).getUTCDay();
+const allKeys = (process.env.KR_LIBS || '').split(',').filter(Boolean);
+// 도서관은 이틀에 한 곳씩 (4곳: 일·화·목·토)
+const keys = DAY == null ? allKeys : allKeys.filter((_, i) => (i * 2) % DAYS === DAY);
+const ridiQuery = DAY == null ? '' : `?part=${DAY}&parts=${DAYS}`;
 const OUT = path.join(__dirname, '..', 'kr-libs.json');
 (async () => {
   const t0 = Date.now();
-  const runId = await report.start('sync-kr', 'full', { libs: keys });
+  console.log(`오늘 몫: ${DAY == null ? '전부' : '요일 ' + DAY} · 도서관 ${keys.join(',') || '없음'} · 리디 ${ridiQuery || '전부'}`);
+  const runId = await report.start('sync-kr', DAY == null ? 'full' : 'part', { libs: keys, day: DAY });
   const results = {};
   const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { libs: {}, books: {} };
   let fail = 0;
@@ -37,6 +44,7 @@ const OUT = path.join(__dirname, '..', 'kr-libs.json');
   }
   await report.finish(runId, !fail ? 'success' : fail === keys.length + (process.env.KR_RIDI === '1' ? 1 : 0) ? 'failed' : 'partial', { libs: keys, results, ms: Date.now() - t0 });
   if (fail && fail === keys.length + (process.env.KR_RIDI === '1' ? 1 : 0)) process.exit(1);
+  process.exit(0);
 })();
 
 // 리디셀렉트: 이전 결과(kr-ridi.json)를 data-ridi.json으로 두고 서버의 동기화를 그대로 돌림 (없어진 책 확인 규칙 같음)
@@ -52,7 +60,7 @@ async function syncRidi() {
       if (i > 120) throw new Error('서버가 켜지지 않음');
       await new Promise(r => setTimeout(r, 1000));
     }
-    const r = await fetch(BASE + '/api/ridi/sync');
+    const r = await fetch(BASE + '/api/ridi/sync' + ridiQuery);
     const reader = r.body.getReader(), dec = new TextDecoder();
     let buf = '', ok = false;
     for (;;) {

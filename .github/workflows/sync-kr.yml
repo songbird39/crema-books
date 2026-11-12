@@ -1,10 +1,15 @@
 # 해외 IP를 막는 도서관 4곳과 리디셀렉트를 Mac(self-hosted runner)에서 받는다. 매일 새벽 2시(KST), 메인 동기화 전.
+# 나눠서: 날마다 리디 카테고리 1/7 + 도서관 이틀에 한 곳 → 일주일에 한 바퀴 (scripts/sync-kr.js)
 # Mac에 runner를 등록한 뒤 저장소 변수 KR_RUNNER=1 을 설정해야 돈다 (없으면 건너뜀).
 name: sync-kr
 on:
   schedule:
     - cron: '0 17 * * *'
   workflow_dispatch:
+    inputs:
+      day:
+        description: '받을 몫: 비우면 오늘 요일 몫, all이면 전부, 0(일)~6(토)'
+        default: ''
 permissions:
   contents: write
 jobs:
@@ -24,6 +29,7 @@ jobs:
         env:
           KR_LIBS: seongdong,seongbuk,yeongdeungpo,songpa
           KR_RIDI: '1'
+          KR_DAY: ${{ inputs.day }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
       - name: 올리기
         env: { GH_TOKEN: '${{ github.token }}' }

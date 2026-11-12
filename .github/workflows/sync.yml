@@ -52,8 +52,8 @@ jobs:
         env:
           MODE: ${{ github.event_name == 'push' && 'export' || inputs.mode || 'full' }}
           MILLIE: ${{ inputs.millie && '1' || '' }}
-          # 십진분류는 밀린 책(도서관 8만 권)을 매일 조금씩: 최대 30분만 기다림
-          KDC_MINUTES: '30'
+          # 십진분류는 밀린 책(도서관·리디 약 10만 권)을 매일 조금씩: 최대 60분만 기다림
+          KDC_MINUTES: '60'
           NL_API_KEY: ${{ secrets.NL_API_KEY }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
