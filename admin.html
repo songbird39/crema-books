@@ -173,17 +173,38 @@ async function main() {
   const { data: isAdmin } = await sb.rpc('is_admin');
   if (!isAdmin) { $main.innerHTML = `<div class="center">관리자만 볼 수 있어요 (${esc(user.email)})</div>`; return; }
 
-  const [status, runsRes] = await Promise.all([
+  const [status, runsRes, bugsRes] = await Promise.all([
     fetch('api/status.json?t=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
     sb.from('sync_runs').select('*').order('started_at', { ascending: false }).limit(60),
+    sb.from('bug_reports').select('*').order('created_at', { ascending: false }).limit(200),
   ]);
   if (runsRes.error) { $main.innerHTML = `<div class="center err">동기화 기록을 못 불러옴: ${esc(runsRes.error.message)}</div>`; return; }
   const runs = runsRes.data;
-  $main.innerHTML = renderStatus(status) + renderRuns(runs);
+  $main.innerHTML = renderBugs(bugsRes) + renderStatus(status) + renderRuns(runs);
+  $main.querySelectorAll('button[data-bug]').forEach(b => b.onclick = async () => {
+    const next = b.dataset.status === 'open' ? 'done' : 'open';
+    b.disabled = true;
+    const { error } = await sb.from('bug_reports').update({ status: next }).eq('id', +b.dataset.bug);
+    if (error) { alert('바꾸기 실패: ' + error.message); b.disabled = false; return; }
+    main();
+  });
   $main.querySelectorAll('tr.run').forEach(tr => tr.onclick = () => {
     const d = tr.nextElementSibling;
     d.hidden = !d.hidden;
   });
+}
+
+// 버그 신고: 처리 안 한 것 먼저, 처리한 건 접어서
+function renderBugs(res) {
+  if (res.error) return `<h2>버그 신고</h2><p class="mute">못 불러옴: ${esc(res.error.message)} (supabase/schema.sql의 bug_reports를 SQL Editor에서 실행했는지 확인)</p>`;
+  const all = res.data || [], open = all.filter(b => b.status === 'open'), done = all.filter(b => b.status !== 'open');
+  const row = (b) => `<tr><td class="mute" style="white-space:nowrap">${fmtTime(b.created_at)}</td><td>${esc(b.email || '익명')}</td>
+    <td style="white-space:pre-wrap">${esc(b.message)}<div class="mute" style="font-size:12px;word-break:break-all">${esc(b.page || '')}</div></td>
+    <td><button class="btn" data-bug="${b.id}" data-status="${b.status}">${b.status === 'open' ? '처리 완료' : '다시 열기'}</button></td></tr>`;
+  const table = (rows) => `<table><tr><th>보낸 때</th><th>보낸 사람</th><th>내용</th><th></th></tr>${rows.map(row).join('')}</table>`;
+  return `<h2>버그 신고 <span class="mute">· 처리 안 함 ${open.length}건</span></h2>`
+    + (open.length ? table(open) : '<p class="mute">처리 안 한 신고가 없어요</p>')
+    + (done.length ? `<details><summary class="mute">처리한 신고 ${done.length}건</summary>${table(done)}</details>` : '');
 }
 
 function renderStatus(s) {

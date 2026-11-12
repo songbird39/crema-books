@@ -225,7 +225,6 @@
     background: var(--c1a1a1a); border: 1px solid var(--ctl-border); box-shadow: 0 10px 30px rgba(0,0,0,.3); font-size: 12px; color: var(--ceee); }
   .kdc-panel .kp-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--c888); }
   .kdc-panel .kp-head b { color: var(--ceee); }
-  .snu-panel { width: 270px; }
   .kdc-panel .kp-head button:first-of-type { margin-left: auto; }
   .kdc-grid { display: grid; grid-template-columns: 86px repeat(10, minmax(0, 1fr)); gap: 3px; }
   .kdc-grid.one { grid-template-columns: 86px repeat(5, minmax(0, 1fr)); }
@@ -515,7 +514,9 @@
   .settings-btn.danger { background: none; color: var(--ce74c3c); border-color: var(--ce74c3c); }
   /* 탭 묶음 (넓은 화면에선 예전처럼 탭이 남는 폭을 나눠 가짐) */
   .tab-list { display: flex; flex: 1; min-width: 0; }
-  .tab-sync .t-m { display: none; }
+  .tab-sync .t-one { color: var(--c888); }
+  .tab-sync .t-one b { color: var(--caaa); font-weight: 500; }
+  .bug-text { width: 100%; box-sizing: border-box; margin: 4px 0; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--ctl-border); background: var(--ctl-bg); color: var(--ceee); font: inherit; font-size: 13px; resize: vertical; }
 
   /* ─── 모바일 ─── */
   @media (max-width: 700px) {
@@ -530,9 +531,6 @@
     .tl-long { display: none; }
     .tab-sync { order: 1; border-left: none; padding: 8px 10px; font-size: 12px; min-height: 38px; }
     #btnSyncPanel { order: 0; margin-right: auto; padding-left: 12px; }
-    #btnSyncPanel .t { display: none; }
-    #btnSyncPanel .t-m { display: inline; color: var(--c888); }
-    #btnSyncPanel .t-m b { color: var(--caaa); font-weight: 500; }
     #btnAccount { max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
     .theme-btn { order: 1; padding: 0 12px; }
     .sync-summary { padding: 8px 12px; gap: 8px 14px; }
@@ -902,7 +900,6 @@ function switchTab(tab) {
       <button class="sort-btn" data-sort="loanCnt" onclick="setSort('loanCnt')">서울도서관 대출순</button>
       <button class="sort-btn" data-sort="recommend" onclick="setSort('recommend')">서울도서관 추천순</button>
       <button class="sort-btn" data-sort="title" onclick="setSort('title')">제목순</button>
-      <button class="sort-btn${SNU_ON ? ' active' : ''}" id="btnSnu" onclick="toggleSnuPanel(event)" title="서울대 전자도서관을 목록에 넣기">서울대: ${SNU_ON ? SNU_LIBS.filter(([k]) => SNU_ON.split(',').includes(k)).map(([, n]) => n).join('·') : '끔'} ▾</button>
       <button class="sort-btn filter-btn" id="btnCremaFilter" onclick="cycleFilter('crema')">크레마: 전체</button>
       <button class="sort-btn filter-btn" id="btnMillieFilter" onclick="cycleFilter('millie')">밀리: 전체</button>
       <button class="sort-btn filter-btn" id="btnRidiFilter" onclick="cycleFilter('ridi')">리디: 전체</button>
@@ -928,7 +925,6 @@ function switchTab(tab) {
   buildGenreOptions();
   updateKdcSelect();
   document.getElementById('kdcPanel')?.remove();
-  document.getElementById('snuPanel')?.remove();
   render();
 }
 
@@ -1006,18 +1002,27 @@ setInterval(() => updateSyncSummary(), 60000); // 상대 시각 갱신
 // 탭 줄 버튼: 소스별 마지막 동기화 시각을 늘 보이게
 const KST_MD = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Seoul', month: '2-digit', day: '2-digit' }); // 11/05
 const fmtMD = (iso) => iso ? KST_MD.format(new Date(iso)) : '—';
+// 탭 줄 오른쪽: 지금 보는 화면의 데이터가 언제 받은 것인지 (누르면 전체 현황)
+function tabSources() {
+  const libsLast = libsData.libs.map(l => l.lastSync).filter(Boolean).sort().pop(); // 서울도서관 포함
+  const src = { crema: ['크레마', data.lastSync], libs: ['도서관', libsLast], millie: ['밀리', millieData.lastSync], ridi: ['리디', ridiData.lastSync], best: ['베스트', data.bestsellerSync] };
+  const on = (k) => k === 'best' || plat(k);
+  if (src[currentTab]) return [src[currentTab]];
+  return Object.entries(src).filter(([k]) => on(k)).map(([, v]) => v); // 즐겨찾기·검색: 여러 곳을 합친 화면
+}
 function renderSyncButton() {
   const btn = document.getElementById('btnSyncPanel');
   if (!btn) return;
-  const libsLast = libsData.libs.map(l => l.lastSync).filter(Boolean).sort().pop(); // 서울도서관 포함
   const busy = document.getElementById('progressWrap').classList.contains('active');
-  // 탭 줄은 좁아서 월/일만 (한국 시각), 마우스를 올리면 자세히
-  const t = (name, iso) => `<span class="t" title="${iso ? KST.format(new Date(iso)) + ' (' + fmtDate(iso) + ')' : '미동기화'}">${name} <b>${fmtMD(iso)}</b></span>`;
   btn.classList.toggle('busy', busy);
-  const oldest = [data.lastSync, libsLast, millieData.lastSync, ridiData.lastSync, data.bestsellerSync].filter(Boolean).sort()[0];
+  const srcs = tabSources();
+  const title = srcs.map(([n, iso]) => `${n}: ${iso ? KST.format(new Date(iso)) + ' (' + fmtDate(iso) + ')' : '미동기화'}`).join('\n');
+  // 한 곳이면 그 날짜, 여러 곳을 합친 화면이면 가장 오래된 날짜 (탭 줄은 좁아서 월/일만)
+  const label = srcs.length === 1 ? `${srcs[0][0]} ` : '';
+  const iso = srcs.length === 1 ? srcs[0][1] : srcs.map(x => x[1]).filter(Boolean).sort()[0];
+  btn.title = title;
   btn.innerHTML = (busy ? '<span class="busy-label">동기화 중…</span>' : '')
-    + `<span class="t-m">동기화 <b>${fmtMD(oldest)}</b></span>` // 모바일: 가장 오래된 날짜 하나만
-    + t('크레마', data.lastSync) + t('도서관', libsLast) + t('밀리', millieData.lastSync) + t('리디', ridiData.lastSync) + t('베스트', data.bestsellerSync) + ' ▾';
+    + `<span class="t-one">${label}<b>${fmtMD(iso)}</b> 기준</span> ▾`;
 }
 
 function updateSyncSummary() {
@@ -1210,31 +1215,6 @@ function kdcTabBooks() {
   if (currentTab === 'favs') return [favorites, b => b.title, b => b.author];
   return [[], b => b.title, b => b.author];
 }
-// 도서관 탭의 '서울대' 버튼: 서울대 전자도서관(교보·YES24·북큐브)을 골라 적용 → 계정에 저장하고 다시 받기
-function toggleSnuPanel(ev) {
-  ev?.stopPropagation();
-  const old = document.getElementById('snuPanel');
-  if (old) { old.remove(); return; }
-  const btn = document.getElementById('btnSnu'), r = btn.getBoundingClientRect();
-  const p = document.createElement('div');
-  p.id = 'snuPanel'; p.className = 'kdc-panel snu-panel';
-  p.style.top = (r.bottom + 6) + 'px'; p.style.left = Math.max(8, Math.min(r.left, innerWidth - 280)) + 'px';
-  p.addEventListener('click', e => e.stopPropagation());
-  p.innerHTML = `<div class="kp-head"><b>서울대 전자도서관</b></div>
-    <p class="settings-note">서울대 학생·교직원만 빌릴 수 있어요. 켠 곳은 도서관 목록·소장 수·검색에 들어가요.</p>
-    ${SNU_LIBS.map(([k, n]) => `<label class="settings-row"><input type="checkbox" data-k="${k}" ${SNU_ON.split(',').includes(k) ? 'checked' : ''}> ${n}</label>`).join('')}
-    <div style="display:flex;gap:6px;margin-top:8px"><button class="settings-btn" onclick="applySnuPanel()">적용</button><button class="settings-btn" onclick="document.getElementById('snuPanel').remove()">닫기</button></div>`;
-  document.body.appendChild(p);
-}
-function applySnuPanel() {
-  const snuLibs = {};
-  document.querySelectorAll('#snuPanel input[data-k]').forEach(i => { snuLibs[i.dataset.k] = i.checked; });
-  const p = document.getElementById('snuPanel');
-  if (snuKeysOf({ snuLibs }) === SNU_ON) { p.remove(); return; }
-  p.querySelector('.kp-head b').textContent = '불러오는 중...';
-  window.setSettings({ ...settings, snuLibs });
-}
-document.addEventListener('click', (e) => { const p = document.getElementById('snuPanel'); if (p && !p.contains(e.target) && e.target.id !== 'btnSnu') p.remove(); });
 function toggleKdcPanel(ev) {
   ev?.stopPropagation();
   const old = document.getElementById('kdcPanel');
@@ -2837,9 +2817,23 @@ function openSettings() {
     <div class="settings-sec"><h4>화면</h4>
       <div class="settings-seg">${[['system', '시스템 설정'], ['light', '라이트'], ['dark', '다크']].map(([v, l]) =>
         `<label><input type="radio" name="theme" value="${v}" ${(settings.theme || 'system') === v ? 'checked' : ''} onchange="window.setSettings({ ...settings, theme: this.value })"> ${l}</label>`).join('')}</div>
-    </div>${acct}`;
+    </div>${acct}${window.sendBugReport ? `
+    <div class="settings-sec"><h4>버그 신고</h4>
+      <p class="settings-note">이상한 점이나 바라는 점을 적어 주세요. 지금 보는 화면 주소가 같이 가요.</p>
+      <textarea id="bugText" class="bug-text" maxlength="4000" rows="4" placeholder="예: 리디 탭에서 별점순으로 바꾸면 목록이 비어요"></textarea>
+      <button class="settings-btn" id="bugSend" onclick="submitBugReport()">보내기</button> <span class="settings-note" id="bugMsg"></span>
+    </div>` : ''}`;
   box.classList.remove('wide');
   document.getElementById('popupOverlay').classList.add('open');
+}
+async function submitBugReport() {
+  const ta = document.getElementById('bugText'), btn = document.getElementById('bugSend'), msg = document.getElementById('bugMsg');
+  const text = ta.value.trim();
+  if (!text) { ta.focus(); return; }
+  btn.disabled = true; msg.textContent = '보내는 중...';
+  try { await window.sendBugReport(text, currentTab); ta.value = ''; msg.textContent = '보냈어요. 고마워요!'; }
+  catch (e) { msg.textContent = '보내기 실패: ' + e.message; }
+  btn.disabled = false;
 }
 function togglePlatform(el) {
   const next = { ...settings.platforms, [el.dataset.plat]: el.checked };

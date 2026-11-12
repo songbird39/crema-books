@@ -208,6 +208,11 @@
        <button class="settings-btn" onclick="accountLogout()">로그아웃</button><button class="settings-btn danger" onclick="accountDelete()">탈퇴</button>`
     : `<p class="settings-note">로그인하면 설정과 즐겨찾기를 계정에 저장해서 다른 기기에서도 볼 수 있어요</p>
        <button class="settings-btn" onclick="closePopup(); accountLogin()">구글로 로그인</button>`}</div>`;
+  // 버그 신고 → Supabase bug_reports (관리자 화면에서 봄)
+  window.sendBugReport = async (message, tab) => {
+    const { error } = await sb.from('bug_reports').insert({ message: message.slice(0, 4000), page: (location.href + (tab ? ` [탭: ${tab}]` : '')).slice(0, 500), user_agent: navigator.userAgent.slice(0, 500) });
+    if (error) throw new Error(error.message);
+  };
   window.accountLogin = () => login();
   window.accountLogout = async () => { await logout(); closePopup(); };
   // 탈퇴: 한 번 확인 → 즐겨찾기·설정·계정 삭제 (Supabase delete_my_account)

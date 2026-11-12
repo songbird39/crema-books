@@ -94,3 +94,25 @@ begin
 end $$;
 revoke execute on function public.delete_my_account() from public, anon;
 grant execute on function public.delete_my_account() to authenticated;
+
+-- ─── 버그 신고 (누구나 보냄, 관리자만 읽고 처리) ───
+create table if not exists public.bug_reports (
+  id         bigint generated always as identity primary key,
+  user_id    uuid default auth.uid() references auth.users(id) on delete set null,
+  email      text default (auth.jwt() ->> 'email'),
+  message    text not null check (char_length(message) between 1 and 4000),
+  page       text check (char_length(page) <= 500),
+  user_agent text check (char_length(user_agent) <= 500),
+  status     text not null default 'open' check (status in ('open', 'done')),
+  created_at timestamptz not null default now()
+);
+alter table public.bug_reports enable row level security;
+drop policy if exists "anyone reports" on public.bug_reports;
+create policy "anyone reports" on public.bug_reports for insert to anon, authenticated
+  with check (user_id is not distinct from auth.uid() and email is not distinct from (auth.jwt() ->> 'email') and status = 'open');
+drop policy if exists "admins read reports" on public.bug_reports;
+create policy "admins read reports" on public.bug_reports for select to authenticated using (public.is_admin());
+drop policy if exists "admins update reports" on public.bug_reports;
+create policy "admins update reports" on public.bug_reports for update to authenticated using (public.is_admin()) with check (public.is_admin());
+grant insert on public.bug_reports to anon, authenticated;
+grant select, update on public.bug_reports to authenticated;
